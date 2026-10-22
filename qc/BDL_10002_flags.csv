@@ -1,0 +1,336 @@
+code,Name,Strain,Sex,Tx,Value,EarTag,detail
+A1_natural_and_harvested,L2047,BXD48,F,HF,167,2047,"same strain and tag also listed as harvested (L2047,H2047), age 167 d"
+A1_natural_and_harvested,L2141,BXD69,F,CD,157,2141,"same strain and tag also listed as harvested (L2141,H2141), age 157 d"
+A1_natural_and_harvested,L1251,C57BL/6J,F,CD,711,1251,"same strain and tag also listed as harvested (L1251,H1251), age 711 d"
+A1_natural_and_harvested,L1292,C57BL/6J,F,CD,705,1292,"same strain and tag also listed as harvested (L1292,H1292), age 705 d"
+A1_natural_and_harvested,L1573,DBA/2J,F,CD,708,1573,"same strain and tag also listed as harvested (L1573,H1573), age 708 d"
+A2_tag_two_strains,N3698,BXD170,F,NAM,349,3698,"tag 3698 used by L3698 BXD2, N3698 BXD170"
+A2_tag_two_strains,H2878,BXD2,M,CD,x,2878,"tag 2878 used by N2878 DBA/2J, H2878 BXD2"
+A2_tag_two_strains,H2879,BXD2,M,CD,x,2879,"tag 2879 used by N2879 DBA/2J, H2879 BXD2"
+A2_tag_two_strains,H2880,BXD2,M,CD,x,2880,"tag 2880 used by N2880 DBA/2J, H2880 BXD2"
+A2_tag_two_strains,L3698,BXD2,F,CD,267,3698,"tag 3698 used by L3698 BXD2, N3698 BXD170"
+A2_tag_two_strains,L2892,BXD22,F,HF,821,2892,"tag 2892 used by N2892 DBA/2J, L2892 BXD22"
+A2_tag_two_strains,N2878,DBA/2J,M,CD,232,2878,"tag 2878 used by N2878 DBA/2J, H2878 BXD2"
+A2_tag_two_strains,N2879,DBA/2J,M,CD,309,2879,"tag 2879 used by N2879 DBA/2J, H2879 BXD2"
+A2_tag_two_strains,N2880,DBA/2J,M,CD,770,2880,"tag 2880 used by N2880 DBA/2J, H2880 BXD2"
+A2_tag_two_strains,N2892,DBA/2J,F,NAM,545,2892,"tag 2892 used by N2892 DBA/2J, L2892 BXD22"
+A3_died_before_known_alive,L2674,BXD16,F,HF,447,2674,recorded alive at 678 d on 15 Nov 2018
+A3_died_before_known_alive,L2641,BXD86,F,HF,813,2641,recorded alive at 836 d on 15 Nov 2018
+A4_value_vs_age,L0852,BXD53,F,CD,663,852,"Value 663, Age 845, Longevity 845"
+A5_strain_spelling,F3310,BXD065XBXD102F1,F,HF,761,3310,'BXD065XBXD102F1' vs 'BXD065xBXD102F1'
+A6_rrid,L2236,BXD175,F,CD,740,2236,RRID JAX:000GET
+A6_rrid,L2237,BXD175,F,HF,743,2237,RRID JAX:000GET
+A6_rrid,L2238,BXD175,F,HF,669,2238,RRID JAX:000GET
+A6_rrid,L2239,BXD175,F,HF,839,2239,RRID JAX:000GET
+A6_rrid,L2240,BXD175,F,CD,1065,2240,RRID JAX:000GET
+A6_rrid,L2241,BXD175,F,CD,941,2241,RRID JAX:000GET
+A6_rrid,L2305,BXD175,F,CD,1040,2305,RRID JAX:000GET
+A6_rrid,L2306,BXD175,F,CD,1091,2306,RRID JAX:000GET
+A6_rrid,L2307,BXD175,F,HF,675,2307,RRID JAX:000GET
+A6_rrid,H1789,BXD65,F,HF,x,1789,RRID JAX:009677; most BXD65 rows have JAX:007110
+A6_rrid,H1790,BXD65,F,HF,x,1790,RRID JAX:009677; most BXD65 rows have JAX:007110
+A6_rrid,H1794,BXD65,F,CD,x,1794,RRID JAX:009677; most BXD65 rows have JAX:007110
+A6_rrid,L1599,BXD65b,F,HF,409,1599,RRID JAX:007110; most BXD65b rows have JAX:009677
+B1_age_differs_from_2018,L0719,BXD101,F,HF,614,719,"2018 AgeAtDeath 669 (DOB 01.12.2012, DOD 11.11.2013, Euthanized)"
+B1_age_differs_from_2018,L2325,BXD170,F,CD,333,2325,"2018 AgeAtDeath 342 (DOB 06.30.2015, DOD 06.06.2016, Natural)"
+B1_age_differs_from_2018,L2527,BXD18,F,CD,243,2527,"2018 AgeAtDeath 419 (DOB 10.28.2015, DOD 12.20.2016, Natural)"
+B1_age_differs_from_2018,L2248,BXD181,F,CD,710,2248,"2018 AgeAtDeath 741 (DOB 10.23.2013, DOD 11.03.2015, Natural)"
+B1_age_differs_from_2018,L0590,BXD48,F,HF,496,590,"2018 AgeAtDeath 517 (DOB 12.10.2011, DOD 05.10.2013, Natural)"
+B1_age_differs_from_2018,L0852,BXD53,F,CD,663,852,"2018 AgeAtDeath 845 (DOB 01.19.2012, DOD 05.13.2014, Natural)"
+B1_age_differs_from_2018,L0723,BXD56,F,HF,318,723,"2018 AgeAtDeath 327 (DOB 03.12.2012, DOD 02.02.2013, Euthanized)"
+B1_age_differs_from_2018,L2458,BXD6,F,CD,685,2458,"2018 AgeAtDeath 622 (DOB 11.05.2015, DOD 07.19.2017, Natural)"
+B1_age_differs_from_2018,L0319,BXD60,F,HF,564,319,"2018 AgeAtDeath 701 (DOB 10.10.2011, DOD 09.10.2013, Natural)"
+B1_age_differs_from_2018,L0471,BXD65b,F,HF,772,471,"2018 AgeAtDeath 843 (DOB 04.18.2011, DOD 08.08.2013, Natural)"
+B1_age_differs_from_2018,L2105,BXD65b,F,HF,505,2105,"2018 AgeAtDeath 650 (DOB 10.09.2014, DOD 07.20.2016, Natural)"
+B1_age_differs_from_2018,L2106,BXD65b,F,HF,450,2106,"2018 AgeAtDeath 505 (DOB 10.09.2014, DOD 02.26.2016, Natural)"
+B1_age_differs_from_2018,L0570,BXD69,F,HF,366,570,"2018 AgeAtDeath 731 (DOB 01.04.2012, DOD 01.04.2014, Natural)"
+B1_age_differs_from_2018,L1465,BXD73b,F,CD,1053,1465,"2018 AgeAtDeath 1055 (DOB 12.20.2013, DOD 11.09.2016, Natural)"
+C1_death_before_200d,L1220,B6D2F1,M,CD,103,1220,103 d
+C1_death_before_200d,L1231,B6D2F1,F,CD,193,1231,193 d
+C1_death_before_200d,F3660,BXD009xBXD170F1,F,CD,91,3660,91 d
+C1_death_before_200d,L2818,BXD1,F,CD,133,2818,133 d
+C1_death_before_200d,L0346,BXD100,F,CD,144,346,144 d
+C1_death_before_200d,L1242,BXD100,F,HF,184,1242,184 d
+C1_death_before_200d,L0232,BXD102,F,CD,75,232,75 d
+C1_death_before_200d,L4920,BXD12,M,CD,143,4920,143 d
+C1_death_before_200d,L0357,BXD13,F,CD,174,357,174 d
+C1_death_before_200d,L0358,BXD13,F,CD,153,358,153 d
+C1_death_before_200d,L0359,BXD13,F,CD,195,359,195 d
+C1_death_before_200d,L0361,BXD13,F,CD,152,361,152 d
+C1_death_before_200d,L0664,BXD13,F,HF,187,664,187 d
+C1_death_before_200d,L1029,BXD13,F,CD,132,1029,132 d
+C1_death_before_200d,L1030,BXD13,F,HF,140,1030,140 d
+C1_death_before_200d,L1338,BXD13,F,HF,136,1338,136 d
+C1_death_before_200d,L2829,BXD14,F,HF,108,2829,108 d
+C1_death_before_200d,L5848,BXD144,F,CD,111,5848,111 d
+C1_death_before_200d,N4558,BXD15,F,NAM,155,4558,155 d
+C1_death_before_200d,L2625,BXD169,F,CD,71,2625,71 d
+C1_death_before_200d,N3570,BXD170,F,NAM,198,3570,198 d
+C1_death_before_200d,L2369,BXD171,F,CD,141,2369,141 d
+C1_death_before_200d,L2585,BXD172,F,HF,96,2585,96 d
+C1_death_before_200d,L2766,BXD172,F,CD,177,2766,177 d
+C1_death_before_200d,N3526,BXD172,F,NAM,103,3526,103 d
+C1_death_before_200d,L2526,BXD18,F,CD,198,2526,198 d
+C1_death_before_200d,L2742,BXD187,F,HF,176,2742,176 d
+C1_death_before_200d,F3312,BXD197xBXD009F1,F,HF,97,3312,97 d
+C1_death_before_200d,F4549,BXD197xBXD170F1,F,CD,53,4549,53 d
+C1_death_before_200d,F4554,BXD197xBXD170F1,F,HF,99,4554,99 d
+C1_death_before_200d,L2202,BXD199,F,HF,86,2202,86 d
+C1_death_before_200d,L2876,BXD2,M,CD,135,2876,135 d
+C1_death_before_200d,L2706,BXD214,F,HF,80,2706,80 d
+C1_death_before_200d,L0774,BXD27,F,HF,190,774,190 d
+C1_death_before_200d,L2550,BXD28,F,CD,99,2550,99 d
+C1_death_before_200d,L5826,BXD33,F,CD,106,5826,106 d
+C1_death_before_200d,L1059,BXD40,F,HF,132,1059,132 d
+C1_death_before_200d,L1692,BXD40,F,CD,172,1692,172 d
+C1_death_before_200d,L2047,BXD48,F,HF,167,2047,167 d
+C1_death_before_200d,L0712,BXD48a,F,CD,161,712,161 d
+C1_death_before_200d,L5787,BXD49,F,HF,158,5787,158 d
+C1_death_before_200d,L2834,BXD5,F,HF,102,2834,102 d
+C1_death_before_200d,L2835,BXD5,F,HF,118,2835,118 d
+C1_death_before_200d,L2847,BXD5,F,CD,196,2847,196 d
+C1_death_before_200d,L1458,BXD51,F,CD,181,1458,181 d
+C1_death_before_200d,L1517,BXD51,F,HF,132,1517,132 d
+C1_death_before_200d,L0166,BXD60,F,CD,102,166,102 d
+C1_death_before_200d,L0429,BXD66,F,HF,108,429,108 d
+C1_death_before_200d,L2141,BXD69,F,CD,157,2141,157 d
+C1_death_before_200d,L0499,BXD70,M,CD,178,499,178 d
+C1_death_before_200d,L0185,BXD73b,F,HF,154,185,154 d
+C1_death_before_200d,L0924,BXD74,F,HF,197,924,197 d
+C1_death_before_200d,L3213,BXD75,F,HF,111,3213,111 d
+C1_death_before_200d,L2457,BXD77,F,HF,36,2457,36 d
+C1_death_before_200d,L4996,BXD8,F,CD,178,4996,178 d
+C1_death_before_200d,L5055,BXD8,F,HF,199,5055,199 d
+C1_death_before_200d,L2605,BXD86,F,CD,98,2605,98 d
+C1_death_before_200d,L5917,BXD88,F,CD,98,5917,98 d
+C1_death_before_200d,L1401,BXD99,F,CD,118,1401,118 d
+C1_death_before_200d,L1402,BXD99,F,CD,75,1402,75 d
+C1_death_before_200d,L5703,BXD99,F,HF,173,5703,173 d
+C1_death_before_200d,L5705,BXD99,F,HF,151,5705,151 d
+C1_death_before_200d,L5793,BXD99,F,HF,140,5793,140 d
+C1_death_before_200d,L1100,C57BL/6J,F,HF,128,1100,128 d
+C1_death_before_200d,L1588,C57BL/6J,M,HF,57,1588,57 d
+C1_death_before_200d,L4997,DBA/2J,F,CD,176,4997,176 d
+C2_same_day_cluster,L1191,BXD100,F,CD,432,1191,"3 BXD100 CD deaths at 432 d: L1191,L5627,L5626"
+C2_same_day_cluster,L5626,BXD100,F,CD,432,5626,"3 BXD100 CD deaths at 432 d: L1191,L5627,L5626"
+C2_same_day_cluster,L5627,BXD100,F,CD,432,5627,"3 BXD100 CD deaths at 432 d: L1191,L5627,L5626"
+C2_same_day_cluster,L3696,BXD2,F,CD,336,3696,"3 BXD2 CD deaths at 336 d: L3696,L3697,L4502"
+C2_same_day_cluster,L3697,BXD2,F,CD,336,3697,"3 BXD2 CD deaths at 336 d: L3696,L3697,L4502"
+C2_same_day_cluster,L4502,BXD2,F,CD,336,4502,"3 BXD2 CD deaths at 336 d: L3696,L3697,L4502"
+C2_same_day_cluster,L5595,BXD49,F,CD,384,5595,"3 BXD49 CD deaths at 384 d: L5595,L5596,L5598"
+C2_same_day_cluster,L5596,BXD49,F,CD,384,5596,"3 BXD49 CD deaths at 384 d: L5595,L5596,L5598"
+C2_same_day_cluster,L5598,BXD49,F,CD,384,5598,"3 BXD49 CD deaths at 384 d: L5595,L5596,L5598"
+C2_same_day_cluster,L0253,BXD86,F,HF,242,253,"3 BXD86 HF deaths at 242 d: L0253,L0255,L0257"
+C2_same_day_cluster,L0255,BXD86,F,HF,242,255,"3 BXD86 HF deaths at 242 d: L0253,L0255,L0257"
+C2_same_day_cluster,L0257,BXD86,F,HF,242,257,"3 BXD86 HF deaths at 242 d: L0253,L0255,L0257"
+C2_same_day_cluster,L0869,BXD91,F,HF,851,869,"3 BXD91 HF deaths at 851 d: L0869,L0870,L0871"
+C2_same_day_cluster,L0870,BXD91,F,HF,851,870,"3 BXD91 HF deaths at 851 d: L0869,L0870,L0871"
+C2_same_day_cluster,L0871,BXD91,F,HF,851,871,"3 BXD91 HF deaths at 851 d: L0869,L0870,L0871"
+C2_same_day_cluster,L1116,C57BL/6J,M,CD,535,1116,"3 C57BL/6J CD deaths at 535 d: L1116,L1117,L1316"
+C2_same_day_cluster,L1117,C57BL/6J,M,CD,535,1117,"3 C57BL/6J CD deaths at 535 d: L1116,L1117,L1316"
+C2_same_day_cluster,L1316,C57BL/6J,M,CD,535,1316,"3 C57BL/6J CD deaths at 535 d: L1116,L1117,L1316"
+C2_same_day_cluster,L1121,DBA/2J,M,HF,547,1121,"4 DBA/2J HF deaths at 547 d: L1121,L1122,L1123,L1124"
+C2_same_day_cluster,L1122,DBA/2J,M,HF,547,1122,"4 DBA/2J HF deaths at 547 d: L1121,L1122,L1123,L1124"
+C2_same_day_cluster,L1123,DBA/2J,M,HF,547,1123,"4 DBA/2J HF deaths at 547 d: L1121,L1122,L1123,L1124"
+C2_same_day_cluster,L1124,DBA/2J,M,HF,547,1124,"4 DBA/2J HF deaths at 547 d: L1121,L1122,L1123,L1124"
+C2_same_day_cluster,N2924,DBA/2J,F,NAM,591,2924,"4 DBA/2J NAM deaths at 591 d: N2924,N5031,N5032,N5030"
+C2_same_day_cluster,N5030,DBA/2J,F,NAM,591,5030,"4 DBA/2J NAM deaths at 591 d: N2924,N5031,N5032,N5030"
+C2_same_day_cluster,N5031,DBA/2J,F,NAM,591,5031,"4 DBA/2J NAM deaths at 591 d: N2924,N5031,N5032,N5030"
+C2_same_day_cluster,N5032,DBA/2J,F,NAM,591,5032,"4 DBA/2J NAM deaths at 591 d: N2924,N5031,N5032,N5030"
+C3_within_strain_outlier,L1220,B6D2F1,M,CD,103,1220,"103 d vs median 903 (n=6, robust z=-3.7)"
+C3_within_strain_outlier,F3660,BXD009xBXD170F1,F,CD,91,3660,"91 d vs median 739 (n=10, robust z=-6.3)"
+C3_within_strain_outlier,F3222,BXD009xBXD172F1,F,HF,238,3222,"238 d vs median 711 (n=10, robust z=-4.9)"
+C3_within_strain_outlier,F3113,BXD065xBXD077F1,F,HF,245,3113,"245 d vs median 648 (n=12, robust z=-4.6)"
+C3_within_strain_outlier,F3316,BXD073bxBXD065F1,F,HF,449,3316,"449 d vs median 660 (n=14, robust z=-3.5)"
+C3_within_strain_outlier,L0260,BXD100,F,HF,239,260,"239 d vs median 630 (n=16, robust z=-4.1)"
+C3_within_strain_outlier,L1242,BXD100,F,HF,184,1242,"184 d vs median 630 (n=16, robust z=-4.6)"
+C3_within_strain_outlier,N3588,BXD101,F,NAM,335,3588,"335 d vs median 604 (n=8, robust z=-3.6)"
+C3_within_strain_outlier,L0097,BXD12,F,CD,1197,97,"1197 d vs median 657 (n=15, robust z=7.3)"
+C3_within_strain_outlier,L0100,BXD12,F,CD,244,100,"244 d vs median 657 (n=15, robust z=-5.6)"
+C3_within_strain_outlier,L0481,BXD12,F,HF,1117,481,"1117 d vs median 590 (n=16, robust z=4.3)"
+C3_within_strain_outlier,L0482,BXD12,F,HF,1088,482,"1088 d vs median 590 (n=16, robust z=4.1)"
+C3_within_strain_outlier,L0483,BXD12,F,HF,1108,483,"1108 d vs median 590 (n=16, robust z=4.3)"
+C3_within_strain_outlier,L0484,BXD12,F,HF,1229,484,"1229 d vs median 590 (n=16, robust z=5.3)"
+C3_within_strain_outlier,L0101,BXD13,F,CD,728,101,"728 d vs median 200 (n=10, robust z=6.2)"
+C3_within_strain_outlier,L0102,BXD13,F,CD,548,102,"548 d vs median 200 (n=10, robust z=4.1)"
+C3_within_strain_outlier,L1768,BXD13,F,CD,587,1768,"587 d vs median 200 (n=10, robust z=4.5)"
+C3_within_strain_outlier,L2400,BXD15,F,HF,973,2400,"973 d vs median 701 (n=7, robust z=4.7)"
+C3_within_strain_outlier,L2842,BXD15,F,CD,462,2842,"462 d vs median 751 (n=9, robust z=-4.1)"
+C3_within_strain_outlier,L2625,BXD169,F,CD,71,2625,"71 d vs median 695 (n=7, robust z=-5.3)"
+C3_within_strain_outlier,L2326,BXD170,F,HF,596,2326,"596 d vs median 398 (n=9, robust z=3.9)"
+C3_within_strain_outlier,L2246,BXD181,F,CD,889,2246,"889 d vs median 711 (n=9, robust z=5.5)"
+C3_within_strain_outlier,L2858,BXD181,F,CD,316,2858,"316 d vs median 711 (n=9, robust z=-12.1)"
+C3_within_strain_outlier,L2861,BXD181,F,CD,540,2861,"540 d vs median 711 (n=9, robust z=-5.2)"
+C3_within_strain_outlier,L2690,BXD190,F,CD,520,2690,"520 d vs median 656 (n=6, robust z=-3.8)"
+C3_within_strain_outlier,L2692,BXD190,F,CD,479,2692,"479 d vs median 656 (n=6, robust z=-5.0)"
+C3_within_strain_outlier,L2712,BXD195,F,CD,1054,2712,"1054 d vs median 840 (n=7, robust z=3.7)"
+C3_within_strain_outlier,F3603,BXD197xBXD009F1,F,CD,1104,3603,"1104 d vs median 819 (n=11, robust z=6.0)"
+C3_within_strain_outlier,F4549,BXD197xBXD170F1,F,CD,53,4549,"53 d vs median 758 (n=15, robust z=-3.9)"
+C3_within_strain_outlier,F4554,BXD197xBXD170F1,F,HF,99,4554,"99 d vs median 649 (n=12, robust z=-4.7)"
+C3_within_strain_outlier,L2202,BXD199,F,HF,86,2202,"86 d vs median 614 (n=6, robust z=-4.9)"
+C3_within_strain_outlier,L2706,BXD214,F,HF,80,2706,"80 d vs median 590 (n=9, robust z=-4.2)"
+C3_within_strain_outlier,L0268,BXD27,F,HF,280,268,"280 d vs median 662 (n=14, robust z=-3.8)"
+C3_within_strain_outlier,L0270,BXD27,F,HF,280,270,"280 d vs median 662 (n=14, robust z=-3.8)"
+C3_within_strain_outlier,L0774,BXD27,F,HF,190,774,"190 d vs median 662 (n=14, robust z=-4.7)"
+C3_within_strain_outlier,L2550,BXD28,F,CD,99,2550,"99 d vs median 861 (n=11, robust z=-8.2)"
+C3_within_strain_outlier,L1475,BXD39,F,CD,285,1475,"285 d vs median 697 (n=7, robust z=-6.3)"
+C3_within_strain_outlier,N3532,BXD40,F,NAM,619,3532,"619 d vs median 458 (n=8, robust z=3.8)"
+C3_within_strain_outlier,L2162,BXD45,F,HF,1053,2162,"1053 d vs median 650 (n=6, robust z=4.5)"
+C3_within_strain_outlier,L0138,BXD48,F,CD,948,138,"948 d vs median 684 (n=8, robust z=3.7)"
+C3_within_strain_outlier,L0561,BXD48,F,HF,821,561,"821 d vs median 506 (n=18, robust z=3.7)"
+C3_within_strain_outlier,L2047,BXD48,F,HF,167,2047,"167 d vs median 506 (n=18, robust z=-3.9)"
+C3_within_strain_outlier,L5787,BXD49,F,HF,158,5787,"158 d vs median 360 (n=6, robust z=-4.3)"
+C3_within_strain_outlier,L0599,BXD51,F,HF,269,599,"269 d vs median 641 (n=9, robust z=-3.8)"
+C3_within_strain_outlier,L1458,BXD51,F,CD,181,1458,"181 d vs median 865 (n=9, robust z=-6.4)"
+C3_within_strain_outlier,L1517,BXD51,F,HF,132,1517,"132 d vs median 641 (n=9, robust z=-5.2)"
+C3_within_strain_outlier,L1698,BXD51,F,HF,268,1698,"268 d vs median 641 (n=9, robust z=-3.8)"
+C3_within_strain_outlier,L2413,BXD6,F,CD,862,2413,"862 d vs median 681 (n=11, robust z=5.1)"
+C3_within_strain_outlier,L2459,BXD6,F,CD,508,2459,"508 d vs median 681 (n=11, robust z=-4.9)"
+C3_within_strain_outlier,L2565,BXD6,F,CD,318,2565,"318 d vs median 681 (n=11, robust z=-10.2)"
+C3_within_strain_outlier,L0446,BXD60,F,HF,297,446,"297 d vs median 546 (n=14, robust z=-4.9)"
+C3_within_strain_outlier,L2477,BXD62,F,HF,259,2477,"259 d vs median 595 (n=13, robust z=-3.7)"
+C3_within_strain_outlier,L0113,BXD65,F,CD,275,113,"275 d vs median 828 (n=16, robust z=-3.8)"
+C3_within_strain_outlier,L2103,BXD65b,F,CD,536,2103,"536 d vs median 755 (n=13, robust z=-3.8)"
+C3_within_strain_outlier,L0499,BXD70,M,CD,178,499,"178 d vs median 710 (n=8, robust z=-5.8)"
+C3_within_strain_outlier,L1904,BXD70,F,HF,383,1904,"383 d vs median 670 (n=15, robust z=-3.9)"
+C3_within_strain_outlier,L2140,BXD70,M,CD,306,2140,"306 d vs median 710 (n=8, robust z=-4.4)"
+C3_within_strain_outlier,L0185,BXD73b,F,HF,154,185,"154 d vs median 790 (n=22, robust z=-3.9)"
+C3_within_strain_outlier,L2596,BXD84,F,CD,404,2596,"404 d vs median 814 (n=12, robust z=-4.5)"
+C3_within_strain_outlier,L0364,BXD86,F,CD,361,364,"361 d vs median 884 (n=11, robust z=-4.6)"
+C3_within_strain_outlier,L2451,BXD86,F,CD,294,2451,"294 d vs median 884 (n=11, robust z=-5.2)"
+C3_within_strain_outlier,L2605,BXD86,F,CD,98,2605,"98 d vs median 884 (n=11, robust z=-6.9)"
+C3_within_strain_outlier,L0048,BXD89,F,CD,348,48,"348 d vs median 751 (n=12, robust z=-4.3)"
+C3_within_strain_outlier,L0687,BXD9,F,CD,956,687,"956 d vs median 466 (n=23, robust z=5.1)"
+C3_within_strain_outlier,L3203,BXD9,F,CD,821,3203,"821 d vs median 466 (n=23, robust z=3.7)"
+C3_within_strain_outlier,L3204,BXD9,F,CD,821,3204,"821 d vs median 466 (n=23, robust z=3.7)"
+C3_within_strain_outlier,L0872,BXD91,F,HF,556,872,"556 d vs median 851 (n=7, robust z=-28.4)"
+C3_within_strain_outlier,L0874,BXD91,F,HF,778,874,"778 d vs median 851 (n=7, robust z=-7.0)"
+C3_within_strain_outlier,L0876,BXD91,F,HF,965,876,"965 d vs median 851 (n=7, robust z=11.0)"
+C3_within_strain_outlier,L1100,C57BL/6J,F,HF,128,1100,"128 d vs median 714 (n=30, robust z=-6.6)"
+C3_within_strain_outlier,N2881,DBA/2J,F,NAM,232,2881,"232 d vs median 591 (n=20, robust z=-4.4)"
+D1_longevity_blank,N3019,BXD101,F,NAM,603,3019,"Value filled, Longevity blank"
+D1_longevity_blank,N3588,BXD101,F,NAM,335,3588,"Value filled, Longevity blank"
+D1_longevity_blank,N3628,BXD101,F,NAM,519,3628,"Value filled, Longevity blank"
+D1_longevity_blank,N3629,BXD101,F,NAM,577,3629,"Value filled, Longevity blank"
+D1_longevity_blank,L3210,BXD102,F,CD,844,3210,"Value filled, Longevity blank"
+D1_longevity_blank,L3249,BXD102,F,CD,763,3249,"Value filled, Longevity blank"
+D1_longevity_blank,L4920,BXD12,M,CD,143,4920,"Value filled, Longevity blank"
+D1_longevity_blank,L3149,BXD123,F,CD,1005,3149,"Value filled, Longevity blank"
+D1_longevity_blank,L4833,BXD125,F,CD,805,4833,"Value filled, Longevity blank"
+D1_longevity_blank,L4834,BXD125,F,CD,640,4834,"Value filled, Longevity blank"
+D1_longevity_blank,N4526,BXD15,F,NAM,406,4526,"Value filled, Longevity blank"
+D1_longevity_blank,N4527,BXD15,F,NAM,423,4527,"Value filled, Longevity blank"
+D1_longevity_blank,N4558,BXD15,F,NAM,155,4558,"Value filled, Longevity blank"
+D1_longevity_blank,N4564,BXD15,F,NAM,395,4564,"Value filled, Longevity blank"
+D1_longevity_blank,N4847,BXD15,F,NAM,246,4847,"Value filled, Longevity blank"
+D1_longevity_blank,L4844,BXD154,F,CD,775,4844,"Value filled, Longevity blank"
+D1_longevity_blank,L4841,BXD161,F,CD,686,4841,"Value filled, Longevity blank"
+D1_longevity_blank,N2987,BXD169,F,NAM,622,2987,"Value filled, Longevity blank"
+D1_longevity_blank,L3206,BXD170,F,CD,622,3206,"Value filled, Longevity blank"
+D1_longevity_blank,N3567,BXD170,F,NAM,284,3567,"Value filled, Longevity blank"
+D1_longevity_blank,N3568,BXD170,F,NAM,251,3568,"Value filled, Longevity blank"
+D1_longevity_blank,N3689,BXD170,F,NAM,331,3689,"Value filled, Longevity blank"
+D1_longevity_blank,N3690,BXD170,F,NAM,433,3690,"Value filled, Longevity blank"
+D1_longevity_blank,N3698,BXD170,F,NAM,349,3698,"Value filled, Longevity blank"
+D1_longevity_blank,N4547,BXD170,F,NAM,291,4547,"Value filled, Longevity blank"
+D1_longevity_blank,N4548,BXD170,F,NAM,387,4548,"Value filled, Longevity blank"
+D1_longevity_blank,L3209,BXD172,F,CD,706,3209,"Value filled, Longevity blank"
+D1_longevity_blank,N3037,BXD172,F,NAM,609,3037,"Value filled, Longevity blank"
+D1_longevity_blank,N3525,BXD172,F,NAM,638,3525,"Value filled, Longevity blank"
+D1_longevity_blank,N3527,BXD172,F,NAM,638,3527,"Value filled, Longevity blank"
+D1_longevity_blank,N3536,BXD172,F,NAM,605,3536,"Value filled, Longevity blank"
+D1_longevity_blank,N3537,BXD172,F,NAM,373,3537,"Value filled, Longevity blank"
+D1_longevity_blank,N3542,BXD172,F,NAM,711,3542,"Value filled, Longevity blank"
+D1_longevity_blank,N3543,BXD172,F,NAM,588,3543,"Value filled, Longevity blank"
+D1_longevity_blank,N3598,BXD172,F,NAM,751,3598,"Value filled, Longevity blank"
+D1_longevity_blank,N4573,BXD172,F,NAM,782,4573,"Value filled, Longevity blank"
+D1_longevity_blank,N3540,BXD190,F,NAM,654,3540,"Value filled, Longevity blank"
+D1_longevity_blank,N3613,BXD190,F,NAM,515,3613,"Value filled, Longevity blank"
+D1_longevity_blank,N3678,BXD190,F,NAM,526,3678,"Value filled, Longevity blank"
+D1_longevity_blank,N3011,BXD194,F,NAM,596,3011,"Value filled, Longevity blank"
+D1_longevity_blank,N3528,BXD197,F,NAM,662,3528,"Value filled, Longevity blank"
+D1_longevity_blank,N3580,BXD197,F,NAM,628,3580,"Value filled, Longevity blank"
+D1_longevity_blank,L3695,BXD2,F,CD,527,3695,"Value filled, Longevity blank"
+D1_longevity_blank,L3696,BXD2,F,CD,336,3696,"Value filled, Longevity blank"
+D1_longevity_blank,L3697,BXD2,F,CD,336,3697,"Value filled, Longevity blank"
+D1_longevity_blank,L3698,BXD2,F,CD,267,3698,"Value filled, Longevity blank"
+D1_longevity_blank,L3699,BXD2,F,CD,515,3699,"Value filled, Longevity blank"
+D1_longevity_blank,L3700,BXD2,F,CD,314,3700,"Value filled, Longevity blank"
+D1_longevity_blank,L4501,BXD2,F,CD,398,4501,"Value filled, Longevity blank"
+D1_longevity_blank,L4502,BXD2,F,CD,336,4502,"Value filled, Longevity blank"
+D1_longevity_blank,L4503,BXD2,F,CD,388,4503,"Value filled, Longevity blank"
+D1_longevity_blank,L4528,BXD2,F,CD,406,4528,"Value filled, Longevity blank"
+D1_longevity_blank,L4529,BXD2,F,CD,483,4529,"Value filled, Longevity blank"
+D1_longevity_blank,L4536,BXD2,M,CD,473,4536,"Value filled, Longevity blank"
+D1_longevity_blank,L4537,BXD2,M,CD,523,4537,"Value filled, Longevity blank"
+D1_longevity_blank,L4538,BXD2,M,CD,480,4538,"Value filled, Longevity blank"
+D1_longevity_blank,L4539,BXD2,M,CD,403,4539,"Value filled, Longevity blank"
+D1_longevity_blank,L4832,BXD2,F,CD,571,4832,"Value filled, Longevity blank"
+D1_longevity_blank,N3618,BXD2,F,NAM,340,3618,"Value filled, Longevity blank"
+D1_longevity_blank,N3619,BXD2,F,NAM,364,3619,"Value filled, Longevity blank"
+D1_longevity_blank,N3620,BXD2,F,NAM,624,3620,"Value filled, Longevity blank"
+D1_longevity_blank,N3621,BXD2,F,NAM,334,3621,"Value filled, Longevity blank"
+D1_longevity_blank,L3156,BXD205,F,CD,912,3156,"Value filled, Longevity blank"
+D1_longevity_blank,L3275,BXD218,F,CD,631,3275,"Value filled, Longevity blank"
+D1_longevity_blank,L3276,BXD218,F,CD,631,3276,"Value filled, Longevity blank"
+D1_longevity_blank,N2995,BXD218,F,NAM,890,2995,"Value filled, Longevity blank"
+D1_longevity_blank,N2996,BXD218,F,NAM,881,2996,"Value filled, Longevity blank"
+D1_longevity_blank,N3038,BXD218,F,NAM,931,3038,"Value filled, Longevity blank"
+D1_longevity_blank,L4845,BXD219,F,CD,916,4845,"Value filled, Longevity blank"
+D1_longevity_blank,L4846,BXD219,F,CD,954,4846,"Value filled, Longevity blank"
+D1_longevity_blank,L4836,BXD226,F,CD,1051,4836,"Value filled, Longevity blank"
+D1_longevity_blank,N3680,BXD29,F,NAM,390,3680,"Value filled, Longevity blank"
+D1_longevity_blank,N3681,BXD29,F,NAM,365,3681,"Value filled, Longevity blank"
+D1_longevity_blank,L4837,BXD31,F,CD,705,4837,"Value filled, Longevity blank"
+D1_longevity_blank,L4842,BXD34,F,CD,691,4842,"Value filled, Longevity blank"
+D1_longevity_blank,L4843,BXD34,F,CD,782,4843,"Value filled, Longevity blank"
+D1_longevity_blank,N3532,BXD40,F,NAM,619,3532,"Value filled, Longevity blank"
+D1_longevity_blank,N3533,BXD40,F,NAM,462,3533,"Value filled, Longevity blank"
+D1_longevity_blank,N3534,BXD40,F,NAM,348,3534,"Value filled, Longevity blank"
+D1_longevity_blank,N3535,BXD40,F,NAM,466,3535,"Value filled, Longevity blank"
+D1_longevity_blank,N3590,BXD44,F,NAM,414,3590,"Value filled, Longevity blank"
+D1_longevity_blank,N3616,BXD44,F,NAM,525,3616,"Value filled, Longevity blank"
+D1_longevity_blank,L3142,BXD5,F,CD,965,3142,"Value filled, Longevity blank"
+D1_longevity_blank,L4838,BXD50,F,CD,604,4838,"Value filled, Longevity blank"
+D1_longevity_blank,N2981,BXD51,F,NAM,684,2981,"Value filled, Longevity blank"
+D1_longevity_blank,L4530,BXD60,F,CD,572,4530,"Value filled, Longevity blank"
+D1_longevity_blank,L4540,BXD60,F,CD,425,4540,"Value filled, Longevity blank"
+D1_longevity_blank,L4542,BXD60,F,CD,535,4542,"Value filled, Longevity blank"
+D1_longevity_blank,N3006,BXD61,F,NAM,608,3006,"Value filled, Longevity blank"
+D1_longevity_blank,N3030,BXD62,F,NAM,604,3030,"Value filled, Longevity blank"
+D1_longevity_blank,L4835,BXD63,F,CD,714,4835,"Value filled, Longevity blank"
+D1_longevity_blank,L3202,BXD65,F,CD,975,3202,"Value filled, Longevity blank"
+D1_longevity_blank,L3212,BXD65,F,CD,797,3212,"Value filled, Longevity blank"
+D1_longevity_blank,N3664,BXD65,F,NAM,492,3664,"Value filled, Longevity blank"
+D1_longevity_blank,N3665,BXD65,F,NAM,251,3665,"Value filled, Longevity blank"
+D1_longevity_blank,L4839,BXD68,F,CD,503,4839,"Value filled, Longevity blank"
+D1_longevity_blank,N3591,BXD70,F,NAM,561,3591,"Value filled, Longevity blank"
+D1_longevity_blank,N3593,BXD70,F,NAM,359,3593,"Value filled, Longevity blank"
+D1_longevity_blank,N3594,BXD70,F,NAM,312,3594,"Value filled, Longevity blank"
+D1_longevity_blank,N3023,BXD73,F,NAM,603,3023,"Value filled, Longevity blank"
+D1_longevity_blank,L3278,BXD73b,F,CD,1003,3278,"Value filled, Longevity blank"
+D1_longevity_blank,L4556,BXD73b,F,CD,705,4556,"Value filled, Longevity blank"
+D1_longevity_blank,L3199,BXD77,F,CD,853,3199,"Value filled, Longevity blank"
+D1_longevity_blank,N3584,BXD77,F,NAM,532,3584,"Value filled, Longevity blank"
+D1_longevity_blank,N3545,BXD79,F,NAM,371,3545,"Value filled, Longevity blank"
+D1_longevity_blank,N3546,BXD79,F,NAM,626,3546,"Value filled, Longevity blank"
+D1_longevity_blank,N3547,BXD79,F,NAM,442,3547,"Value filled, Longevity blank"
+D1_longevity_blank,L3203,BXD9,F,CD,821,3203,"Value filled, Longevity blank"
+D1_longevity_blank,L3204,BXD9,F,CD,821,3204,"Value filled, Longevity blank"
+D1_longevity_blank,N3521,BXD9,F,NAM,347,3521,"Value filled, Longevity blank"
+D1_longevity_blank,N3522,BXD9,F,NAM,634,3522,"Value filled, Longevity blank"
+D1_longevity_blank,N3523,BXD9,F,NAM,305,3523,"Value filled, Longevity blank"
+D1_longevity_blank,N3524,BXD9,F,NAM,628,3524,"Value filled, Longevity blank"
+D1_longevity_blank,L3122,C57BL/6J,F,HF,853,3122,"Value filled, Longevity blank"
+D1_longevity_blank,L3123,C57BL/6J,F,HF,789,3123,"Value filled, Longevity blank"
+D1_longevity_blank,L3125,C57BL/6J,F,HF,801,3125,"Value filled, Longevity blank"
+D1_longevity_blank,L3127,C57BL/6J,F,CD,805,3127,"Value filled, Longevity blank"
+D1_longevity_blank,L3128,C57BL/6J,F,CD,775,3128,"Value filled, Longevity blank"
+D1_longevity_blank,L3129,C57BL/6J,F,CD,836,3129,"Value filled, Longevity blank"
+D1_longevity_blank,L3130,C57BL/6J,F,CD,786,3130,"Value filled, Longevity blank"
+D1_longevity_blank,L3247,C57BL/6J,F,CD,906,3247,"Value filled, Longevity blank"
+D1_longevity_blank,L3248,C57BL/6J,F,CD,835,3248,"Value filled, Longevity blank"
+D1_longevity_blank,N2985,C57BL/6J,F,NAM,655,2985,"Value filled, Longevity blank"
+D1_longevity_blank,N3091,C57BL/6J,F,NAM,836,3091,"Value filled, Longevity blank"
+D1_longevity_blank,N2877,DBA/2J,F,NAM,718,2877,"Value filled, Longevity blank"
+D1_longevity_blank,N3033,DBA/2J,F,NAM,642,3033,"Value filled, Longevity blank"
