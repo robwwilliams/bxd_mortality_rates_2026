@@ -1,10 +1,11 @@
 """QC of the GeneNetwork export of BDL_10002 (natural lifespan, BXD-Longevity).
 
 Usage:
-    python qc/qc_bdl10002.py BDL_10002.xlsx ROY2018_DATA_DIR OUT.csv
+    python qc/qc_bdl10002.py data/original/BDL_10002.xlsx ROY2018_DATA_DIR qc/BDL_10002_flags.csv
 
 ROY2018_DATA_DIR is the data/ folder of genenetwork/bxd_gxelongevity_2020
-(the November 2018 freeze used in Roy et al. 2021). Writes one row per flag.
+(the November 2018 freeze used in Roy et al. 2021). Writes one row per flag, and
+next to it a list of rows where Value and Longevity differ (they should be equal).
 """
 import itertools
 import sys
@@ -89,8 +90,14 @@ nat["z"] = (nat.value - nat.med) / nat.mad.replace(0, np.nan)
 flag(nat[(nat.n >= 6) & (nat.z.abs() > 3.5)], "C3_within_strain_outlier",
      lambda r: f"{int(r.value)} d vs median {r.med:.0f} (n={r.n}, robust z={r.z:.1f})")
 
-# D1. Value present but Longevity column blank
-flag(nat[nat.longevity.isna()], "D1_longevity_blank", "Value filled, Longevity blank")
+# D1. Value and Longevity should be identical: a number for natural deaths, 'x' for harvested
+differ = d[d.Value.astype(str) != d.Longevity.astype(str)].copy()
+flag(differ[differ.Longevity.isna()], "D1_longevity_blank",
+     lambda r: f"Value {r.Value}, Longevity blank")
+differ["should_be"] = np.where(differ.Longevity.isna(), differ.Value.astype(str), "")
+differ.loc[differ.Name == "L0852", "should_be"] = "845 in both (Age, Longevity and 2018 record agree)"
+differ[["Name", "Strain", "Sex", "Tx", "Value", "Age", "Longevity", "should_be"]].to_csv(
+    out.replace("_flags.csv", "_value_vs_longevity.csv"), index=False)
 
 f = pd.DataFrame(flags).sort_values(["code", "Strain", "Name"])
 f.to_csv(out, index=False)

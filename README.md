@@ -7,6 +7,8 @@ See GeneNetwork.org trait 10002:  https://genenetwork.org/show_trait?trait_id=10
 
 - `papers/`: the papers that frame this analysis, with citations, licenses and links to their data and code.
 - `notes/reading_notes.md`: notes on those papers and what they mean for estimating mortality rate doubling time in BXD mice.
+- `data/original/`: data exactly as received, starting with the GeneNetwork export of BDL_10002 (natural lifespan, 22 October 2026).
+- `qc/`: quality checks of those data, a list of flagged animals, and the script that produces them.
 
 ## Related repositories
 
