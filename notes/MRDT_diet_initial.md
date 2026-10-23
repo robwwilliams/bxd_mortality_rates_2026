@@ -79,6 +79,6 @@ This is the de Magalhães et al. (2018) pattern: an intervention that changes li
 
 All four are in `output/` as SVG files with editable text in Arial, plus PNG previews made with CairoSVG.
 - **Fig 1.** Mortality rate in 30-day bins (point size ∝ deaths) with the two Gompertz fits, on a log2 axis where each gridline is one doubling: parallel lines, HF half a doubling above.
-- **Fig 2.** (a) Kaplan–Meier survival from 200 d, with the Gompertz fits dashed. (b) Mean age at death of each diet's survivors relative to both diets, by T-age, ± s.e.m., with Gompertz predictions dashed (after Arends et al. 2026 Fig. 1b).
+- **Fig 2.** (a) Kaplan–Meier survival from 200 d, with the Gompertz fits dashed. (b) Mean age at death of each diet's survivors relative to both diets, by T-age, with ±1 s.e.m. shading (after Arends et al. 2026 Fig. 1b).
 - **Fig 3.** MRDT with 95% intervals by diet across the six analyses, with the equal-slope p values.
 - **Fig 4.** Bootstrap estimates of R0 (log2 axis) against MRDT: two parallel ridges, separated along R0.

@@ -122,14 +122,12 @@ for (d in c("CD", "HF")) {                                         # shading fir
 for (d in c("CD", "HF")) {
   m <- surv[, paste0("delta.", d)]
   lines(surv[, "Tage"], m, col = col.diet[d], lwd = 2)
-  lines(surv[, "Tage"], surv[, paste0("gompertz.delta.", d)], col = col.diet[d], lwd = 1.5, lty = 2)
   text(215, m[1] + ifelse(d == "CD", 13, -13), lab.diet[d], adj = c(0, 0.5), col = ink, cex = 0.8)
 }
 nT <- surv[surv[, "Tage"] %in% c(395, 605, 800, 935), ]
 text(nT[, "Tage"], 57, paste0(nT[, "n.CD"], " / ", nT[, "n.HF"]), cex = 0.7, col = ink2)
 text(1010, 57, "mice alive (CD / HF)", adj = c(0, 0.5), cex = 0.7, col = ink2)
-legend("bottomright", legend = c("Observed, \u00b1 s.e.m.", "Gompertz fit"), lty = c(1, 2), lwd = c(2, 1.5), col = ink2,
-       bty = "n", text.col = ink, cex = 0.85)
+text(1290, -55, "Lines: mean; shading: \u00b11 s.e.m.", adj = c(1, 0.5), cex = 0.8, col = ink2)
 mtext("b", side = 3, line = 0.6, adj = -0.1, font = 2, cex = 1.2, col = ink)
 dev.off()
 
