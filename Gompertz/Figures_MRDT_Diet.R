@@ -22,7 +22,7 @@ library(svglite)
 
 source("Gompertz/gompertz.R")
 
-col.diet <- c(CD = "#2a78d6", HF = "#eb6834")                     # categorical slots 1 and 2
+col.diet <- c(CD = "#a86a28", HF = "#2a78d6")                     # chow brown; HF blue (the "blue diet"); pair passes the CVD and contrast checks
 lab.diet <- c(CD = "Chow (CD)", HF = "High fat (HF)")
 ink <- "#0b0b0b"; ink2 <- "#52514e"; grid.col <- "#e4e3df"
 # Labels are set in Arial. The SVG names "Arial"; text is measured with Arial or, where it is not installed,
@@ -115,12 +115,15 @@ abline(h = 0, col = ink2, lwd = 0.75)
 axis(1, at = seq(200, 1300, 200), col = NA, col.ticks = ink2)
 axis(2, at = seq(-60, 60, 20), col = NA, col.ticks = ink2)
 box(bty = "l", col = ink2)
-for (d in c("CD", "HF")) {
+for (d in c("CD", "HF")) {                                         # shading first, so no band hides a line
   m <- surv[, paste0("delta.", d)]; e <- surv[, paste0("sem.", d)]
-  polygon(c(surv[, "Tage"], rev(surv[, "Tage"])), c(m + e, rev(m - e)), col = paste0(col.diet[d], "40"), border = NA)
+  polygon(c(surv[, "Tage"], rev(surv[, "Tage"])), c(m + e, rev(m - e)), col = paste0(col.diet[d], "80"), border = NA)   # 50% shading, as in Arends et al.
+}
+for (d in c("CD", "HF")) {
+  m <- surv[, paste0("delta.", d)]
   lines(surv[, "Tage"], m, col = col.diet[d], lwd = 2)
   lines(surv[, "Tage"], surv[, paste0("gompertz.delta.", d)], col = col.diet[d], lwd = 1.5, lty = 2)
-  text(215, m[1] + ifelse(d == "CD", 9, -9), lab.diet[d], adj = c(0, 0.5), col = ink, cex = 0.8)
+  text(215, m[1] + ifelse(d == "CD", 13, -13), lab.diet[d], adj = c(0, 0.5), col = ink, cex = 0.8)
 }
 nT <- surv[surv[, "Tage"] %in% c(395, 605, 800, 935), ]
 text(nT[, "Tage"], 57, paste0(nT[, "n.CD"], " / ", nT[, "n.HF"]), cex = 0.7, col = ink2)
