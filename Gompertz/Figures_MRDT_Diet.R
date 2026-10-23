@@ -59,26 +59,26 @@ ci.text <- function(d) sprintf("MRDT %.0f d (95%% CI %.0f-%.0f)", primary[d, "MR
 ### Figure 1: Gompertz plot
 openSVG("output/Fig1_Gompertz_hazard.svg")
 par(mar = c(4.2, 4.6, 1.2, 1.2))
-doublings <- 2^(-4:7)                                              # 1/16 to 128: one gridline per doubling
-plot(c(0, 1300), c(1 / 16, 128), type = "n", log = "y", xaxs = "i", axes = FALSE,
+doublings <- 2^(-3:5)                                              # 0.125 to 32: one gridline per doubling
+plot(c(0, 1200), c(0.1, 40), type = "n", log = "y", xaxs = "i", yaxs = "i", axes = FALSE,
      xlab = "Age (days)", ylab = "Deaths per 1,000 mouse-days (log2 scale)")
 abline(h = doublings, v = seq(200, 1200, 200), col = grid.col, lwd = 0.75)
-axis(1, at = seq(0, 1300, 200), col = NA, col.ticks = ink2)
-axis(2, at = doublings, labels = c("1/16", "1/8", "1/4", "1/2", 2^(0:7)), col = NA, col.ticks = ink2, cex.axis = 0.9)
+axis(1, at = seq(0, 1200, 200), col = NA, col.ticks = ink2)
+axis(2, at = doublings, labels = c("0.125", "0.25", "0.50", 2^(0:5)), col = NA, col.ticks = ink2, cex.axis = 0.9)
 box(bty = "l", col = ink2)
 for (d in c("CD", "HF")) {
   bn <- binned[binned[, "diet"] == d & binned[, "deaths"] > 0 & binned[, "atrisk"] >= 20, ]
   points(bn[, "mid"], 1000 * bn[, "rate"], pch = 21, bg = paste0(col.diet[d], "B3"), col = "white", lwd = 0.8,
          cex = 0.5 + 0.25 * sqrt(bn[, "deaths"]))
-  t <- seq(100, 1250, 5)
+  t <- seq(min(bn[, "mid"]), max(bn[, "mid"]), 5)                  # fits drawn only over the ages with data
   lines(t, 1000 * primary[d, "a"] * exp(primary[d, "b"] * t), col = col.diet[d], lwd = 2)
 }
 legend("topleft", legend = c(paste0(lab.diet["CD"], ", n = ", primary["CD", "n"], ": ", ci.text("CD")),
                              paste0(lab.diet["HF"], ", n = ", primary["HF", "n"], ": ", ci.text("HF"))),
        col = col.diet, lwd = 2, pch = 21, pt.bg = col.diet, pt.cex = 1, bty = "n", text.col = ink, cex = 0.85, inset = c(0.01, 0.01))
-mtext(sprintf("Same slope: p = %.2f. Shared MRDT %.0f d; HF raises mortality %.2f-fold (%.2f doublings) at every age.",
-              tests[1, "p.slope"], tests[1, "MRDT.sharedb"], tests[1, "HR.gompertz"], tests[1, "HR.doublings"]),
-      side = 1, line = -1.4, adj = 0.97, cex = 0.75, col = ink2)
+text(1185, 0.125, adj = c(1, 0), cex = 0.75, col = ink2,
+     sprintf("Same slope: p = %.2f. Shared MRDT %.0f d.\nHF raises mortality %.2f-fold (%.2f doublings) at every age.",
+             tests[1, "p.slope"], tests[1, "MRDT.sharedb"], tests[1, "HR.gompertz"], tests[1, "HR.doublings"]))
 dev.off()
 
 ### Figure 2: survival from 200 days (a) and its companion survivorship-difference plot (b), as in Arends et al. 2026 Fig. 1b
@@ -87,17 +87,17 @@ surv <- surv[pmin(surv[, "n.CD"], surv[, "n.HF"]) >= 20, ]          # plot only 
 openSVG("output/Fig2_Survival_from200d.svg", width = 7, height = 8.6)
 layout(matrix(1:2, ncol = 1), heights = c(1, 0.9))
 par(mar = c(4.2, 4.6, 1.6, 1.2))
-plot(c(200, 1300), c(0, 100), type = "n", xaxs = "i", yaxs = "i", axes = FALSE,
+plot(c(200, 1200), c(0, 100), type = "n", xaxs = "i", yaxs = "i", axes = FALSE,
      xlab = "Age (days)", ylab = "Surviving, of those alive at 200 days (%)")
 abline(h = seq(25, 100, 25), v = seq(400, 1200, 200), col = grid.col, lwd = 0.75)
-axis(1, at = seq(200, 1300, 200), col = NA, col.ticks = ink2)
+axis(1, at = seq(200, 1200, 200), col = NA, col.ticks = ink2)
 axis(2, at = seq(0, 100, 25), col = NA, col.ticks = ink2)
 box(bty = "l", col = ink2)
 for (d in c("CD", "HF")) {
   s <- mdata[mdata[, "Diet"] == d & mdata[, "Age"] >= 200, ]
   km <- survfit(Surv(pmax(s[, "SetupAge"], 200), s[, "Age"], rep(1, nrow(s))) ~ 1)
   lines(c(200, km$time), 100 * c(1, km$surv), type = "s", col = col.diet[d], lwd = 1.5)
-  t <- seq(200, 1300, 5)
+  t <- seq(200, 1200, 5)
   lines(t, 100 * exp(-(gompertz.H(t, primary[d, "a"], primary[d, "b"]) - gompertz.H(200, primary[d, "a"], primary[d, "b"]))),
         col = col.diet[d], lwd = 2, lty = 2)
   med <- median(s[, "Age"])
@@ -108,11 +108,11 @@ legend("topright", legend = c("Kaplan-Meier", "Gompertz fit"), lty = c(1, 2), lw
 mtext("a", side = 3, line = 0.2, adj = -0.1, font = 2, cex = 1.2, col = ink)
 
 par(mar = c(4.2, 4.6, 2.2, 1.2))
-plot(c(200, 1300), c(-60, 60), type = "n", xaxs = "i", axes = FALSE,
+plot(c(200, 1200), c(-60, 60), type = "n", xaxs = "i", axes = FALSE,
      xlab = "T-age: mice alive at this age (days)", ylab = "Mean age at death vs both diets (days)")
 abline(h = seq(-60, 60, 20), v = seq(400, 1200, 200), col = grid.col, lwd = 0.75)
 abline(h = 0, col = ink2, lwd = 0.75)
-axis(1, at = seq(200, 1300, 200), col = NA, col.ticks = ink2)
+axis(1, at = seq(200, 1200, 200), col = NA, col.ticks = ink2)
 axis(2, at = seq(-60, 60, 20), col = NA, col.ticks = ink2)
 box(bty = "l", col = ink2)
 for (d in c("CD", "HF")) {                                         # shading first, so no band hides a line
@@ -126,8 +126,8 @@ for (d in c("CD", "HF")) {
 }
 nT <- surv[surv[, "Tage"] %in% c(395, 605, 800, 935), ]
 text(nT[, "Tage"], 57, paste0(nT[, "n.CD"], " / ", nT[, "n.HF"]), cex = 0.7, col = ink2)
-text(1010, 57, "mice alive (CD / HF)", adj = c(0, 0.5), cex = 0.7, col = ink2)
-text(1290, -55, "Lines: mean; shading: \u00b11 s.e.m.", adj = c(1, 0.5), cex = 0.8, col = ink2)
+text(1005, 57, "mice alive (CD / HF)", adj = c(0, 0.5), cex = 0.7, col = ink2)
+text(1190, -55, "Lines: mean; shading: \u00b11 s.e.m.", adj = c(1, 0.5), cex = 0.8, col = ink2)
 mtext("b", side = 3, line = 0.6, adj = -0.1, font = 2, cex = 1.2, col = ink)
 dev.off()
 
