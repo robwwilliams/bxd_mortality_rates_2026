@@ -14,9 +14,9 @@ Exploratory analysis, 23 October 2026. Code: `Gompertz/`. Tables and figures: `o
 | Median age at death | 683 d | 611 d |
 
 - **The two slopes do not differ.** HF minus CD is −4 d, with a bootstrap 95% CI of −24 to +15 d. The likelihood-ratio test of equal slopes gives p = 0.55.
-- **With a shared slope** (MRDT 151 d), HF mortality is **1.42 times** CD mortality at every age (95% CI 1.29–1.55). The diet acts on R0, not on the rate of aging.
+- **With a shared slope** (MRDT 151 d), HF mortality is **1.42 times** CD mortality at every age (95% CI 1.29–1.55). In log2 units that is **0.50 doublings**. The diet acts on R0, not on the rate of aging.
 - **A Cox model agrees.** The hazard ratio is 1.44 (1.32–1.58), and the proportional-hazards test finds no departure (p = 0.85).
-- **The numbers hang together.** With equal slopes, a 1.42-fold hazard is the same as being MRDT × log2(1.42) = **76 d** older. The observed difference in median age at death is **72 d**.
+- **The numbers hang together.** With equal slopes, a 1.42-fold hazard puts HF mice half a doubling ahead: MRDT × log2(1.42) = 151 × 0.50 = **76 d** older. The observed difference in median age at death is **72 d**.
 
 This is the de Magalhães et al. (2018) pattern: an intervention that changes lifespan through age-independent mortality rather than through the demographic rate of aging.
 
@@ -30,7 +30,7 @@ This is the de Magalhães et al. (2018) pattern: an intervention that changes li
 
 ## Method
 
-- **Model.** Gompertz hazard h(t) = a·e^(bt), fitted by maximum likelihood to individual ages at death with left truncation. MRDT = ln 2 / b.
+- **Model.** Gompertz hazard written in base 2, h(t) = R0 · 2^(t / MRDT): mortality doubles every MRDT days. It is fitted by maximum likelihood to individual ages at death with left truncation. (The code fits the identical form a·e^(bt), with R0 = a and MRDT = ln 2 / b.)
 - **Fitting code.** Analytic gradients and BFGS, in `Gompertz/gompertz.R`.
 - **Checked on simulated data** (`Gompertz/test_gompertz.R`). From 200 simulated studies of 1,000 left-truncated animals:
   - the mean MRDT estimate is 119.7 d against a true 120 d;
@@ -59,11 +59,11 @@ This is the de Magalhães et al. (2018) pattern: an intervention that changes li
 - **Two possible explanations for that lead:**
   - **Heterogeneity.** A higher hazard removes frail animals sooner, which flattens the population curve at late ages.
   - **Fitting degeneracy.** a and b trade off along a ridge (see below).
-- **Figure 2 points the same way.** The Gompertz curve fits HF less well than CD: HF mortality runs steeper from about 600 to 850 d and flatter after that.
+- **Figure 2 points the same way.** Panel b, a survivorship plot in the style of Arends et al. 2026 Fig. 1b, shows the diet gap holding at about 65 to 69 d through 400 d. It then closes between about 650 and 850 d, much faster than the Gompertz fits predict, and reverses after about 860 d, when few HF mice remain (56 at T860).
 
 ## Things to keep in mind
 
-- **The a–b ridge.** Bootstrap estimates of ln(a) and ln(b) correlate at r = −0.95 (CD) and −0.97 (HF), as Figure 4 shows. This is the Strehler–Mildvan degeneracy that Tarkhov et al. (2017) describe. MRDT on its own is much less certain than the difference in R0 at a shared slope, so compare slopes with the joint likelihood-ratio test, as here, not by eye.
+- **The R0–MRDT ridge.** Bootstrap estimates of R0 and MRDT correlate at r = 0.95 (CD) and 0.97 (HF), as Figure 4 shows. This is the Strehler–Mildvan degeneracy that Tarkhov et al. (2017) describe. MRDT on its own is much less certain than the difference in R0 at a shared slope, so compare slopes with the joint likelihood-ratio test, as here, not by eye.
 - **This is the MRDT of a mixture.** Pooling 124 genotypes flattens the population curve relative to the strains within it. Stratifying a Cox model by strain raises the diet hazard ratio from 1.44 to **1.78** (1.61–1.98), close to the 2.0 that Roy et al. (2021) report with strain as a random effect. Within-strain MRDTs are probably shorter than 150 d.
 - **Animals still alive are not in the file.** For the latest cohorts this under-represents long-lived animals. The early cohorts are unaffected.
 - **No adjustments yet.** Vivarium and set-up cohort are not adjusted for. The design is balanced by strain across diets, but vivarium 3 holds more CD than HF animals (440 against 232).
@@ -78,7 +78,7 @@ This is the de Magalhães et al. (2018) pattern: an intervention that changes li
 ## Figures
 
 All four are in `output/` as SVG files with editable text in Arial, plus PNG previews made with CairoSVG.
-- **Fig 1.** Mortality rate in 30-day bins (point size ∝ deaths) with the two Gompertz fits: parallel lines, HF above.
-- **Fig 2.** Kaplan–Meier survival from 200 d, with the Gompertz fits dashed.
+- **Fig 1.** Mortality rate in 30-day bins (point size ∝ deaths) with the two Gompertz fits, on a log2 axis where each gridline is one doubling: parallel lines, HF half a doubling above.
+- **Fig 2.** (a) Kaplan–Meier survival from 200 d, with the Gompertz fits dashed. (b) Mean age at death of each diet's survivors relative to both diets, by T-age, ± s.e.m., with Gompertz predictions dashed (after Arends et al. 2026 Fig. 1b).
 - **Fig 3.** MRDT with 95% intervals by diet across the six analyses, with the equal-slope p values.
-- **Fig 4.** Bootstrap estimates of ln(R0) against MRDT: two parallel ridges, separated along R0.
+- **Fig 4.** Bootstrap estimates of R0 (log2 axis) against MRDT: two parallel ridges, separated along R0.

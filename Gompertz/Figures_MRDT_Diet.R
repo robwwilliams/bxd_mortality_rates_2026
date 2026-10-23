@@ -8,9 +8,12 @@
 # PNG previews: python3 tools/svg2png.py output/*.svg
 #
 #  Fig1_Gompertz_hazard.svg     log mortality rate by age, 30-day bins, with the Gompertz fits
-#  Fig2_Survival_from200d.svg   Kaplan-Meier survival from 200 d with the Gompertz fits
+#  Fig2_Survival_from200d.svg   (a) Kaplan-Meier survival from 200 d with the Gompertz fits; (b) survivorship
+#                                differences by T-age (Arends et al. 2026 Fig. 1b style)
 #  Fig3_MRDT_estimates.svg      MRDT and 95% intervals by diet across the analyses
-#  Fig4_Bootstrap_R0_MRDT.svg   bootstrap estimates of ln(R0) and MRDT: the Strehler-Mildvan ridge
+#  Fig4_Bootstrap_R0_MRDT.svg   bootstrap estimates of log2(R0) and MRDT: the Strehler-Mildvan ridge
+#
+# Log scales are base 2 throughout: on Fig 1, one gridline is one doubling of mortality.
 #
 
 library(readxl)
@@ -56,11 +59,12 @@ ci.text <- function(d) sprintf("MRDT %.0f d (95%% CI %.0f-%.0f)", primary[d, "MR
 ### Figure 1: Gompertz plot
 openSVG("output/Fig1_Gompertz_hazard.svg")
 par(mar = c(4.2, 4.6, 1.2, 1.2))
-plot(c(0, 1300), c(0.05, 100), type = "n", log = "y", xaxs = "i", axes = FALSE,
-     xlab = "Age (days)", ylab = "Deaths per 1,000 mouse-days (log scale)")
-abline(h = c(0.1, 1, 10, 100), v = seq(200, 1200, 200), col = grid.col, lwd = 0.75)
+doublings <- 2^(-4:7)                                              # 1/16 to 128: one gridline per doubling
+plot(c(0, 1300), c(1 / 16, 128), type = "n", log = "y", xaxs = "i", axes = FALSE,
+     xlab = "Age (days)", ylab = "Deaths per 1,000 mouse-days (log2 scale)")
+abline(h = doublings, v = seq(200, 1200, 200), col = grid.col, lwd = 0.75)
 axis(1, at = seq(0, 1300, 200), col = NA, col.ticks = ink2)
-axis(2, at = c(0.1, 1, 10, 100), labels = c("0.1", "1", "10", "100"), col = NA, col.ticks = ink2)
+axis(2, at = doublings, labels = c("1/16", "1/8", "1/4", "1/2", 2^(0:7)), col = NA, col.ticks = ink2, cex.axis = 0.9)
 box(bty = "l", col = ink2)
 for (d in c("CD", "HF")) {
   bn <- binned[binned[, "diet"] == d & binned[, "deaths"] > 0 & binned[, "atrisk"] >= 20, ]
@@ -72,14 +76,17 @@ for (d in c("CD", "HF")) {
 legend("topleft", legend = c(paste0(lab.diet["CD"], ", n = ", primary["CD", "n"], ": ", ci.text("CD")),
                              paste0(lab.diet["HF"], ", n = ", primary["HF", "n"], ": ", ci.text("HF"))),
        col = col.diet, lwd = 2, pch = 21, pt.bg = col.diet, pt.cex = 1, bty = "n", text.col = ink, cex = 0.85, inset = c(0.01, 0.01))
-mtext(sprintf("Same slope: p = %.2f.  Shared MRDT %.0f d; HF raises mortality %.2f-fold at every age.",
-              tests[1, "p.slope"], tests[1, "MRDT.sharedb"], tests[1, "HR.gompertz"]),
+mtext(sprintf("Same slope: p = %.2f. Shared MRDT %.0f d; HF raises mortality %.2f-fold (%.2f doublings) at every age.",
+              tests[1, "p.slope"], tests[1, "MRDT.sharedb"], tests[1, "HR.gompertz"], tests[1, "HR.doublings"]),
       side = 1, line = -1.4, adj = 0.97, cex = 0.75, col = ink2)
 dev.off()
 
-### Figure 2: survival from 200 days
-openSVG("output/Fig2_Survival_from200d.svg")
-par(mar = c(4.2, 4.6, 1.2, 1.2))
+### Figure 2: survival from 200 days (a) and its companion survivorship-difference plot (b), as in Arends et al. 2026 Fig. 1b
+surv <- read.table("output/survivorship_by_Tage.txt", sep = "\t", header = TRUE)
+surv <- surv[pmin(surv[, "n.CD"], surv[, "n.HF"]) >= 20, ]          # plot only while both diets keep 20 or more mice
+openSVG("output/Fig2_Survival_from200d.svg", width = 7, height = 8.6)
+layout(matrix(1:2, ncol = 1), heights = c(1, 0.9))
+par(mar = c(4.2, 4.6, 1.6, 1.2))
 plot(c(200, 1300), c(0, 100), type = "n", xaxs = "i", yaxs = "i", axes = FALSE,
      xlab = "Age (days)", ylab = "Surviving, of those alive at 200 days (%)")
 abline(h = seq(25, 100, 25), v = seq(400, 1200, 200), col = grid.col, lwd = 0.75)
@@ -98,6 +105,29 @@ for (d in c("CD", "HF")) {
 }
 legend("topright", legend = c("Kaplan-Meier", "Gompertz fit"), lty = c(1, 2), lwd = c(1.5, 2), col = ink2,
        bty = "n", text.col = ink, cex = 0.85)
+mtext("a", side = 3, line = 0.2, adj = -0.1, font = 2, cex = 1.2, col = ink)
+
+par(mar = c(4.2, 4.6, 2.2, 1.2))
+plot(c(200, 1300), c(-60, 60), type = "n", xaxs = "i", axes = FALSE,
+     xlab = "T-age: mice alive at this age (days)", ylab = "Mean age at death vs both diets (days)")
+abline(h = seq(-60, 60, 20), v = seq(400, 1200, 200), col = grid.col, lwd = 0.75)
+abline(h = 0, col = ink2, lwd = 0.75)
+axis(1, at = seq(200, 1300, 200), col = NA, col.ticks = ink2)
+axis(2, at = seq(-60, 60, 20), col = NA, col.ticks = ink2)
+box(bty = "l", col = ink2)
+for (d in c("CD", "HF")) {
+  m <- surv[, paste0("delta.", d)]; e <- surv[, paste0("sem.", d)]
+  polygon(c(surv[, "Tage"], rev(surv[, "Tage"])), c(m + e, rev(m - e)), col = paste0(col.diet[d], "40"), border = NA)
+  lines(surv[, "Tage"], m, col = col.diet[d], lwd = 2)
+  lines(surv[, "Tage"], surv[, paste0("gompertz.delta.", d)], col = col.diet[d], lwd = 1.5, lty = 2)
+  text(215, m[1] + ifelse(d == "CD", 9, -9), lab.diet[d], adj = c(0, 0.5), col = ink, cex = 0.8)
+}
+nT <- surv[surv[, "Tage"] %in% c(395, 605, 800, 935), ]
+text(nT[, "Tage"], 57, paste0(nT[, "n.CD"], " / ", nT[, "n.HF"]), cex = 0.7, col = ink2)
+text(1010, 57, "mice alive (CD / HF)", adj = c(0, 0.5), cex = 0.7, col = ink2)
+legend("bottomright", legend = c("Observed, \u00b1 s.e.m.", "Gompertz fit"), lty = c(1, 2), lwd = c(2, 1.5), col = ink2,
+       bty = "n", text.col = ink, cex = 0.85)
+mtext("b", side = 3, line = 0.6, adj = -0.1, font = 2, cex = 1.2, col = ink)
 dev.off()
 
 ### Figure 3: MRDT estimates across analyses
@@ -136,23 +166,25 @@ legend("bottomright", legend = lab.diet, pch = 21, pt.bg = col.diet, col = "whit
        bty = "n", text.col = ink, cex = 0.85)
 dev.off()
 
-### Figure 4: bootstrap estimates of ln(R0) and MRDT
+### Figure 4: bootstrap estimates of log2(R0) and MRDT
 openSVG("output/Fig4_Bootstrap_R0_MRDT.svg", width = 6, height = 5)
 par(mar = c(4.2, 4.6, 1.2, 1.2))
-plot(range(c(boot[, "loga.CD"], boot[, "loga.HF"])), c(120, 190), type = "n", axes = FALSE,
-     xlab = "ln(R0), age-independent mortality (ln per day)", ylab = "Mortality rate doubling time (days)")
+k <- log2(1000)                                                    # x axis: R0 per 1,000 mouse-days, log2 scale
+plot(range(c(boot[, "log2R0.CD"], boot[, "log2R0.HF"])) + k, c(120, 190), type = "n", axes = FALSE,
+     xlab = "R0, deaths per 1,000 mouse-days at age 0 (log2 scale)", ylab = "Mortality rate doubling time (days)")
 abline(h = seq(120, 190, 10), col = grid.col, lwd = 0.75)
-axis(1, col = NA, col.ticks = ink2); axis(2, at = seq(120, 190, 10), col = NA, col.ticks = ink2)
+r0.ticks <- c(0.125, 0.15, 0.175, 0.2, 0.25, 0.3)
+axis(1, at = log2(r0.ticks), labels = r0.ticks, col = NA, col.ticks = ink2); axis(2, at = seq(120, 190, 10), col = NA, col.ticks = ink2)
 box(bty = "l", col = ink2)
 for (d in c("CD", "HF")) {
-  points(boot[, paste0("loga.", d)], boot[, paste0("MRDT.", d)], pch = 16, cex = 0.35, col = paste0(col.diet[d], "40"))
+  points(boot[, paste0("log2R0.", d)] + k, boot[, paste0("MRDT.", d)], pch = 16, cex = 0.35, col = paste0(col.diet[d], "40"))
 }
 for (d in c("CD", "HF")) {
-  points(primary[d, "lnR0"], primary[d, "MRDT"], pch = 21, bg = col.diet[d], col = "white", cex = 1.6, lwd = 1.2)
+  points(primary[d, "log2R0"] + k, primary[d, "MRDT"], pch = 21, bg = col.diet[d], col = "white", cex = 1.6, lwd = 1.2)
 }
 legend("topright", legend = paste0(lab.diet, ": ", nrow(boot), " bootstrap fits"), pch = 21, pt.bg = col.diet, col = "white",
        pt.cex = 1.3, bty = "n", text.col = ink, cex = 0.85)
-mtext(sprintf("Estimates of ln(R0) and ln(b) correlate at r = %.2f (CD) and %.2f (HF)",
-              cor(boot[, "loga.CD"], boot[, "logb.CD"]), cor(boot[, "loga.HF"], boot[, "logb.HF"])),
+mtext(sprintf("Estimates of R0 and MRDT correlate at r = %.2f (CD) and %.2f (HF)",
+              cor(boot[, "log2R0.CD"], log2(boot[, "MRDT.CD"])), cor(boot[, "log2R0.HF"], log2(boot[, "MRDT.HF"]))),
       side = 3, line = -4.4, adj = 0.03, cex = 0.75, col = ink2)
 dev.off()

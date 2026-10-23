@@ -8,6 +8,7 @@
 #
 #   hazard:   h(t) = a * exp(b * t) + c        (c = 0 for plain Gompertz; t in days)
 #   MRDT:     log(2) / b                       (mortality rate doubling time, days)
+#   base 2:   h(t) = R0 * 2^(t / MRDT) + c     (the same law; R0 = a, and mortality doubles every MRDT days)
 #
 # Parameters are fitted on the log scale, p = c(log(a), log(b)[, log(c)]), so a, b and c stay positive.
 #

@@ -4,6 +4,8 @@
 # copyright (c) 2026 - Rob Williams
 #
 # Initial Gompertz analysis of BXD family females on chow (CD) versus high-fat diet (HF).
+# Results are reported in base 2: h(t) = R0 * 2^(t / MRDT), so mortality doubles every MRDT days
+# (identical to h(t) = a * exp(b * t) with R0 = a and MRDT = ln(2) / b).
 # Does the high-fat diet change the mortality rate doubling time (MRDT), the age-independent
 # mortality (R0 = a), or both?
 #
@@ -47,11 +49,12 @@ for (an in analyses) {
   sdata <- mdata[an$keep & mdata[, "Age"] >= an$from, ]
   entry <- pmax(sdata[, "SetupAge"], an$from)
   cmp <- gompertz.compare(sdata[, "Age"], entry, sdata[, "Diet"])
+  if (an$from == 0 && all(an$keep)) fits.primary <- cmp$fits
   for (diet in levels(sdata[, "Diet"])) {
     f <- cmp$fits[[diet]]
     results <- rbind(results, data.frame(analysis = an$name, method = "Gompertz MLE", diet = diet, n = f$n,
-                                         a = f$a, b = f$b, lnR0 = log(f$a), MRDT = f$MRDT,
-                                         MRDT.lo = f$MRDT.lo, MRDT.hi = f$MRDT.hi, cor.lna.lnb = cov2cor(f$vcov)[1, 2]))
+                                         a = f$a, b = f$b, log2R0 = log2(f$a), MRDT = f$MRDT,
+                                         MRDT.lo = f$MRDT.lo, MRDT.hi = f$MRDT.hi, cor.R0.MRDT = -cov2cor(f$vcov)[1, 2]))
   }
   cox <- coxph(Surv(entry, sdata[, "Age"], rep(1, nrow(sdata))) ~ sdata[, "Diet"])
   zph <- cox.zph(cox)
@@ -60,6 +63,7 @@ for (an in analyses) {
                                    p.slope = cmp$slope["p"], p.R0.given.slope = cmp$R0["p"], p.any = cmp$any["p"],
                                    MRDT.sharedb = cmp$sharedb["MRDT"], HR.gompertz = cmp$sharedb["HR"],
                                    HR.gompertz.lo = cmp$sharedb["HR.lo"], HR.gompertz.hi = cmp$sharedb["HR.hi"],
+                                   HR.doublings = log2(cmp$sharedb["HR"]),
                                    HR.cox = exp(coef(cox)), HR.cox.lo = exp(confint(cox))[1], HR.cox.hi = exp(confint(cox))[2],
                                    p.cox.PH = zph$table[1, "p"], HR.cox.strain = exp(coef(cox.s)),
                                    HR.cox.strain.lo = exp(confint(cox.s))[1], HR.cox.strain.hi = exp(confint(cox.s))[2],
@@ -73,8 +77,8 @@ for (diet in levels(mdata[, "Diet"])) {
   sdata <- mdata[mdata[, "Diet"] == diet, ]
   f <- gompertz.fit(sdata[, "Age"], sdata[, "SetupAge"], makeham = TRUE)
   results <- rbind(results, data.frame(analysis = "Gompertz-Makeham", method = "Gompertz-Makeham MLE", diet = diet, n = f$n,
-                                       a = f$a, b = f$b, lnR0 = log(f$a), MRDT = f$MRDT,
-                                       MRDT.lo = f$MRDT.lo, MRDT.hi = f$MRDT.hi, cor.lna.lnb = cov2cor(f$vcov)[1, 2]))
+                                       a = f$a, b = f$b, log2R0 = log2(f$a), MRDT = f$MRDT,
+                                       MRDT.lo = f$MRDT.lo, MRDT.hi = f$MRDT.hi, cor.R0.MRDT = -cov2cor(f$vcov)[1, 2]))
   cat(diet, "Makeham c =", signif(f$c, 3), "per day\n")
 }
 
@@ -86,26 +90,55 @@ for (diet in levels(mdata[, "Diet"])) {
   binned <- rbind(binned, data.frame(diet = diet, bn))
   reg <- gompertz.regression(bn, from = 200)
   results <- rbind(results, data.frame(analysis = "Binned regression (from 200 d)", method = "Weighted regression", diet = diet,
-                                       n = nrow(sdata), a = reg["a"], b = reg["b"], lnR0 = log(reg["a"]), MRDT = reg["MRDT"],
-                                       MRDT.lo = reg["MRDT.lo"], MRDT.hi = reg["MRDT.hi"], cor.lna.lnb = NA))
+                                       n = nrow(sdata), a = reg["a"], b = reg["b"], log2R0 = log2(reg["a"]), MRDT = reg["MRDT"],
+                                       MRDT.lo = reg["MRDT.lo"], MRDT.hi = reg["MRDT.hi"], cor.R0.MRDT = NA))
 }
 
 # Bootstrap of the primary analysis: percentile intervals for MRDT and the HF - CD difference
 boot <- gompertz.bootstrap(mdata[, "Age"], mdata[, "SetupAge"], mdata[, "Diet"], B = B, seed = 20261023)
 boot[, "MRDT.diff"] <- boot[, "MRDT.HF"] - boot[, "MRDT.CD"]
+for (d in c("CD", "HF")) boot[, paste0("log2R0.", d)] <- boot[, paste0("loga.", d)] / log(2)   # report R0 in log2 units
+boot <- boot[, c("log2R0.CD", "MRDT.CD", "log2R0.HF", "MRDT.HF", "MRDT.diff")]
 bsum <- t(sapply(c("MRDT.CD", "MRDT.HF", "MRDT.diff"), function(x) {
   c(estimate = median(boot[, x]), lo = quantile(boot[, x], 0.025, names = FALSE), hi = quantile(boot[, x], 0.975, names = FALSE))
 }))
 print(round(bsum, 1))
-cat("Bootstrap correlation of ln(a) and ln(b): CD", round(cor(boot[, "loga.CD"], boot[, "logb.CD"]), 3),
-    " HF", round(cor(boot[, "loga.HF"], boot[, "logb.HF"]), 3), "\n")
+cat("Bootstrap correlation of log2(R0) and log2(MRDT): CD", round(cor(boot[, "log2R0.CD"], log2(boot[, "MRDT.CD"])), 3),
+    " HF", round(cor(boot[, "log2R0.HF"], log2(boot[, "MRDT.HF"])), 3), "\n")
+
+# Actuarial survivorships (as in Arends et al. 2026, Fig. 1b): for each T-age, the mice alive and under observation
+# at that age (set up by T, died at T or later); mean age at death by diet relative to both diets combined, with s.e.m.
+sem <- function(x) sd(x) / sqrt(length(x))
+# Mean age at death predicted by a Gompertz fit for mice alive at age T: T + integral of S(t) / S(T) from T onward
+gompertz.meanage <- function(T, f) {
+  T + integrate(function(t) exp(-(gompertz.H(t, f$a, f$b) - gompertz.H(T, f$a, f$b))), T, T + 3000)$value
+}
+survivorship <- c()
+for (tage in seq(200, 1100, 15)) {
+  s <- mdata[mdata[, "Age"] >= tage & mdata[, "SetupAge"] <= tage, ]
+  all <- mean(s[, "Age"])
+  row <- c(Tage = tage, n.CD = sum(s[, "Diet"] == "CD"), n.HF = sum(s[, "Diet"] == "HF"), mean.all = all)
+  for (d in c("CD", "HF")) {
+    x <- s[s[, "Diet"] == d, "Age"]
+    row <- c(row, setNames(c(mean(x), mean(x) - all, sem(x)), paste0(c("mean.", "delta.", "sem."), d)))
+  }
+  row <- c(row, diff.HF.CD = unname(row["mean.HF"] - row["mean.CD"]),
+           diff.sem = sqrt(sem(s[s[, "Diet"] == "CD", "Age"])^2 + sem(s[s[, "Diet"] == "HF", "Age"])^2))
+  pred <- sapply(c(CD = "CD", HF = "HF"), function(d) gompertz.meanage(tage, fits.primary[[d]]))
+  pred.all <- sum(pred * row[c("n.CD", "n.HF")]) / sum(row[c("n.CD", "n.HF")])
+  row <- c(row, gompertz.delta.CD = unname(pred["CD"] - pred.all), gompertz.delta.HF = unname(pred["HF"] - pred.all))
+  survivorship <- rbind(survivorship, row)
+}
+survivorship <- as.data.frame(survivorship)
+print(survivorship[survivorship[, "Tage"] %in% c(200, 395, 605, 800, 995, 1100), ], digits = 4)
 
 rownames(results) <- NULL; rownames(tests) <- NULL
-print(results[, c("analysis", "diet", "n", "MRDT", "MRDT.lo", "MRDT.hi", "lnR0")], digits = 4)
+print(results[, c("analysis", "diet", "n", "MRDT", "MRDT.lo", "MRDT.hi", "log2R0")], digits = 4)
 print(tests, digits = 3)
 
 write.table(results, "output/MRDT_by_diet.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 write.table(tests, "output/MRDT_diet_tests.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 write.table(binned, "output/hazard_binned_30d.txt", sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(survivorship, "output/survivorship_by_Tage.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 write.table(boot, "output/MRDT_bootstrap.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 write.table(data.frame(quantity = rownames(bsum), bsum), "output/MRDT_bootstrap_summary.txt", sep = "\t", quote = FALSE, row.names = FALSE)
