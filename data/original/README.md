@@ -32,3 +32,22 @@ The groups include females and males, the parental strains and F1 hybrids, and t
 - **126 natural deaths** have Longevity blank.
 - **H0004** (harvested) has Longevity blank instead of `x`.
 - **L0852** has Value 663, but Age and Longevity are 845, which also matches the November 2018 record.
+
+## BXD_Mortality_for_Mapping_Arends.xlsx
+
+Suheeta Roy's curated file of BXD family females used for actuarial mapping by Danny Arends. Received from Rob Williams on 23 October 2026 and kept unchanged.
+- **SHA-256:** `7f4b373ea9da132b6dbd7608d77c871a9f208b081f6869942272ab339dfa4457`
+
+**Layout.** Rows 1–9 are notes on sample sizes; the column headers are on row 10. There are 2,106 females:
+- CD 1,044
+- HF 890
+- HF + 1% NAM 172
+
+**Columns.** Index, Ear tag, Diet, Strain, Age at death (days), Age at set up (days), Vivarium (1 = Nash, 2 = Nash then TSRB, 3 = TSRB).
+
+**Compared with the GeneNetwork export of 22 October 2026:**
+- **Same animals.** Every animal here is a natural death in that export.
+- **Fewer animals.** This file leaves out males, BXD × BXD F1s, and the 2018 "Other" exclusions (same-day culls). It keeps the 2018 LowOutliers.
+- **Ages.** Where the two disagree on age at death, this file agrees with the November 2018 records.
+
+The Gompertz analysis in `Gompertz/` uses this file.
