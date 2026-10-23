@@ -77,7 +77,7 @@ legend("topleft", legend = c(paste0(lab.diet["CD"], ", n = ", primary["CD", "n"]
                              paste0(lab.diet["HF"], ", n = ", primary["HF", "n"], ": ", ci.text("HF"))),
        col = col.diet, lwd = 2, pch = 21, pt.bg = col.diet, pt.cex = 1, bty = "n", text.col = ink, cex = 0.85, inset = c(0.01, 0.01))
 text(1185, 0.125, adj = c(1, 0), cex = 0.75, col = ink2,
-     sprintf("Same slope: p = %.2f. Shared MRDT %.0f d.\nHF raises mortality %.2f-fold (%.2f doublings) at every age.",
+     sprintf("Same slope: P = %.2f. Shared MRDT %.0f days.\nHF raises mortality %.2f-fold (%.2f doublings) at every age.",
              tests[1, "p.slope"], tests[1, "MRDT.sharedb"], tests[1, "HR.gompertz"], tests[1, "HR.doublings"]))
 dev.off()
 
@@ -160,7 +160,7 @@ for (i in seq_along(rows)) {
     segments(e[2], yy, e[3], yy, col = col.diet[d], lwd = 2)
     points(e[1], yy, pch = 21, bg = col.diet[d], col = "white", cex = 1.3, lwd = 1)
   }
-  if (rows[i] %in% names(pslope)) mtext(sprintf("p = %.2f", pslope[rows[i]]), side = 4, at = y[i], las = 1, line = 0.5, cex = 0.75, col = ink2)
+  if (rows[i] %in% names(pslope)) mtext(sprintf("P = %.2g", pslope[rows[i]]), side = 4, at = y[i], las = 1, line = 0.5, cex = 0.75, col = ink2)
 }
 mtext("Same slope?", side = 4, at = length(rows) + 0.75, las = 1, line = 0.5, cex = 0.75, col = ink2)
 legend("bottomright", legend = lab.diet, pch = 21, pt.bg = col.diet, col = "white", pt.cex = 1.3, lwd = 2, lty = 0,

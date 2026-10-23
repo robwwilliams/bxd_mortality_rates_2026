@@ -155,7 +155,7 @@
 <circle cx='82.38' cy='44.58' r='2.70' style='stroke-width: 1.50; stroke: #2A78D6; fill: #2A78D6;' />
 <text x='100.74' y='35.85' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Chow (CD), n = 1044: MRDT 153 d (95% CI 144-163)</text>
 <text x='100.74' y='48.09' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>High fat (HF), n = 890: MRDT 149 d (95% CI 140-159)</text>
-<text x='481.46' y='278.21' text-anchor='end' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>Same slope: p = 0.55. Shared MRDT 151 d.</text>
+<text x='481.46' y='278.21' text-anchor='end' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>Same slope: P = 0.55. Shared MRDT 151 days.</text>
 <text x='481.46' y='289.01' text-anchor='end' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>HF raises mortality 1.42-fold (0.50 doublings) at every age.</text>
 </g>
 </svg>
