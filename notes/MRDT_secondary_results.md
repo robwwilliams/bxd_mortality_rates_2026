@@ -1,6 +1,6 @@
-# Pre-registered secondary tests: does genotype change the mortality rate doubling time?
+# Planned secondary tests: does genotype change the mortality rate doubling time?
 
-Results of the two tests registered in `notes/PREREGISTRATION_secondary.md` (commit 59c990f, 24 October 2026, 00:08 UTC), and of the secondary analyses specified there.
+Results of the two tests in the analysis plan `notes/PREREGISTRATION_secondary.md` (commit 59c990f, 24 October 2026, 00:08 UTC), and of the secondary analyses specified there. Claude wrote the plan and fixed it before any fit. "Registered" below means only that, as the plan's opening explains. The H2 direction (a longer F1 MRDT) was Claude's reading of Rob Williams's question. Rob's own prediction was about level: F1 mortality lower at every age (see the plan's Amendments).
 - **Code:** `Gompertz/MRDT_Secondary.R` and `Gompertz/Figures_MRDT_Secondary.R`.
 - **Tables:** `output/MRDT_secondary_*.txt`.
 - **Figures:** Figs 5 and 6.
@@ -12,7 +12,7 @@ Everything below the registered tests is reported as an estimate with its 95% in
 | Registered test | MRDT, first group | MRDT, second group | Ratio (95% CI) | P | Decision at α = 0.025 |
 |---|---|---|---|---|---|
 | **H1** Chr 1, D strains / B strains | B: 141 d (127–156) | D: 154 d (141–169) | 1.10 (0.80–1.51) | 0.57, two-tailed | no difference |
-| **H2** F1 hybrids / inbred parents | Parents: 165 d (140–193) | F1: 107 d (97–117) | 0.65 (0.43–0.97) | 0.98, one-tailed | prediction not supported |
+| **H2** F1 hybrids / inbred parents | Parents: 165 d (140–193) | F1: 107 d (97–117) | 0.65 (0.43–0.97) | 0.98, one-tailed | registered direction (longer F1 MRDT) not supported |
 
 - **H1: proximal Chr 1 does not change MRDT.**
   - The jackknife P is 0.57. Dropping each strain in turn moves the log2 ratio only between −0.03 and +0.20.
@@ -100,4 +100,5 @@ For H1 this reverses the sign of the Gompertz estimate. Together with the per-st
 
 - **Chr 1.** The proximal Chr 1 region changes *how many* BXD mice die at a given age, especially on the high-fat diet, but not *how fast* their risk doubles with age.
 - **The F1s.** Crossing two short-lived BXD strains gives hybrids that are much less likely to die in early and middle adult life. Their risk then climbs faster, so by very old ages the hybrids lose much of their advantage.
-- **Rob's prediction.** The registered prediction was that hybrids age more slowly, with a flatter climb. The data say the opposite, and the registration means we report that as an estimate, not as a discovery.
+- **The registered direction.** The plan tested whether hybrids age more slowly, with a flatter climb. That was Claude's reading of Rob's question, not Rob's prediction. The data say the opposite, and under the plan that is reported as an estimate, not as a discovery.
+- **Rob's prediction.** Rob predicted that hybrids would be more vigorous and better buffered at every age, which is a statement about level, not about how fast risk climbs. In the short-by-short crosses that holds: hybrid mortality stays below the parents' to about 1,000 d.

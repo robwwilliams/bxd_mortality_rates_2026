@@ -1,6 +1,6 @@
-# Pre-registration: two secondary analyses of mortality rate doubling time in the BXD family
+# Analysis plan, fixed before the fits: two secondary analyses of mortality rate doubling time in the BXD family
 
-**Registered by the commit that adds this file, 24 October 2026.** The plan was agreed with Rob Williams on 23–24 October 2026. The haplotype calls in `output/Chr1_haplotypes.txt` are committed together with this file, so the classification is fixed before any survival data are joined to it. Any later change to the plan goes in the amendments section at the end, dated, and does not replace this text.
+**Corrected 24 October 2026 (see Amendments).** Claude wrote this plan and committed it on 24 October 2026 (commit 59c990f), before any MRDT was fitted. The haplotype calls in `output/Chr1_haplotypes.txt` were committed with it, so the classification was fixed before any survival data were joined to it. The design follows Rob Williams's rulings of 23 October: whole-region Chr 1 haplotypes, and pooled F1s against pooled parents. Rob did not ask for a pre-registration, and he did not review the direction of H2. An earlier version of this paragraph said the plan was "agreed with Rob Williams", which overstated what happened. The words "registered" and "pre-registration" below mean only that the plan was fixed before the fits. Later changes go in the Amendments section at the end, dated, and do not replace this text.
 
 **What has and has not been seen.**
 - **Known:** the lifespans of these groups.
@@ -103,4 +103,14 @@ These are scaled from the precision of the primary fits. They are lower bounds, 
 
 ## Amendments
 
-None.
+**24 October 2026: the direction of H2.** Rob Williams's own words, before the plan was written:
+
+> Does being an F1 flatten the MRDT. For me this is a pre-registered one-tailed test.
+
+And on 24 October, after the results:
+
+> I was guessing that F1 hybrids would be more vigorous and more buffered to the hard knocks of being a mouse born into a vivarium from the moment of birth and throughout life. Full stop. This is not a rate of change assertion.
+
+- **Claude's translation.** Claude read "flatten the MRDT" as a flatter rise of mortality, that is, a longer MRDT, and linked it to the mutation-accumulation prediction of Charlesworth and Hughes. That reading, not Rob's, is the H2 tested above.
+- **Rob's prediction was about level.** F1 mortality should be lower than the parents' at every age. In the short-by-short crosses it is, up to about 1,000 d (`notes/MRDT_secondary_results.md`).
+- **What does not change.** H2 and its result stand as committed: the longer-MRDT direction is not supported. This amendment changes only whose prediction it was.

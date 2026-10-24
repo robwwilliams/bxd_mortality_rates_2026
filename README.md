@@ -6,15 +6,15 @@ See GeneNetwork.org trait 10002:  https://genenetwork.org/show_trait?trait_id=10
 
 On a high-fat diet, BXD family females die at 1.4 times the rate of chow-fed females at every age. The mortality rate doubling time (MRDT) does not change: 153 d on chow, 149 d on high fat (p = 0.55 for equal slopes). See [notes/MRDT_diet_initial.md](notes/MRDT_diet_initial.md).
 
-### Pre-registered secondary analyses
+### Planned secondary analyses
 
-Two tests of whether genotype changes MRDT were registered before any fit was made ([notes/PREREGISTRATION_secondary.md](notes/PREREGISTRATION_secondary.md), 24 October 2026):
+Two tests of whether genotype changes MRDT were fixed in an analysis plan before any fit was made ([notes/PREREGISTRATION_secondary.md](notes/PREREGISTRATION_secondary.md), 24 October 2026). Claude wrote the plan; its opening and Amendments say what was and was not agreed:
 - **H1:** strains that are D across all of proximal Chr 1 (Vita1a and Vita1b) against strains that are B across all of it.
 - **H2:** BXD × BXD F1 hybrids against their inbred parents.
 
 Results ([notes/MRDT_secondary_results.md](notes/MRDT_secondary_results.md)):
 - **H1:** the haplotype changes the level of mortality, not its doubling time. On high fat, B strains die at twice the rate of D strains at 600 d, but MRDT is 141 d against 154 d (P = 0.57).
-- **H2:** the predicted longer F1 MRDT is not supported (one-tailed P = 0.98). The estimate goes the other way: 107 d in F1s against 165 d in their parents. The difference comes from the short-by-short crosses.
+- **H2:** the planned direction, a longer F1 MRDT, is not supported (one-tailed P = 0.98). That direction was Claude's reading, not Rob's prediction. The estimate goes the other way: 107 d in F1s against 165 d in their parents, and the difference comes from the short-by-short crosses. Rob's prediction, lower F1 mortality at every age, holds for those crosses up to about 1,000 d.
 
 ### Installation
 
