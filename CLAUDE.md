@@ -22,6 +22,7 @@ Rob's decision (24 October 2026): nothing in this project is private. Papers, da
 
 - **The one hard limit is size.** GitHub refuses any file over 100 MB, such as the 629 MB founder sequence variants ZIP. Such files go in `data/local/`, which git ignores, and are published elsewhere (a GitHub release asset or Zenodo) with a link in the README.
 - **When adding a paper to `papers/`,** add its citation and a link to `papers/README.md`.
+- **The one exception is CACHET,** Rob's separate patent repository. Its content stays private until Rob says otherwise: never copy any of it here.
 
 `data/original/` holds data exactly as received. Never edit it; corrections go into derived files elsewhere.
 
