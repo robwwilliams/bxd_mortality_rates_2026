@@ -16,13 +16,12 @@ Gompertz analyses of mortality in BXD family mice: the mortality rate doubling t
 - **Danny Arends** wrote the UM-HET3 analyses. Code here follows his R style.
 - **Suheeta Roy** curates the BXD lifespan data. **Arthur Centeno** maintains GeneNetwork.
 
-## Confidential material: never commit
+## Openness
 
-- the grant application Rob shared, or anything taken from it;
-- numbers derived from the unpublished expanded Table 1 of Arends et al.;
-- any other unpublished data, unless Rob says so.
+Rob's decision (24 October 2026): nothing in this project is private. Papers, data, transcripts and results may all be committed.
 
-Large or unpublished files go in `data/local/`, which git ignores. Examples: the founder sequence variants (629 MB), the Arends supplementary tables, the expanded Table 1. GitHub refuses files over 100 MB in any case.
+- **The one hard limit is size.** GitHub refuses any file over 100 MB, such as the 629 MB founder sequence variants ZIP. Such files go in `data/local/`, which git ignores, and are published elsewhere (a GitHub release asset or Zenodo) with a link in the README.
+- **When adding a paper to `papers/`,** add its citation and a link to `papers/README.md`.
 
 `data/original/` holds data exactly as received. Never edit it; corrections go into derived files elsewhere.
 
