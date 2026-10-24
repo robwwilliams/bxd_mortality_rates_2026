@@ -12,6 +12,10 @@ Two tests of whether genotype changes MRDT were registered before any fit was ma
 - **H1:** strains that are D across all of proximal Chr 1 (Vita1a and Vita1b) against strains that are B across all of it.
 - **H2:** BXD × BXD F1 hybrids against their inbred parents.
 
+Results ([notes/MRDT_secondary_results.md](notes/MRDT_secondary_results.md)):
+- **H1:** the haplotype changes the level of mortality, not its doubling time. On high fat, B strains die at twice the rate of D strains at 600 d, but MRDT is 141 d against 154 d (P = 0.57).
+- **H2:** the predicted longer F1 MRDT is not supported (one-tailed P = 0.98). The estimate goes the other way: 107 d in F1s against 165 d in their parents. The difference comes from the short-by-short crosses.
+
 ### Installation
 
 To obtain the code, run the following command in your terminal:
@@ -38,13 +42,15 @@ Rscript Gompertz/MRDT_Diet.R              # fits, tests and bootstrap; writes ta
 Rscript Gompertz/Figures_MRDT_Diet.R      # writes SVG figures to output/
 python3 tools/svg2png.py output/*.svg     # PNG previews
 Rscript Genotypes/Chr1_haplotypes.R data/genotypes/BXD_genotypes_Chr1_0to35Mb.txt output/Chr1_haplotypes.txt
+Rscript Gompertz/MRDT_Secondary.R         # the pre-registered secondary tests (about 10 s)
+Rscript Gompertz/Figures_MRDT_Secondary.R # Figs 5 and 6
 ```
 
 ### Structure
 
-- [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures.
+- [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures.
 - [output/](./output/) contains the result tables (tab-separated `.txt`) and figures (`.svg` with editable text in Arial, and `.png` previews).
-- [notes/](./notes/) contains write-ups: `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, and `reading_notes.md` on the three papers below.
+- [notes/](./notes/) contains write-ups: `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, and `reading_notes.md` on the three papers below.
 - [Genotypes/](./Genotypes/) contains `Chr1_haplotypes.R`, which classifies strains as B, D or recombinant across proximal Chr 1.
 - [data/genotypes/](./data/genotypes/) holds the proximal Chr 1 slice of the sequence-based BXD genotypes, with its provenance.
 - [data/original/](./data/original/) holds data exactly as received:

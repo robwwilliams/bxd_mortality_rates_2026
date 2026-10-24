@@ -13,6 +13,8 @@ We plan to submit to a Nature-series journal. Figures and legends follow Arends 
 - **Files:** vector, with editable text. Our SVGs come from `svglite`, with every label one text element; the PNGs are previews only. RGB color; line weights of at least 0.25 pt.
 - **Colors:**
   - chow (CD) is brown `#a86a28`; high fat (HF, the "blue diet") is blue `#2a78d6`. The pair passes the contrast and color-blind checks.
+  - **Haplotypes follow Arends et al. 2026 (Fig. 2f):** B ("black") dark purple `#7d4598`; D ("dilute") orange `#ed8f22`. Their tan D (Fig. 3f, `#a97b4f`) is too close to the chow brown, so it is not used.
+  - **F1 hybrids** are green `#008300`, and **inbred parents** pink `#e87ba4`. The four group colors pass the color-blind checks as a set. Orange and pink fall below 3:1 contrast, so every series is named in its key.
   - Use the same colors in every figure.
 - **Arends-style conventions:**
   - T-age notation (T365) for survivorships.

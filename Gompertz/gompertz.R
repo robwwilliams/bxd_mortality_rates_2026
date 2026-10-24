@@ -144,3 +144,89 @@ gompertz.bootstrap <- function(age, entry, group, B = 1000, seed = 1) {
   colnames(res) <- paste0(rep(c("loga.", "logb.", "MRDT."), length(lv)), rep(lv, each = 3))
   return(as.data.frame(res))
 }
+
+# ---- Classes of animals whose cells share one slope -------------------------------------------------------------
+# A class (for example, the D strains) has one slope b; each of its cells (for example, D on chow and D on high fat)
+# has its own level a_c. For a fixed b the best a_c has a closed form, a_c = deaths_c / S_c(b), with
+# S_c(b) = sum over the cell of (exp(b * age) - exp(b * entry)) / b. The fit is then a one-dimensional search over b
+# (a profile likelihood). event = 1 for a death, 0 for an animal censored at 'age' (alive at the data freeze).
+
+# Profile log-likelihood of log(b), with each cell's level at its best value
+gompertz.profile <- function(lb, age, entry, cell, event = rep(1, length(age))) {
+  b <- exp(lb)
+  S <- tapply(exp(b * entry) * expm1(b * (age - entry)) / b, cell, sum)
+  d <- tapply(event, cell, sum)
+  sum(ifelse(d > 0, d * log(d / S) - d, 0)) + b * sum(age[event == 1])
+}
+
+# Fit one class. Levels are reported as the hazard at the reference age (h.ref, per day) as well as a = R0.
+gompertz.cells.fit <- function(age, entry, cell, event = rep(1, length(age)), ref = 600) {
+  cell <- factor(cell)
+  pf <- function(lb) gompertz.profile(lb, age, entry, cell, event)
+  opt <- optimize(pf, c(log(1e-4), log(0.05)), maximum = TRUE, tol = 1e-10)
+  lb <- opt$maximum; b <- exp(lb); eps <- 1e-3
+  se.logb <- sqrt(-1 / ((pf(lb + eps) - 2 * opt$objective + pf(lb - eps)) / eps^2))   # curvature of the profile
+  a <- tapply(event, cell, sum) / tapply(exp(b * entry) * expm1(b * (age - entry)) / b, cell, sum)
+  return(list(b = b, se.logb = se.logb, MRDT = log(2) / b, MRDT.lo = log(2) / exp(lb + 1.96 * se.logb),
+              MRDT.hi = log(2) / exp(lb - 1.96 * se.logb), logLik = opt$objective, n = length(age),
+              deaths = sum(event), n.cell = table(cell), a = a, h.ref = a * exp(b * ref)))
+}
+
+# Two classes (levels of 'class', in order). delta = log2(MRDT of class 2 / MRDT of class 1), with a Wald s.e.
+# from the two profiles, and the likelihood-ratio test of one slope for both classes.
+gompertz.classes.compare <- function(age, entry, cell, class, event = rep(1, length(age))) {
+  lv <- levels(factor(class))
+  f <- lapply(lv, function(k) { s <- class == k; gompertz.cells.fit(age[s], entry[s], cell[s], event[s]) })
+  shared <- gompertz.cells.fit(age, entry, paste(class, cell), event)
+  x2 <- 2 * (f[[1]]$logLik + f[[2]]$logLik - shared$logLik)
+  return(list(fits = setNames(f, lv), shared = shared,
+              delta = log2(f[[2]]$MRDT / f[[1]]$MRDT),
+              delta.se = sqrt(f[[1]]$se.logb^2 + f[[2]]$se.logb^2) / log(2),
+              lrt = c(chisq = x2, df = 1, p = pchisq(x2, 1, lower.tail = FALSE))))
+}
+
+# Delete-one-unit jackknife of delta: each unit (a strain, or an F1 type) is dropped in turn and both classes refitted.
+# The s.e. carries unit-to-unit variation, so mice of one strain are not treated as independent replicates.
+gompertz.jackknife <- function(age, entry, cell, class, unit, event = rep(1, length(age))) {
+  units <- unique(unit)
+  loo <- sapply(units, function(u) {
+    s <- unit != u
+    gompertz.classes.compare(age[s], entry[s], cell[s], class[s], event[s])$delta
+  })
+  n <- length(units)
+  return(list(loo = setNames(loo, units), n = n, se = sqrt((n - 1) / n * sum((loo - mean(loo))^2))))
+}
+
+# ---- Gamma-Gompertz -----------------------------------------------------------------------------------------------
+# Each animal's hazard is z * a * exp(b * t), with z gamma-distributed (mean 1, variance s2) across the animals of a
+# class. In the population the hazard then bends below the Gompertz line at late ages, as high-risk animals die first:
+#   mu(t) = a exp(b t) / G(t),   S(t) = G(t)^(-1 / s2),   G(t) = 1 + s2 (a / b) (exp(b t) - 1)
+# b is the slope of each animal's own hazard. Parameters: log a for each cell, then log b and log s2 for each class
+# (or one log b shared by the classes when shared.b = TRUE).
+gammagompertz.nll <- function(p, age, entry, event, cellidx, classidx, ncell, nclass, shared.b) {
+  la <- p[1:ncell]
+  lb <- if (shared.b) rep(p[ncell + 1], nclass) else p[ncell + 1:nclass]
+  ls <- p[ncell + (if (shared.b) 1 else nclass) + 1:nclass]
+  a <- exp(la[cellidx]); b <- exp(lb[classidx]); s2 <- exp(ls[classidx])
+  logG <- function(t) log1p(s2 * (a / b) * expm1(b * t))
+  -sum(event * (log(a) + b * age - logG(age)) - (logG(age) - logG(entry)) / s2)
+}
+
+gammagompertz.fit <- function(age, entry, cell, class, event = rep(1, length(age)), shared.b = FALSE) {
+  cl <- factor(class); cellf <- factor(paste(class, cell))
+  classidx <- as.numeric(cl); cellidx <- as.numeric(cellf)
+  nclass <- nlevels(cl); ncell <- nlevels(cellf)
+  # start from the Gompertz fit of each class, with a small frailty variance
+  g <- lapply(levels(cl), function(k) { s <- cl == k; gompertz.cells.fit(age[s], entry[s], cell[s], event[s]) })
+  cell.class <- as.numeric(factor(sub(" .*$", "", levels(cellf)), levels = levels(cl)))
+  la0 <- log(unlist(lapply(g, function(x) x$a)))
+  lb0 <- log(sapply(g, function(x) x$b))
+  start <- c(la0, if (shared.b) mean(lb0) else lb0, rep(log(0.1), nclass))
+  opt <- optim(start, gammagompertz.nll, age = age, entry = entry, event = event, cellidx = cellidx, classidx = classidx,
+               ncell = ncell, nclass = nclass, shared.b = shared.b, method = "BFGS",
+               control = list(maxit = 10000, reltol = 1e-12))
+  lb <- if (shared.b) rep(opt$par[ncell + 1], nclass) else opt$par[ncell + 1:nclass]
+  ls <- opt$par[ncell + (if (shared.b) 1 else nclass) + 1:nclass]
+  return(list(logLik = -opt$value, convergence = opt$convergence, MRDT = setNames(log(2) / exp(lb), levels(cl)),
+              s2 = setNames(exp(ls), levels(cl))))
+}

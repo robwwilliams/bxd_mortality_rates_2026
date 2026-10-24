@@ -1,0 +1,2 @@
+test	estimate	se.jack	lo	hi	units
+S4 haplotype x diet: delta(HF) - delta(CD)	0.387114867211234	0.32871582839049	-0.269187459699652	1.04341719412212	67
