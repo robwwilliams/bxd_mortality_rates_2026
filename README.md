@@ -44,14 +44,18 @@ python3 tools/svg2png.py output/*.svg     # PNG previews
 Rscript Genotypes/Chr1_haplotypes.R data/genotypes/BXD_genotypes_Chr1_0to35Mb.txt output/Chr1_haplotypes.txt
 Rscript Gompertz/MRDT_Secondary.R         # the pre-registered secondary tests (about 10 s)
 Rscript Gompertz/Figures_MRDT_Secondary.R # Figs 5 and 6
+Rscript Models/effective_factors.R         # exploratory model of F1 heterosis (about 40 s)
+Rscript Models/fig_effective_factors.R
 ```
 
 ### Structure
 
 - [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures.
 - [output/](./output/) contains the result tables (tab-separated `.txt`) and figures (`.svg` with editable text in Arial, and `.png` previews).
-- [notes/](./notes/) contains write-ups: `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, and `reading_notes.md` on the three papers below.
+- [notes/](./notes/) contains write-ups: `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, and `reading_notes.md` on the three papers below.
 - [Genotypes/](./Genotypes/) contains `Chr1_haplotypes.R`, which classifies strains as B, D or recombinant across proximal Chr 1.
+- [Models/](./Models/) contains an exploratory model of Sewall Wright's question for the F1 experiment: do 10 or 200 recessive loci predict different lifespan gains for short-by-short and long-by-long F1s?
+- [UMHET3/](./UMHET3/) contains exploratory fits of mortality level and MRDT by Vita1a genotype in UM-HET3 mice. They read the unpublished expanded Table 1 of Arends et al., which is not stored here.
 - [data/genotypes/](./data/genotypes/) holds the proximal Chr 1 slice of the sequence-based BXD genotypes, with its provenance.
 - [data/original/](./data/original/) holds data exactly as received:
   - the GeneNetwork export of BDL_10002 (natural lifespan, 22 October 2026);
