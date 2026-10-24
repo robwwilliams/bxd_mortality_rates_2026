@@ -1,2 +1,5 @@
 # Large or unpublished data: kept on the local machine, never committed (see CLAUDE.md)
 data/local/
+
+# macOS Finder creates these in every folder it opens
+.DS_Store
