@@ -1,12 +1,25 @@
 # Papers
 
-Three papers frame this analysis. Two are open access (CC BY 4.0) and are stored here. The third is not, so only its citation and link are given. Three further papers on inbreeding depression and age, cited in `notes/PREREGISTRATION_secondary.md`, follow the same rule.
+Rob decided on 24 October 2026 that nothing in this project is private, so every paper we have is stored here as a PDF, whatever its license. The License column gives each publisher's terms. The three papers on inbreeding depression and age, cited in `notes/PREREGISTRATION_secondary.md`, are cited with links only, because their PDFs have not been added.
+
+Three papers frame this analysis.
 
 | File | Paper | License |
 |---|---|---|
 | `deMagalhaes_2018_Genetics_GompertzRateOfAging.pdf` | de Magalhães JP, Thompson L, de Lima I, Gaskill D, Li X, Thornton D, Yang C, Palmer D (2018). A reassessment of genes modulating aging in mice using demographic measurements of the rate of aging. *Genetics* 208:1617–1630. [doi:10.1534/genetics.118.300821](https://doi.org/10.1534/genetics.118.300821) | CC BY 4.0 |
 | `Arends_2026_Nature_VitaSomaLoci.pdf` | Arends D, Ashbrook DG, Roy S, … Miller RA, Williams RW (2026). Dynamics of genetic and somatic trade-offs in ageing and mortality. *Nature* 654:437. [doi:10.1038/s41586-026-10407-9](https://doi.org/10.1038/s41586-026-10407-9) | CC BY 4.0 |
-| *(not stored)* | Roy S, Bou Sleiman M, Jha P, … Auwerx J, Williams RW (2021). Gene-by-environment modulation of lifespan and weight gain in the murine BXD family. *Nature Metabolism* 3:1217–1227. [doi:10.1038/s42255-021-00449-w](https://doi.org/10.1038/s42255-021-00449-w) | Exclusive licence to Springer Nature |
+| `Roy_Williams_GxEofLifespanWeightGain_NatMetabol_2021.pdf` | Roy S, Bou Sleiman M, Jha P, … Auwerx J, Williams RW (2021). Gene-by-environment modulation of lifespan and weight gain in the murine BXD family. *Nature Metabolism* 3:1217–1227. [doi:10.1038/s42255-021-00449-w](https://doi.org/10.1038/s42255-021-00449-w) | Exclusive licence to Springer Nature |
+
+### Other BXD papers on aging, diet and mutation
+
+| File | Paper | License |
+|---|---|---|
+| `Mozhui_Horvath_BXDEpigeneticAgingAndMetabolism-eLife_2022.pdf` | Mozhui K, Lu AT, Li CZ, Haghani A, Sandoval-Sierra JV, Wu Y, Williams RW, Horvath S (2022). Genetic loci and metabolic states associated with murine epigenetic aging. *eLife* 11:e75244. [doi:10.7554/eLife.75244](https://doi.org/10.7554/eLife.75244) | CC BY 4.0 |
+| `Williams_Aebersold_MultiomicsGXEofBXDs_CellSystems_2022.pdf` | Williams EG, Pfister N, Roy S, … Williams RW, Aebersold R (2022). Multiomic profiling of the liver across diets and age in a diverse mouse population. *Cell Systems* 13:43–57.e6. [doi:10.1016/j.cels.2021.09.005](https://doi.org/10.1016/j.cels.2021.09.005) (free at [PMC8776606](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8776606/)) | Copyright Elsevier |
+| `Sasani_Ashbrook_Harris_MutatorAllele_Nature_2022.pdf` | Sasani TA, Ashbrook DG, Beichman AC, Lu L, Palmer AA, Williams RW, Pritchard JK, Harris K (2022). A natural mutator allele shapes mutation spectrum variation in mice. *Nature* 605:497–502. [doi:10.1038/s41586-022-04701-5](https://doi.org/10.1038/s41586-022-04701-5) (free at [PMC9272728](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9272728/)) | Exclusive licence to Springer Nature |
+| `Sasani_Ashbrook_Harris_Supplements_2022.pdf` | Supplementary information for Sasani et al. (2022), as provided by the authors. | Not stated; published with the paper |
+
+The Williams et al. PDF is the article-in-press version, with pages numbered 1–15; the published pages are 43–57.e6.
 
 ### Inbreeding depression and age (cited for the F1 test)
 
