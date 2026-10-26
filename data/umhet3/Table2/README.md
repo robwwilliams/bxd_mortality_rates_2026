@@ -45,4 +45,7 @@ Paternal H outnumbers paternal D about 2:1 at Vita1a and Vita1b, but not at any 
 
 - **At Vita1b the D deficit depends on the mother's haplotype:** BH : BD is 3.1 but CH : CD only 1.2. A distortion in the fathers' transmission could not depend on the mother's allele.
 - **Nor can BD itself be lethal:** B6D2F1 hybrids are B/D at every locus and live long.
+- **The raw MonsterPlex calls confirm it** (`UMHET3/vcf_set_check.R`).
+  - One of the two marker sets loses heterozygous calls at a few SNPs, among them 1_3010274 (Vita1a), 1_31062737 (Vita1b) and 1_167148678 (Vita1d). That set typed half of the UM mice and all of the UT mice.
+  - See `notes/Message_Chr1_genotype_error_2026-10-26.md`.
 - **So the excess is most likely a genotyping problem.** Use the Chr 1 loci with care until the low-pass whole-genome sequencing redoes these calls. See Part 3 of the report in `notes/`.

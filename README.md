@@ -20,6 +20,8 @@ Results ([notes/MRDT_secondary_results.md](notes/MRDT_secondary_results.md)):
 
 Part 3 of the report ([notes/Report_MRDT_Parts1-3_2026-10-26.md](notes/Report_MRDT_Parts1-3_2026-10-26.md), also as PDF and Word) asks the same level-or-slope question of the Vita1a and Vita1b loci of Arends et al. 2026:
 - **The paternal genotype calls on proximal Chr 1 are biased toward H at UM and UT, not at JL.** This is the source of the 2:1 excess of paternal H over D in Supplementary Table 2, and of the near-absence of BD calls at Vita1b at those sites.
+  - The bias follows the genotyping set, not the site. One of the two MonsterPlex marker sets loses heterozygous calls at a few SNPs. It typed half of the UM mice and all of the UT mice; JL is all in the other set.
+  - See [notes/Message_Chr1_genotype_error_2026-10-26.md](notes/Message_Chr1_genotype_error_2026-10-26.md).
 - **Paternal D at Vita1a raises mortality about 1.2-fold** within sites and cohorts. Its apparent effect on MRDT does not survive a check by site and cohort.
 - **In BXD chow females, proximal Chr 1 D lowers mortality** relative to B (0.79-fold at 600 d). In UM-HET3 females, paternal D raises it relative to H.
 
@@ -61,6 +63,8 @@ The UM-HET3 analyses read Arends et al. Supplementary Table 7 (the R/qtl cross f
 X="data/local/Arends_Supplementary_Tables_10Apr2026/S_Table_7_R:qtl_v1_cross-object_for_mapping_18Aug2025.csvr"
 Rscript UMHET3/clean_table2.R data/original/Arends_2026_Supplementary_Table_2.zip data/umhet3/Table2
 Rscript UMHET3/chr1_marker_check.R "$X"    # genotype calls on proximal Chr 1, by site
+D="data/local/Arends_Supplementary_Tables_10Apr2026"
+Rscript UMHET3/vcf_set_check.R "$D/S_Table_5_VCF_coded_genotypes_metadata_18Aug2025.xlsx" "$D/S_Table_4_Primers_MonsterPlex_Mouse_20Aug2025.xlsx" "$X"   # raw calls, by genotyping set
 Rscript UMHET3/vita_sex_stratified.R data/umhet3/Table2/Vita1a_deathsIn15Dwindows_female.txt data/umhet3/Table2/Vita1a_deathsIn15Dwindows_male.txt paternalD
 Rscript UMHET3/vita1_site_check.R "$X"     # individual mice, by sex, site and cohort
 Rscript UMHET3/Figures_Part3.R             # Figs 8-10

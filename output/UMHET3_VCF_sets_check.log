@@ -1,0 +1,134 @@
+Mice by site and genotyping set:
+    set
+site    A    B both none
+  JL 2236    0    0    3
+  UM 1245 1497    1    7
+  UT    0 1883    0    0
+
+Mice in the mapping file by site, cohort and genotyping set:
+            set   A   B
+site cohort            
+JL   2004       269   0
+     2005       434   0
+     2006       481   0
+     2007       553   0
+     2009       216   0
+     2010         0   0
+     2011         0   0
+     2012         0   0
+     2013         0   0
+UM   2004        30  94
+     2005       115 239
+     2006       227 198
+     2007       352 238
+     2009       105 205
+     2010       119 174
+     2011         0 181
+     2012       150 168
+     2013        39   0
+UT   2004         0 261
+     2005         0 270
+     2006         0 374
+     2007         0 364
+     2009         0 217
+     2010         0 179
+     2011         0 186
+     2012         0   0
+     2013         0   0
+
+Autosomal SNPs called by both sets (>= 200 mice in each): 168 ; heterozygous fraction, set B minus set A: median -0.021 ; 1st-99th percentile -0.50565 0.04199 
+SNPs where the sets differ by more than 0.10:
+    position      marker odd.strain   targeted n.A.JL het.A.JL n.A.UM het.A.UM
+ 1_132295971  rs33889206     DBA_2J Incidental   1313    0.503    768    0.500
+   1_3010274  rs31443144     DBA_2J Incidental    399    0.484    371    0.701
+  1_31062737 rs230225148     DBA_2J Incidental   1613    0.491     17    0.412
+ 12_65049772  rs47436964     DBA_2J Incidental    407    0.528    393    0.776
+ 13_19367455  rs50255892   C57BL_6J Incidental   1623    0.514     17    0.412
+ 14_62627023  rs48472785   C57BL_6J Incidental   1872    0.513   1073    0.488
+ 14_78415875  rs51512690     DBA_2J Incidental   1278    0.440    768    0.500
+ 17_83900092  rs29762406     DBA_2J Incidental   1863    0.486   1058    0.478
+ 18_11017447  rs50440951   C57BL_6J Incidental   1452    0.535    880    0.634
+  6_47028063  rs30118238   C57BL_6J Incidental   1792    0.530   1128    0.497
+  8_28353590  rs46044760   C57BL_6J Incidental   1390    0.514    892    0.518
+ 9_110947022  rs30528015   C57BL_6J Incidental    316    0.544    410    0.515
+ n.B.UM het.B.UM n.B.UT het.B.UT
+   1360    0.221   1847    0.470
+    932    0.057    915    0.299
+   1443    0.265   1852    0.247
+    531    0.508    484    0.562
+   1495    0.285   1878    0.038
+   1483    0.000   1877    0.000
+   1374    0.244   1836    0.260
+    953    0.050    739    0.364
+   1454    0.001   1803    0.000
+   1488    0.331   1878    0.082
+   1494    0.016   1880    0.000
+   1465    0.353   1870    0.295
+
+Set B SNPs with no set A row, outside 0.40-0.60 heterozygous:
+     marker    position odd.strain   targeted n.B.UM het.B.UM n.B.UT het.B.UT
+ rs32557046 1_167148678     DBA_2J Incidental   1310    0.157   1029    0.199
+
+Calls at 31.06 Mb (D2 allele) by the mother's haplotype at 24.04 Mb:
+, , call.31.06 = 0/0
+
+         mother
+set.site    B   C
+  A JL    273 285
+  A UM      7   3
+  B UM    674 360
+  B UT    925 467
+  both UM   0   0
+  none JL   0   0
+  none UM   0   0
+
+, , call.31.06 = 0/1
+
+         mother
+set.site    B   C
+  A JL    253 259
+  A UM      5   2
+  B UM     35 347
+  B UT     10 446
+  both UM   0   1
+  none JL   0   0
+  none UM   0   0
+
+, , call.31.06 = 1/1
+
+         mother
+set.site    B   C
+  A JL      0   0
+  A UM      0   0
+  B UM      2  23
+  B UT      0   0
+  both UM   0   0
+  none JL   0   0
+  none UM   0   0
+
+
+Calls at 3.01 Mb (D2 allele) by the mother's haplotype at 6.25 Mb (set A) or 7.97 Mb (set B):
+, , call.3.01 = 0/0
+
+         mother
+set.site    B   C
+  A JL     95 102
+  A UM     68  41
+  B UM    423 452
+  B UT    333 307
+  both UM   0   1
+  none JL   0   0
+  none UM   0   0
+
+, , call.3.01 = 0/1
+
+         mother
+set.site    B   C
+  A JL     85  97
+  A UM    153  93
+  B UM     29  24
+  B UT    139 135
+  both UM   0   0
+  none JL   0   0
+  none UM   0   0
+
