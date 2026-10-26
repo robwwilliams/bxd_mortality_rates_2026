@@ -51,3 +51,16 @@ Suheeta Roy's curated file of BXD family females used for actuarial mapping by D
 - **Ages.** Where the two disagree on age at death, this file agrees with the November 2018 records.
 
 The Gompertz analysis in `Gompertz/` uses this file.
+
+## Arends_2026_Supplementary_Table_2.zip
+
+Supplementary Data Table 2 of Arends et al. 2026 (*Nature* 654:437), as published (file `S_Table_2_Vita_mortality_by_age_and_genotype_text_files.zip` in `Arends_Supplementary_Tables_10Apr2026`).
+- **SHA-256:** `90ce5c43097d4d9e1e7a5dbe52b27a0771a8b6d73fdbb9fb569b9d8526428a9f`
+
+**Layout.** 87 tab-separated text files, one per Vita locus (29) and sex (female, male, combined): deaths per 15-day window by genotype, and numbers alive at the start of each window. The ZIP also holds macOS `__MACOSX` folders, which are not data.
+
+**Known problems.**
+- **No file names its first column** (the window, `5-20` to `1475-1490` days), so the header is one name short and R reads that column as row names.
+- **The 2:1 excess of paternal H over paternal D** at Vita1a and Vita1b (and less at Vita1c and Vita1d) is in the files as published. It is most likely a genotyping problem on proximal Chr 1; see `data/umhet3/Table2/README.md`.
+
+Clean copies, with the header fixed and every file checked, are in `data/umhet3/Table2/`.
