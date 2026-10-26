@@ -6,3 +6,6 @@ data/local/
 
 # Python environment for the tools (see CLAUDE.md)
 .venv/
+
+# Report builds (tools/build_report.py); the PDF and Word copies are kept in notes/
+reports/
