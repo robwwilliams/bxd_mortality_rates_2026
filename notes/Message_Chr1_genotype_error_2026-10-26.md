@@ -85,7 +85,7 @@ At Vita1a and Vita1b, paternal H outnumbers paternal D about 2:1. The cause is a
 
 ## How to replicate
 
-**Code:** `https://github.com/robwwilliams/bxd_mortality_rates_2026`, branch `main`, commit `________`. Rob fills this in once the check is pushed.
+**Code:** `https://github.com/robwwilliams/bxd_mortality_rates_2026`, branch `main`, commit `80c78f3` or later ([view the commit](https://github.com/robwwilliams/bxd_mortality_rates_2026/commit/80c78f3)).
 
 **Inputs:** your Supplementary Tables, from `Arends_Supplementary_Tables_10Apr2026.zip`. They are not in git. Any folder works, because the scripts take paths.
 
