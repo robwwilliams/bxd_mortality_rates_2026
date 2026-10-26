@@ -39,7 +39,7 @@ for png in re.findall(r"!\[[^\]]*\]\(([^)]+\.png)\)", text):
             shutil.copy(f, figdir)
     text = text.replace(png, "figures/" + os.path.basename(png))
 
-body = markdown.markdown(text, extensions=["tables", "sane_lists"])
+body = markdown.markdown(text, extensions=["tables", "sane_lists", "fenced_code"])
 css = """
 body { font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; line-height: 1.4; color: #111; max-width: 7in; margin: auto; }
 h1 { font-size: 17pt; margin-top: 0.4em; } h2 { font-size: 13pt; margin-top: 1.2em; } h3 { font-size: 11pt; }
