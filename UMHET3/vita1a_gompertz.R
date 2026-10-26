@@ -7,22 +7,24 @@
 # Gompertz fits (Poisson regression on deaths per 15 days, with exposure) by genotype, with one slope per paternal
 # (H, D) or maternal (C, B) haplotype, and the D/H mortality ratio by age window.
 #
-# Input: the output of UMHET3/extract_vita1a_deaths.py (data not stored here).
-# Run:   Rscript UMHET3/vita1a_gompertz.R <vita1a_deaths_15d.txt>
+# Input: one file of Arends et al. Supplementary Data Table 2 (deaths and numbers alive per 15-day window by genotype),
+#        for one sex or both combined, in data/local/Arends_Supplementary_Tables_10Apr2026/.
+# Run:   Rscript UMHET3/vita1a_gompertz.R <Vita1a_deathsIn15Dwindows_female.txt>
 #
-# Open questions for Danny Arends: (1) the column order (labels CH, BH, BD, CD; hazards match Table 1b only as CH, CD,
-# BH, BD, the order used here); (2) the counts are 2:1, paternal H : paternal D (2,096 : 1,037), not 1:1:1:1;
-# (3) which mice (3,133 of 6,438) and which sex the table covers.
+# The Vita1a block of the expanded Table 1 (Table_1f, columns 52-55) is Table 2's both-sexes file, in the order CH, CD,
+# BH, BD (its labels CH, BH, BD, CD are wrong), with deaths on window edges binned differently. Table 2 shows the 2:1
+# excess of paternal H over paternal D in both sexes, and at the Chr 1 loci only. Open for Danny Arends: why.
 #
 
-d <- read.delim(commandArgs(trailingOnly = TRUE)[1])
-colnames(d)[2:5] <- c("CH", "CD", "BH", "BD")
-cat("Deaths by genotype:", colSums(d[, 2:5]), "\n")
+d <- read.delim(commandArgs(trailingOnly = TRUE)[1], header = FALSE, skip = 1,   # the sex files lack the "T-age" name
+                col.names = c("window", "CH", "CD", "BH", "BD", "C", "B", "D", "H",
+                              "CH_alive", "CD_alive", "BH_alive", "BD_alive", "nGenotyped", "nTotal"))
+d$age <- as.numeric(sub("[^0-9].*", "", d$window))                               # window start; row 1 has an en dash
+cat("Mice by genotype:", colSums(d[, 2:5]), " of", d$nTotal[1], "\n")
 
 lt <- c()
 for (g in c("CH", "CD", "BH", "BD")) {
-  x <- d[, g]; N <- sum(x)
-  atrisk <- N - c(0, head(cumsum(x), -1))
+  x <- d[, g]; atrisk <- d[, paste0(g, "_alive")]
   lt <- rbind(lt, data.frame(geno = g, age = d$age + 7.5, deaths = x, atrisk = atrisk, exposure = 15 * (atrisk - x / 2)))
 }
 lt$maternal <- substr(lt$geno, 1, 1); lt$paternal <- substr(lt$geno, 2, 2)
@@ -47,9 +49,9 @@ for (from in c(42, 200, 365)) {
 }
 
 # Paternal D / H mortality ratio by age window
-pool <- function(x) { N <- sum(x); atrisk <- N - c(0, head(cumsum(x), -1)); list(deaths = x, exposure = 15 * (atrisk - x / 2)) }
-H <- pool(d$CH + d$BH); D <- pool(d$CD + d$BD)
-win <- cut(d$age, breaks = c(200, 350, 500, 650, 800, 900, 1000, 1100, 1250))
+pool <- function(g) { x <- rowSums(d[, g]); list(deaths = x, exposure = 15 * (rowSums(d[, paste0(g, "_alive")]) - x / 2)) }
+H <- pool(c("CH", "BH")); D <- pool(c("CD", "BD"))
+win <- cut(d$age + 7.5, breaks = c(200, 350, 500, 650, 800, 900, 1000, 1100, 1250))
 r <- data.frame(window = levels(win),
                 H.rate = tapply(H$deaths, win, sum) / tapply(H$exposure, win, sum) * 1000,
                 D.rate = tapply(D$deaths, win, sum) / tapply(D$exposure, win, sum) * 1000,

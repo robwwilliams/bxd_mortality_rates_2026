@@ -55,7 +55,7 @@ Rscript Models/fig_effective_factors.R
 - [notes/](./notes/) contains write-ups: `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, and `reading_notes.md` on the three papers below.
 - [Genotypes/](./Genotypes/) contains `Chr1_haplotypes.R`, which classifies strains as B, D or recombinant across proximal Chr 1.
 - [Models/](./Models/) contains an exploratory model of Sewall Wright's question for the F1 experiment: do 10 or 200 recessive loci predict different lifespan gains for short-by-short and long-by-long F1s?
-- [UMHET3/](./UMHET3/) contains exploratory fits of mortality level and MRDT by Vita1a genotype in UM-HET3 mice. They read the unpublished expanded Table 1 of Arends et al., which is not stored here.
+- [UMHET3/](./UMHET3/) contains exploratory fits of mortality level and MRDT by Vita1a genotype and sex in UM-HET3 mice. They read Supplementary Data Table 2 of Arends et al. (deaths per 15 days by genotype), which is kept in `data/local/`.
 - [data/genotypes/](./data/genotypes/) holds the proximal Chr 1 slice of the sequence-based BXD genotypes, with its provenance.
 - [data/original/](./data/original/) holds data exactly as received:
   - the GeneNetwork export of BDL_10002 (natural lifespan, 22 October 2026);

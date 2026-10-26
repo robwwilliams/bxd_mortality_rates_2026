@@ -4,8 +4,9 @@
 The data are not stored in this repository (the expanded table is unpublished). Run locally:
   python3 UMHET3/extract_vita1a_deaths.py <00_Table_1_Vita_Loci_Expanded_Version_21Feb2026.xlsx> <out.txt>
 
-The four columns are written in the order they appear. Their labels read CH, BH, BD, CD, but their hazards match
-Table 1b only in Danny Arends' order (CH, CD, BH, BD); vita1a_gompertz.R reads them in that order. Check with Danny.
+The four columns are written in the order they appear. Supplementary Data Table 2 shows that they are CH, CD, BH, BD
+(their labels CH, BH, BD, CD are wrong) and that this block is Table 2's both-sexes file. vita1a_gompertz.R now reads
+Table 2 instead.
 """
 import csv
 import sys
