@@ -9,7 +9,8 @@
 # Contrasts: paternalD (CD and BD against CH and BH; for Vita1a) or BD (BD against the other three; for Vita1b).
 #
 # Input: the female and male files of Arends et al. Supplementary Data Table 2 for one locus (data/umhet3/Table2/).
-# Run:   Rscript UMHET3/vita_sex_stratified.R <Vita1a_..._female.txt> <Vita1a_..._male.txt> [paternalD | BD]
+# Run:   Rscript UMHET3/vita_sex_stratified.R <Vita1a_..._female.txt> <Vita1a_..._male.txt> [paternalD | BD] [<table.txt>]
+#        With a table file, the results are appended to it as tab-separated rows.
 #
 
 read.t2 <- function(f, sex) {
@@ -29,6 +30,7 @@ contrast <- if (length(args) > 2) args[3] else "paternalD"
 lt <- rbind(read.t2(args[1], "F"), read.t2(args[2], "M"))
 lt$k <- as.numeric(if (contrast == "BD") lt$geno == "BD" else substr(lt$geno, 2, 2) == "D")
 cat(sprintf("Contrast %s: %s against %s\n", contrast, if (contrast == "BD") "BD" else "CD + BD", if (contrast == "BD") "CH + CD + BH" else "CH + BH"))
+locus <- sub("_.*", "", basename(args[1])); res <- c()
 
 for (from in c(42, 200, 365)) {
   s <- lt[lt$age >= from & lt$atrisk >= 20 & lt$exposure > 0, ]
@@ -45,9 +47,17 @@ for (from in c(42, 200, 365)) {
     r <- tapply(nd$h, list(nd$k, nd$age), function(h) exp(mean(log(h))))   # geometric mean over the genotypes in a group
     cat(sprintf("  %s: MRDT %.0f d against %.0f d; mortality ratio %.2f at 600 d, %.2f at 860 d\n",
                 x, log(2) / b1 * 100, log(2) / b0 * 100, r["1", "600"] / r["0", "600"], r["1", "860"] / r["0", "860"]))
+    res <- rbind(res, data.frame(locus = locus, contrast = contrast, from = from, sex = x,
+                                 MRDT.contrast = round(unname(log(2) / b1 * 100)), MRDT.other = round(unname(log(2) / b0 * 100)),
+                                 ratio600 = round(r["1", "600"] / r["0", "600"], 2), ratio860 = round(r["1", "860"] / r["0", "860"], 2),
+                                 P.slope.shared = NA, P.slope.differs.by.sex = NA))
   }
   bs <- coef(m1)["I(age/100):k"]; se <- sqrt(vcov(m1)["I(age/100):k", "I(age/100):k"])
+  p.shared <- anova(m0, m1, test = "LRT")[2, "Pr(>Chi)"]; p.sex <- anova(m1, m2, test = "LRT")[2, "Pr(>Chi)"]
   cat(sprintf("  Shared change in slope: %+.3f per 100 d (95%% CI %+.3f to %+.3f), P = %.2g\n", bs, bs - 1.96 * se,
-              bs + 1.96 * se, anova(m0, m1, test = "LRT")[2, "Pr(>Chi)"]))
-  cat(sprintf("  Does the change in slope differ by sex? P = %.2g\n", anova(m1, m2, test = "LRT")[2, "Pr(>Chi)"]))
+              bs + 1.96 * se, p.shared))
+  cat(sprintf("  Does the change in slope differ by sex? P = %.2g\n", p.sex))
+  res$P.slope.shared[res$from == from] <- signif(p.shared, 2); res$P.slope.differs.by.sex[res$from == from] <- signif(p.sex, 2)
 }
+if (length(args) > 3) write.table(res, args[4], sep = "\t", quote = FALSE, row.names = FALSE,
+                                  append = file.exists(args[4]), col.names = !file.exists(args[4]))

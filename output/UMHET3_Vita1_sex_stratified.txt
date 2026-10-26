@@ -1,4 +1,4 @@
-######## Vita1a
+######## Vita1a paternalD
 Contrast paternalD: CD + BD against CH + BH
 
 From 42 d
@@ -18,7 +18,7 @@ From 365 d
   M: MRDT 139 d against 156 d; mortality ratio 1.21 at 600 d, 1.40 at 860 d
   Shared change in slope: +0.054 per 100 d (95% CI +0.007 to +0.101), P = 0.025
   Does the change in slope differ by sex? P = 0.95
-######## Vita1b
+######## Vita1b BD
 Contrast BD: BD against CH + CD + BH
 
 From 42 d
@@ -38,7 +38,7 @@ From 365 d
   M: MRDT 134 d against 151 d; mortality ratio 1.25 at 600 d, 1.45 at 860 d
   Shared change in slope: +0.059 per 100 d (95% CI +0.007 to +0.112), P = 0.025
   Does the change in slope differ by sex? P = 0.97
-######## Vita1b
+######## Vita1b paternalD
 Contrast paternalD: CD + BD against CH + BH
 
 From 42 d
