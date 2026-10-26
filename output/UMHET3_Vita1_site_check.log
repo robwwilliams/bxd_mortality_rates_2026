@@ -1,0 +1,35 @@
+                           test sex cohorts   n1  n2 frac.class2 MRDT1 MRDT2
+       JL Vita1a paternal D / H   F       5  274 343       0.556    88   105
+       JL Vita1a paternal D / H   M       5  414 385       0.482   140   134
+           JL Vita1b BD / other   F       5  359 102       0.221    81    88
+           JL Vita1b BD / other   M       5  447 144       0.244   139   127
+    UM+UT Vita1a paternal D / H   F      12  775 419       0.351   104    99
+    UM+UT Vita1a paternal D / H   M      15 1006 442       0.305   144   132
+        UM+UT Vita1b BD / other   F      10 1067  33       0.030   108   112
+        UM+UT Vita1b BD / other   M       6  691  17       0.024   134   183
+ JL+UM+UT Vita1a paternal D / H   F      17 1049 762       0.421   100   101
+ JL+UM+UT Vita1a paternal D / H   M      20 1420 827       0.368   143   133
+     JL+UM+UT Vita1b BD / other   F      15 1426 135       0.086   102    95
+     JL+UM+UT Vita1b BD / other   M      11 1138 161       0.124   136   132
+ ratio600 ratio860 chisq.slope p.slope
+     1.29     0.92        7.37  0.0066
+     0.97     1.03        0.50  0.4800
+     1.36     1.14        0.78  0.3800
+     0.94     1.05        0.86  0.3500
+     1.22     1.33        1.02  0.3100
+     1.17     1.31        2.26  0.1300
+     1.22     1.14        0.08  0.7800
+     1.71     1.20        1.39  0.2400
+     1.22     1.18        0.20  0.6600
+     1.10     1.21        2.86  0.0910
+     1.00     1.15        0.93  0.3300
+     1.11     1.15        0.13  0.7200
+
+Slope change in either sex (2 df):
+                           test chisq.slope p.2df
+       JL Vita1a paternal D / H        7.87  0.02
+           JL Vita1b BD / other        1.64  0.44
+ JL+UM+UT Vita1a paternal D / H        3.06  0.22
+     JL+UM+UT Vita1b BD / other        1.06  0.59
+    UM+UT Vita1a paternal D / H        3.28  0.19
+        UM+UT Vita1b BD / other        1.47  0.48

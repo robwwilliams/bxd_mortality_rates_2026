@@ -1,0 +1,7 @@
+site	mother	father.D	father.H	fracH
+JL	B	249	270	0.52
+UM	B	40	681	0.945
+UT	B	10	911	0.989
+JL	C	259	285	0.524
+UM	C	349	363	0.51
+UT	C	437	458	0.512
