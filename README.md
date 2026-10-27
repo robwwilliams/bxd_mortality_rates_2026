@@ -6,7 +6,7 @@ See GeneNetwork.org trait 10002:  https://genenetwork.org/show_trait?trait_id=10
 
 On a high-fat diet, BXD family females die at 1.4 times the rate of chow-fed females at every age. The mortality rate doubling time (MRDT) does not change: 153 d on chow, 149 d on high fat (p = 0.55 for equal slopes). See [notes/MRDT_diet_initial.md](notes/MRDT_diet_initial.md).
 
-Within strains (exploratory), high fat raises mortality 1.8-fold, strains differ in how much (P = 0.0002), and the MRDT is 113 d rather than the pooled 151 d. See Part 1 of the [report](notes/Report_MRDT_Parts1-3_2026-10-26.md), Fig. 5.
+Within strains (exploratory), high fat raises mortality 1.8-fold, strains differ in how much (P = 0.0002), and the MRDT is 113 d rather than the pooled 151 d. See Part 1 of the [report](notes/Report_MRDT_Parts1-4_2026-10-27.md), Fig. 5.
 
 ### Planned secondary analyses
 
@@ -20,12 +20,20 @@ Results ([notes/MRDT_secondary_results.md](notes/MRDT_secondary_results.md)):
 
 ### UM-HET3 Vita1a and Vita1b (exploratory)
 
-Part 3 of the report ([notes/Report_MRDT_Parts1-3_2026-10-26.md](notes/Report_MRDT_Parts1-3_2026-10-26.md), also as PDF and Word) asks the same level-or-slope question of the Vita1a and Vita1b loci of Arends et al. 2026:
+Part 3 of the report ([notes/Report_MRDT_Parts1-4_2026-10-27.md](notes/Report_MRDT_Parts1-4_2026-10-27.md), also as PDF and Word) asks the same level-or-slope question of the Vita1a and Vita1b loci of Arends et al. 2026:
 - **The paternal genotype calls on proximal Chr 1 are biased toward H at UM and UT, not at JL.** This is the source of the 2:1 excess of paternal H over D in Supplementary Table 2, and of the near-absence of BD calls at Vita1b at those sites.
   - The bias follows the genotyping set, not the site. One of the two MonsterPlex marker sets loses heterozygous calls at a few SNPs. It typed half of the UM mice and all of the UT mice; JL is all in the other set.
   - See [notes/Message_Chr1_genotype_error_2026-10-26.md](notes/Message_Chr1_genotype_error_2026-10-26.md).
 - **Paternal D at Vita1a raises mortality about 1.2-fold** within sites and cohorts. Its apparent effect on MRDT does not survive a check by site and cohort.
 - **In BXD chow females, proximal Chr 1 D lowers mortality** relative to B (0.79-fold at 600 d). In UM-HET3 females, paternal D raises it relative to H.
+
+### Terminal weight loss and the per diem cost of late life (exploratory)
+
+Rob's per diem model: a mouse is free until 500 days, then costs 1 unit per day alive plus a surcharge for each day of terminal weight loss. The plan ([notes/PLAN_terminal_decline.md](notes/PLAN_terminal_decline.md)) was fixed before any comparison was run. Results are in Part 4 of the report and in [notes/Terminal_decline_results.md](notes/Terminal_decline_results.md), Fig. 12:
+- **Longer-lived BXD strains spend longer in decline,** about 11–13 days per 100 days of life. That is close to proportional, not compression.
+- **Short × short F1 hybrids live 171 days longer than their parents, with the same length of decline.**
+- **High fat shortens both life (76 days) and the decline (42 days).**
+- **Two corrections to the F1 data** (Rob, 27 October 2026) are in [data/corrected/](data/corrected/README.md): six F1s recorded as BXD73 crosses are BXD73b crosses, and F1s euthanized at end of life count as natural deaths.
 
 ### Installation
 
@@ -58,6 +66,9 @@ Rscript Gompertz/MRDT_Secondary.R         # the pre-registered secondary tests (
 Rscript Gompertz/Figures_MRDT_Secondary.R # Figs 6 and 7
 Rscript Models/effective_factors.R         # exploratory model of F1 heterosis (about 40 s)
 Rscript Models/fig_effective_factors.R
+Rscript BodyWeight/F1_weights_corrected.R # the F1 weight table with our corrections, in data/corrected/
+Rscript BodyWeight/terminal_decline.R      # terminal weight loss and per diem cost (about 10 s)
+Rscript BodyWeight/Figures_terminal_decline.R   # Fig. 12
 ```
 
 The UM-HET3 analyses read Arends et al. Supplementary Table 7 (the R/qtl cross file), kept in `data/local/`:
@@ -71,21 +82,23 @@ Rscript UMHET3/vcf_set_check.R "$D/S_Table_5_VCF_coded_genotypes_metadata_18Aug2
 Rscript UMHET3/vita_sex_stratified.R data/umhet3/Table2/Vita1a_deathsIn15Dwindows_female.txt data/umhet3/Table2/Vita1a_deathsIn15Dwindows_male.txt paternalD
 Rscript UMHET3/vita1_site_check.R "$X"     # individual mice, by sex, site and cohort
 Rscript UMHET3/Figures_Part3.R             # Figs 9-11
-.venv/bin/python tools/build_report.py notes/Report_MRDT_Parts1-3_2026-10-26.md reports   # PDF, Word, figures and ZIP
+.venv/bin/python tools/build_report.py notes/Report_MRDT_Parts1-4_2026-10-27.md reports   # PDF, Word, figures and ZIP
 ```
 
 ### Structure
 
 - [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures.
 - [output/](./output/) contains the result tables (tab-separated `.txt`) and figures (`.svg` with editable text in Arial, and `.png` previews).
-- [notes/](./notes/) contains write-ups: `Report_MRDT_Parts1-3_2026-10-26` (Markdown, PDF and Word) for beginners, covering all three parts; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, and `reading_notes.md` on the three papers below.
+- [notes/](./notes/) contains write-ups: `Report_MRDT_Parts1-4_2026-10-27` (Markdown, PDF and Word) for beginners, covering all four parts; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, and `reading_notes.md` on the three papers below.
 - [Genotypes/](./Genotypes/) contains `Chr1_haplotypes.R`, which classifies strains as B, D or recombinant across proximal Chr 1.
+- [BodyWeight/](./BodyWeight/) contains the analysis of terminal weight loss and Rob's per diem model of the cost of late life (Fig. 12).
 - [Models/](./Models/) contains an exploratory model of Sewall Wright's question for the F1 experiment: do 10 or 200 recessive loci predict different lifespan gains for short-by-short and long-by-long F1s?
 - [UMHET3/](./UMHET3/) contains the exploratory UM-HET3 analyses of Part 3:
   - the clean copy of Supplementary Table 2;
   - the check of genotype calls on proximal Chr 1;
   - fits of mortality level and MRDT by Vita1a and Vita1b genotype, by sex, and by site and cohort;
   - Figs 9–11.
+- [data/corrected/](./data/corrected/) holds our corrections to tables in `data/original/` (which stay as received), with the recorded values kept alongside.
 - [data/umhet3/](./data/umhet3/) holds the clean copy of Arends et al. Supplementary Table 2, with a README on its columns and on the genotype problem.
 - [tools/](./tools/) holds `svg2png.py`, `build_report.py` (Markdown note to HTML, Word, PDF and ZIP), `html2pdf.swift` and `pdftext.swift` (PDFs with macOS's own WebKit and PDFKit).
 - [data/genotypes/](./data/genotypes/) holds the proximal Chr 1 slice of the sequence-based BXD genotypes, with its provenance.

@@ -1,8 +1,8 @@
 # How fast does mortality rise with age? Gompertz analyses of BXD and UM-HET3 mice
 
-**Parts 1–3: diet, proximal Chr 1 and F1 hybrids in the BXD family, and Vita1a and Vita1b in UM-HET3 mice**
+**Parts 1–4: diet, proximal Chr 1 and F1 hybrids in the BXD family, Vita1a and Vita1b in UM-HET3 mice, and terminal weight loss**
 
-Exploratory report, 26 October 2026. Prepared by Claude (Anthropic) with Rob Williams, for Suheeta Roy, Danny Arends and Khyobeni Mozhui. All code, data and figures: [github.com/robwwilliams/bxd_mortality_rates_2026](https://github.com/robwwilliams/bxd_mortality_rates_2026).
+Exploratory report, 26 October 2026; Part 4 added 27 October 2026. Prepared by Claude (Anthropic) with Rob Williams, for Suheeta Roy, Danny Arends and Khyobeni Mozhui. All code, data and figures: [github.com/robwwilliams/bxd_mortality_rates_2026](https://github.com/robwwilliams/bxd_mortality_rates_2026).
 
 ## Summary
 
@@ -18,6 +18,11 @@ Exploratory report, 26 October 2026. Prepared by Claude (Anthropic) with Rob Wil
   - **Whether it also shortens the MRDT is not settled.** The published Table 2 suggests it does (P ≈ 0.04), but the effect disappears when the miscalls and site differences are taken into account.
   - **The D haplotype acts in opposite directions in the two populations.** In BXD chow females, proximal Chr 1 D lowers mortality relative to B. In UM-HET3 females, paternal D raises it relative to H (C3H).
   - **Neither population shows a convincing proximal Chr 1 effect on MRDT.**
+- **Part 4, terminal weight loss and the per diem cost of late life (BXD and F1 hybrids).**
+  - **Weight loss marks about the last three months of life.**
+  - **Across BXD strains, longer life brings somewhat longer decline:** about 12 more days of decline per 100 more days of life, close to proportional.
+  - **Hybrids of short-lived strains live 171 days longer than their parents, with the same three months of decline.** The decline is postponed, not lengthened. It is compressed relative to lifespan, but not in days.
+  - **High fat shortens both life and the decline,** by 76 and 42 days within strains.
 
 ## A five-minute Gompertz primer
 
@@ -410,6 +415,129 @@ We refitted from individual mice, using each mouse's raw marker calls, by maximu
 
 ---
 
+# Part 4. Terminal weight loss and the per diem cost of late life
+
+## Question
+
+Do longer lives bring longer periods of decline at the end?
+- **Expansion of morbidity:** longer life adds years of poor health at the end.
+- **Compression of morbidity** (Fries 1980): the decline is squeezed into a short span just before death, so survival curves become more "rectangular".
+- **Human data are hard to read,** because people differ in so many ways. Mice of fixed genotypes, on the same diet in the same vivarium, are easier.
+
+Rob put the question as a cost to the investigator:
+
+> "consider our mouse models as if we changed mouse per diem rates and made them essentially free until XXX days (say 500 days in BXDs and 700 days in UM-HET3), but then started to increase the per diem rates for the investigators as a function of the rate of change of body weight."
+
+We use body weight to mark the decline. Weight loss is the clearest sign of end of life in the colony's records.
+
+## The plan
+
+- **Written before the comparisons.** Claude wrote the plan (`notes/PLAN_terminal_decline.md`) from Rob's idea. Rob approved it on 26 October 2026, before any comparison was run. The implementation details were also fixed beforehand.
+- **Exploratory.** It has many measures and no correction for multiple tests.
+- **Two corrections were made after the first results were seen** (see Data). They changed only the long × long comparison, and only slightly.
+
+## Data
+
+- **BXD family.** The 1,934 females of Parts 1 and 2, on chow or high fat. Each has up to 20 weighings, about every 66 days, from Suheeta Roy's workbooks.
+- **F1 hybrids.** 308 BXD × BXD F1 females of 13 types that died, with up to 18 weighings.
+- **Who enters.** 2,117 of these mice have a weighing at least 120 days before death.
+- **Two corrections to the F1 data, from Rob on 27 October 2026** (he is confirming both with Suheeta). They are made in `data/corrected/`; the original workbook is unchanged.
+  - **Six F1s recorded as BXD73 crosses are BXD73b crosses.** Rob: "Our goal was 10 or more F1s per type so this is likely to be an error." GeneNetwork already lists these six mice as BXD73b crosses.
+  - **Euthanized F1s count as natural deaths.** Rob: "we typically euthanized them when they were within a week or two of natural death based on our assessment of their level of frailty. We harvested organs at these euthanasias for biobanking."
+  - **The data agree.** Euthanized F1s were older than F1s that died naturally (medians 743 against 676 days in the short × short set, 792 against 708 in the long × long), and at least as thin.
+
+## How terminal decline is measured
+
+A mouse's weight holds near its adult peak for most of its life and falls near the end. We measure when it starts to fall.
+
+- **Peak:** the highest weight at least 120 days before death.
+- **In decline:** a weighing below 90% of the peak, with no later weighing back at 90% or more.
+- **Onset of decline:** halfway between the last weighing at 90% or more and the first below.
+  - **Morbidity span** = age at death − onset.
+  - A mouse still at 90% or more at its last weighing gets half the days from that weighing to death.
+- **Precision.** Weighings are about two months apart, so onset is known to about ±1 month.
+- **Rob's per diem.** Each mouse is free until 500 days. After that it costs:
+  - **pension:** 1 unit for each day alive;
+  - **surcharge:** 4 units for each day in decline.
+  - **Checks:** surcharges of 1 and 10 units, and a surcharge that grows with the rate of weight loss.
+  - The units are arbitrary; only comparisons between groups mean anything.
+
+## Results
+
+**1. Weight loss marks the end of life (Fig. 12a).**
+- **On chow,** median weight drifts down from about four months before death. It is 82% of peak in the last two weeks.
+- **On high fat,** mice are still at their peak three months before death, then lose a quarter of their weight. Their decline is shorter and steeper.
+
+**2. Across BXD strains, decline lengthens with lifespan (Fig. 12b).**
+
+| Diet | Strains | Days of decline per 100 days of life (95% CI) | P | Proportional change predicts |
+|---|---|---|---|---|
+| Chow | 68 | 13 (3–23) | 0.021 | 18 |
+| High fat | 58 | 11 (5–17) | 0.0015 | 12 |
+
+- **Longer-lived strains spend longer in decline,** at a little under the rate that proportional change predicts.
+- **So among BXD strains, morbidity rises roughly in step with lifespan.** That fits neither strict compression nor a strong expansion.
+- **Lesson: why split halves.** A strain's mean lifespan contains its mean decline. Regressing one on the other from the same mice therefore gives a positive slope even if the two were unrelated. So each strain's mice were split at random: one half gives the lifespan, the other the decline. The slope is averaged over 200 random splits.
+
+**3. Hybrid vigor adds healthy life, not decline (Fig. 12c).** F1s against their inbred parents. Differences are F1s minus parents, with 95% CIs from a delete-one-genotype jackknife and P from an exact permutation over genotypes:
+
+| | Short × short F1s (6 types, 4 parents) | P | Long × long F1s (7 types, 4 parents) | P |
+|---|---|---|---|---|
+| Age at death (days) | +171 (104 to 239) | 0.005 | +22 (−63 to 107) | 0.60 |
+| Morbidity span (days) | 0 (−32 to 32) | 1.0 | −18 (−53 to 17) | 0.34 |
+| Per diem cost, units | +276 (96 to 455) | 0.010 | −41 (−231 to 149) | 0.69 |
+
+- **The short × short F1s live 171 days longer, and the extra days come before the decline.** Their decline lasts about 90 days, as their parents' does (96 days).
+- **Long × long F1s differ from their parents in nothing we measured.**
+- **The smallest P an exact permutation can give** is 0.005 for the short set and 0.003 for the long set.
+
+**4. High fat shortens both life and the decline.** Within 81 BXD strains, high-fat mice die 76 days sooner (95% CI 54–99) after a decline 42 days shorter (28–56). They lose as much weight by the end, so their decline is steeper.
+
+**5. The per diem bill (Fig. 12d).** Means per mouse:
+
+| Group | Mice | Died before 500 days | Pension | Days in decline | Cost |
+|---|---|---|---|---|---|
+| BXD, chow | 739 | 18% | 200 | 94 | 575 |
+| BXD, high fat | 681 | 28% | 128 | 56 | 353 |
+| Short-lived parents | 92 | 49% | 76 | 50 | 275 |
+| Short × short F1s | 140 | 9% | 212 | 83 | 543 |
+| Long-lived parents | 120 | 8% | 259 | 121 | 743 |
+| Long × long F1s | 165 | 6% | 271 | 100 | 672 |
+
+- **The short × short F1s cost twice as much as their parents.** Half the parents die before 500 days, when they are free. The F1s live past 500 days, so they pay a pension, and their decline now falls in the charged window.
+- **High fat is the cheapest diet,** because the mice die sooner after a shorter decline.
+- **The ranking of groups is the same** with surcharges of 1 and 10 units and with the rate-based surcharge.
+
+![Fig. 12](../output/Fig12_Terminal_decline.png)
+
+**Fig. 12 | Longer-lived BXD strains spend longer in terminal decline, but F1 hybrids of short-lived strains add life without adding decline.** **a**, Body weight of BXD-family females as a fraction of each mouse's peak (its highest weight at least 120 days before death), aligned on the day of death, on chow (brown; 7,041 weighings) and high fat (blue; 6,147 weighings). Points indicate medians and shaded bands interquartile ranges, in windows of 15–120 days. The dashed line marks 90% of peak, the threshold for terminal decline. Mice were weighed about every 66 days. **b**, Strain-mean morbidity span against strain-mean age at death, for BXD strains with at least 6 mice (68 strains on chow, 58 on high fat). Morbidity span runs from the onset of terminal decline (halfway between the last weighing at 90% of peak or more and the first below it, with no later recovery) to death. Lines show least-squares fits to the strain means. The key gives the slope from split halves, in which the lifespan and the span of each strain come from different mice, averaged over 200 random splits. *P* values come from 2,000 permutations of strain labels. Proportional change would give 18 and 12 days per 100 days. **c**, Mean age at onset of decline (pale) and mean morbidity span (dark), by group. *n* = 739 and 681 mice for BXD strains on chow and high fat; 92 short-lived parents (4 strains); 140 short × short F1s (6 F1 types); 120 long-lived parents (4 strains); 165 long × long F1s (7 F1 types). F1s and parents pool both diets. The dashed line marks 500 days. Short × short F1s live 171 days longer than their parents (95% CI 104–239; exact permutation over genotypes, *P* = 0.005) with the same morbidity span (difference 0 days, −32 to 32; *P* = 1.0). **d**, Per diem cost per mouse when mice are free until 500 days and then cost 1 unit per day alive (pale) plus 4 units per day in decline (dark). Means per mouse; the totals are at right. F1s euthanized at end of life, within a week or two of expected death as judged by frailty, are counted as natural deaths; euthanized BXD-family mice are included throughout, and results without them are in `output/Terminal_decline_tests.txt`. Six F1s recorded as BXD73 crosses are BXD73b crosses (`data/corrected/`). Exploratory; analysis plan approved before any comparison was run; *P* values are not corrected for multiple tests.
+
+## Is this rectangularization?
+
+Compression of morbidity can mean two things, and the data answer them differently.
+- **Relative compression: decline is a smaller share of life.** Yes, for the short × short F1s. Their decline is about 90 of 700 days (13%), against 96 of 525 days (18%) in their parents.
+- **Absolute compression: fewer days of decline.** No. The decline lasts the same number of days; it simply comes later.
+- **Across BXD strains,** longer life brings somewhat more days of decline, at close to the same share of life.
+
+So in these mice, hybrid vigor postpones a terminal phase of about three months rather than shortening it. All the days it adds are healthy days.
+
+## Things to keep in mind
+
+- **No mouse was weighed at death,** and weighings are two months apart.
+- **The 90% threshold and the 120-day window are choices.** The bounds of the span (onset as early or as late as the weighings allow) give the same answers.
+- **Euthanized BXD-family mice stay in every analysis.** They died somewhat younger and less thin than natural deaths. Leaving them out gives the same direction on every question.
+- **The UM-HET3 version** (free until 700 days) is not possible with the published weights, which were taken at 6, 18 and 24 months only.
+- **Full results:** `notes/Terminal_decline_results.md`.
+
+## In plain words
+
+- **In BXD mice, the last three months or so of life are marked by weight loss.**
+- **Longer-lived strains spend somewhat longer in decline,** roughly in step with their longer lives.
+- **Crossing two short-lived strains adds almost six months of life, all of it before the decline.**
+- **On Rob's per diem,** those extra months cost the investigator more, mostly as pension.
+
+---
+
 ## Appendix: files
 
 All paths are in the repository.
@@ -424,8 +552,11 @@ All paths are in the repository.
 | Table 2 fits by sex | `UMHET3/vita1a_gompertz.R`, `UMHET3/vita_sex_stratified.R` | `output/UMHET3_Vita1_sex_stratified.txt` |
 | Fits by site and cohort | `UMHET3/vita1_site_check.R` | `output/UMHET3_Vita1_site_check.txt` |
 | Part 3 figures | `UMHET3/Figures_Part3.R` | Figs 9–11 |
+| Part 4, corrected F1 table | `BodyWeight/F1_weights_corrected.R` | `data/corrected/` |
+| Part 4 | `BodyWeight/terminal_decline.R`, `BodyWeight/Figures_terminal_decline.R` | `output/Terminal_decline_*.txt`, Fig. 12 |
 
 **Sources.**
 - Arends D, Ashbrook DG, Roy S, … Miller RA, Williams RW (2026). Dynamics of genetic and somatic trade-offs in ageing and mortality. *Nature* 654:437.
 - Roy S, Bou Sleiman M, Jha P, … Auwerx J, Williams RW (2021). Gene-by-environment modulation of lifespan and weight gain in the murine BXD family. *Nature Metabolism* 3:1217–1227.
+- Fries JF (1980). Aging, natural death, and the compression of morbidity. *New England Journal of Medicine* 303:130–135.
 - de Magalhães JP, et al. (2018). A reassessment of genes modulating aging in mice using demographic measurements of the rate of aging. *Genetics* 208:1617–1630.

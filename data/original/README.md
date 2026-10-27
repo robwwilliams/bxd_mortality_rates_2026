@@ -64,3 +64,28 @@ Supplementary Data Table 2 of Arends et al. 2026 (*Nature* 654:437), as publishe
 - **The 2:1 excess of paternal H over paternal D** at Vita1a and Vita1b (and less at Vita1c and Vita1d) is in the files as published. It is most likely a genotyping problem on proximal Chr 1; see `data/umhet3/Table2/README.md`.
 
 Clean copies, with the header fixed and every file checked, are in `data/umhet3/Table2/`.
+
+## Body weights of the BXD aging colony: three workbooks
+
+Suheeta Roy's body-weight workbooks, from `Roy_RawData_To_Danny.zip` (SHA-256 `1381de76cb404a2765c6f862c8bf04a54af1e8ab259439c22d44ab160b929f42`), which Rob Williams shared from Dropbox on 26 October 2026. Copied out of the ZIP unchanged; the file names, including " copy", are as received. The rest of the ZIP is in `data/local/`.
+
+| File | SHA-256 | Content |
+|---|---|---|
+| `AgingBXD_BodyWeightData_updated31Dec2024.xlsx` | `bcb13f305ba998cb5fd64a463d6109d76fcac0dcba149555e4bdb1fa06189271` | BXD family females (128 genotypes) on CD and HF |
+| `AgingBXD_F1_BodyWeightData_Dec2024 copy.xlsx` | `63e28dc6c81b7bbc8884c867a818d2a1594160b2101ae9af64eb6d6709670149` | BXD × BXD F1 females (18 F1 types) |
+| `AgingBXD_NAM_BodyWeight_Feb2026.xlsx` | `bb83c2f10915445c25060d2e59c9317db5714c28eb8fb8ce7a52177853218b08` | Females on high fat with 1% NAM (187 mice) |
+
+**Layout of `AgingBXD_BodyWeightData_updated31Dec2024.xlsx`.** The sheet `BXD_Females` has one row per mouse (2,621 rows):
+- ear tag (current and original), strain, diet, sex and status (Natural, Euthanized, Harvest, LowOutlier, Other);
+- age, date of birth, diet start and death;
+- `Weight00 Baseline` at set-up, then up to 20 weighings (`Weight01`–`Weight20`, grams), each with `AgeAtWeightNN`, `DateWeightNN` and `DaysOnDietAtWeightNN`.
+
+Weighings are about every 66 days. The other sheets are subsets of `BXD_Females` for single ages (baseline, 2, 6, 12, 18 and 24 months).
+
+**Layout of the F1 workbook.** The sheet `NaturalDeath` has 310 F1 mice that died (Natural 141, Euthanized 168, Other 1), with up to 18 weighings in the same layout; `CauseOfDeath` holds the status. The other sheets are subsets for single ages.
+
+**Linkage.** All 1,934 mice of `BXD_Mortality_for_Mapping_Arends.xlsx` are in `BXD_Females` by ear tag, with the same strain and diet. Age at death agrees for 1,933 of them.
+
+**Corrections.** Six F1s are labeled BXD73 rather than BXD73b, and euthanized F1s count as natural deaths in our analyses (Rob, 27 October 2026). Both corrections are in `data/corrected/AgingBXD_F1_BodyWeight_NaturalDeath_corrected.txt` (see `data/corrected/README.md`); the workbook here is unchanged.
+
+**Used by** `BodyWeight/terminal_decline.R` (`notes/PLAN_terminal_decline.md`), through the corrected F1 table.

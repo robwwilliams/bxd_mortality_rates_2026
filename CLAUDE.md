@@ -62,7 +62,7 @@ Follow `notes/figure_style.md` (Nature-series style). The colors are fixed:
 ## Writing and workflow
 
 - **Writing.**
-  - American spelling in the text; British (Oxford) spelling in figure legends, as in *Nature* (see `notes/figure_style.md`).
+  - American spelling everywhere: notes, code comments, commit messages and every message to Rob ("labeled", not "labelled"). The one exception is figure legends, which Rob asked to be in British (Oxford) spelling, as in *Nature* (see `notes/figure_style.md`).
   - "days" spelled out in legends.
   - Capital P.
   - Legends open with "Fig. N |".

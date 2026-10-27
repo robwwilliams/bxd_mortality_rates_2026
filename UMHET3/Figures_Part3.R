@@ -7,7 +7,7 @@
 #   UMHET3/clean_table2.R, UMHET3/chr1_marker_check.R, UMHET3/vita1_site_check.R and Gompertz/MRDT_Secondary.R
 # Conventions as in Gompertz/Figures_MRDT_Secondary.R: svglite with Arial labels as single text elements; log scales
 # in base 2. Paternal D is orange and maternal B dark purple, as in Arends et al.; the haplotype each is compared with
-# (paternal H, maternal C) is grey. UM-HET3 sites: JL black circles, UM teal triangles, UT magenta squares.
+# (paternal H, maternal C) is gray. UM-HET3 sites: JL black circles, UM teal triangles, UT magenta squares.
 #
 #  Fig9_UMHET3_Chr1_genotype_calls.svg  (a) fraction of paternal calls that are H at each proximal Chr 1 marker, by
 #                                       site; (b) at 31.06 Mb, by the mother's haplotype at 24.0 Mb
