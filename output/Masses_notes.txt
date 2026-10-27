@@ -1,0 +1,347 @@
+EarTag	Genotype	Diet	Status	Death	last.weigh	gap	last.rel	group	necropsy	note
+3058	BXD199	CD	Euthanized	598	598	0	1.574	mass	TRUE	Retired breeder Euthanized. Right shoulder/arm protruding outward.  Gross Observations at Necropsy: Soft mass in right axillary region causing arm to protrude outward. | Formalin_PB
+2565	BXD6	CD	Euthanized	318	317	1	1.566	mass	FALSE	 | Euthanized Nov 23, 2016, Abdominal ascites. No data on this strain. Exclude this case as outlier (Rob, Casey, Melida)
+2859	BXD181	CD	Euthanized	711	711	0	1.548	neither	TRUE	Euthanized. Severe abdominal distention.  Gross observations at necropsy- Abdomen filled with a significant amount of clear to clear-yellow tinged fluid. Blood also present in chest cavity (may have been due to imperfect incision at time of necropsy). | Formalin_PB
+563	BXD48	HF	Natural	302	275	27	1.546	mass	FALSE	 | FORMALIN/ulcerated mass
+2051	BXD79	HF	Natural	274	264	10	1.516	mass	FALSE	 | Found Dead WITH Abdominal tumors
+3057	BXD184	CD	Euthanized	1001	1001	0	1.495	mass	TRUE	Retired breeder Euthanized. Distended abdomen.  Gross Observations at Necropsy: Abdominal cavity filled with a milky white fluid. Large mass in mesentery. Multiple masses in liver. | Formalin_PB
+1690	BXD40	HF	Natural	437	381	56	1.415	mass	FALSE	 | Found Dead/WITH TUMOR
+3214	BXD75	HF	Euthanized	400	400	0	1.358	mass	TRUE	Reason for euthanizing: Corneal ulcer, right eye. Cadaver Status: Tissue and body in freezer. Tissue collected: Whole tail for PI, Tongue, heart, pancreas, cecum, prox+distal colon, jejunum, duodenum, ileum, feces, liver, spleen, kidneys, skin.  Gross Observations at Necropsy: Liver lightly mottled, clear fluid filled cyst on right ovary, stomach quite small. Any additional notes:  Pancreas tissue may be contaminated with other tissue, overall a sloppy G.I dissection. | Body Saved -80_CJC
+1552	BXD79	HF	Natural	242	234	8	1.349	mass	FALSE	 | tumor in throat are (thyroid??)/respiratory distress
+1783	BXD65	HF	Natural	379	324	55	1.331	mass	FALSE	 | Found Dead/WITH TUMORS
+862	BXD95	HF	Euthanized	500	422	78	1.271	mass	FALSE	 | FORMALIN/LargeMass/Sac/DeathWeight35.5g
+660	BXD90	HF	Natural	423	381	42	1.268	mass	FALSE	 | MASSES/FORMALIN
+2184	DBA/2J	CD	Euthanized	338	324	14	1.263	mass	FALSE	 | Euthanized due to Large Masses -
+2153	BXD43	CD	Natural	657	649	8	1.245	mass	FALSE	Fluid-filled abdomen | NoTag 3rdWeight
+898	BXD16	HF	Natural	487	486	1	1.243	mass	FALSE	 | FORMALIN/UlceratedMass
+1704	BXD40	HF	Euthanized	254	196	58	1.233	mass	FALSE	 | Euthanized/Abdominal Masses but may not have been moribund
+3063	BXD169	CD	Euthanized	616	616	0	1.216	mass	TRUE	Retired breeder. Abdominal distention. Gross Observations at Necropsy: free blood in abdominal cavity, lungs pale, liver enlarged (marked) and diseased (tumors, +/- necrosis), Mass in uterus, fluid in uterus. | Formalin_PB
+97	BXD12	CD	Natural	1197	1187	10	1.21	mass	FALSE	 | 1PunchLeftEar/MASSES at 8th weight/Found Dead
+2711	BXD195	CD	Euthanized	840	840	0	1.201	mass	FALSE	Right eye squinting @ 11th weight Distended abdomen @ 13th weight. Euthanized | 
+793	BXD101	HF	Euthanized	262	212	50	1.199	mass	FALSE	 | FORMALIN/TumorMass/AscitesFluid/Sac
+327	BXD77	CD	Euthanized	480	466	14	1.198	mass	FALSE	 | AbdominalMass/FORMALIN
+2336	BXD168	CD	Euthanized	703	666	37	1.188	mass	FALSE	Abdominal fluid @ 9th weight. | 
+799	BXD101	CD	Natural	489	478	11	1.169	mass	FALSE	 | Mammary Tumors/sac
+2480	BXD62	CD	Natural	795	776	19	1.167	mass	FALSE	Abdominal fluid @11th weight | No tag @4th weight
+382	BXD32	HF	Natural	681	580	101	1.152	mass	FALSE	 | AbdominalMasses/LaboredBreathing/FORMALIN
+3067	BXD43	CD	Euthanized	719	718	1	1.147	mass	TRUE	Retired breeder Abdominal distention. Gross Observations at Necropsy: free blood in abdominal cavity, liver enlarged (marked) and diseased with multiple masses, spleen enlarged (mild-moderate), mass in uterus. | Formalin_PB
+3048	BXD202	CD	Euthanized	576	576	0	1.138	mass	TRUE	Retired breeder Euthanized. Hard mass on chest.  Gross Observations at Necropsy: Entire right side (and part of left side) of rib cage is one large mass.  Any additional notes: Osteosarcoma? | Formalin_PB
+449	BXD102	HF	Euthanized	442	357	85	1.135	mass	FALSE	 | FORMALIN/MassOrFluidFilled/Sac/DeathWeight 41.7g
+337	BXD100	HF	Euthanized	460	446	14	1.132	mass	FALSE	 | FORMALIN/ABDOMINAL MASS
+347	BXD100	HF	Natural	640	535	105	1.128	mass	FALSE	 | FORMALIN/Overweight/Tumors/UlcerativeDermatitis/no tag w/tumor/punch Left ear
+2335	BXD168	CD	Natural	889	883	6	1.115	mass	FALSE	abdominal fluid @ 12th weight | 
+20	BXD70	CD	Natural	613	570	43	1.114	mass	FALSE	 | FORMALIN/MammaryTumours/MALOCCLUSION/MiceMoveStrange/eyes?
+2863	BXD191	CD	Euthanized	611	611	0	1.113	mass	FALSE	Abdominal mass @ 1st weight | 
+2644	DBA/2J	CD	Natural	607	568	39	1.109	mass	FALSE	From Megan. Small abdominal mass @ 4th weight. Missing? on 10/18/2017 | Death date interpolated as Sept 10 2017 (between last weighing and first missed weighing)
+641	D2B6F1	HF	Natural	692	684	8	1.103	mass	FALSE	 | SAC/MASSES/FORMALIN
+2427	BXD16	HF	Euthanized	533	498	35	1.101	mass	FALSE	Euthanized. Ulcerated mammary tumor, epistaxis. Lost 13.2 g  on 3/1/2017 since last weight. | 
+446	BXD60	HF	Euthanized	297	297	0	1.099	mass	FALSE	 | necrotic abdominal tumor/sacrificed after weighed
+400	BXD69	HF	Natural	626	551	75	1.097	mass	FALSE	 | Formalin_PPB FORMALIN/ExcessiveWeight/1cmMassRtHip
+717	BXD98	CD	Natural	739	732	7	1.092	mass	FALSE	 | SmallMassMonitor(8thWt)/Found Dead
+768	BXD85	CD	Natural	449	386	63	1.089	mass	FALSE	 | large neck tumors/sac
+381	BXD48a	CD	Natural	670	631	39	1.088	mass	FALSE	 | Formalin_PPB FORMALIN/Abdominal Masses/Ocular Ulceration
+43	BXD86	CD	Natural	914	887	27	1.088	mass	FALSE	 | FORMALIN/mam tumor/weight loss
+5788	BXD49	HF	Euthanized	362	362	0	1.085	mass	FALSE	Euthanized. Neck mass and abdominal distention | 
+889	BXD91	CD	Natural	623	555	68	1.081	mass	FALSE	 | FORMALIN/MammaryTumors/1PunchLeftEar
+2899	DBA/2J	CD	Euthanized	506	506	0	1.079	mass	TRUE	Euthanized. Abdominal distention Gross Observations at Necropsy: Liver enlarged and diseased, spleen enlarged (marked), Mass in mesentery, Apparent lung involvement/metastasis, abdomen filled with a blood tinged milky fluid. | Formalin_PB
+377	BXD9	HF	Euthanized	425	382	43	1.078	mass	FALSE	 | FORMALIN/AbdominalMass/SacStomachSkinUlcers
+2869	BXD181	HF	Euthanized	665	617	48	1.077	neither	TRUE	Found moribund. In respiratory distress.  Gross Observations at Necropsy: Stomach filled with air? Looks like a balloon. Abnormal discoloration of the liver. Spleen abnormally shaped. | Formalin_PB
+682	BXD40	CD	Natural	577	519	58	1.076	mass	FALSE	 | MASSES/FORMALIN
+344	BXD100	CD	Natural	470	456	14	1.075	mass	FALSE	 | NoTag/Intra-AbdominalMass/VetSac/FORMALIN
+2514	BXD16	HF	Euthanized	676	642	34	1.07	mass	FALSE	Euthanized. red and ulcerated mass. | 
+3145	BXD68	CD	Natural	632	577	55	1.066	neither	TRUE	Retired Breeder Found dead and cannibalized.  Cadaver Status: Cadaver mostly eaten, discarded remains in necropsy cooler. | 
+390	BXD32	HF	Natural	601	537	64	1.063	mass	FALSE	 | FORMALIN/FoundDead/MammaryTumors
+2560	BXD19	CD	Euthanized	842	838	4	1.057	mass	FALSE	Distended abdomen @ 13th weight. Euthanized. | 
+2563	BXD19	CD	Euthanized	503	492	11	1.057	mass	FALSE	Large mass on left side @ 8th weight. | 
+2609	BXD101	HF	Euthanized	479	429	50	1.051	mass	FALSE	Mass on/over throat region. | 
+2864	BXD181	CD	Euthanized	731	731	0	1.049	mass	TRUE	Euthanized. Domed head, increased respiratory rate. Gross Observations at Necropsy: Enlarged liver with at lest one visible mass, enlarged spleen, seems to be a large amount of fat like tissue in chest cavity.  | Formalin_PB
+2417	BXD6	HF	Euthanized	686	644	42	1.049	mass	FALSE	Mass on left hind quarter. | 
+863	BXD95	CD	Natural	610	570	40	1.046	mass	FALSE	 | FORMALIN/AbdMasses/Dehydrated/SAVED
+2524	BXD18	HF	Euthanized	412	412	0	1.045	mass	FALSE	Euthanized. Abdominal mass, lethargic, cold to touch. | 
+380	BXD48a	HF	Natural	536	453	83	1.043	mass	FALSE	 | FORMALIN/BXD96'sVeryFat/LargeMass/DeathWeight46.2g
+797	BXD101	CD	Natural	463	399	64	1.04	mass	FALSE	 | large neck/mammary tumors/sac
+671	BXD29	HF	Euthanized	579	518	61	1.038	mass	FALSE	 | FORMALIN/AbdFluid-Masses/Overweight/Sac/EnlargedSpleen
+885	BXD91	CD	Natural	812	772	40	1.035	mass	FALSE	 | Submandibular Masses/Weight Loss/Euth
+2858	BXD181	CD	Euthanized	316	316	0	1.032	mass	TRUE	lightly hunched and showing signs of abdominal pain. Slight visual signs of a mass in abdomen. Necropsy showed an enlarged and diseased liver as well as an enlarged spleen. | 
+305	BXD48a	CD	Natural	689	634	55	1.031	mass	FALSE	 | FORMALIN/1.5cmAbdMass/Respiratory
+467	BXD101	HF	Natural	434	412	22	1.026	mass	FALSE	 | FORMALIN/Hunched/Thin/Tumor
+752	BXD32	CD	Euthanized	426	384	42	1.023	mass	FALSE	 | ASCITES/FORMALIN
+3154	BXD202	CD	Euthanized	781	781	0	1.022	mass	TRUE	Retired Breeder Reason for euthanizing: Firm, intra-abdominal mass, showing signs of distress and piloerection. Gross Observations at Necropsy: Large, multicolored, firm mass in right side abdominal cavity. Difficult to discern origin due to the tumor invading surrounding tissue, but I suspect the tumor originated in the female reproductive tract. There was a thick, sticky, clear-yellow, jelly like substance throughout the abdominal cavity. This was a novel signing for me, very interesting. Bones seemed brittle.  Any additional notes: Bones seemed brittle (to me) in both mice euthanized 5/25/21. These mice were littermates, perhaps strain related? Will look out for this in future BXD202 necropsies. | Formalin_PB
+711	BXD48a	CD	Natural	501	408	93	1.022	mass	FALSE	 | FORMALIN/AbdMasses/LaboredBreathing1 punch LEFT ear
+868	BXD95	CD	Natural	551	487	64	1.022	mass	FALSE	 | FORMALIN/FoundDead/Tumors
+12	BXD61	CD	Natural	744	694	50	1.021	mass	FALSE	 | FORMALIN/AbdominalMass
+2825	BXD14	CD	Natural	467	429	38	1.02	mass	FALSE	Mass on left shoulder @ 6th weight | 
+140	BXD48	CD	Euthanized	643	604	39	1.02	mass	FALSE	 | FORMALIN/Intra-AbdominalMasses
+714	BXD48a	CD	Natural	723	716	7	1.016	mass	FALSE	 | Blind(8thWt)/Masses/Respiratory Distress/Sac
+312	BXD55	CD	Natural	750	658	92	1.012	mass	FALSE	 | FORMALIN/MammaryTumors
+13	BXD61	CD	Natural	730	694	36	1.012	mass	FALSE	 | no tag/FORMALIN NoSlitLetEar/tumor mass/lethargic/thin and hunched/sac
+798	BXD101	CD	Natural	578	478	100	1.011	mass	FALSE	 | no tag/1 punch Left Ear/LargeMasses/Mammary/FORMALIN
+1852	BXD69	CD	Euthanized	308	308	0	1.008	mass	FALSE	 | LARGE tumor/Euthanized/Formalin at 4th weight date 5/13/2015
+284	BXD56	CD	Natural	578	567	11	1.006	mass	FALSE	 | Sacd by Vet/Masses
+835	BXD53	HF	Natural	687	657	30	1.006	mass	FALSE	 | no et/2 punches Left Ear/Masses/Respiratory
+438	BXD73	HF	Natural	480	459	21	1.004	mass	FALSE	 | FORMALIN/LargeNeckMass
+2873	BXD14	CD	Euthanized	476	476	0	1.003	mass	TRUE	Abdominal distension. Upon gross necropsy- enlarged fluid filled uterus, enlarged spleen, hydronephrosis (right kidney) | 
+2281	B6D2F1	CD	Natural	879	749	130	1	mass	FALSE	Abdominal mass @ 11th weight | 
+153	BXD102	CD	Euthanized	514	473	41	1	mass	FALSE	 | AbdominalMasses/Sac/FORMALIN
+795	BXD101	HF	Euthanized	518	390	128	1	mass	FALSE	 | Formalin_PPB FORMALIN/AbdominalMass/Hypothermia
+156	BXD102	HF	Natural	708	587	121	1	mass	FALSE	 | FORMALIN/3.5cmNeckMass/Ulcerated
+585	BXD79	HF	Natural	639	512	127	1	mass	FALSE	 | FORMALIN/AbdominalFluid/Masses
+605	BXD86	HF	Natural	639	517	122	1	mass	FALSE	 | FORMALIN/tumorLeftLeg/WtLoss/RapidBreathing
+2337	BXD168	CD	Euthanized	703	605	98	0.997	mass	FALSE	Abdominal fluid @ 8th weight. | 
+744	BXD29	CD	Euthanized	614	513	101	0.997	mass	FALSE	 | FORMALIN/AbdomMasses/Hypothermia
+250	BXD100	CD	Natural	689	568	121	0.995	mass	FALSE	 | FORMALIN/Intra-AbdominalMasses
+3027	BXD62	HF	Euthanized	702	702	0	0.995	neither	TRUE	Euthanized.  Corneal ulcer, right eye. Gross Observations at Necropsy: Uterine horns red and inflamed.  Any additional notes:  Tissue Collected: Liver, spleen, kidneys, heart, tail (for Collin). Collected whole brain and eyes for Daniel Ciobanu. I also collected trigeminal ganglion but can't guarantee the quality, as it was my first time collecting this tissue (CB). | 
+295	BXD29	CD	Natural	743	674	69	0.993	mass	FALSE	 | FORMALIN/MassesBaseOfTail
+321	BXD60	HF	Natural	517	480	37	0.993	mass	FALSE	 | SeveralMammaryTumors/Sac/FORMALIN
+2816	BXD1	CD	Euthanized	847	807	40	0.992	mass	TRUE	Euthanized. Bilateral masses on lower abdomen, one ulcerated. Gross Observations at Necropsy: Spleen enlarged (moderate), Dark contents in stomach (blood?) | 
+749	BXD40	CD	Natural	427	336	91	0.991	mass	FALSE	 | FORMALIN/tumors/thin/can't breath
+427	BXD66	HF	Natural	833	735	98	0.991	mass	FALSE	 | AbdominalMasses/Ulcerated/Sac
+311	BXD55	HF	Natural	677	658	19	0.989	mass	FALSE	 | Masses/Formalin/NotAsTorn/1PunchRtEar
+2709	BXD195	HF	Natural	394	369	25	0.987	mass	FALSE	Possible abdominal mass @ 6th weight | 
+308	BXD48a	HF	Euthanized	564	525	39	0.986	mass	FALSE	 | FORMALIN/Intra-AbdominalMasses
+2319	BXD168	CD	Euthanized	823	818	5	0.983	mass	FALSE	Severely distended abdomen | 
+3144	BXD44	CD	Euthanized	635	635	0	0.98	mass	TRUE	Retired Breeder Euthanized. Distended abdomen.  Gross Observations at Necropsy: Spleen enlarged (marked). Stomach greatly distended.  Any additional notes: Contents of the stomach appeared abnormal, dissection revealed the contents included a decent amount of cannibalized flesh from other mouse that was found dead and mostly eaten in this cage today. | Formalin_PB
+3151	BXD155	CD	Euthanized	648	648	0	0.978	neither	TRUE	Retired Breeder. Found moribund. In respiratory distress.  Gross Observations at Necropsy: Clear fluid in chest cavity, Kidneys pale and finely pitted, heart enlarged, mild-moderate.   | Formalin_PB
+2830	BXD14	HF	Natural	461	423	38	0.977	mass	FALSE	Barbering around nose @ 4th weight Mass on left shoulder | 
+3043	BXD123	CD	Euthanized	571	562	9	0.976	mass	TRUE	Retired breeder Euthanized. Abdominal distention. Gross Observations at Necropsy: Blood filed abdominal cavity, Liver enlarged (marked) and diseased, cyst on right ovary, large firm mass in uterus. | Formalin_PB
+3161	BXD147a	CD	Euthanized	778	778	0	0.974	mass	TRUE	Retired Breeder Euthanized. Abdominal mass. Cadaver Status: In freezer with tissue.  Gross Observations at Necropsy:  Spleen Enlarged, Marked. With multiple masses, some necrotic. Clear fluid filled cyst on right ovary. Cecum through large intestine enlarged and deformed.  Masses in mesentery. Mass near heart, thymus?   | Body Saved -80_CJC
+627	BXD74	CD	Natural	588	533	55	0.97	mass	FALSE	 | Formalin_PPB Formalin/FdDeadMasses (abdominal) 9/26/2013 monitor
+414	BXD61	CD	Natural	649	541	108	0.966	mass	FALSE	 | FORMALIN/AbdominalMass/WeightLoss
+2828	BXD14	HF	Euthanized	395	375	20	0.966	mass	TRUE	Barbering around nose @ 4th weight. Moribund, with abdominal mass. Euth. Necropsy shows hydronephrosis and blood in chest cavity | 
+3074	BXD87	CD	Euthanized	957	957	0	0.965	mass	TRUE	Retired breeder Euthanized. Abdominal distension. Cadaver Status:  Whole Tail saved in -80. Harvested: Tongue, heart, eyes, liver, spleen, kidney, skin, body.  Gross Observations at Necropsy: Urinary bladder greatly distended, lungs congested, fluid filled cysts in left and right ovaries Any additional notes: Could not get LN2, tissue was immediately put on dry ice. | Body Saved -80_CJC
+3062	BXD169	CD	Euthanized	774	774	0	0.962	mass	TRUE	Retired breeder Euthanized. Distended abdomen. Scant blood present on anus.  Gross Observations at Necropsy: Large mass in mesentery (possibly necrotic in areas) Spleen enlarged (marked) spleen also deformed | Formalin_PB
+2571	BXD18	HF	Euthanized	484	478	6	0.962	mass	FALSE	Mass on left rear leg. Weight loss. | 
+418	BXD74	HF	Euthanized	414	365	49	0.958	mass	FALSE	 | FORMALIN/2SlitsLeftEar/AbdominalFluid-Mass/35.2g
+3162	BXD147	CD	Euthanized	573	573	0	0.956	mass	TRUE	Retired Breeder Euthanized. Distended abdomen, domed head.  Gross Observations at Necropsy: Spleen enlarged (moderate), large mass in mesentery, mass near the spine anterior to the base of the uterus, bilateral masses (or more likely markedly enlarged adrenal glands) above kidneys. Apparent lung metastasis, no tumors but looked mottled.   | Formalin_PB
+309	BXD55	HF	Natural	705	658	47	0.956	mass	FALSE	 | AbdFluidOR Masses/GREASY FUR/Formalin
+858	BXD95	HF	Euthanized	554	432	122	0.954	mass	FALSE	 | FORMALIN/1cmNeckMass/EnlargedAbdomen/SAVED
+900	BXD16	HF	Natural	507	486	21	0.952	mass	FALSE	 | FORMAIN/MASSES
+3065	BXD71	CD	Euthanized	827	827	0	0.951	mass	TRUE	Retired breeder Euthanized. Been monitoring mass on right side of neck since 3/15/21. At 3/25/21 mass measured ~1cm, suspected mammary mass. At 4/11 mass measured ~1.5 cm. Humane endpoint was reached today at ~2cm when mass started impacting her normal ability to move. Gross Observations at Necropsy: Small abrasion on left side of muzzle. Large fluid filled cyst on right ovary. Small semi-bloody cyst right ovary. | Formalin_PB
+233	BXD102	CD	Natural	723	690	33	0.948	mass	FALSE	 | FoundDead/Formalin/AbdominalMass7thWeight
+775	BXD27	HF	Natural	583	455	128	0.945	mass	FALSE	 | FORMALIN/ChestMass/Hunched/Thin
+84	BXD29	CD	Euthanized	599	556	43	0.944	mass	FALSE	 | FORMALIN/AbdominalMass/Sac
+56	BXD102	CD	Natural	943	835	108	0.943	mass	FALSE	 | FORMALIN/AbdominalMasses/Hunched/Thin/Respirator/PUTTING A BABY IN THIS CAGE
+3049	BXD62	CD	Euthanized	830	803	27	0.942	neither	TRUE	Retired breeder Euthanized. Corneal ulcer (Right eye). Mouse was treated with BNP eye ointment on 1/4-pm and 1/5-am to alleviate discomfort while awaiting euthanasia.  Gross Observations at Necropsy: Corneal ulcer on right eye, cyst on left ovary. | Formalin_PB
+3009	BXD61	HF	Euthanized	638	638	0	0.941	thin	TRUE	Euthanized. Casey harvested tissues as much as possible as mouse was our fattest/largest mouse till date.  Started treatment for lesions to rear and undercarriage (due to rubbing) on 3/16/21, wounds had gotten worse as of 4/8/21 and treatment was deemed unsuccessful and humane endpoint was imminent. Mouse also had ~20 grams of weight loss.  Treatment log: 3/16/21- Small lesion on excess fat/shin under right hind leg/abdomen area. TAO for 7 days, then recheck.  4/8/21- Multiple lesions now present (3 lesions on dorsal rump)  Cadaver Status: Harvested Tissue  Gross Observations at Necropsy: Mottled liver | 
+3277	BXD102	CD	Euthanized	668	668	0	0.94	mass	TRUE	Retired breeder Euthanized. Decreased respiratory effort, lethargic, moribund.  Gross Observations at Necropsy: Free blood in chest and abdominal cavity. Liver enlarged, marked. With masses. Fluid filled cyst, left ovary. Small mesenteric masses.  | Body Saved -80_CJC
+225	BXD100	CD	Natural	552	489	63	0.939	mass	FALSE	 | mammary tumors/massive tumors/can't eat/sac
+172	BXD32	HF	Natural	656	553	103	0.939	mass	FALSE	 | FORMALIN/EnlargedAbdomen/Fluid/Tumors
+769	BXD85	CD	Natural	659	574	85	0.937	mass	FALSE	 | FORMALIN/AbdominalMasses/Fluid
+2705	BXD214	HF	Natural	509	482	27	0.935	neither	TRUE	Respiratory distress. Necropsy showed enlarged heart, liver diseased, with small red spots. | 
+317	BXD60	HF	Natural	584	559	25	0.932	mass	FALSE	 | MASSES/RESPIRATORY
+2611	BXD89	CD	Natural	755	698	57	0.931	mass	FALSE	Right eye bulging @ 6th weight. Mass to th eleft of vagina @ 7th weight- monitor | 
+26	BXD73	CD	Natural	724	649	75	0.929	mass	FALSE	 | FORMALIN/1.5cmMassRtHip/26 does not have eartag/1 punch LEFT ear
+304	BXD48a	HF	Natural	650	634	16	0.929	mass	FALSE	 | Formalin_PPB Masses/Formalin
+2812	BXD5	HF	Euthanized	575	573	2	0.927	mass	TRUE	Euthanized. Deep ulcerated wound down to musce layer. Gross necropsy showed red and white splotches on lungs, red spots on liver. moderately enlarged spleen. | 
+2851	BXD22	CD	Euthanized	733	705	28	0.925	mass	TRUE	Euthanized. lethargic, increased breathing effort Gross Observations at Necropsy: White discharge in eyes, Blood in abdominal cavity (appears to be from a burst bloody cyst near or on the left ovary), Clear fluid filled cyst on right ovary. | Formalin_PB
+2513	BXD16	HF	Euthanized	644	642	2	0.924	mass	FALSE	Mass on left ear reported on 7/12/2017. Swollen and bloody @ 9th weight. | 
+1854	BXD70	CD	Natural	632	630	2	0.923	mass	FALSE	euthanized | Mass on front left leg ulcerated (9th weight)
+2276	C57BL/6J	CD	Euthanized	1109	1075	34	0.923	mass	FALSE	Ulcerated mass. | 
+3150	BXD154	CD	Euthanized	703	703	0	0.922	mass	TRUE	Retired Breeder Euthanized. Firm mass, left of anogenital region. Left side of face appears swollen and left eye protruding. Gross Observations at Necropsy: Retro-orbital mass, left eye. Liver appeared to be an abnormal hue (purple).  Any additional notes: Did not have time to harvest tissue on this mouse. | Formalin_PB
+2215	BXD170	CD	Euthanized	774	772	2	0.916	mass	FALSE	Enlarged spleen. Fluid-filled abdomen @11th weight | 
+1408	BXD65b	HF	Natural	559	545	14	0.916	mass	FALSE	 | Found Dead/WITH TUMORS
+3044	BXD31	CD	Euthanized	837	802	35	0.915	mass	FALSE	Retired breeder Euth 5/27/21 for 2cm ulcerated mass on right flank | Formalin_PB
+2954	BXD5	CD	Euthanized	833	811	22	0.914	thin	TRUE	Retired breeder Euthanized. Diarrhea, Increased respiratory rate, BCS 2.5/5.  Gross Observations at Necropsy: Blood tinged fluid in abdominal cavity. Liver enlarged and diseased. Spleen an abnormal gry/tan color. | Formalin_CJC
+3163	BXD148	CD	Euthanized	577	571	6	0.913	mass	TRUE	Retired Breeder. Euthanized. Head tilt.  Gross Observations at Necropsy: Spleen enlarged (moderate) with mass | Formalin_PB
+3055	BXD123	CD	Euthanized	874	874	0	0.912	mass	TRUE	Retired breeder Euthanized. Rectal prolapse and severe abdominal distention.  Gross Observations at Necropsy: Abdominal cavity filled with clear fluid, spleen diseased and enlarged (marked), masses on liver. Any additional notes:  Tissue Collected: Liver, spleen, eyes, kidneys, tail (for Collin), rest of body.  | 
+415	BXD61	CD	Euthanized	608	541	67	0.911	mass	FALSE	 | FORMALIN/AbdMasses/WtLoss
+2391	BXD98	HF	Natural	561	528	33	0.911	mass	FALSE	Recently added to aging colony in 11/2015. Needs to stay on diet for 18 months time point. | Abdominal mass noted at 6th weight.
+4822	DBA/2J	CD	Euthanized	770	770	0	0.909	mass	FALSE	Mass on rear left leg | 
+14	BXD61	CD	Natural	834	830	4	0.908	mass	FALSE	 | masses/respiratory distress/vet sac
+2991	BXD169	HF	Natural	614	602	12	0.908	mass	TRUE	Gross Observations at Necropsy:  Liver male and mottled, spleen enlarged (moderation-marked), stomach greatly distended with food, left side of face cannibalized by cage mates.  | Formalin_PB
+3143	BXD14	CD	Euthanized	564	482	82	0.906	mass	TRUE	Retired Breeder Euthanized. Abdominal distention and increased breathing effort.  Gross Observations at Necropsy:  Yellow staining on anogenital area  White fibrous-like streaks on heart Liver enlarged (marked) with multiple small masses Spleen enlarged (marked) with multiple small masses Yellow tinged free fluid in abdominal cavity Multiple small masses in mesentery | Formalin_PB
+2927	DBA/2J	CD	Euthanized	760	760	0	0.906	mass	FALSE	Retired breeder. Euthanizd. Mass surrounding rear left leg becoming necrotic on anterior surface | 
+903	BXD98	CD	Natural	532	505	27	0.905	mass	FALSE	 | AbdominalMass/FoundDead
+2283	B6D2F1	CD	Natural	912	904	8	0.904	mass	FALSE	Abdominal fluid @ 12th weight | 
+174	BXD32	HF	Natural	695	592	103	0.898	mass	FALSE	 | FORMALIN/EnlargedAbdomen/Tumors/RespiratoryDistress
+430	BXD89	CD	Euthanized	477	454	23	0.897	mass	FALSE	 | FORMALIN/ABDOMINAL MASSES
+160	BXD70	HF	Natural	664	658	6	0.897	mass	FALSE	 | FORMALIN/AbdominalMasses/MammaryTumors/1 punch/left ear
+2673	BXD16	CD	Euthanized	647	601	46	0.896	mass	FALSE	Euthanized by Casey. Mass under rear right leg. Unable to walk. | 
+3008	BXD61	HF	Euthanized	595	595	0	0.894	mass	TRUE	Euthanized. Large open wound on left side fat pad. Abrasions on left and right lower fat pads. Gait was greatly impaired due to fat accumulation surrounding the rear limbs, causing fat pads to drag along the cage floor as she moves. Therefore, it was decided she was not a good candidate for surgical correction of wound.  Gross Observations at Necropsy: Enlarged spleen (moderate), Darkened cysts around right ovary. | Formalin_PB
+2804	BXD14	HF	Natural	464	447	17	0.889	mass	FALSE	These mice do not have ears. Tag#s have been assigned but not tagged physically. Barbering over right eye @ 3rd weight. Mass on left shoulder @ 5th weight | 
+1821	DBA/2J	CD	Euthanized	659	644	15	0.887	mass	FALSE	Mass on back near thoracolumbar junction growing rapidly (05/18/2016). Euthanized 05/19/2016. | 
+2503	DBA/2J	HF	Natural	816	797	19	0.887	mass	FALSE	Abdominal mass or fluid @ 10th weight- monitor. | 
+573	BXD69	HF	Natural	598	541	57	0.881	mass	FALSE	 | Formalin_PPB FORMALIN/NeckMasses/RespDistress
+217	BXD48a	CD	Natural	806	782	24	0.879	mass	FALSE	 | Euthanized for abdominal tumors. Rob changed to "natural" death since animal was much older than average life span for this strain on CD
+707	BXD48a	HF	Natural	772	732	40	0.879	mass	FALSE	 | FoundDead/BothHips-Masses(8thWt)
+2460	BXD6	HF	Euthanized	600	558	42	0.878	mass	FALSE	Mass on chest. | 
+2407	BXD19	CD	Euthanized	683	640	43	0.877	mass	FALSE	Tumor behind eye. Ulceration. | No Tag at 1st weight
+2117	BXD101	HF	Euthanized	372	358	14	0.876	mass	FALSE	 | Euthanized due to large masses - ROB check to see if LOW OUTLIER OR NATURAL
+440	BXD73	HF	Natural	549	538	11	0.873	mass	FALSE	 | Abdominal-MammaryMASSES/FOUND DEAD
+2543	BXD73	CD	Euthanized	573	571	2	0.871	mass	FALSE	Abdominal mass @ 9th weight | 
+2850	BXD15	CD	Euthanized	762	762	0	0.87	mass	TRUE	Euthanized. Abdominal distention Gross Observations at Necropsy: Liver riddled with masses of various sizes, cyst on right ovary, heart enlarged. | Formalin_PB
+3066	BXD43	CD	Euthanized	908	908	0	0.87	mass	TRUE	Retired breeder Euthanized. Abdominal mass.  Cadaver Status: Whole Tail saved in -80. Harvested: Tongue, heart, eyes, liver, spleen, kidney, skin, body.  Gross Observations at Necropsy: Large masses in liver, deformed. Hear enlarged, small mass on left ovary. Any additional notes: Could not get LN2, tissue was immediately put on dry ice. | Body Saved -80_CJC
+3147	BXD75	CD	Euthanized	809	809	0	0.869	thin	TRUE	Retired Breeder Chronic conjunctvitis @ 2nd weight Reason for euthanizing: Reached humane endpoint predetermined with vet staff (weight loss grater that 15%)  Gross observations at necropsy: Pancreas appeared abnormally red, small brown nodule adhered to pancreas. Tissue collected: Whole tail saved for PI. Serum (note: serum was accidentally left out overnight) tongue, heart, pancreas, caecum, prox + distal colon, jejunum, duodenum, ileum, feces,  liver, spleen, adrenals,  right eye (left eye ruptured at dissection), kidney, skin, rest of boxy in box with tissue. Head saved in 10% NBF for Penny in ophthalmology. | Body Saved -80_CJC
+404	BXD87	CD	Natural	790	766	24	0.867	mass	FALSE	 | Euthanized for multiple tumors. Considered natural death. Animal lived longer than mean of this strain on CD.
+2635	BXD186	CD	Euthanized	848	812	36	0.866	mass	FALSE	Left eye cloudy @ 8th weight. Euthanized. Possible vaginal polyp, bleeding from vagina, mass friable. | 
+2341	BXD186	CD	Natural	869	826	43	0.864	mass	FALSE	Mass on neck @11th weight | Blind in both eyes @ 7th weight
+2736	BXD187	HF	Euthanized	560	541	19	0.863	mass	FALSE	Mass on neck, above throat. Euth. | 
+124	BXD90	CD	Natural	912	908	4	0.862	mass	FALSE	 | FORMALIN/UlceratedMassesAbd/no eartag
+2533	BXD29	CD	Natural	1046	983	63	0.86	mass	FALSE	Mass on throat @ 11th weight- monitor | 
+354	BXD43	CD	Natural	660	621	39	0.86	mass	FALSE	 | FORMALIN/FirmAbdominalMassesmissing eartag
+1865	BXD77	CD	Natural	842	778	64	0.857	mass	FALSE	Euthanized. Vaginal prolapse. Mass/tumor on right hind leg, impedeing movement. | 
+2754	BXD187	CD	Euthanized	444	406	38	0.856	mass	FALSE	Enlarged spleen, showed up as an abdominal mass. | 
+2731	BXD197	CD	Euthanized	616	591	25	0.855	mass	FALSE	seizure @ 3rd weight. Euthanized. Distended abdomen | 
+196	BXD9	HF	Natural	393	388	5	0.855	mass	FALSE	 | Throat tumor, Couldn'tEat/Sacd
+2219	BXD157	CD	Natural	647	607	40	0.854	mass	FALSE	 | Abdominal fluid @ 6th weight. Abdominal mass @7th weight.
+2902	BXD22	CD	Euthanized	749	739	10	0.854	thin	TRUE	Euthanized. Bulging of left eye.  Gross Observations at Necropsy: Bulging left eye with white discharge, BCS 1/5, cyst on left ovary. | Formalin_PB
+719	BXD101	HF	Euthanized	669	669	0	0.852	mass	FALSE	 | Weak/AbdFluidOrMasses/UrineDischarge/FORMALIN/no et, lower notch/1 punch Left Earlow notch/1 punch Right Ear
+213	BXD48a	CD	Euthanized	628	582	46	0.85	mass	FALSE	 | FORMALIN/WtLoss/AbdMasses
+593	BXD69	CD	Euthanized	566	499	67	0.85	mass	FALSE	 | FORMALIN/AbdMasses/WtLoss/1 punch LEFT ear
+2174	C57BL/6J	HF	Natural	761	716	45	0.848	mass	FALSE	Euthanized. Abdominal mass. Weight loss. | NO TAG 2nd weight
+2677	BXD16	CD	Euthanized	649	649	0	0.843	mass	FALSE	Euthanized 10/17/18. Previously reported mass (located on the lower back) has enlarged. Sudden onset of diarrhea, loss of bladder control and rear right limb paralysis. | 
+757	BXD90	CD	Natural	683	598	85	0.843	mass	FALSE	 | Formalin_PPB FORMALIN/AbdominalMasses/AbdominalMassNoted5thWeight
+2648	DBA/2J	CD	Natural	772	772	0	0.842	mass	FALSE	From Megan. Mass (~1cm) on R side caudal shoulder @8th weight large ulcerated flank mass @ 9th weight | 
+3152	BXD160	CD	Euthanized	691	691	0	0.839	mass	TRUE	Retired Breeder Euthanized. Large mass encompassing entire right leg, inhibiting mobility.  Gross Observations at Necropsy: Large mass on leg appeared to be mostly filled with blood.  Alternative identification post necropsy: NT DBA +1 punch right ear. In container with #3162   | Formalin_PB
+928	C57BL/6J	CD	Natural	804	783	21	0.834	mass	FALSE	 | MASSES/FORMALIN/NOW ET#928
+533	DBA/2J	HF	Natural	700	699	1	0.832	mass	FALSE	 | Lg Mass Rt Rear Leg/Mobility Impaired/Euth
+2567	BXD18	CD	Natural	528	478	50	0.831	mass	FALSE	Small mass on rear right hip @ 7th weight. | 
+621	BXD48a	HF	Natural	764	715	49	0.83	mass	FALSE	 | Large Abdominal Masses/Euth/NT
+266	BXD73b	HF	Natural	880	808	72	0.83	mass	FALSE	 | Abdominal Masses/Euth
+2667	BXD168	CD	Euthanized	999	999	0	0.829	mass	FALSE	Abdominal mass @15th weight | 
+2096	BXD65	HF	Natural	551	485	66	0.829	mass	FALSE	 | Large abdominal mass 3rd & 4th weights but still mobile
+3075	BXD2	CD	Euthanized	601	600	1	0.828	mass	TRUE	Retired breeder Euthanized. Mass palpable in lower abdomen Gross Observations at Necropsy: Splenomegaly, gallbladder enlarged/full/distended, liver mottled. | Formalin_PB
+122	BXD85	CD	Euthanized	631	618	13	0.828	mass	FALSE	 | FORMALIN??/LargeOvalAbdominalMass
+859	BXD95	HF	Natural	528	521	7	0.827	mass	FALSE	 | SAVED/SAC/MammaryTumor/Thin/Scruffy/Lethargic/FORMALIN
+2894	DBA/2J	CD	Euthanized	459	459	0	0.824	mass	TRUE	Been treating for squinting and redness of left eye since 1/14/20 with daily BNP ointment application. Fluorescent stain uptake test on 1/27 showed ulceration of eye. Euth required. Gross Observations at Necropsy: Uterus red and inflamed, cysts or masses on both ovaries. | 
+3047	BXD202	CD	Euthanized	730	724	6	0.822	mass	TRUE	Retired breeder. Euthanized. Minimal use of rear right leg due to musculoskeletal tumor. Gross Observations at Necropsy: Large mass around leg, likely a bone tumor. | Formalin_PB
+2285	B6D2F1	CD	Natural	1080	1030	50	0.821	mass	FALSE	Mammary mass on left flank @13th weight | 
+2770	BXD214	CD	Euthanized	560	520	40	0.821	mass	FALSE	Euthanized by CB. Red ears and Mass on right ear @ 8th weight | 
+460	BXD65	HF	Natural	609	576	33	0.818	mass	FALSE	 | FORMALIN/Hypothermia/TumorRight Leg/STARTED HI-FAT 2-29-12
+2678	BXD16	HF	Natural	654	646	8	0.817	mass	FALSE	Abdominal fluid @ 5th weight | 
+837	BXD53	HF	Natural	687	657	30	0.817	mass	FALSE	 | Masses/Formalin/no et?/1 punch Left Ear
+8	BXD60	CD	Natural	710	664	46	0.816	mass	FALSE	 | FORMALIN/4cmNeckMass
+388	BXD32	HF	Euthanized	570	537	33	0.816	mass	FALSE	 | FORMALIN/Ascites/LaboredBreathing
+2820	BXD11	CD	Euthanized	811	811	0	0.815	neither	TRUE	Fatty mass on right hip @ 4th weight Euthanized. Large firm and shiny mass in left inguinal region. Gross Observations at Necropsy: Left and right ovarian masses, fluid in abdominal cavity, uterine mass, diaphragm appears thickened, pin-point masses on liver.  Any additional notes: DDX fatty hip masses at necropsy (BXD11 phenotype) | Formalin_PB
+2713	BXD195	CD	Euthanized	895	895	0	0.814	mass	TRUE	Euthanized. Lethargy, eye discharge, respiratory distress. Gross Observations at Necropsy: Enlarged heart, blood filled chest cavity, large tumor on right lobe of lung | Formalin_PB
+2817	BXD1	CD	Euthanized	1007	960	47	0.813	mass	TRUE	Euthanized. Ulcerated mass on left knee.  Gross Observations at Necropsy:  spleen enlarged (moderate-marked), small clear cyst between right lobe and caudate lobe of liver | Formalin_PB
+2777	BXD75	CD	Euthanized	898	898	0	0.813	mass	TRUE	Right eye closed and a little crusty @ 7th weight. Ocular discharge and squinting @10th weight Tobramycin eyedrops BIO @ 13th weight Euthanized. Been treating eyes for chronic conjunctivitis (BXD75 phenotype) since May 2020 with minimal/questionable improvement. Veterinary staff requested a humane endpoint.  Gross Observations at Necropsy: Spleen enlarged, deformed with masses | Formalin_PB
+3124	C57BL/6J	HF	Euthanized	678	678	0	0.813	mass	TRUE	From MKM colony Reason for euthanizing: Corneal ulcer, Left eye.  Gross Observations at Necropsy:  Gallbladder distended, moderate-marked. Spleen enlarged, moderate. Lungs- lower right lobe discolored. | Body Saved -80_CJC
+378	BXD24	HF	Euthanized	500	475	25	0.809	mass	FALSE	 | FORMALIN/ASCITES
+3078	BXD171	CD	Euthanized	710	663	47	0.806	mass	TRUE	Retired breeder. Euthanized. Abdominal distention. Lethargy.  Gross Observations at Necropsy: Clear fluid in abdominal cavity. Two large masses in intestines, multiple small masses/cysts clustered on medial lobe of liver. Uterus has small white round masses within | Formalin_PB
+319	BXD60	HF	Natural	701	668	33	0.806	mass	FALSE	 | Euthanized for multiple masses. Considered a natural death. Animal longevity longer than strain mean on HF
+1002	BXD9	CD	Euthanized	435	433	2	0.805	mass	FALSE	 | Possible Abdominal Fluid/Mass??Mass 4th Wt
+723	BXD56	HF	Euthanized	327	326	1	0.805	mass	FALSE	• ET 723 - same issue. mouse weighed until 1/2/2013 but date of death given as 24/1/2013. Not a clear case of date switching. I have changed the date of death to 2/2/2013 but animal was euthanized so someone may have the exact date. | FORMALIN/AbdominalMasses/FAILURE TO THRIVE
+2746	BXD194	CD	Euthanized	941	941	0	0.804	neither	TRUE	Euthanized. Bleeding rectal prolapse Gross Observations at Necropsy: Cyst, Left ovary | Formalin_PB
+3046	BXD155	CD	Natural	723	717	6	0.799	neither	TRUE	Retired breeder. Found dead. Gross Observations at Necropsy: Mildly decomposed. Tissue surrounding head, both eyes, and brain eaten by cage mates. Liver enlarged (moderate-marked) Liver diseased and Spleen enlarged (moderate). | Formalin_PB
+2348	BXD29	CD	Euthanized	860	855	5	0.797	mass	FALSE	Distended abdomen with scruffy appearance. Hunched. | Original weighing 8 removed (38.7 g at 26/01/2017; 1 day after previous weighing and doesn't make sense with other weights)
+2415	BXD6	HF	Euthanized	650	644	6	0.797	mass	FALSE	Mass under neck. | 
+1600	BXD39	CD	Natural	741	741	0	0.795	mass	FALSE	Medium sized abdominal mass reported on 12/10/15. Euthanized on 2/17/16. Large abdominal mass. | 
+2698	BXD191	HF	Euthanized	258	238	20	0.791	mass	TRUE	Hunched, thin, frail, Dehydrated, palpable abdominal mass, may be enlarged spleen/liver disguised as mass Euthanized and necropsied. | 
+2616	BXD161	CD	Euthanized	824	820	4	0.79	mass	FALSE	Mass at rear left flank/hip @ 11th weight. Mass grown out of aceeptable range @ 12th weight. Euthanized | 
+2752	BXD187	CD	Natural	717	715	2	0.789	mass	FALSE	Abdominal mass, hunched and pale @ 11th weight. | 
+2819	BXD11	CD	Euthanized	785	784	1	0.787	thin	TRUE	Fatty masses on hips @ 7th weight Euthanized. Mass, Left side Gross Observations at Necropsy: Uterus enlarged with fluid and/or masses within. | Formalin_PB
+577	BXD69	CD	Natural	893	873	20	0.784	mass	FALSE	 | Abdominal Masses at 6th weight
+93	BXD11	CD	Natural	762	662	100	0.783	mass	FALSE	 | tumor on left rear flank/moribund/euthanized
+2347	BXD29	CD	Natural	1025	981	44	0.777	mass	FALSE	Superficial mass L abdomen, feels cystic, walking mildly affected @ 13th weight | 
+3309	BXD73b	CD	Euthanized	596	596	0	0.777	mass	TRUE	Retired breeder Hunched posture, dehydrated, mild abdominal distention. Cadaver Status: Body and tissue in freezer. Tissue collected:  Heart, pancreas, caecum, prox+dist colon, jejunum, duodenum, ileum, feces, eyes, liver, spleen, kidneys, body. Gross Observations at Necropsy: Intestines greatly distended.  | Body Saved -80_CJC
+3016	BXD202	HF	Euthanized	754	754	0	0.776	mass	TRUE	1.2cm axillary mass, 0.5cm left inguinal mass, 1cm mass on abdomen (suspected lymph nodes), increased respiratory effort after handling. Cadaver Status: Body and tissue in freezer. Tissue collected: Serum, lungs, tongue, heart pancreas, cecum, prox + distal colon, jejunum, duodenum, ileum, feces, eyes, liver, spleen, adrenals, kidneys, skin, body, whole brain, whole tail (For Colin) Gross Observations at Necropsy: Clear fluid filled cysts on liver, cyst near left ovary, spleen enlarged, kidneys enlarges and pitted, pancreatic mass?? | Body Saved -80_CJC
+2074	BXD87	CD	Natural	689	632	57	0.775	mass	FALSE	Euthanized | Large mass top lip @ 7th weight
+635	BXD98	CD	Natural	806	799	7	0.774	mass	FALSE	 | Masses/Respiratory Distress/Sac
+2379	BXD51	CD	Natural	865	865	0	0.769	mass	FALSE	Euthanized on 1/25/17. Mass on right shoulder impeding mobility. Excessive loss of weight. | Mass on right shoulder @ 6th weight.
+3039	BXD213	CD	Euthanized	769	723	46	0.768	neither	TRUE	Retired breeder Euthanized. Abdominal distention. Erect coat.  Gross Observations at Necropsy: Clear fluid free in abdominal cavity, liver disease and mottled. Prominent rectum. | Formalin_PB
+2833	BXD11	HF	Euthanized	598	546	52	0.767	mass	FALSE	2 firm masses in anogenital region @ 9th weight | 
+2282	B6D2F1	CD	Natural	992	966	26	0.766	mass	FALSE	Mass on back @ 11th weight- monitor. 12th weight impossible, deleted (wrong date, wrong weight) | 
+2691	BXD190	CD	Euthanized	674	632	42	0.765	mass	FALSE	Left eye bulging @ 8th weight.  Euthanized by CB. Abdominal mass | 
+2612	BXD89	CD	Euthanized	655	651	4	0.765	mass	FALSE	Mass at entrance of vagina @ 10th weight | 
+634	BXD98	HF	Natural	685	679	6	0.763	mass	FALSE	 | FoundDead/NO Form/AbdominalMasses
+5043	BXD8	CD	Euthanized	493	493	0	0.76	mass	FALSE	Euthanized. Weight loss and abdominal distension | 
+4556	BXD73b	CD	Euthanized	705	664	41	0.756	mass	TRUE	Retired breeder from BC CB20L9750 Weight loss, spinal kyphosis, moderate malocclusion.  Cadaver in -80 freezer Gross Observations at Necropsy: Urinary bladder distended-Marked. Clear fluid-filled cyst on left ovary. Any additional notes: Small mouse with uniformly small organs. | 
+3040	BXD11	CD	Euthanized	837	836	1	0.749	mass	TRUE	Retired breeder Euthanized. Wt loss, scruffy coat, suspected superficial mass in lower abdomen/perineal region.  Gross Observations at Necropsy: Spleen enlarged, cyst on both ovaries, skin over lower abdomen/upper perineal region thickened (yellow/pink pus-like material oozed out when cut into) DDX fatty hip masses at necropsy (BXD11 phenotype) | Formalin_PB
+1908	BXD73b	HF	Natural	950	949	1	0.747	mass	FALSE	Euthanized. Abdominal mass on right side, reluctant to move, poor condition. | Abdominal mass @ 13th weight
+2607	BXD86	CD	Euthanized	946	911	35	0.745	mass	FALSE	Rectal prolapse @ 8th weight. Euthanized for a large mass or aural hematoma of the left ear | 
+3153	BXD202	CD	Euthanized	781	781	0	0.741	thin	TRUE	Retired Breeder Reason for euthanizing: Thin (BCS 2/5) and has what appears to be an older injury to the right hind leg.  There is a bony prominence on the medial aspect of the stifle, and the carpus is swollen, likely indicative of arthritis.  She is mostly non-weight-bearing on the left hind leg. Gross Observations at Necropsy: Bones seemed to be brittle Any additional notes: Bones seemed brittle (to me) in both mice euthanized 5/25/21. These mice were littermates, perhaps strain related? Will look out for this in future BXD202 necropsies.  | Formalin_PB
+3200	BXD77	CD	Euthanized	691	691	0	0.739	mass	TRUE	Reason for euthanizing: Lethargic, increased respiratory rate Cadaver Status: In freezer with tissue Gross Observations at Necropsy:  Soft, bloody mass near kidneys.  Bloody pituitary.  | Body Saved -80_CJC
+318	BXD60	CD	Natural	688	668	20	0.733	mass	FALSE	 | FORMALIN/NoTag/Lower/LessTorn/AbdMasses/Respiratory
+787	BXD73b	CD	Natural	833	806	27	0.731	mass	FALSE	 | Abdominal Masses
+1278	BXD29	HF	Natural	852	811	41	0.73	mass	FALSE	 | Derm-Tx Tao (5th wt)/Sac-Abdominal Masses
+1592	BXD85	HF	Natural	591	542	49	0.727	mass	FALSE	 | HA(2ndWt)/Abdominal Mass 5th weight/lethargic won't eat-euthanized
+2827	BXD14	HF	Euthanized	376	375	1	0.726	mass	FALSE	Barbering around nose @ 4th weight. Abdominal mass @ 5th weight. Euthanized. | 
+2602	BXD170	CD	Natural	630	593	37	0.725	mass	FALSE	Abdominal mass, suspected to be enlarged spleen @ 9th weight | 
+348	BXD100	CD	Natural	819	805	14	0.72	neither	TRUE	 | 3Tail/PunchesR/1LeftEars/To Dr. Hamilton for Necropsy
+383	BXD32	CD	Natural	690	689	1	0.717	mass	FALSE	 | Masses/Sac'd/Formalin
+200	BXD9	HF	Natural	388	383	5	0.715	mass	FALSE	 | ThroatTumor/Couldn''tEat/Sacd
+2366	BXD172	HF	Euthanized	481	481	0	0.714	mass	FALSE	No Tag. Euthanized on 11/23/2016. Right leg paralysis. | Mouse is paralyzed right leg on Nov 23, 2016 at 481 days of age. Probably needs to be euthanized.Possible bone tumor or may have been injury in cage (Casey and David Hamilton)
+412	BXD61	HF	Natural	659	650	9	0.713	mass	FALSE	 | PossibleAbdominalTumor/UlcerativeDermatitis
+2785	BXD75	CD	Euthanized	661	661	0	0.71	mass	FALSE	Crusty eyes @ 9th weight Euthanized by CB. Firm mass, right thoracic region. Blepharitis and ocular opacity or Right eye. Hunched. | 
+3201	BXD65	CD	Natural	699	652	47	0.709	mass	TRUE	Respiratory distress, emergency euthanasia by vet staff.  Alternative identification post necropsy: No Tag, Brown +1 punch: Left Ear Gross Observations at Necropsy:  Blood and fluid in chest cavity. Spleen Enlarged, marked. Uterus Distended with fluid/pus. Liver enlarged, moderate. Heart enlarged, mild. Any additional notes: Initially identified as 3301 then corrected   | 
+379	BXD24	CD	Natural	697	663	34	0.707	mass	FALSE	 | Masses/Formalin
+2200	BXD28	HF	Euthanized	785	785	0	0.705	mass	FALSE	Rectal prolapse, presence of abdominal fluid. | 
+2998	BXD170	HF	Euthanized	369	344	25	0.704	neither	TRUE	Euthanized. Lethargic, increased respiratory rate.  Gross Observations at Necropsy: Spleen enlarged, kidneys pale and finely pitted | 
+1849	BXD69	CD	Natural	764	721	43	0.703	mass	FALSE	Euthanized for mass on rear right leg | 
+2810	BXD15	CD	Euthanized	756	756	0	0.702	mass	TRUE	Euthanized. Increased respiratory rate, hypersensitive,  abdomen palpates abnormally   Gross Observations at Necropsy: Liver severely distorted with multi lobular bloody masses. Bloody cyst/mass on Left ovary. Blood in chest cavity.  | Formalin_PB
+2636	BXD186	HF	Natural	781	754	27	0.702	mass	FALSE	Cloudy eyes @ 9th weight Abdominal mass and fluid @ 11th weight | 
+2499	BXD73	HF	Euthanized	728	728	0	0.702	mass	FALSE	Presence of abdominal fluid, palpable spleen, weight loss. | 
+2767	BXD172	CD	Euthanized	600	600	0	0.701	mass	FALSE	Euthanized. Abdominal distension (likely splenomegaly) | 
+2570	BXD18	HF	Euthanized	484	478	6	0.699	mass	FALSE	Mass on both rear legs. Weight loss. | 
+2778	BXD214	HF	Euthanized	497	464	33	0.699	mass	FALSE	Barbering over right eye @ 5th weight. Weight loss @ 7th weight Euthanozed by Casey. Weight loss, hunched , distended abdomen. Enlarged spleen and liver. | 
+3148	BXD75	CD	Euthanized	809	809	0	0.698	thin	TRUE	Retired Breeder Chronic conjunctivitis @ 2nd weight Reason for euthanizing: Reached humane endpoint predetermined with vet staff (weight loss greater that 15%) as well as bleeding rectal prolapse.  Gross observations at necropsy: Rectal prolapse Tissue collected: Whole tail saved for PI. Serum (note: serum was accidentally left out overnight) tongue, heart, pancreas, caecum, prox + distal colon, jejunum, duodenum, ileum, feces,  liver, spleen, adrenals (right adrenal got smushed during harvest), right eye (left eye ruptured at dissection), kidney, skin, rest of boxy in box with tissue. Head saved in 10% NBF for Penny in ophthalmology. | Body Saved -80_CJC
+2449	BXD8	HF	Natural	710	682	28	0.696	mass	FALSE	Abdominal fluid @ 10th weight | 
+2151	BXD43	HF	Natural	852	839	13	0.692	mass	FALSE	 | Large mass/tumor on rear leg @ 10th weight
+659	BXD85	HF	Euthanized	610	574	36	0.692	mass	FALSE	 | Overweight/RespiratoryDistress/AbdominalMasses. Considered a natural death. Animal older than mean of this strain on HF
+853	BXD53	CD	Natural	600	567	33	0.69	mass	FALSE	 | FoundDead/Formalin/AbdominalMasses/1 punch LEFT AND 1 punch RIGHT ear
+551	BXD89	HF	Natural	850	807	43	0.686	mass	FALSE	 | Found Dead/Mammary Mass (9th wt)
+2066	BXD70	HF	Natural	725	711	14	0.683	mass	FALSE	 | mass on neck- monitor BC Lost ~5g weight @ 8th weight. Abdominal mass @ 9th weight
+371	BXD9	CD	Euthanized	440	397	43	0.68	mass	FALSE	 | FORMALIN/AbdominalMass/WeightLoss/Sac
+2679	BXD16	CD	Euthanized	862	829	33	0.676	mass	FALSE	Euthanized by Casey. Weight loss, distended abdomen, blood in abdominal cavity | Is this animal actually dead?? Original death date was given as 10/4/2017 which is impossible Confirmed to be 'alive' by CB @ 9th weight
+3054	BXD123	CD	Euthanized	901	901	0	0.672	neither	TRUE	Retired breeder Rectal Prolapse Cadaver Status: Body in freezer, Tail saved for Collin. Tissue collected: Will have to double check freezer, but I believe all tissues were collected. Gross Observations at Necropsy: Kidneys dark, small nodule anterior stomach Any additional notes: This mouse was treated with an experimental topical (phenylephrine), treatment schedule below… 6/15-6/29: Sterile Lubricant  6/29+7/2: Phenylephrine 7/3: Sterile Lubricant  7/8: Phenylephrine 7/10-7/13: Sterile Lubricant | Body Saved -80_CJC
+1047	BXD29	HF	Natural	826	785	41	0.665	mass	FALSE	 | Sac-Dermatitis/Abdominal Masses
+3205	BXD170	CD	Euthanized	416	416	0	0.659	mass	TRUE	Abdominal mass/distention Cadaver Status: Body in freezer, tail saved for Collin.  Tissue collected: Tail, Eyes, Spleen, Liver, Body Gross Observations at Necropsy: Spleen Enlarged (Marked) | Body Saved -80_CJC
+2028	BXD32	CD	Euthanized	963	917	46	0.656	mass	FALSE	Mass on right abdomen. Ataxia. Body tremors. | 
+2079	BXD90	CD	Natural	831	831	0	0.645	mass	FALSE	Euthanized. Abdominal mass, pronounced weight loss. | Abdominal mass and pronounced weight loss @ 11th weight
+144	BXD73	HF	Natural	721	682	39	0.645	mass	FALSE	 | FoundDead/NoForm/AbdominalMassAt7thWeight
+2531	BXD28	HF	Natural	828	793	35	0.644	mass	FALSE	Mass on throat | 
+454	BXD70	CD	Natural	814	802	12	0.637	mass	FALSE	 | Abdominal Tumors/Monitor/Found Dead
+278	BXD39	CD	Euthanized	630	570	60	0.634	mass	FALSE	 | FORMALIN/AbdMasses
+2897	DBA/2J	CD	Euthanized	478	478	0	0.633	mass	TRUE	Euthanized. Mass on throat obstructing normal movement.  Gross Observations at Necropsy: Enlarged spleen | Formalin_PB
+2814	BXD11	HF	Euthanized	640	604	36	0.63	mass	TRUE	Alopecia on shoulders @ 7th weight Euthanized by CC. Found weak, lethargic, labored breathing, pale, wet rear end, Right eye squinting with excessive discharge. No tag, in separate labeled container. Black female with Alopecia on head and shoulders. Gross Observations at Necropsy: Blood in chest cavity, liver pale with tumors, heart enlarged (marked). | 
+1773	BXD48a	HF	Natural	800	793	7	0.624	mass	FALSE	euthanized | Lost ~11g @ 10th weight. Large abdominal mass
+2294	BXD16	CD	Euthanized	892	876	16	0.62	mass	FALSE	 | Mass in flank region. Blood coming from anus. Euthanized
+2385	BXD73b	HF	Euthanized	832	782	50	0.616	mass	FALSE	No tag. Mass near left eye. | 
+631	BXD98	HF	Natural	751	745	6	0.615	mass	FALSE	 | Large Mass Rear Rt Hip/Alopecia Lower Body/Monitor/Developed Respiratory and Dehydration/Euth
+2505	DBA/2J	CD	Natural	845	797	48	0.613	mass	FALSE	Abdominal mass or fluid @ 10th weight | 
+3211	BXD65	CD	Euthanized	733	716	17	0.604	mass	FALSE	Euthanized by Vet Staff 11/22/21- Mass engulfing rear left limb | Formalin_OB
+2997	BXD218	HF	Euthanized	716	716	0	0.603	mass	TRUE	2cm firm subcutaneous mass over the right hip Tissue collected: Tail for Collin, eyes Gross Observations at Necropsy: Masses and large fluid filled cyst in liver  | Formalin_PB
+2102	BXD65b	CD	Natural	701	685	16	0.594	mass	FALSE	Euthanized. Mammary tumor in left axilla. | 
+2080	BXD90	HF	Natural	834	831	3	0.593	mass	FALSE	Euthanized. Emaciated, dehydrated, difficulty ambulating, small ulcerated mass in abdomen. | Pronounced weight loss @ 11th weight.
+2454	BXD86	HF	Euthanized	930	922	8	0.588	mass	FALSE	Mass on left shoulder/under arm @ 13th weight. Euthanized as per vet call. Respiratory distress. | 
+2715	BXD190	HF	Euthanized	841	841	0	0.578	mass	FALSE	Right eye cloudy @9th weight Cloudy eyes, abdominal mass @14th weight. Euthanized | 
+1729	BXD70	CD	Natural	920	920	0	0.575	mass	FALSE	Euthanized. Abdominal mass. Lethargic. | No Tag 5th Weight
+724	BXD56	HF	Natural	617	609	8	0.575	mass	FALSE	 | MASSES/FORMALIN
+561	BXD48	HF	Natural	821	787	34	0.573	mass	FALSE	 | AbdominalTumors and RespiratoryDistress/Sac/no tag/low ear notch/1RtEar
+2384	BXD73b	HF	Natural	860	859	1	0.571	mass	FALSE	Abdominal mass, weight loss, consider euth. | 
+4949	B6D2F1	HF	Euthanized	664	664	0	0.568	mass	FALSE	Euthanized. Weight loss and abdominal distension | 
+2762	BXD172	CD	Euthanized	855	855	0	0.558	mass	TRUE	Aggressive female Euthanized. BCS 1/5, shaky, weak and frail Gross Observations at Necropsy: Bloody mass on left ovary   | Formalin_PB
+3022	BXD101	HF	Euthanized	611	590	21	0.555	mass	TRUE	Small notch on right ear Euthanized. Weight loss.  Gross Observations at Necropsy: Liver pale, mottled and enlarged with multiple masses throughout, greatly deformed.  Right side: ovary, kidney and lobe of liver fused together in one mass that appears necrotic in areas. Bloody mass on left ovary.  Heart enlarged.  Spleen enlarged.  | Formalin_PB
+294	BXD29	HF	Natural	867	769	98	0.554	mass	FALSE	 | Abdominal Masses/Respiratory/Sac
+447	BXD102	HF	Natural	942	922	20	0.542	mass	FALSE	 | Severe Wt. Loss/Won't Eat/Sac/Derm Lower Abdomen/TAO/Monitor/MassAbdomenMonitor (11th wt)
+2627	BXD169	HF	Euthanized	694	674	20	0.532	mass	TRUE	Abdominal mass and low BCS. Euthanized and necropsied. | 
+204	BXD9	HF	Natural	503	482	21	0.525	mass	FALSE	 | MASSES/FORMALIN
+871	BXD91	HF	Euthanized	851	849	2	0.52	mass	FALSE	 | BlindRightEye/Mass/SevereDermititis(10Wt)/Sacrificed
+2326	BXD170	HF	Natural	596	596	0	0.516	mass	FALSE	Euthanized. Abdominal mass.   Severe weight loss. | 
+2868	BXD181	HF	Euthanized	776	751	25	0.514	thin	TRUE	Euthanized. Weight loss, abnormal gait.  Gross Observations at Necropsy: Enlarged heart  Any additional notes: Check hips at necropsy for abnormalities | 
+2802	BXD31	HF	Euthanized	599	575	24	0.508	mass	FALSE	Distended abdomen filled with white, milky fluid, sticking to internal organs. Blood in chest cavity. Enlarged spleen. | 
+201	BXD9	CD	Natural	680	670	10	0.505	mass	FALSE	 | Masses/Formalin
+1243	BXD100	HF	Natural	703	690	13	0.503	mass	FALSE	 | MAMMARY MASSES 8th Weight/Found Dead
+2211	BXD19	HF	Euthanized	388	386	2	0.489	mass	FALSE	euthanized | Large abdominal mass- euthanize as per vet instructions
+2435	BXD28	CD	Natural	974	955	19	0.488	mass	FALSE	cloudy eyes, rectal prolapse @ 13th weight. Hair loss, abdomen mildly distended @ 14th weight | 
+1933	C57BL/6J	HF	Natural	1004	1004	0	0.487	mass	FALSE	Euthanized. Abdominal mass. Severe weight loss. Moribund. | No tag @ 11th weight
+2805	BXD191	HF	Euthanized	820	820	0	0.484	mass	TRUE	Euthanized. Abnormal gait, weak/frail, weight loss, increased respiratory rate Gross Observations at Necropsy: Spleen enlarged, fluid in chest cavity, Left kidney deformed and small in size with possible masses or cysts throughout. strangulated fat mass. | Formalin_PB
+2552	BXD28	CD	Natural	918	902	16	0.468	mass	FALSE	cloudy eyes @ 12th weight. Possible mass in abdomen @ 13th weight | 
+2831	BXD11	HF	Euthanized	675	675	0	0.457	mass	FALSE	Possible abdominal mass @ 9th weight. Weight loss @ 10th weight. Euthanized. Abdominal distension. | Formalin_PB
+2339	BXD168	HF	Euthanized	1016	1010	6	0.456	mass	FALSE	Abdominal fluid @ 11th weight. Cloudy eyes and alopecia on face @12th weight Mass on R side of abdomen @ 13th weight. Shaky and can't correct herself. | 
+2474	BXD24	CD	Euthanized	971	952	19	0.455	neither	TRUE	Kyphosis @ 10th weight Euthanized and necropsied. | 
+2832	BXD11	HF	Euthanized	811	786	25	0.448	mass	TRUE	Mildly distended abdomen @ 10th weight Euthanized. Pale, weak leaning.  Gross Observations at Necropsy: Heart enlarged, liver pale and spotted | 
+3005	BXD172	HF	Euthanized	791	791	0	0.444	mass	TRUE	Reason for euthanizing: Ulcerated right eye Cadaver Status: Tissue and body in freezer. Tissue collected: Whole tail for PI, Tongue, Heart, Eyes, Lungs, Pancreas, Cecum, Prox+Dist colon, Jejunum, Duodenum, Ileum, Feces, Liver, Spleen, Kidneys, Adrenals, Skin.  Gross Observations at Necropsy: Heart enlarged (marked), liver pale with a large mass within, kidneys pale and finely pitted, clear fluid filled cyst on left ovary. | Body Saved -80_CJC
+2338	BXD168	HF	Euthanized	1079	1059	20	0.443	mass	TRUE	Abdominal fluid @ 12th weight. Cloudy eyes and alopecia on face.  Alopecia and cloudy eyes @ 14th weight  Euthanized and necropsied. | 
+811	BXD65	CD	Natural	921	921	0	0.44	mass	FALSE	 | AbdominalTumors/RespiratoryDistress/Lethargic
+2599	BXD157	HF	Euthanized	836	836	0	0.44	mass	FALSE	Euthanized 10/17/18. Weight loss, BCS 1/5, lethargic. pale, distended abdomen (Bladder greatly enlarged, likely a blockage preventing her from urinating). Blood in chest cavity. | 
+2087	BXD73b	HF	Euthanized	951	945	6	0.44	mass	FALSE	Mass under neck. Weight loss. | 
+2623	BXD168	HF	Natural	828	825	3	0.439	mass	FALSE	1 PUNCH LEFT EAR. Abdominal mass, thin. | 
+2871	BXD22	HF	Euthanized	679	679	0	0.431	mass	TRUE	Euthanized. Weight loss, lethargic Gross Observations at Necropsy: Enlarged heart, diseased liver, Mass in female repro area/behind urinary bladder | Formalin_PB
+2321	BXD171	CD	Natural	955	932	23	0.429	mass	FALSE	Walking on toes? Abdominal mass @12th weight | 
+4944	B6D2F1	HF	Euthanized	677	677	0	0.427	mass	FALSE	Euthanized. Weight loo and abdominal distension | 
+729	BXD67	HF	Natural	920	912	8	0.369	mass	FALSE	 | Tumors/wt loss/respiratory distress/SmallMassTail(8thWt)/HA(10thAnd11thWt)
+2672	BXD157	HF	Euthanized	808	806	2	0.353	mass	TRUE	Right eye cloudy @ 11th weight Euthanized on 2/14/19. Weight loss, hunched posture, unkempt, difficulty in walking ( not due to paralysis).  Necropsy showed a liver with a “shrunken appearance, abnormally textured/colored kidneys, as well as an enlarged spleen and blood in the chest cavity. | 
+2839	BXD15	HF	Euthanized	735	735	0	0.338	thin	TRUE	Euthanized. Wt. loss, increased respiratory rate, weak-lethargic Gross Observations at Necropsy: Pale and spotted liver, clear cyst on left ovary, intestines appear red (possibly inflamed or irritated?) | Formalin_PB
+2837	BXD15	HF	Euthanized	662	662	0	0.314	mass	FALSE	Euthanized. Weight loss, lethargic, mild abdominal distension | Formalin_PB

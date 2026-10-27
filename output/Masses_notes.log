@@ -1,0 +1,36 @@
+Part 4 sample: 2117 mice; notes of any kind: 1581 ; necropsy notes: 85 
+         
+          B6 and D2 B6D2 F1s  BXD   F1
+  mass           17        7  298    0
+  neither       111       45 1242  305
+  thin            0        0   92    0
+
+Weighed within 7 days of death: last weight / peak, by group and status
+   group     status mice median at.least.95 below.90
+    mass Euthanized   87  0.829        0.31     0.59
+ neither Euthanized   93  0.828        0.34     0.56
+    thin Euthanized   15  0.590        0.00     0.93
+    mass    Natural   30  0.772        0.13     0.80
+ neither    Natural  181  0.715        0.18     0.74
+    thin    Natural   16  0.670        0.06     0.94
+
+Mice with a mass recorded: 31 of 96 at 95% of peak or more (32%), 86 of 326 below it (26%)
+
+Mass - neither, within strain: -0.050 of peak (95% CI -0.140 to +0.040), P = 0.28; 391 mice
+
+Mice with necropsy notes: 85 ; with an internal mass, enlarged organ or fluid: 63 
+Born:
+born
+2011 2015 2016 2017 2018 2019 2020 
+   1    2    2    4   38   35    3 
+Findings named (a mouse can have several):
+                 liver                 spleen                  ovary 
+                    30                     27                     15 
+                kidney                 uterus              mesentery 
+                     8                     10                      6 
+                  lung blood in a body cavity                  fluid 
+                     6                     19                     18 
+                 heart 
+                    10 
+
+Necropsied mice with a mass, weighed within 7 days of death: 45 ; at 95% of peak or more: 17 
