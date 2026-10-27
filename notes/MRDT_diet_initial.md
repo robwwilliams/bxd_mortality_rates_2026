@@ -63,8 +63,8 @@ This is the de Magalhães et al. (2018) pattern: an intervention that changes li
 
 ## Things to keep in mind
 
-- **The R0–MRDT ridge.** Bootstrap estimates of R0 and MRDT correlate at r = 0.95 (CD) and 0.97 (HF), as Figure 4 shows. This is the Strehler–Mildvan degeneracy that Tarkhov et al. (2017) describe. MRDT on its own is much less certain than the difference in R0 at a shared slope, so compare slopes with the joint likelihood-ratio test, as here, not by eye.
-- **This is the MRDT of a mixture.** Pooling 124 genotypes flattens the population curve relative to the strains within it. Stratifying a Cox model by strain raises the diet hazard ratio from 1.44 to **1.78** (1.61–1.98), close to the 2.0 that Roy et al. (2021) report with strain as a random effect. Within-strain MRDTs are probably shorter than 150 d.
+- **The R0–MRDT ridge.** Bootstrap estimates of R0 and MRDT correlate at r = 0.95 (CD) and 0.97 (HF). This is the Strehler–Mildvan degeneracy that Tarkhov et al. (2017) describe. MRDT on its own is much less certain than the difference in R0 at a shared slope, so compare slopes with the joint likelihood-ratio test, as here, not by eye.
+- **This is the MRDT of a mixture.** Pooling 124 genotypes flattens the population curve relative to the strains within it. Stratifying a Cox model by strain raises the diet hazard ratio from 1.44 to **1.78** (1.61–1.98), close to the 2.0 that Roy et al. (2021) report with strain as a random effect. Within strains the MRDT is 113 d (`Gompertz/Diet_by_strain.R`, Fig. 5).
 - **Animals still alive are not in the file.** For the latest cohorts this under-represents long-lived animals. The early cohorts are unaffected.
 - **No adjustments yet.** Vivarium and set-up cohort are not adjusted for. The design is balanced by strain across diets, but vivarium 3 holds more CD than HF animals (440 against 232).
 
@@ -77,8 +77,9 @@ This is the de Magalhães et al. (2018) pattern: an intervention that changes li
 
 ## Figures
 
-All four are in `output/` as SVG files with editable text in Arial, plus PNG previews made with CairoSVG.
+All five are in `output/` as SVG files with editable text in Arial, plus PNG previews made with CairoSVG.
 - **Fig 1.** Mortality rate in 30-day bins (point size ∝ deaths) with the two Gompertz fits, on a log2 axis where each gridline is one doubling: parallel lines, HF half a doubling above.
 - **Fig 2.** (a) Kaplan–Meier survival from 200 d, with the Gompertz fits dashed. (b) Mean age at death of each diet's survivors relative to both diets, by T-age, with ±1 s.e.m. shading (after Arends et al. 2026 Fig. 1b).
 - **Fig 3.** MRDT with 95% intervals by diet across the six analyses, with the equal-slope p values.
-- **Fig 4.** Bootstrap estimates of R0 (log2 axis) against MRDT: two parallel ridges, separated along R0.
+- **Fig 4.** Bootstrap distributions of MRDT (a) and of mortality at 600 days (b): the diets overlap in MRDT and separate in level.
+- **Fig 5.** The diet hazard ratio strain by strain (a), and pooled against within-strain estimates (b) (`Gompertz/Diet_by_strain.R`).

@@ -6,6 +6,8 @@ See GeneNetwork.org trait 10002:  https://genenetwork.org/show_trait?trait_id=10
 
 On a high-fat diet, BXD family females die at 1.4 times the rate of chow-fed females at every age. The mortality rate doubling time (MRDT) does not change: 153 d on chow, 149 d on high fat (p = 0.55 for equal slopes). See [notes/MRDT_diet_initial.md](notes/MRDT_diet_initial.md).
 
+Within strains (exploratory), high fat raises mortality 1.8-fold, strains differ in how much (P = 0.0002), and the MRDT is 113 d rather than the pooled 151 d. See Part 1 of the [report](notes/Report_MRDT_Parts1-3_2026-10-26.md), Fig. 5.
+
 ### Planned secondary analyses
 
 Two tests of whether genotype changes MRDT were fixed in an analysis plan before any fit was made ([notes/PREREGISTRATION_secondary.md](notes/PREREGISTRATION_secondary.md), 24 October 2026). Claude wrote the plan; its opening and Amendments say what was and was not agreed:
@@ -48,11 +50,12 @@ All scripts run from the repository root:
 ```
 Rscript Gompertz/test_gompertz.R          # checks the fitting code on simulated data (about 10 s)
 Rscript Gompertz/MRDT_Diet.R              # fits, tests and bootstrap; writes tables to output/ (about 30 s)
+Rscript Gompertz/Diet_by_strain.R         # exploratory: the diet effect within and across strains (about 5 s)
 Rscript Gompertz/Figures_MRDT_Diet.R      # writes SVG figures to output/
 python3 tools/svg2png.py output/*.svg     # PNG previews
 Rscript Genotypes/Chr1_haplotypes.R data/genotypes/BXD_genotypes_Chr1_0to35Mb.txt output/Chr1_haplotypes.txt
 Rscript Gompertz/MRDT_Secondary.R         # the pre-registered secondary tests (about 10 s)
-Rscript Gompertz/Figures_MRDT_Secondary.R # Figs 5 and 6
+Rscript Gompertz/Figures_MRDT_Secondary.R # Figs 6 and 7
 Rscript Models/effective_factors.R         # exploratory model of F1 heterosis (about 40 s)
 Rscript Models/fig_effective_factors.R
 ```
@@ -67,7 +70,7 @@ D="data/local/Arends_Supplementary_Tables_10Apr2026"
 Rscript UMHET3/vcf_set_check.R "$D/S_Table_5_VCF_coded_genotypes_metadata_18Aug2025.xlsx" "$D/S_Table_4_Primers_MonsterPlex_Mouse_20Aug2025.xlsx" "$X"   # raw calls, by genotyping set
 Rscript UMHET3/vita_sex_stratified.R data/umhet3/Table2/Vita1a_deathsIn15Dwindows_female.txt data/umhet3/Table2/Vita1a_deathsIn15Dwindows_male.txt paternalD
 Rscript UMHET3/vita1_site_check.R "$X"     # individual mice, by sex, site and cohort
-Rscript UMHET3/Figures_Part3.R             # Figs 8-10
+Rscript UMHET3/Figures_Part3.R             # Figs 9-11
 .venv/bin/python tools/build_report.py notes/Report_MRDT_Parts1-3_2026-10-26.md reports   # PDF, Word, figures and ZIP
 ```
 
@@ -82,7 +85,7 @@ Rscript UMHET3/Figures_Part3.R             # Figs 8-10
   - the clean copy of Supplementary Table 2;
   - the check of genotype calls on proximal Chr 1;
   - fits of mortality level and MRDT by Vita1a and Vita1b genotype, by sex, and by site and cohort;
-  - Figs 8–10.
+  - Figs 9–11.
 - [data/umhet3/](./data/umhet3/) holds the clean copy of Arends et al. Supplementary Table 2, with a README on its columns and on the genotype problem.
 - [tools/](./tools/) holds `svg2png.py`, `build_report.py` (Markdown note to HTML, Word, PDF and ZIP), `html2pdf.swift` and `pdftext.swift` (PDFs with macOS's own WebKit and PDFKit).
 - [data/genotypes/](./data/genotypes/) holds the proximal Chr 1 slice of the sequence-based BXD genotypes, with its provenance.

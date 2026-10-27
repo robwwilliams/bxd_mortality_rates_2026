@@ -25,13 +25,16 @@ We plan to submit to a Nature-series journal. Figures and legends follow Arends 
 
 ## Legends
 
+- **Spelling:** British (Oxford), as in *Nature*: colour, grey, analysed, labelled, modelled, towards, but -ize endings (randomized). The main text of our notes stays American unless Rob says otherwise.
 - **Opening:** a bold title stating the finding: "**Fig. 1 | A high-fat diet raises mortality at every age without changing the mortality rate doubling time.**" Extended Data figures use "Extended Data Fig. 1 |".
-- **Panels:** one description per panel, in the form "a, ...", "b, ...".
+- **Panels:** one description per panel, with bold panel letters: "**a**, ...", "**b**, ..."; "**a**,**b**, ..." for a pair.
+- **Italic:** statistical symbols (*n*, *P*, *r*, *t*, *χ*², *I*²), axis letters (*x* axis), and gene symbols.
 - **Every mark defined:** for example, "Lines indicate mean and shaded bands represent s.e.m.", "Points indicate estimates and bars indicate 95% CI".
 - **Statistics:**
   - n per group, with thousands separators (n = 1,044);
   - the test, named;
   - exact P values with a capital P (P = 0.035);
   - whether P values are corrected for multiple tests.
-- **Wording:** "days" spelled out; "s.e.m."; "95% CI". Keep each legend to about 250 words.
+- **Wording:** "days" spelled out; "s.e.m."; "95% CI"; "d.f.".
+- **Length:** Rob prefers longer legends that carry the statistics (26 October 2026): the test, *n*, d.f., exact *P*, whether *P* is corrected, and which analyses are exploratory. Reviewers look for these details in the legends.
 - **The current legends,** written in this style, are in `output/Figure_legends.md`.

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='504.00pt' height='360.00pt' viewBox='0 0 504.00 360.00'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='504.00pt' height='360.00pt' viewBox='0 0 504.00 360.00'>
+<g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
     .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
@@ -11,6 +12,10 @@
     }
     .svglite text {
       white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
     }
   ]]></style>
 </defs>
@@ -72,15 +77,15 @@
 <line x1='66.24' y1='93.10' x2='61.92' y2='93.10' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='66.24' y1='60.44' x2='61.92' y2='60.44' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='66.24' y1='27.79' x2='61.92' y2='27.79' style='stroke-width: 0.75; stroke: #52514E;' />
-<text x='57.60' y='292.72' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>0.125</text>
-<text x='57.60' y='260.07' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>0.25</text>
-<text x='57.60' y='227.42' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>0.50</text>
-<text x='57.60' y='194.77' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>1</text>
-<text x='57.60' y='162.12' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>2</text>
-<text x='57.60' y='129.46' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>4</text>
-<text x='57.60' y='96.81' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>8</text>
-<text x='57.60' y='64.16' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>16</text>
-<text x='57.60' y='31.51' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>32</text>
+<text x='57.60' y='292.87' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>0.125</text>
+<text x='57.60' y='260.22' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>0.25</text>
+<text x='57.60' y='227.57' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>0.50</text>
+<text x='57.60' y='194.92' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>1</text>
+<text x='57.60' y='162.27' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>2</text>
+<text x='57.60' y='129.61' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>4</text>
+<text x='57.60' y='96.96' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>8</text>
+<text x='57.60' y='64.31' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>16</text>
+<text x='57.60' y='31.66' text-anchor='end' style='font-size: 10.80px;fill: #52514E; font-family: "Arial";'>32</text>
 <polyline points='66.24,17.28 66.24,299.52 486.72,299.52 ' style='stroke-width: 0.75; stroke: #52514E;' />
 </g>
 <g clip-path='url(#cpNjYuMjR8NDg2LjcyfDE3LjI4fDI5OS41Mg==)'>
@@ -153,9 +158,10 @@
 <line x1='73.20' y1='44.58' x2='91.56' y2='44.58' style='stroke-width: 1.50; stroke: #2A78D6;' />
 <circle cx='82.38' cy='32.34' r='2.70' style='stroke-width: 1.50; stroke: #A86A28; fill: #A86A28;' />
 <circle cx='82.38' cy='44.58' r='2.70' style='stroke-width: 1.50; stroke: #2A78D6; fill: #2A78D6;' />
-<text x='100.74' y='35.85' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Chow (CD), n = 1044: MRDT 153 d (95% CI 144-163)</text>
-<text x='100.74' y='48.09' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>High fat (HF), n = 890: MRDT 149 d (95% CI 140-159)</text>
+<text x='100.74' y='35.99' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Chow (CD), n = 1044: MRDT 153 d (95% CI 144-163)</text>
+<text x='100.74' y='48.23' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>High fat (HF), n = 890: MRDT 149 d (95% CI 140-159)</text>
 <text x='481.46' y='278.21' text-anchor='end' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>Same slope: P = 0.55. Shared MRDT 151 days.</text>
 <text x='481.46' y='289.01' text-anchor='end' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>HF raises mortality 1.42-fold (0.50 doublings) at every age.</text>
+</g>
 </g>
 </svg>

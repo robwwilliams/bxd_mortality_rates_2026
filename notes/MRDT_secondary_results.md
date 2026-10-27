@@ -3,7 +3,7 @@
 Results of the two tests in the analysis plan `notes/PREREGISTRATION_secondary.md` (commit 59c990f, 24 October 2026, 00:08 UTC), and of the secondary analyses specified there. Claude wrote the plan and fixed it before any fit. "Registered" below means only that, as the plan's opening explains. The H2 direction (a longer F1 MRDT) was Claude's reading of Rob Williams's question. Rob's own prediction was about level: F1 mortality lower at every age (see the plan's Amendments).
 - **Code:** `Gompertz/MRDT_Secondary.R` and `Gompertz/Figures_MRDT_Secondary.R`.
 - **Tables:** `output/MRDT_secondary_*.txt`.
-- **Figures:** Figs 5 and 6.
+- **Figures:** Figs 6 and 7.
 
 Everything below the registered tests is reported as an estimate with its 95% interval, as the registration requires. The analyses in the section marked exploratory were added after the registered results were seen.
 
@@ -19,13 +19,13 @@ Everything below the registered tests is reported as an estimate with its 95% in
   - **Chr 1 acts on the level of mortality, not on its slope.** At 600 d on high fat, B strains die at twice the rate of D strains: 5.8 against 2.8 deaths per 1,000 mouse-days. On chow the ratio is 1.25 (3.1 against 2.5).
   - **The D haplotype nearly cancels the high-fat penalty.** High fat raises mortality at 600 d 1.86-fold in B strains but only 1.15-fold in D strains. This matches the diet-dependent Vita1a/b effect on lifespan, and it acts through the level. (This comes from the fitted levels and is descriptive, not a registered test.)
 - **H2: F1s do not have a longer MRDT. Their MRDT is shorter.**
-  - F1 mortality starts much lower and rises faster (Fig. 6c, d). At 600 d, F1 mortality is less than half the parents' on chow (1.1 against 2.3 per 1,000 mouse-days). The two curves meet near 940 d on chow and near 760 d on high fat.
+  - F1 mortality starts much lower and rises faster (Fig. 7c, d). At 600 d, F1 mortality is less than half the parents' on chow (1.1 against 2.3 per 1,000 mouse-days). The two curves meet near 940 d on chow and near 760 d on high fat.
   - The one-tailed test cannot reject in the opposite direction, so under the registration this steepening is an estimate, not a finding.
   - It is robust within the registered design. Dropping any one of the 21 genotypes leaves the log2 ratio between −0.74 and −0.43. It holds from 0 d (107 against 163 d) and from 365 d (110 against 177 d).
 
 ## Where the F1 result comes from
 
-**The steepening is all in the short-by-short crosses** (secondary analysis S1, Fig. 5):
+**The steepening is all in the short-by-short crosses** (secondary analysis S1, Fig. 6):
 
 | Comparison | Parents | F1 | Ratio (95% CI) |
 |---|---|---|---|
@@ -67,7 +67,7 @@ The registered model gives each class and diet one level, so it pools genotypes 
 | S5: D / B strains, high fat + NAM (51 and 24 mice) | 123 d | 80 d | 0.65 (0.25–1.67) |
 
 - **S4: on high fat, B strains have a steeper rise** (120 against 154 d), and on chow the slopes are equal. The haplotype × diet difference in log2 ratio is 0.39 (−0.27 to 1.04). This is the same direction as the Vita1a/b lifespan effect, which is strongest on high fat, but the interval is wide.
-- **S6:** the H1 and H2 estimates from 0 d and from 365 d agree with those from 200 d (Fig. 5).
+- **S6:** the H1 and H2 estimates from 0 d and from 365 d agree with those from 200 d (Fig. 6).
 
 ## Sensitivity: gamma-Gompertz
 

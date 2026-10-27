@@ -1,0 +1,28 @@
+Genotypes: 124 ; on both diets: 98 ; with at least 5 mice on each diet: 76 
+
+Gompertz, a level for each strain: MRDT 113 d (95% CI 108-117); HF / CD 1.76 (1.60-1.95)
+
+76 strains with >= 5 mice per diet (1725 mice)
+  Stratified Cox in these strains: HF / CD 1.83 (1.65-2.04)
+  Diet x strain, likelihood-ratio test: chi-square 127.0 on 75 df, P = 0.00017
+Warning message:
+In agreg.fit(X, Y, istrat, offset, init, control, weights = weights,  :
+  Loglik converged before variable  37 ; beta may be infinite. 
+  The same test within strain x vivarium: chi-square 111.4 on 75 df, P = 0.0041
+  Cochran's Q 115.5 on 75 df, P = 0.0018; I2 = 35%; tau (s.d. of the log HR between strains) = 0.36
+  Random-effects mean HF / CD 1.86 (1.62-2.14)
+
+Largest strains (detectable fold departure from the common ratio, in either direction):
+   strain n.CD n.HF    HR HR.lo HR.hi HR.shrunk p.vs.common detectable.fold
+ C57BL/6J   31   30 2.228 1.311  3.79      2.09     0.41375            1.70
+     BXD9   23   22 1.401 0.761  2.58      1.58     0.43572            1.84
+   BXD73b   19   22 1.400 0.729  2.69      1.60     0.46394            1.92
+   DBA/2J   57   17 1.000 0.574  1.74      1.27     0.04052            1.74
+   BXD100   21   16 1.847 0.920  3.71      1.85     0.92503            2.01
+    BXD29   16   16 2.255 1.026  4.96      2.02     0.56159            2.20
+    BXD32   16   19 3.551 1.504  8.38      2.41     0.11674            2.36
+    BXD79   17   15 0.545 0.257  1.15      1.05     0.00194            2.12
+
+Strains whose ratio differs from the common one at P < 0.05: 8 of 76 (3.8 expected by chance)
+C57BL/6J against DBA/2J: HF / CD 2.23 against 1.00; P = 0.04 for a difference
+B6D2F1 (B6 mother) against D2B6F1 (D2 mother): HF / CD 2.48 against 0.55; P = 0.02 for a difference

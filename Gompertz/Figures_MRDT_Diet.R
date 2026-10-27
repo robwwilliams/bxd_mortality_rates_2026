@@ -11,7 +11,9 @@
 #  Fig2_Survival_from200d.svg   (a) Kaplan-Meier survival from 200 d with the Gompertz fits; (b) survivorship
 #                                differences by T-age (Arends et al. 2026 Fig. 1b style)
 #  Fig3_MRDT_estimates.svg      MRDT and 95% intervals by diet across the analyses
-#  Fig4_Bootstrap_R0_MRDT.svg   bootstrap estimates of log2(R0) and MRDT: the Strehler-Mildvan ridge
+#  Fig4_Bootstrap_level_MRDT.svg  bootstrap distributions of MRDT (a) and of mortality at 600 days (b), by diet
+#  Fig5_Diet_by_strain.svg        the diet hazard ratio strain by strain (a), and pooled against within-strain estimates (b).
+#                                 Run Gompertz/Diet_by_strain.R first.
 #
 # Log scales are base 2 throughout: on Fig 1, one gridline is one doubling of mortality.
 #
@@ -167,25 +169,90 @@ legend("bottomright", legend = lab.diet, pch = 21, pt.bg = col.diet, col = "whit
        bty = "n", text.col = ink, cex = 0.85)
 dev.off()
 
-### Figure 4: bootstrap estimates of log2(R0) and MRDT
-openSVG("output/Fig4_Bootstrap_R0_MRDT.svg", width = 6, height = 5)
-par(mar = c(4.2, 4.6, 1.2, 1.2))
-k <- log2(1000)                                                    # x axis: R0 per 1,000 mouse-days, log2 scale
-plot(range(c(boot[, "log2R0.CD"], boot[, "log2R0.HF"])) + k, c(120, 190), type = "n", axes = FALSE,
-     xlab = "R0, deaths per 1,000 mouse-days at age 0 (log2 scale)", ylab = "Mortality rate doubling time (days)")
-abline(h = seq(120, 190, 10), col = grid.col, lwd = 0.75)
-r0.ticks <- c(0.125, 0.15, 0.175, 0.2, 0.25, 0.3)
-axis(1, at = log2(r0.ticks), labels = r0.ticks, col = NA, col.ticks = ink2); axis(2, at = seq(120, 190, 10), col = NA, col.ticks = ink2)
+### Figure 4: bootstrap distributions of MRDT (a) and of mortality at 600 days (b)
+for (d in c("CD", "HF")) boot[, paste0("h600.", d)] <- 1000 * 2^boot[, paste0("log2R0.", d)] * 2^(600 / boot[, paste0("MRDT.", d)])
+q <- function(x) quantile(x, c(0.025, 0.975))
+openSVG("output/Fig4_Bootstrap_level_MRDT.svg", width = 7.5, height = 3.8)
+par(mfrow = c(1, 2), mar = c(5, 2.6, 2.2, 1.2))
+panel <- function(v, xlim, xlab, at, labels, logx, note) {
+  dens <- lapply(c("CD", "HF"), function(d) density(if (logx) log2(boot[, paste0(v, d)]) else boot[, paste0(v, d)], n = 512))
+  ymax <- 1.25 * max(sapply(dens, function(x) max(x$y)))
+  plot(xlim, c(0, ymax), type = "n", axes = FALSE, xlab = "", ylab = "", yaxs = "i", xaxs = "i")
+  title(xlab = xlab, line = 3.6); title(ylab = "Density", line = 1)
+  abline(v = at, col = grid.col, lwd = 0.75)
+  axis(1, at = at, labels = labels, col = NA, col.ticks = ink2)
+  box(bty = "l", col = ink2)
+  for (j in 1:2) {
+    d <- c("CD", "HF")[j]
+    polygon(c(dens[[j]]$x, rev(dens[[j]]$x)), c(dens[[j]]$y, rep(0, 512)), col = paste0(col.diet[d], "59"), border = NA)
+    lines(dens[[j]]$x, dens[[j]]$y, col = col.diet[d], lwd = 1.5)
+    ci <- q(if (logx) log2(boot[, paste0(v, d)]) else boot[, paste0(v, d)])
+    yy <- ymax * (0.93 - 0.06 * j)
+    segments(ci[1], yy, ci[2], yy, col = col.diet[d], lwd = 2)
+    est <- if (v == "MRDT.") primary[d, "MRDT"] else 1000 * primary[d, "a"] * exp(primary[d, "b"] * 600)
+    points(if (logx) log2(est) else est, yy, pch = 21, bg = col.diet[d], col = "white", cex = 1.3, lwd = 1)
+  }
+  mtext(note, side = 3, line = 0.3, adj = 0, cex = 0.75, col = ink2)
+}
+dm <- boot[, "MRDT.HF"] - boot[, "MRDT.CD"]; rh <- boot[, "h600.HF"] / boot[, "h600.CD"]
+panel("MRDT.", c(120, 190), "Mortality rate doubling time (days)", seq(120, 190, 10), seq(120, 190, 10), FALSE,
+      sprintf("HF minus CD: %.0f days (95%% CI %.0f to %.0f)", median(dm), q(dm)[1], q(dm)[2]))
+legend("right", legend = lab.diet, fill = paste0(col.diet, "59"), border = col.diet, bty = "n", text.col = ink, cex = 0.8)
+mtext("a", side = 3, line = 0.9, adj = -0.1, font = 2, cex = 1.2, col = ink)
+lv <- c(2, 2.5, 3, 3.5, 4, 4.5)
+panel("h600.", log2(c(2.1, 4.6)), "Deaths per 1,000 mouse-days at 600 days\n(log2 scale)", log2(lv), lv, TRUE,
+      sprintf("HF / CD: %.2f-fold (95%% CI %.2f to %.2f)", median(rh), q(rh)[1], q(rh)[2]))
+mtext("b", side = 3, line = 0.9, adj = -0.1, font = 2, cex = 1.2, col = ink)
+dev.off()
+
+### Figure 5: the diet hazard ratio strain by strain (a), and pooled against within-strain estimates (b)
+per <- read.table("output/Diet_by_strain.txt", sep = "\t", header = TRUE)
+summ <- read.table("output/Diet_by_strain_summary.txt", sep = "\t", header = TRUE, quote = "")
+col.par <- "#e87ba4"; col.f1 <- "#008300"; col.bxd <- "#8a8a8a"
+type.col <- ifelse(per[, "strain"] %in% c("C57BL/6J", "DBA/2J"), col.par, ifelse(grepl("F1$", per[, "strain"]), col.f1, col.bxd))
+mu <- sum(per[, "logHR"] / per[, "se"]^2) / sum(1 / per[, "se"]^2)        # common (fixed-effect) log hazard ratio
+openSVG("output/Fig5_Diet_by_strain.svg", width = 7.5, height = 4)
+layout(matrix(1:2, nrow = 1), widths = c(1.2, 1))
+par(mar = c(4.2, 4.6, 1.6, 0.8))
+n <- per[, "n.CD"] + per[, "n.HF"]
+yt <- 2^(-2:4)
+plot(c(8, 110), c(0.25, 16), type = "n", log = "xy", axes = FALSE, xaxs = "i", yaxs = "i",
+     xlab = "Mice in the strain, both diets (log2 scale)", ylab = "Hazard ratio, HF / CD (log2 scale)")
+abline(h = yt, v = c(10, 20, 40, 80), col = grid.col, lwd = 0.75)
+axis(1, at = c(10, 20, 40, 80), col = NA, col.ticks = ink2); axis(2, at = yt, labels = c("0.25", "0.5", 1, 2, 4, 8, 16), col = NA, col.ticks = ink2)
 box(bty = "l", col = ink2)
-for (d in c("CD", "HF")) {
-  points(boot[, paste0("log2R0.", d)] + k, boot[, paste0("MRDT.", d)], pch = 16, cex = 0.35, col = paste0(col.diet[d], "40"))
+abline(h = 1, col = ink2, lwd = 0.75)
+nn <- seq(8, 110, 0.5)
+lines(nn, exp(mu + 1.96 * 2 / sqrt(nn)), lty = 2, col = ink2); lines(nn, exp(mu - 1.96 * 2 / sqrt(nn)), lty = 2, col = ink2)
+segments(8, exp(mu), 110, exp(mu), col = ink, lwd = 1.2)
+o <- order(type.col == col.bxd, decreasing = TRUE)                  # BXD strains first, so parents and F1s sit on top
+points(n[o], per[o, "HR"], pch = 21, bg = paste0(type.col[o], "B3"), col = "white", lwd = 0.6, cex = 1.1)
+lab <- per[, "strain"] %in% c("C57BL/6J", "DBA/2J", "B6D2F1", "D2B6F1")
+text(n[lab], per[lab, "HR"], per[lab, "strain"], pos = c(4, 1, 3, 1)[match(per[lab, "strain"], c("C57BL/6J", "DBA/2J", "B6D2F1", "D2B6F1"))],
+     offset = 0.45, cex = 0.7, col = ink)
+text(108, exp(mu) / 1.06, sprintf("common ratio %.2f", exp(mu)), adj = c(1, 1), cex = 0.68, col = ink)
+text(108, exp(mu + 1.96 * 2 / sqrt(108)) * 1.3, "95% range if all\nstrains shared it", adj = c(1, 0), cex = 0.68, col = ink2)
+legend("topright", legend = c("BXD strains", "Parental strains", "B6D2 F1s"), pch = 21, pt.bg = paste0(c(col.bxd, col.par, col.f1), "B3"),
+       col = "white", pt.cex = 1.1, bty = "n", text.col = ink, cex = 0.68)
+mtext("a", side = 3, line = 0.4, adj = -0.2, font = 2, cex = 1.2, col = ink)
+
+par(mar = c(4.2, 9.2, 1.6, 3.2))
+rows <- c("Cox, pooled", "Gompertz, pooled", "Cox, stratified by strain", "Gompertz, level for each strain", "Random-effects mean of per-strain Cox")
+rlab <- c("Cox", "Gompertz", "Cox, stratified", "Gompertz, level\nper strain", "Mean of 76 strains,\nrandom effects")
+y <- c(5.2, 4.4, 2.8, 2.0, 1.0)
+plot(log2(c(1, 2.5)), c(0.4, 6), type = "n", axes = FALSE, xlab = "Hazard ratio, HF / CD", ylab = "", yaxs = "i")
+xt <- c(1, 1.25, 1.5, 2, 2.5)
+abline(v = log2(xt), col = grid.col, lwd = 0.75)
+axis(1, at = log2(xt), labels = xt, col = NA, col.ticks = ink2)
+axis(2, at = y, labels = rlab, tick = FALSE, cex.axis = 0.75, col.axis = ink, line = -0.4)
+box(bty = "l", col = ink2)
+for (i in seq_along(rows)) {
+  r <- summ[summ[, "estimate"] == rows[i], ]
+  segments(log2(r[, "HR.lo"]), y[i], log2(r[, "HR.hi"]), y[i], col = ink, lwd = 2)
+  points(log2(r[, "HR"]), y[i], pch = 21, bg = if (i <= 2) "white" else ink, col = ink, cex = 1.2, lwd = 1.2)
+  if (!is.na(r[, "MRDT"])) mtext(sprintf("%.0f d", r[, "MRDT"]), side = 4, at = y[i], las = 1, line = 0.4, cex = 0.7, col = ink2)
 }
-for (d in c("CD", "HF")) {
-  points(primary[d, "log2R0"] + k, primary[d, "MRDT"], pch = 21, bg = col.diet[d], col = "white", cex = 1.6, lwd = 1.2)
-}
-legend("topright", legend = paste0(lab.diet, ": ", nrow(boot), " bootstrap fits"), pch = 21, pt.bg = col.diet, col = "white",
-       pt.cex = 1.3, bty = "n", text.col = ink, cex = 0.85)
-mtext(sprintf("Estimates of R0 and MRDT correlate at r = %.2f (CD) and %.2f (HF)",
-              cor(boot[, "log2R0.CD"], log2(boot[, "MRDT.CD"])), cor(boot[, "log2R0.HF"], log2(boot[, "MRDT.HF"]))),
-      side = 3, line = -4.4, adj = 0.03, cex = 0.75, col = ink2)
+mtext("MRDT", side = 4, at = 5.85, las = 1, line = 0.4, cex = 0.7, col = ink2)
+mtext(c("Pooled over 124 genotypes", "Within strains"), side = 2, at = c(5.85, 3.5), las = 1, line = 0.2, cex = 0.72, font = 2, col = ink)
+mtext("b", side = 3, line = 0.4, adj = -0.75, font = 2, cex = 1.2, col = ink)
 dev.off()

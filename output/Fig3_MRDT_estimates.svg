@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='540.00pt' height='331.20pt' viewBox='0 0 540.00 331.20'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='540.00pt' height='331.20pt' viewBox='0 0 540.00 331.20'>
+<g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
     .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
@@ -11,6 +12,10 @@
     }
     .svglite text {
       white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
     }
   ]]></style>
 </defs>
@@ -47,13 +52,13 @@
 <text x='334.80' y='290.88' text-anchor='middle' style='font-size: 12.00px;fill: #52514E; font-family: "Arial";'>160</text>
 <text x='399.80' y='290.88' text-anchor='middle' style='font-size: 12.00px;fill: #52514E; font-family: "Arial";'>180</text>
 <text x='464.80' y='290.88' text-anchor='middle' style='font-size: 12.00px;fill: #52514E; font-family: "Arial";'>200</text>
-<text x='185.76' y='245.94' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Binned regression, from 200 d</text>
-<text x='185.76' y='214.09' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Gompertz-Makeham</text>
-<text x='185.76' y='182.24' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>BXD strains only</text>
-<text x='185.76' y='150.39' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Survived to 365 d</text>
-<text x='185.76' y='118.53' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Survived to 200 d</text>
-<text x='185.76' y='86.68' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Primary (bootstrap interval)</text>
-<text x='185.76' y='54.83' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Primary (Wald interval)</text>
+<text x='185.76' y='246.08' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Binned regression, from 200 d</text>
+<text x='185.76' y='214.23' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Gompertz-Makeham</text>
+<text x='185.76' y='182.38' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>BXD strains only</text>
+<text x='185.76' y='150.53' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Survived to 365 d</text>
+<text x='185.76' y='118.67' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Survived to 200 d</text>
+<text x='185.76' y='86.82' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Primary (bootstrap interval)</text>
+<text x='185.76' y='54.97' text-anchor='end' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Primary (Wald interval)</text>
 <polyline points='194.40,23.04 194.40,270.72 475.20,270.72 ' style='stroke-width: 0.75; stroke: #52514E;' />
 </g>
 <g clip-path='url(#cpMTk0LjQwfDQ3NS4yMHwyMy4wNHwyNzAuNzI=)'>
@@ -63,7 +68,7 @@
 <circle cx='299.18' cy='56.10' r='3.51' style='stroke-width: 0.75; stroke: #FFFFFF; fill: #2A78D6;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHwzMzEuMjA=)'>
-<text x='482.40' y='54.42' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>P = 0.55</text>
+<text x='482.40' y='54.55' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>P = 0.55</text>
 </g>
 <g clip-path='url(#cpMTk0LjQwfDQ3NS4yMHwyMy4wNHwyNzAuNzI=)'>
 <line x1='278.27' y1='78.40' x2='346.59' y2='78.40' style='stroke-width: 1.50; stroke: #A86A28;' />
@@ -76,7 +81,7 @@
 <circle cx='309.26' cy='119.81' r='3.51' style='stroke-width: 0.75; stroke: #FFFFFF; fill: #2A78D6;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHwzMzEuMjA=)'>
-<text x='482.40' y='118.12' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>P = 0.99</text>
+<text x='482.40' y='118.25' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>P = 0.99</text>
 </g>
 <g clip-path='url(#cpMTk0LjQwfDQ3NS4yMHwyMy4wNHwyNzAuNzI=)'>
 <line x1='277.59' y1='142.10' x2='359.38' y2='142.10' style='stroke-width: 1.50; stroke: #A86A28;' />
@@ -85,7 +90,7 @@
 <circle cx='391.10' cy='151.66' r='3.51' style='stroke-width: 0.75; stroke: #FFFFFF; fill: #2A78D6;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHwzMzEuMjA=)'>
-<text x='482.40' y='149.98' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>P = 0.035</text>
+<text x='482.40' y='150.10' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>P = 0.035</text>
 </g>
 <g clip-path='url(#cpMTk0LjQwfDQ3NS4yMHwyMy4wNHwyNzAuNzI=)'>
 <line x1='289.94' y1='173.95' x2='358.32' y2='173.95' style='stroke-width: 1.50; stroke: #A86A28;' />
@@ -94,7 +99,7 @@
 <circle cx='298.68' cy='183.51' r='3.51' style='stroke-width: 0.75; stroke: #FFFFFF; fill: #2A78D6;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHwzMzEuMjA=)'>
-<text x='482.40' y='181.83' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>P = 0.31</text>
+<text x='482.40' y='181.95' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>P = 0.31</text>
 </g>
 <g clip-path='url(#cpMTk0LjQwfDQ3NS4yMHwyMy4wNHwyNzAuNzI=)'>
 <line x1='282.23' y1='205.81' x2='344.54' y2='205.81' style='stroke-width: 1.50; stroke: #A86A28;' />
@@ -107,12 +112,13 @@
 <circle cx='283.67' cy='247.21' r='3.51' style='stroke-width: 0.75; stroke: #FFFFFF; fill: #2A78D6;' />
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHwzMzEuMjA=)'>
-<text x='482.40' y='30.53' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>Same slope?</text>
+<text x='482.40' y='30.66' style='font-size: 9.00px;fill: #52514E; font-family: "Arial";'>Same slope?</text>
 </g>
 <g clip-path='url(#cpMTk0LjQwfDQ3NS4yMHwyMy4wNHwyNzAuNzI=)'>
-<circle cx='393.95' cy='246.24' r='3.51' style='stroke-width: 1.50; stroke: #FFFFFF; fill: #A86A28;' />
-<circle cx='393.95' cy='258.48' r='3.51' style='stroke-width: 1.50; stroke: #FFFFFF; fill: #2A78D6;' />
-<text x='412.31' y='249.75' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Chow (CD)</text>
-<text x='412.31' y='261.99' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>High fat (HF)</text>
+<circle cx='393.94' cy='246.24' r='3.51' style='stroke-width: 1.50; stroke: #FFFFFF; fill: #A86A28;' />
+<circle cx='393.94' cy='258.48' r='3.51' style='stroke-width: 1.50; stroke: #FFFFFF; fill: #2A78D6;' />
+<text x='412.30' y='249.89' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>Chow (CD)</text>
+<text x='412.30' y='262.13' style='font-size: 10.20px;fill: #0B0B0B; font-family: "Arial";'>High fat (HF)</text>
+</g>
 </g>
 </svg>

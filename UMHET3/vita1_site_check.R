@@ -65,7 +65,7 @@ comb <- aggregate(chisq.slope ~ test, out, sum); comb$p.2df <- signif(pchisq(com
 print(out, row.names = FALSE); cat("\nSlope change in either sex (2 df):\n"); print(comb, row.names = FALSE)
 write.table(out, "output/UMHET3_Vita1_site_check.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 
-# Deaths and mouse-days by age window, Vita1a paternal haplotype, for the figures (Fig. 9)
+# Deaths and mouse-days by age window, Vita1a paternal haplotype, for the figures (Fig. 10)
 br <- c(200, 500, 680, 800, 920, 1100)
 binned <- c()
 for (st in list("JL", c("UM", "UT"))) for (sx in c("F", "M")) for (k in c("H", "D")) {

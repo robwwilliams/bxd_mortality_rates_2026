@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='540.00pt' height='475.20pt' viewBox='0 0 540.00 475.20'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='540.00pt' height='475.20pt' viewBox='0 0 540.00 475.20'>
+<g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
     .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
@@ -11,6 +12,10 @@
     }
     .svglite text {
       white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
     }
   ]]></style>
 </defs>
@@ -78,16 +83,16 @@
 <line x1='52.59' y1='60.21' x2='49.00' y2='60.21' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='52.59' y1='42.52' x2='49.00' y2='42.52' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='52.59' y1='24.82' x2='49.00' y2='24.82' style='stroke-width: 0.75; stroke: #52514E;' />
-<text x='45.42' y='186.83' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.125</text>
-<text x='45.42' y='169.13' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.25</text>
-<text x='45.42' y='151.44' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.50</text>
-<text x='45.42' y='133.74' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>1</text>
-<text x='45.42' y='116.04' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>2</text>
-<text x='45.42' y='98.35' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>4</text>
-<text x='45.42' y='80.65' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>8</text>
-<text x='45.42' y='62.95' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>16</text>
-<text x='45.42' y='45.25' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>32</text>
-<text x='45.42' y='27.56' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>64</text>
+<text x='45.42' y='186.94' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.125</text>
+<text x='45.42' y='169.25' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.25</text>
+<text x='45.42' y='151.55' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.50</text>
+<text x='45.42' y='133.85' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>1</text>
+<text x='45.42' y='116.15' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>2</text>
+<text x='45.42' y='98.46' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>4</text>
+<text x='45.42' y='80.76' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>8</text>
+<text x='45.42' y='63.06' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>16</text>
+<text x='45.42' y='45.37' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>32</text>
+<text x='45.42' y='27.67' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>64</text>
 <polyline points='52.59,19.12 52.59,189.79 260.44,189.79 ' style='stroke-width: 0.75; stroke: #52514E;' />
 </g>
 <g clip-path='url(#cpNTIuNTl8MjYwLjQ0fDE5LjEyfDE4OS43OQ==)'>
@@ -124,12 +129,12 @@
 <line x1='56.68' y1='38.76' x2='70.13' y2='38.76' style='stroke-width: 1.50; stroke: #ED8F22;' />
 <circle cx='63.41' cy='29.79' r='2.24' style='stroke-width: 1.50; stroke: #7D4598; fill: #7D4598;' />
 <circle cx='63.41' cy='38.76' r='2.24' style='stroke-width: 1.50; stroke: #ED8F22; fill: #ED8F22;' />
-<text x='76.85' y='32.36' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>B strains, n = 260: MRDT 141 d</text>
-<text x='76.85' y='41.32' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>D strains, n = 249: MRDT 154 d</text>
+<text x='76.85' y='32.47' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>B strains, n = 260: MRDT 141 d</text>
+<text x='76.85' y='41.43' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>D strains, n = 249: MRDT 154 d</text>
 <text x='257.32' y='184.09' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>chow</text>
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHw0NzUuMjA=)'>
-<text x='16.50' y='14.34' style='font-size: 13.20px; font-weight: bold;fill: #0B0B0B; font-family: "Arial";'>a</text>
+<text x='16.49' y='14.34' style='font-size: 13.20px; font-weight: bold;fill: #0B0B0B; font-family: "Arial";'>a</text>
 </g>
 <defs>
   <clipPath id='cpMzIyLjU5fDUzMC40NHwxOS4xMnwxODkuNzk='>
@@ -189,16 +194,16 @@
 <line x1='322.59' y1='60.21' x2='319.00' y2='60.21' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='322.59' y1='42.52' x2='319.00' y2='42.52' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='322.59' y1='24.82' x2='319.00' y2='24.82' style='stroke-width: 0.75; stroke: #52514E;' />
-<text x='315.42' y='186.83' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.125</text>
-<text x='315.42' y='169.13' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.25</text>
-<text x='315.42' y='151.44' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.50</text>
-<text x='315.42' y='133.74' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>1</text>
-<text x='315.42' y='116.04' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>2</text>
-<text x='315.42' y='98.35' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>4</text>
-<text x='315.42' y='80.65' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>8</text>
-<text x='315.42' y='62.95' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>16</text>
-<text x='315.42' y='45.25' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>32</text>
-<text x='315.42' y='27.56' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>64</text>
+<text x='315.42' y='186.94' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.125</text>
+<text x='315.42' y='169.25' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.25</text>
+<text x='315.42' y='151.55' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.50</text>
+<text x='315.42' y='133.85' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>1</text>
+<text x='315.42' y='116.15' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>2</text>
+<text x='315.42' y='98.46' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>4</text>
+<text x='315.42' y='80.76' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>8</text>
+<text x='315.42' y='63.06' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>16</text>
+<text x='315.42' y='45.37' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>32</text>
+<text x='315.42' y='27.67' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>64</text>
 <polyline points='322.59,19.12 322.59,189.79 530.44,189.79 ' style='stroke-width: 0.75; stroke: #52514E;' />
 </g>
 <g clip-path='url(#cpMzIyLjU5fDUzMC40NHwxOS4xMnwxODkuNzk=)'>
@@ -231,8 +236,8 @@
 <line x1='326.68' y1='38.76' x2='340.13' y2='38.76' style='stroke-width: 1.50; stroke: #ED8F22;' />
 <circle cx='333.41' cy='29.79' r='2.24' style='stroke-width: 1.50; stroke: #7D4598; fill: #7D4598;' />
 <circle cx='333.41' cy='38.76' r='2.24' style='stroke-width: 1.50; stroke: #ED8F22; fill: #ED8F22;' />
-<text x='346.85' y='32.36' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>B strains, n = 223: MRDT 141 d</text>
-<text x='346.85' y='41.32' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>D strains, n = 210: MRDT 154 d</text>
+<text x='346.85' y='32.47' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>B strains, n = 223: MRDT 141 d</text>
+<text x='346.85' y='41.43' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>D strains, n = 210: MRDT 154 d</text>
 <text x='527.32' y='184.09' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>high fat</text>
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHw0NzUuMjA=)'>
@@ -296,16 +301,16 @@
 <line x1='52.59' y1='297.81' x2='49.00' y2='297.81' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='52.59' y1='280.12' x2='49.00' y2='280.12' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='52.59' y1='262.42' x2='49.00' y2='262.42' style='stroke-width: 0.75; stroke: #52514E;' />
-<text x='45.42' y='424.43' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.125</text>
-<text x='45.42' y='406.73' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.25</text>
-<text x='45.42' y='389.04' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.50</text>
-<text x='45.42' y='371.34' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>1</text>
-<text x='45.42' y='353.64' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>2</text>
-<text x='45.42' y='335.95' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>4</text>
-<text x='45.42' y='318.25' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>8</text>
-<text x='45.42' y='300.55' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>16</text>
-<text x='45.42' y='282.85' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>32</text>
-<text x='45.42' y='265.16' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>64</text>
+<text x='45.42' y='424.54' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.125</text>
+<text x='45.42' y='406.85' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.25</text>
+<text x='45.42' y='389.15' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.50</text>
+<text x='45.42' y='371.45' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>1</text>
+<text x='45.42' y='353.75' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>2</text>
+<text x='45.42' y='336.06' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>4</text>
+<text x='45.42' y='318.36' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>8</text>
+<text x='45.42' y='300.66' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>16</text>
+<text x='45.42' y='282.97' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>32</text>
+<text x='45.42' y='265.27' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>64</text>
 <polyline points='52.59,256.72 52.59,427.39 260.44,427.39 ' style='stroke-width: 0.75; stroke: #52514E;' />
 </g>
 <g clip-path='url(#cpNTIuNTl8MjYwLjQ0fDI1Ni43Mnw0MjcuMzk=)'>
@@ -341,12 +346,12 @@
 <line x1='56.68' y1='276.36' x2='70.13' y2='276.36' style='stroke-width: 1.50; stroke: #008300;' />
 <circle cx='63.41' cy='267.39' r='2.24' style='stroke-width: 1.50; stroke: #E87BA4; fill: #E87BA4;' />
 <circle cx='63.41' cy='276.36' r='2.24' style='stroke-width: 1.50; stroke: #008300; fill: #008300;' />
-<text x='76.85' y='269.96' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>Inbred parents, n = 115: MRDT 165 d</text>
-<text x='76.85' y='278.92' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>F1 hybrids, n = 158: MRDT 107 d</text>
+<text x='76.85' y='270.07' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>Inbred parents, n = 115: MRDT 165 d</text>
+<text x='76.85' y='279.03' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>F1 hybrids, n = 158: MRDT 107 d</text>
 <text x='257.32' y='421.69' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>chow</text>
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHw0NzUuMjA=)'>
-<text x='16.50' y='251.94' style='font-size: 13.20px; font-weight: bold;fill: #0B0B0B; font-family: "Arial";'>c</text>
+<text x='16.49' y='251.94' style='font-size: 13.20px; font-weight: bold;fill: #0B0B0B; font-family: "Arial";'>c</text>
 </g>
 <defs>
   <clipPath id='cpMzIyLjU5fDUzMC40NHwyNTYuNzJ8NDI3LjM5'>
@@ -406,16 +411,16 @@
 <line x1='322.59' y1='297.81' x2='319.00' y2='297.81' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='322.59' y1='280.12' x2='319.00' y2='280.12' style='stroke-width: 0.75; stroke: #52514E;' />
 <line x1='322.59' y1='262.42' x2='319.00' y2='262.42' style='stroke-width: 0.75; stroke: #52514E;' />
-<text x='315.42' y='424.43' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.125</text>
-<text x='315.42' y='406.73' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.25</text>
-<text x='315.42' y='389.04' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.50</text>
-<text x='315.42' y='371.34' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>1</text>
-<text x='315.42' y='353.64' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>2</text>
-<text x='315.42' y='335.95' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>4</text>
-<text x='315.42' y='318.25' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>8</text>
-<text x='315.42' y='300.55' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>16</text>
-<text x='315.42' y='282.85' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>32</text>
-<text x='315.42' y='265.16' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>64</text>
+<text x='315.42' y='424.54' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.125</text>
+<text x='315.42' y='406.85' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.25</text>
+<text x='315.42' y='389.15' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>0.50</text>
+<text x='315.42' y='371.45' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>1</text>
+<text x='315.42' y='353.75' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>2</text>
+<text x='315.42' y='336.06' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>4</text>
+<text x='315.42' y='318.36' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>8</text>
+<text x='315.42' y='300.66' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>16</text>
+<text x='315.42' y='282.97' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>32</text>
+<text x='315.42' y='265.27' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>64</text>
 <polyline points='322.59,256.72 322.59,427.39 530.44,427.39 ' style='stroke-width: 0.75; stroke: #52514E;' />
 </g>
 <g clip-path='url(#cpMzIyLjU5fDUzMC40NHwyNTYuNzJ8NDI3LjM5)'>
@@ -448,11 +453,12 @@
 <line x1='326.68' y1='276.36' x2='340.13' y2='276.36' style='stroke-width: 1.50; stroke: #008300;' />
 <circle cx='333.41' cy='267.39' r='2.24' style='stroke-width: 1.50; stroke: #E87BA4; fill: #E87BA4;' />
 <circle cx='333.41' cy='276.36' r='2.24' style='stroke-width: 1.50; stroke: #008300; fill: #008300;' />
-<text x='346.85' y='269.96' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>Inbred parents, n = 103: MRDT 165 d</text>
-<text x='346.85' y='278.92' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>F1 hybrids, n = 162: MRDT 107 d</text>
+<text x='346.85' y='270.07' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>Inbred parents, n = 103: MRDT 165 d</text>
+<text x='346.85' y='279.03' style='font-size: 7.47px;fill: #0B0B0B; font-family: "Arial";'>F1 hybrids, n = 162: MRDT 107 d</text>
 <text x='527.32' y='421.69' text-anchor='end' style='font-size: 7.97px;fill: #52514E; font-family: "Arial";'>high fat</text>
 </g>
 <g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHw0NzUuMjA=)'>
 <text x='286.63' y='251.94' style='font-size: 13.20px; font-weight: bold;fill: #0B0B0B; font-family: "Arial";'>d</text>
+</g>
 </g>
 </svg>

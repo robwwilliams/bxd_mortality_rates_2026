@@ -6,8 +6,8 @@
 # Figures for the pre-registered secondary tests. Run Gompertz/MRDT_Secondary.R first.
 # Conventions as in Figures_MRDT_Diet.R: svglite with Arial labels as single text elements; log scales in base 2.
 #
-#  Fig5_MRDT_ratios.svg            MRDT ratio, with 95% CI, for every registered, secondary and exploratory comparison
-#  Fig6_Hazard_by_class.svg        mortality rate by age (60-day bins) with the fitted lines: (a, b) Chr 1 D and B strains,
+#  Fig6_MRDT_ratios.svg            MRDT ratio, with 95% CI, for every registered, secondary and exploratory comparison
+#  Fig7_Hazard_by_class.svg        mortality rate by age (60-day bins) with the fitted lines: (a, b) Chr 1 D and B strains,
 #                                  (c, d) F1 hybrids and their inbred parents, on chow and on high fat
 #
 
@@ -60,7 +60,7 @@ rows <- list(
   list("S1  Short x short F1s / short-lived parents", expl[3, ]),
   list("S1  Long x long F1s / long-lived parents", expl[4, ])
 )
-openSVG("output/Fig5_MRDT_ratios.svg", width = 7.5, height = 7.4)
+openSVG("output/Fig6_MRDT_ratios.svg", width = 7.5, height = 7.4)
 par(mar = c(4.2, 16.5, 1, 7.2))
 n <- length(rows); y <- rev(seq_len(n))
 xr <- c(-2, 1.25)
@@ -91,7 +91,7 @@ box(bty = "l", col = ink2)
 dev.off()
 
 ### Figure 6: hazard by class, with the fitted lines of the registered model
-openSVG("output/Fig6_Hazard_by_class.svg", width = 7.5, height = 6.6)
+openSVG("output/Fig7_Hazard_by_class.svg", width = 7.5, height = 6.6)
 par(mfrow = c(2, 2), mar = c(4, 4.4, 1.6, 0.8))
 doublings <- 2^(-3:6)
 panels <- list(c("H1", "CD", "a"), c("H1", "HF", "b"), c("H2", "CD", "c"), c("H2", "HF", "d"))

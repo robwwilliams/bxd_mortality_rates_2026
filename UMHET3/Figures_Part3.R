@@ -9,11 +9,11 @@
 # in base 2. Paternal D is orange and maternal B dark purple, as in Arends et al.; the haplotype each is compared with
 # (paternal H, maternal C) is grey. UM-HET3 sites: JL black circles, UM teal triangles, UT magenta squares.
 #
-#  Fig8_UMHET3_Chr1_genotype_calls.svg  (a) fraction of paternal calls that are H at each proximal Chr 1 marker, by
+#  Fig9_UMHET3_Chr1_genotype_calls.svg  (a) fraction of paternal calls that are H at each proximal Chr 1 marker, by
 #                                       site; (b) at 31.06 Mb, by the mother's haplotype at 24.0 Mb
-#  Fig9_UMHET3_Vita1a_by_sex.svg        (a, b) mortality by paternal Vita1a haplotype, females and males (Table 2);
+#  Fig10_UMHET3_Vita1a_by_sex.svg        (a, b) mortality by paternal Vita1a haplotype, females and males (Table 2);
 #                                       (c, d) the D / H mortality ratio by age window, by site
-#  Fig10_BXD_vs_UMHET3_females.svg      (a) mortality of BXD chow females by Chr 1 haplotype and of UM-HET3 females by
+#  Fig11_BXD_vs_UMHET3_females.svg      (a) mortality of BXD chow females by Chr 1 haplotype and of UM-HET3 females by
 #                                       paternal Vita1a haplotype; (b) the D / B and D / H mortality ratios by age window
 #
 # Run from the repository root:  Rscript UMHET3/Figures_Part3.R
@@ -96,7 +96,7 @@ br.ratio <- c(200, 500, 680, 800, 920, 1100)
 ### Figure 8: genotype calls on proximal Chr 1
 bysite <- read.delim("output/UMHET3_markers_chr1_by_site.txt")
 t31 <- read.delim("output/UMHET3_31Mb_father_by_mother.txt")
-openSVG("output/Fig8_UMHET3_Chr1_genotype_calls.svg", width = 7.5, height = 3.6)
+openSVG("output/Fig9_UMHET3_Chr1_genotype_calls.svg", width = 7.5, height = 3.6)
 layout(matrix(1:2, 1), widths = c(2.1, 1)); par(mar = c(4, 4.4, 2.2, 0.8))
 plot(c(0, 45), c(0, 1), type = "n", xaxs = "i", yaxs = "i", axes = FALSE, xlab = "Chr 1 position (Mb)",
      ylab = "Paternal calls that are H (fraction)", cex.lab = 0.9)
@@ -135,7 +135,7 @@ dev.off()
 
 ### Figure 9: Vita1a by sex
 site.bins <- read.delim("output/UMHET3_Vita1a_binned_by_site.txt")
-openSVG("output/Fig9_UMHET3_Vita1a_by_sex.svg", width = 7.5, height = 6.6)
+openSVG("output/Fig10_UMHET3_Vita1a_by_sex.svg", width = 7.5, height = 6.6)
 par(mfrow = c(2, 2), mar = c(4, 4.4, 1.6, 0.8))
 lab.sex <- c(female = "females", male = "males"); fits <- list()
 for (sx in c("female", "male")) {
@@ -180,7 +180,7 @@ dev.off()
 bxd <- read.delim("output/MRDT_secondary_binned_60d.txt"); bxd <- bxd[bxd$test == "H1" & bxd$diet == "CD", ]
 tests <- read.delim("output/MRDT_secondary_tests.txt"); s4 <- tests[tests$test == "S4 Chr1 D vs B, CD only" & tests$from == 200, ]
 lev <- read.delim("output/MRDT_secondary_levels.txt"); lev <- lev[lev$test == "S4 Chr1 D vs B, CD only" & lev$from == 200, ]
-openSVG("output/Fig10_BXD_vs_UMHET3_females.svg", width = 7.5, height = 3.9)
+openSVG("output/Fig11_BXD_vs_UMHET3_females.svg", width = 7.5, height = 3.9)
 par(mfrow = c(1, 2), mar = c(4, 4.4, 1.6, 0.8))
 hazard.axes(c(0.0625, 256))
 for (k in c("B", "D")) {
@@ -222,4 +222,4 @@ legend("topleft", legend = c("BXD chow: D strains / B strains", "UM-HET3: patern
 text(1090, 0.27, "Females", adj = c(1, 0), cex = 0.75, col = ink2)
 panel.letter("b")
 dev.off()
-cat("Wrote Figs 8-10 to output/\n")
+cat("Wrote Figs 9-11 to output/\n")
