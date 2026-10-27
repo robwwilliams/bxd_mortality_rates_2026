@@ -35,6 +35,34 @@ Rob's per diem model: a mouse is free until 500 days, then costs 1 unit per day 
 - **High fat shortens both life (76 days) and the decline (42 days).**
 - **Two corrections to the F1 data** (Rob, 27 October 2026) are in [data/corrected/](data/corrected/README.md): six F1s recorded as BXD73 crosses are BXD73b crosses, and F1s euthanized at end of life count as natural deaths.
 
+### Definitions of terminal decline, and nicotinamide (exploratory)
+
+Both plans were approved by Rob on 27 October 2026, before they were run. The reading behind them is in [notes/reading_notes_frailty.md](notes/reading_notes_frailty.md).
+
+**How much the Part 4 conclusions depend on the definition of terminal decline.** Plan: [notes/PLAN_morbidity_definitions.md](notes/PLAN_morbidity_definitions.md). Results: [notes/Onset_definitions_results.md](notes/Onset_definitions_results.md), Fig. 13. 568 definitions were tested.
+- **Graded percent below peak predicts death best.**
+- **Robust:**
+  - on high fat, longer-lived strains spend longer in decline;
+  - short × short F1s add life without adding days of decline;
+  - long × long F1s do not differ from their parents.
+- **Sensitive:**
+  - the chow slope, which is a slope of mild weight loss;
+  - high fat's shorter decline, which is shorter in days but steeper and riskier.
+
+**Nicotinamide (NAM), rectangularization and the decline.** Plan: [notes/PLAN_NAM_rectangularization.md](notes/PLAN_NAM_rectangularization.md). Results: [notes/NAM_rectangularization_results.md](notes/NAM_rectangularization_results.md), Fig. 14.
+- Within 9 BXD strains at TSRB, 1% NAM on high fat changed none of the following detectably: lifespan, the Gompertz level and MRDT, the spread of ages at death, or the days in decline.
+- NAM mice were born about three years after their controls, and later births died younger, so a moderate NAM effect is neither shown nor excluded.
+
+**Rectangularization side by side with de Cabo's studies** (exploratory). Results: [notes/Rectangularization_results.md](notes/Rectangularization_results.md), Fig. 15. Survival curves of Mitchell et al. 2018 (nicotinamide) and Martin-Montalvo et al. 2013 (metformin) were read from the published figures into [data/digitized/](data/digitized/).
+- Hybrid vigor lengthens life and concentrates deaths relative to lifespan.
+- Nicotinamide, in either laboratory, changes nothing.
+- Metformin at 0.1% shifts the curve later; at 1% it concentrates deaths by shortening life.
+- Within strains, high fat shortens the MRDT (117 to 91 days), which pooled fits (Part 1) do not show.
+
+**Tumors and terminal weight.** Results: [notes/Masses_and_terminal_weight.md](notes/Masses_and_terminal_weight.md). A large tumor or abdominal fluid can hold a dying mouse at its peak weight, but mice with a recorded mass lost as much weight as the rest.
+
+**Odd body weighings** are listed for Suheeta's review in [qc/BodyWeight_QC.md](qc/BodyWeight_QC.md), now including the NAM workbook.
+
 ### Installation
 
 To obtain the code, run the following command in your terminal:
@@ -69,6 +97,15 @@ Rscript Models/fig_effective_factors.R
 Rscript BodyWeight/F1_weights_corrected.R # the F1 weight table with our corrections, in data/corrected/
 Rscript BodyWeight/terminal_decline.R      # terminal weight loss and per diem cost (about 10 s)
 Rscript BodyWeight/Figures_terminal_decline.R   # Fig. 12
+Rscript BodyWeight/weights_QC.R           # odd weighings, listed in qc/ for review
+Rscript BodyWeight/onset_definitions.R     # 568 definitions of terminal decline against the Part 4 conclusions (about 25 s)
+Rscript BodyWeight/Figures_onset_definitions.R  # Fig. 13
+Rscript Gompertz/NAM_rectangularization.R  # nicotinamide against high fat within strains (about 5 s)
+Rscript Gompertz/Figures_NAM.R             # Fig. 14
+.venv/bin/python tools/digitize_km.py      # reads de Cabo's published survival curves into data/digitized/
+Rscript Gompertz/Rectangularization.R      # rectangularization side by side (about 10 s)
+Rscript Gompertz/Figures_Rectangularization.R   # Fig. 15
+Rscript BodyWeight/masses_notes.R          # tumors, swelling and terminal weight, from the free-text notes
 ```
 
 The UM-HET3 analyses read Arends et al. Supplementary Table 7 (the R/qtl cross file), kept in `data/local/`:
@@ -87,11 +124,11 @@ Rscript UMHET3/Figures_Part3.R             # Figs 9-11
 
 ### Structure
 
-- [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures.
+- [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures. `NAM_rectangularization.R` compares high fat with and without nicotinamide (Fig. 14). `Rectangularization.R` sets the BXD comparisons beside de Cabo's studies (Fig. 15).
 - [output/](./output/) contains the result tables (tab-separated `.txt`) and figures (`.svg` with editable text in Arial, and `.png` previews).
-- [notes/](./notes/) contains write-ups: `Report_BXD_Mortality_Parts1-4_27Oct2026_v1` (Markdown, PDF and Word) for beginners, covering all four parts; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, and `reading_notes.md` on the three papers below.
+- [notes/](./notes/) contains write-ups: `Report_BXD_Mortality_Parts1-4_27Oct2026_v1` (Markdown, PDF and Word) for beginners, covering all four parts; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, `reading_notes.md` on the three papers below, and `reading_notes_frailty.md` on mouse frailty, terminal weight loss and rectangularization.
 - [Genotypes/](./Genotypes/) contains `Chr1_haplotypes.R`, which classifies strains as B, D or recombinant across proximal Chr 1.
-- [BodyWeight/](./BodyWeight/) contains the analysis of terminal weight loss and Rob's per diem model of the cost of late life (Fig. 12).
+- [BodyWeight/](./BodyWeight/) contains the analysis of terminal weight loss and Rob's per diem model of the cost of late life (Fig. 12). It also holds the comparison of definitions of terminal decline (`morbidity_functions.R`, `onset_definitions.R`; Fig. 13), the weight QC (`weights_QC.R`) and the look at tumors and terminal weight (`masses_notes.R`).
 - [Models/](./Models/) contains an exploratory model of Sewall Wright's question for the F1 experiment: do 10 or 200 recessive loci predict different lifespan gains for short-by-short and long-by-long F1s?
 - [UMHET3/](./UMHET3/) contains the exploratory UM-HET3 analyses of Part 3:
   - the clean copy of Supplementary Table 2;
@@ -100,13 +137,14 @@ Rscript UMHET3/Figures_Part3.R             # Figs 9-11
   - Figs 9–11.
 - [data/corrected/](./data/corrected/) holds our corrections to tables in `data/original/` (which stay as received), with the recorded values kept alongside.
 - [data/umhet3/](./data/umhet3/) holds the clean copy of Arends et al. Supplementary Table 2, with a README on its columns and on the genotype problem.
-- [tools/](./tools/) holds `svg2png.py`, `build_report.py` (Markdown note to HTML, Word, PDF and ZIP), `html2pdf.swift` and `pdftext.swift` (PDFs with macOS's own WebKit and PDFKit).
+- [tools/](./tools/) holds `svg2png.py`, `build_report.py` (Markdown note to HTML, Word, PDF and ZIP), `html2pdf.swift` and `pdftext.swift` (PDFs with macOS's own WebKit and PDFKit), and `digitize_km.py` (survival curves read from published figures).
+- [data/digitized/](./data/digitized/) holds those readings, with images that lay each reading over its figure.
 - [data/genotypes/](./data/genotypes/) holds the proximal Chr 1 slice of the sequence-based BXD genotypes, with its provenance.
 - [data/original/](./data/original/) holds data exactly as received:
   - the GeneNetwork export of BDL_10002 (natural lifespan, 22 October 2026);
   - Suheeta Roy's curated file of females used for actuarial mapping;
   - Supplementary Table 2 of Arends et al. 2026, as published.
-- [qc/](./qc/) contains quality checks of the GeneNetwork export, the annotated workbooks for curation, and the scripts that produce them.
+- [qc/](./qc/) contains quality checks of the GeneNetwork export and of the body weights, the annotated workbooks for curation, and the scripts that produce them.
 - [papers/](./papers/) contains the papers that frame this analysis, with citations, licenses and links to their data and code.
 
 ### Related repositories
