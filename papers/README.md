@@ -21,6 +21,16 @@ Three papers frame this analysis.
 
 The Williams et al. PDF is the article-in-press version, with pages numbered 1–15; the published pages are 43–57.e6.
 
+### Nicotinamide, metformin and rectangularization
+
+Added on 27 October 2026 for `notes/PLAN_NAM_rectangularization.md`. The survival curves of the two de Cabo papers are read by `tools/digitize_km.py`.
+
+| File | Paper |
+|---|---|
+| `WilliamsPete_John_VitB3Glaucoma_Science_2017.pdf` | Williams PA, Harder JM, Foxworth NE, Cochran KE, Philip VM, Porciatti V, Smithies O, John SWM (2017). Vitamin B3 modulates mitochondrial vulnerability and prevents glaucoma in aged mice. *Science* 355:756–760. [doi:10.1126/science.aal0092](https://doi.org/10.1126/science.aal0092). The source of our 1% NAM dose. |
+| `Mitchell_deCabo_NicotinamideHealthspanMice_CellMeta_2018.pdf` | Mitchell SJ, Bernier M, Aon MA, Cortassa S, Kim EY, … Baur JA, de Cabo R (2018). Nicotinamide improves aspects of healthspan, but not lifespan, in mice. *Cell Metabolism* 27:667–676.e4. [doi:10.1016/j.cmet.2018.02.001](https://doi.org/10.1016/j.cmet.2018.02.001) |
+| `Martin-Montalvo_deCabo_MetforminLifespanMice_NatComm_2013.pdf` | Martin-Montalvo A, Mercken EM, Mitchell SJ, Palacios HH, Mote PL, … Bernier M, de Cabo R (2013). Metformin improves healthspan and lifespan in mice. *Nature Communications* 4:2192. [doi:10.1038/ncomms3192](https://doi.org/10.1038/ncomms3192) |
+
 ### Inbreeding depression and age (cited for the F1 test)
 
 | File | Paper | License |

@@ -1,0 +1,91 @@
+comparison	source	measure	estimate	lo	hi	p	units	unit	note	scale
+metformin 0.1% vs standard diet	Martin-Montalvo 2013	mean	56.53	14.24	98.57	0.005	147	mouse	2000 bootstrap resamples	days, difference
+metformin 0.1% vs standard diet	Martin-Montalvo 2013	median	38.5	-14	98	0.134	147	mouse	2000 bootstrap resamples	days, difference
+metformin 0.1% vs standard diet	Martin-Montalvo 2013	sd	-0.1857	-0.5224	0.1375	0.252	147	mouse	2000 bootstrap resamples	log2 ratio
+metformin 0.1% vs standard diet	Martin-Montalvo 2013	iqr	0.3034	-0.5291	0.5966	0.783	147	mouse	2000 bootstrap resamples	log2 ratio
+metformin 0.1% vs standard diet	Martin-Montalvo 2013	cv	-0.2826	-0.6496	0.07794	0.121	147	mouse	2000 bootstrap resamples	log2 ratio
+metformin 0.1% vs standard diet	Martin-Montalvo 2013	H	-0.01859	-0.05004	0.01074	0.214	147	mouse	2000 bootstrap resamples	difference
+metformin 0.1% vs standard diet	Martin-Montalvo 2013	mrdt	-0.09097	-0.4794	0.2676	0.595	147	mouse	2000 bootstrap resamples	log2 ratio
+metformin 0.1% vs standard diet	Martin-Montalvo 2013	h600	-0.8297	-1.804	0.05079	0.066	147	mouse	2000 bootstrap resamples	log2 ratio
+metformin 1% vs standard diet	Martin-Montalvo 2013	mean	-149.7	-186.3	-115.2	0	178	mouse	2000 bootstrap resamples	days, difference
+metformin 1% vs standard diet	Martin-Montalvo 2013	median	-126.5	-166.7	-104.9	0	178	mouse	2000 bootstrap resamples	days, difference
+metformin 1% vs standard diet	Martin-Montalvo 2013	sd	-0.503	-0.8446	-0.1765	0.003	178	mouse	2000 bootstrap resamples	log2 ratio
+metformin 1% vs standard diet	Martin-Montalvo 2013	iqr	-0.5224	-1.551	-0.01103	0.048	178	mouse	2000 bootstrap resamples	log2 ratio
+metformin 1% vs standard diet	Martin-Montalvo 2013	cv	-0.2282	-0.6098	0.1324	0.189	178	mouse	2000 bootstrap resamples	log2 ratio
+metformin 1% vs standard diet	Martin-Montalvo 2013	H	-0.02921	-0.05591	2.734e-05	0.051	178	mouse	2000 bootstrap resamples	difference
+metformin 1% vs standard diet	Martin-Montalvo 2013	mrdt	-0.7335	-1.089	-0.367	0	178	mouse	2000 bootstrap resamples	log2 ratio
+metformin 1% vs standard diet	Martin-Montalvo 2013	h600	1.52	0.7117	2.358	0	178	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs standard diet	Mitchell 2018	mean	-22	-55.93	11.08	0.177	200	mouse	2000 bootstrap resamples	days, difference
+NAM 0.05% vs standard diet	Mitchell 2018	median	-0.9625	-44.32	20.23	0.947	200	mouse	2000 bootstrap resamples	days, difference
+NAM 0.05% vs standard diet	Mitchell 2018	sd	0.121	-0.2442	0.4974	0.477	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs standard diet	Mitchell 2018	iqr	0.05761	-0.5175	0.7405	0.842	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs standard diet	Mitchell 2018	cv	0.1584	-0.2499	0.5587	0.389	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs standard diet	Mitchell 2018	H	0.008428	-0.02089	0.03693	0.528	200	mouse	2000 bootstrap resamples	difference
+NAM 0.05% vs standard diet	Mitchell 2018	mrdt	0.0156	-0.3209	0.3875	0.885	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs standard diet	Mitchell 2018	h600	0.2921	-0.5245	1.134	0.452	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs standard diet	Mitchell 2018	mean	-25.35	-60.67	9.115	0.135	200	mouse	2000 bootstrap resamples	days, difference
+NAM 0.1% vs standard diet	Mitchell 2018	median	-1.928	-48.17	18.3	0.917	200	mouse	2000 bootstrap resamples	days, difference
+NAM 0.1% vs standard diet	Mitchell 2018	sd	0.2045	-0.1527	0.5833	0.24	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs standard diet	Mitchell 2018	iqr	0.6258	-0.1926	1.152	0.174	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs standard diet	Mitchell 2018	cv	0.2477	-0.1453	0.6449	0.182	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs standard diet	Mitchell 2018	H	0.02299	-0.008113	0.05295	0.142	200	mouse	2000 bootstrap resamples	difference
+NAM 0.1% vs standard diet	Mitchell 2018	mrdt	0.2891	-0.07678	0.6612	0.12	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs standard diet	Mitchell 2018	h600	0.712	-0.03245	1.479	0.058	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs high fat	Mitchell 2018	mean	19.86	-20.05	59.03	0.324	200	mouse	2000 bootstrap resamples	days, difference
+NAM 0.05% vs high fat	Mitchell 2018	median	24.08	-22.15	86.69	0.215	200	mouse	2000 bootstrap resamples	days, difference
+NAM 0.05% vs high fat	Mitchell 2018	sd	0.1567	-0.06114	0.3811	0.153	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs high fat	Mitchell 2018	iqr	0.5811	-0.5881	0.9794	0.322	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs high fat	Mitchell 2018	cv	0.1165	-0.1579	0.3884	0.384	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs high fat	Mitchell 2018	H	0.01086	-0.02446	0.04481	0.554	200	mouse	2000 bootstrap resamples	difference
+NAM 0.05% vs high fat	Mitchell 2018	mrdt	0.1698	-0.3004	0.6307	0.477	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.05% vs high fat	Mitchell 2018	h600	-0.226	-0.9002	0.4522	0.518	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs high fat	Mitchell 2018	mean	5.163	-32.64	42.06	0.812	200	mouse	2000 bootstrap resamples	days, difference
+NAM 0.1% vs high fat	Mitchell 2018	median	-0.0035	-54.9	63.58	0.879	200	mouse	2000 bootstrap resamples	days, difference
+NAM 0.1% vs high fat	Mitchell 2018	sd	-0.01107	-0.2361	0.2212	0.95	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs high fat	Mitchell 2018	iqr	0.301	-0.4865	0.6821	0.586	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs high fat	Mitchell 2018	cv	-0.02165	-0.2935	0.2433	0.906	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs high fat	Mitchell 2018	H	0.000245	-0.033	0.03178	0.974	200	mouse	2000 bootstrap resamples	difference
+NAM 0.1% vs high fat	Mitchell 2018	mrdt	0.02148	-0.4239	0.45	0.893	200	mouse	2000 bootstrap resamples	log2 ratio
+NAM 0.1% vs high fat	Mitchell 2018	h600	-0.05889	-0.6811	0.6058	0.871	200	mouse	2000 bootstrap resamples	log2 ratio
+high fat vs standard diet	Mitchell 2018	mean	-157.1	-193	-123.5	0	200	mouse	2000 bootstrap resamples	days, difference
+high fat vs standard diet	Mitchell 2018	median	-134.9	-167.6	-92.45	0	200	mouse	2000 bootstrap resamples	days, difference
+high fat vs standard diet	Mitchell 2018	sd	0.2209	-0.0952	0.5622	0.147	200	mouse	2000 bootstrap resamples	log2 ratio
+high fat vs standard diet	Mitchell 2018	iqr	0.7629	0.172	1.464	0.009	200	mouse	2000 bootstrap resamples	log2 ratio
+high fat vs standard diet	Mitchell 2018	cv	0.5123	0.1566	0.8791	0.003	200	mouse	2000 bootstrap resamples	log2 ratio
+high fat vs standard diet	Mitchell 2018	H	0.03939	0.007825	0.06864	0.016	200	mouse	2000 bootstrap resamples	difference
+high fat vs standard diet	Mitchell 2018	mrdt	0.1664	-0.2091	0.5889	0.365	200	mouse	2000 bootstrap resamples	log2 ratio
+high fat vs standard diet	Mitchell 2018	h600	2.233	1.56	3.002	0	200	mouse	2000 bootstrap resamples	log2 ratio
+high fat vs chow	BXD	mean	-80.42	-102.4	-58.4	0	76	strain		days, difference
+high fat vs chow	BXD	median	-90.33	-112.4	-68.29	0	76	strain		days, difference
+high fat vs chow	BXD	sd	-0.3264	-0.4945	-0.1583	1e-04	76	strain		log2 ratio
+high fat vs chow	BXD	iqr	-0.4743	-0.7124	-0.2362	1e-04	75	strain		log2 ratio
+high fat vs chow	BXD	cv	-0.1368	-0.3214	0.04778	0.14	76	strain		log2 ratio
+high fat vs chow	BXD	H	-0.01595	-0.03726	0.005368	0.137	76	strain		difference
+high fat vs chow	BXD	mrdt	-0.3579	-0.5319	-0.184	NA	76	strain	MRDT chow 117 d, high fat 91 d; animal-level LRT chi2 = 30.3, P = 3.7e-08	log2 ratio
+high fat vs chow	BXD	h600	0.9303	0.6797	1.181	0	76	strain		log2 ratio
+high fat vs chow	BXD	mrdt	-0.4212	NA	NA	4.08e-07	34	strain	check: strains with at least 10 mice on each diet; MRDT chow 125 d, high fat 93 d; P is the animal-level LRT	log2 ratio
+high fat vs chow	BXD	mrdt	-0.4055	NA	NA	0.000446	14	strain	check: strains with at least 15 mice on each diet; MRDT chow 127 d, high fat 96 d; P is the animal-level LRT	log2 ratio
+high fat vs chow	BXD	mrdt	-0.01439	-0.1162	0.08633	NA	76	strain	check: 40 simulations with one true MRDT (117 d) for both diets and the same strains, cell sizes and set-up ages; the estimate is the bias	log2 ratio
+short x short F1s vs short-lived parents	BXD	mean	178.8	110.9	246.7	0.00476	10	genotype	adjusted for diet	days, difference
+short x short F1s vs short-lived parents	BXD	median	205.6	126.5	284.7	0.00476	10	genotype	adjusted for diet	days, difference
+short x short F1s vs short-lived parents	BXD	sd	0.01983	-0.6447	0.6844	0.91	10	genotype	adjusted for diet	log2 ratio
+short x short F1s vs short-lived parents	BXD	iqr	0.008694	-0.8897	0.9071	0.976	10	genotype	adjusted for diet	log2 ratio
+short x short F1s vs short-lived parents	BXD	cv	-0.4112	-1.016	0.1934	0.11	10	genotype	adjusted for diet	log2 ratio
+short x short F1s vs short-lived parents	BXD	H	-0.07359	-0.1514	0.004236	0.0143	10	genotype	adjusted for diet	difference
+short x short F1s vs short-lived parents	BXD	mrdt	-0.5643	-1.02	-0.1085	NA	10	genotype	MRDT parents 131 d, F1s 89 d; animal-level LRT chi2 = 10.3, P = 0.0013	log2 ratio
+short x short F1s vs short-lived parents	BXD	h600	-1.618	-2.518	-0.7187	0.00476	10	genotype	adjusted for diet	log2 ratio
+long x long F1s vs long-lived parents	BXD	mean	43.62	-41.48	128.7	0.291	11	genotype	adjusted for diet	days, difference
+long x long F1s vs long-lived parents	BXD	median	44.71	-25.49	114.9	0.236	11	genotype	adjusted for diet	days, difference
+long x long F1s vs long-lived parents	BXD	sd	-0.3849	-0.7787	0.008933	0.0697	11	genotype	adjusted for diet	log2 ratio
+long x long F1s vs long-lived parents	BXD	iqr	-0.4308	-0.915	0.05349	0.097	11	genotype	adjusted for diet	log2 ratio
+long x long F1s vs long-lived parents	BXD	cv	-0.4708	-0.8676	-0.0741	0.0364	11	genotype	adjusted for diet	log2 ratio
+long x long F1s vs long-lived parents	BXD	H	-0.04446	-0.08653	-0.002384	0.0364	11	genotype	adjusted for diet	difference
+long x long F1s vs long-lived parents	BXD	mrdt	-0.268	-0.6736	0.1375	NA	11	genotype	MRDT parents 102 d, F1s 85 d; animal-level LRT chi2 = 3.4, P = 0.067	log2 ratio
+long x long F1s vs long-lived parents	BXD	h600	-0.5166	-1.587	0.5542	0.303	11	genotype	adjusted for diet	log2 ratio
+NAM 1% vs high fat	BXD	mean	26.49	-94.93	147.9	0.621	9	strain	from output/NAM_rectangularization_tests.txt	days, difference
+NAM 1% vs high fat	BXD	sd	-0.1131	-1.022	0.7958	0.785	9	strain	from output/NAM_rectangularization_tests.txt	log2 ratio
+NAM 1% vs high fat	BXD	iqr	0.1448	-0.9724	1.262	0.781	9	strain	from output/NAM_rectangularization_tests.txt	log2 ratio
+NAM 1% vs high fat	BXD	cv	-0.1694	-1.257	0.9185	0.742	9	strain	from output/NAM_rectangularization_tests.txt	log2 ratio
+NAM 1% vs high fat	BXD	H	0.01067	-0.08921	0.1106	0.816	9	strain	from output/NAM_rectangularization_tests.txt	difference
+NAM 1% vs high fat	BXD	mrdt	0.0314	-0.671	0.7338	NA	9	strain	from output/NAM_rectangularization_tests.txt	log2 ratio
+NAM 1% vs high fat	BXD	h600	-0.2495	-1.423	0.9236	0.641	9	strain	from output/NAM_rectangularization_tests.txt	log2 ratio

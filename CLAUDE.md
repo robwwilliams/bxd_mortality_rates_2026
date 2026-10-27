@@ -31,7 +31,7 @@ Rob's decision (24 October 2026): nothing in this project is private. Papers, da
 - **Language.** R for analyses (readxl, survival, svglite). Python only for tools (openpyxl, cairosvg). Run R with `LC_ALL=C.UTF-8`.
 - **Local tools on Rob's Mac.** Never ask Rob to install or configure anything.
   - **PDFs:** `swift tools/pdftext.swift <file.pdf> [pages]` prints the text with macOS's own PDFKit.
-  - **Python tools** run from `.venv/` (git ignores it). Rebuild it if missing: `python3 -m venv .venv && .venv/bin/pip install openpyxl cairosvg python-docx`.
+  - **Python tools** run from `.venv/` (git ignores it). Rebuild it if missing: `python3 -m venv .venv && .venv/bin/pip install openpyxl cairosvg python-docx pymupdf numpy`.
   - **cairosvg** finds Homebrew's cairo only with `DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib`.
 - **Gompertz fits.**
   - Fit by maximum likelihood with left truncation at the set-up age, censoring animals alive at the data freeze. The functions are in `Gompertz/gompertz.R`.

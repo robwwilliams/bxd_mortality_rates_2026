@@ -1,0 +1,215 @@
+de Cabo's arms, from the published curves (ages in days):
+                study                  arm mice    mean  median      sd     iqr
+ Martin-Montalvo 2013        standard diet   83 813.982 836.500 139.966 164.500
+ Martin-Montalvo 2013       metformin 0.1%   64 870.516 875.000 123.057 203.000
+ Martin-Montalvo 2013        standard diet   88 862.995 869.166 136.344 207.214
+ Martin-Montalvo 2013         metformin 1%   90 713.320 742.682  96.211 144.266
+        Mitchell 2018        standard diet  100 859.163 865.368 114.713 106.442
+        Mitchell 2018            NAM 0.05%  100 837.161 864.406 124.747 110.779
+        Mitchell 2018             NAM 0.1%  100 833.809 863.439 132.184 164.243
+        Mitchell 2018             high fat  100 702.049 730.506 133.693 180.617
+        Mitchell 2018 high fat + NAM 0.05%  100 721.912 754.590 149.034 270.203
+        Mitchell 2018  high fat + NAM 0.1%  100 707.212 730.503 132.671 222.521
+    cv     H mrdt h600.per1000
+ 0.172 0.133 80.9        0.815
+ 0.141 0.114 76.0        0.458
+ 0.158 0.130 84.8        0.573
+ 0.135 0.101 51.0        1.640
+ 0.134 0.109 72.5        0.487
+ 0.149 0.117 73.3        0.596
+ 0.159 0.132 88.6        0.797
+ 0.190 0.148 81.3        2.290
+ 0.206 0.159 91.5        1.960
+ 0.188 0.148 82.6        2.200
+
+Check against the paper: change in mean lifespan, metformin 0.1% +6.9% (paper +5.83%), metformin 1% -17.3% (paper -14.4%)
+
+High fat vs chow: 76 strains with at least 5 mice on each diet; 916 chow and 809 high-fat mice
+
+short x short F1s vs short-lived parents: 6 F1 types and 4 parental strains; 143 F1 and 95 parental mice in cells of 5 or more
+
+long x long F1s vs long-lived parents: 7 F1 types and 4 parental strains; 165 F1 and 124 parental mice in cells of 5 or more
+
+All comparisons (log2 ratios for sd, iqr, cv, mrdt and h600; days for mean and median):
+                               comparison measure   estimate         lo
+          metformin 0.1% vs standard diet    mean  5.653e+01  1.424e+01
+          metformin 0.1% vs standard diet  median  3.850e+01 -1.400e+01
+          metformin 0.1% vs standard diet      sd -1.857e-01 -5.224e-01
+          metformin 0.1% vs standard diet     iqr  3.034e-01 -5.291e-01
+          metformin 0.1% vs standard diet      cv -2.826e-01 -6.496e-01
+          metformin 0.1% vs standard diet       H -1.859e-02 -5.004e-02
+          metformin 0.1% vs standard diet    mrdt -9.097e-02 -4.794e-01
+          metformin 0.1% vs standard diet    h600 -8.297e-01 -1.804e+00
+            metformin 1% vs standard diet    mean -1.497e+02 -1.863e+02
+            metformin 1% vs standard diet  median -1.265e+02 -1.667e+02
+            metformin 1% vs standard diet      sd -5.030e-01 -8.446e-01
+            metformin 1% vs standard diet     iqr -5.224e-01 -1.551e+00
+            metformin 1% vs standard diet      cv -2.282e-01 -6.098e-01
+            metformin 1% vs standard diet       H -2.921e-02 -5.591e-02
+            metformin 1% vs standard diet    mrdt -7.335e-01 -1.089e+00
+            metformin 1% vs standard diet    h600  1.520e+00  7.117e-01
+               NAM 0.05% vs standard diet    mean -2.200e+01 -5.593e+01
+               NAM 0.05% vs standard diet  median -9.625e-01 -4.432e+01
+               NAM 0.05% vs standard diet      sd  1.210e-01 -2.442e-01
+               NAM 0.05% vs standard diet     iqr  5.761e-02 -5.175e-01
+               NAM 0.05% vs standard diet      cv  1.584e-01 -2.499e-01
+               NAM 0.05% vs standard diet       H  8.428e-03 -2.089e-02
+               NAM 0.05% vs standard diet    mrdt  1.560e-02 -3.209e-01
+               NAM 0.05% vs standard diet    h600  2.921e-01 -5.245e-01
+                NAM 0.1% vs standard diet    mean -2.535e+01 -6.067e+01
+                NAM 0.1% vs standard diet  median -1.928e+00 -4.817e+01
+                NAM 0.1% vs standard diet      sd  2.045e-01 -1.527e-01
+                NAM 0.1% vs standard diet     iqr  6.258e-01 -1.926e-01
+                NAM 0.1% vs standard diet      cv  2.477e-01 -1.453e-01
+                NAM 0.1% vs standard diet       H  2.299e-02 -8.113e-03
+                NAM 0.1% vs standard diet    mrdt  2.891e-01 -7.678e-02
+                NAM 0.1% vs standard diet    h600  7.120e-01 -3.245e-02
+                    NAM 0.05% vs high fat    mean  1.986e+01 -2.005e+01
+                    NAM 0.05% vs high fat  median  2.408e+01 -2.215e+01
+                    NAM 0.05% vs high fat      sd  1.567e-01 -6.114e-02
+                    NAM 0.05% vs high fat     iqr  5.811e-01 -5.881e-01
+                    NAM 0.05% vs high fat      cv  1.165e-01 -1.579e-01
+                    NAM 0.05% vs high fat       H  1.086e-02 -2.446e-02
+                    NAM 0.05% vs high fat    mrdt  1.698e-01 -3.004e-01
+                    NAM 0.05% vs high fat    h600 -2.260e-01 -9.002e-01
+                     NAM 0.1% vs high fat    mean  5.163e+00 -3.264e+01
+                     NAM 0.1% vs high fat  median -3.500e-03 -5.490e+01
+                     NAM 0.1% vs high fat      sd -1.107e-02 -2.361e-01
+                     NAM 0.1% vs high fat     iqr  3.010e-01 -4.865e-01
+                     NAM 0.1% vs high fat      cv -2.165e-02 -2.935e-01
+                     NAM 0.1% vs high fat       H  2.450e-04 -3.300e-02
+                     NAM 0.1% vs high fat    mrdt  2.148e-02 -4.239e-01
+                     NAM 0.1% vs high fat    h600 -5.889e-02 -6.811e-01
+                high fat vs standard diet    mean -1.571e+02 -1.930e+02
+                high fat vs standard diet  median -1.349e+02 -1.676e+02
+                high fat vs standard diet      sd  2.209e-01 -9.520e-02
+                high fat vs standard diet     iqr  7.629e-01  1.720e-01
+                high fat vs standard diet      cv  5.123e-01  1.566e-01
+                high fat vs standard diet       H  3.939e-02  7.825e-03
+                high fat vs standard diet    mrdt  1.664e-01 -2.091e-01
+                high fat vs standard diet    h600  2.233e+00  1.560e+00
+                         high fat vs chow    mean -8.042e+01 -1.024e+02
+                         high fat vs chow  median -9.033e+01 -1.124e+02
+                         high fat vs chow      sd -3.264e-01 -4.945e-01
+                         high fat vs chow     iqr -4.743e-01 -7.124e-01
+                         high fat vs chow      cv -1.368e-01 -3.214e-01
+                         high fat vs chow       H -1.595e-02 -3.726e-02
+                         high fat vs chow    mrdt -3.579e-01 -5.319e-01
+                         high fat vs chow    h600  9.303e-01  6.797e-01
+                         high fat vs chow    mrdt -4.212e-01         NA
+                         high fat vs chow    mrdt -4.055e-01         NA
+                         high fat vs chow    mrdt -1.439e-02 -1.162e-01
+ short x short F1s vs short-lived parents    mean  1.788e+02  1.109e+02
+ short x short F1s vs short-lived parents  median  2.056e+02  1.265e+02
+ short x short F1s vs short-lived parents      sd  1.983e-02 -6.447e-01
+ short x short F1s vs short-lived parents     iqr  8.694e-03 -8.897e-01
+ short x short F1s vs short-lived parents      cv -4.112e-01 -1.016e+00
+ short x short F1s vs short-lived parents       H -7.359e-02 -1.514e-01
+ short x short F1s vs short-lived parents    mrdt -5.643e-01 -1.020e+00
+ short x short F1s vs short-lived parents    h600 -1.618e+00 -2.518e+00
+    long x long F1s vs long-lived parents    mean  4.362e+01 -4.148e+01
+    long x long F1s vs long-lived parents  median  4.471e+01 -2.549e+01
+    long x long F1s vs long-lived parents      sd -3.849e-01 -7.787e-01
+    long x long F1s vs long-lived parents     iqr -4.308e-01 -9.150e-01
+    long x long F1s vs long-lived parents      cv -4.708e-01 -8.676e-01
+    long x long F1s vs long-lived parents       H -4.446e-02 -8.653e-02
+    long x long F1s vs long-lived parents    mrdt -2.680e-01 -6.736e-01
+    long x long F1s vs long-lived parents    h600 -5.166e-01 -1.587e+00
+                       NAM 1% vs high fat    mean  2.649e+01 -9.493e+01
+                       NAM 1% vs high fat      sd -1.131e-01 -1.022e+00
+                       NAM 1% vs high fat     iqr  1.448e-01 -9.724e-01
+                       NAM 1% vs high fat      cv -1.694e-01 -1.257e+00
+                       NAM 1% vs high fat       H  1.067e-02 -8.921e-02
+                       NAM 1% vs high fat    mrdt  3.140e-02 -6.710e-01
+                       NAM 1% vs high fat    h600 -2.495e-01 -1.423e+00
+         hi        p units
+  9.857e+01 5.00e-03   147
+  9.800e+01 1.34e-01   147
+  1.375e-01 2.52e-01   147
+  5.966e-01 7.83e-01   147
+  7.794e-02 1.21e-01   147
+  1.074e-02 2.14e-01   147
+  2.676e-01 5.95e-01   147
+  5.079e-02 6.60e-02   147
+ -1.152e+02 0.00e+00   178
+ -1.049e+02 0.00e+00   178
+ -1.765e-01 3.00e-03   178
+ -1.103e-02 4.80e-02   178
+  1.324e-01 1.89e-01   178
+  2.734e-05 5.10e-02   178
+ -3.670e-01 0.00e+00   178
+  2.358e+00 0.00e+00   178
+  1.108e+01 1.77e-01   200
+  2.023e+01 9.47e-01   200
+  4.974e-01 4.77e-01   200
+  7.405e-01 8.42e-01   200
+  5.587e-01 3.89e-01   200
+  3.693e-02 5.28e-01   200
+  3.875e-01 8.85e-01   200
+  1.134e+00 4.52e-01   200
+  9.115e+00 1.35e-01   200
+  1.830e+01 9.17e-01   200
+  5.833e-01 2.40e-01   200
+  1.152e+00 1.74e-01   200
+  6.449e-01 1.82e-01   200
+  5.295e-02 1.42e-01   200
+  6.612e-01 1.20e-01   200
+  1.479e+00 5.80e-02   200
+  5.903e+01 3.24e-01   200
+  8.669e+01 2.15e-01   200
+  3.811e-01 1.53e-01   200
+  9.794e-01 3.22e-01   200
+  3.884e-01 3.84e-01   200
+  4.481e-02 5.54e-01   200
+  6.307e-01 4.77e-01   200
+  4.522e-01 5.18e-01   200
+  4.206e+01 8.12e-01   200
+  6.358e+01 8.79e-01   200
+  2.212e-01 9.50e-01   200
+  6.821e-01 5.86e-01   200
+  2.433e-01 9.06e-01   200
+  3.178e-02 9.74e-01   200
+  4.500e-01 8.93e-01   200
+  6.058e-01 8.71e-01   200
+ -1.235e+02 0.00e+00   200
+ -9.245e+01 0.00e+00   200
+  5.622e-01 1.47e-01   200
+  1.464e+00 9.00e-03   200
+  8.791e-01 3.00e-03   200
+  6.864e-02 1.60e-02   200
+  5.889e-01 3.65e-01   200
+  3.002e+00 0.00e+00   200
+ -5.840e+01 0.00e+00    76
+ -6.829e+01 0.00e+00    76
+ -1.583e-01 1.00e-04    76
+ -2.362e-01 1.00e-04    75
+  4.778e-02 1.40e-01    76
+  5.368e-03 1.37e-01    76
+ -1.840e-01       NA    76
+  1.181e+00 0.00e+00    76
+         NA 4.08e-07    34
+         NA 4.46e-04    14
+  8.633e-02       NA    76
+  2.467e+02 4.76e-03    10
+  2.847e+02 4.76e-03    10
+  6.844e-01 9.10e-01    10
+  9.071e-01 9.76e-01    10
+  1.934e-01 1.10e-01    10
+  4.236e-03 1.43e-02    10
+ -1.085e-01       NA    10
+ -7.187e-01 4.76e-03    10
+  1.287e+02 2.91e-01    11
+  1.149e+02 2.36e-01    11
+  8.933e-03 6.97e-02    11
+  5.349e-02 9.70e-02    11
+ -7.410e-02 3.64e-02    11
+ -2.384e-03 3.64e-02    11
+  1.375e-01       NA    11
+  5.542e-01 3.03e-01    11
+  1.479e+02 6.21e-01     9
+  7.958e-01 7.85e-01     9
+  1.262e+00 7.81e-01     9
+  9.185e-01 7.42e-01     9
+  1.106e-01 8.16e-01     9
+  7.338e-01       NA     9
+  9.236e-01 6.41e-01     9
