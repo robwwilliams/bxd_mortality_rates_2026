@@ -1,6 +1,6 @@
 # Figure legends
 
-Part 1, diet (Figs 1–5); Part 2, proximal Chr 1 and F1 hybrids (Figs 6–7) and an exploratory model (Fig. 8); Part 3, UM-HET3 Vita1a and Vita1b (Figs 9–11); Part 4, terminal weight loss and the per diem cost of late life (Fig. 12). Text: `notes/Report_MRDT_Parts1-4_2026-10-27.md`.
+Part 1, diet (Figs 1–5); Part 2, proximal Chr 1 and F1 hybrids (Figs 6–7) and an exploratory model (Fig. 8); Part 3, UM-HET3 Vita1a and Vita1b (Figs 9–11); Part 4, terminal weight loss and the per diem cost of late life (Fig. 12). Text: `notes/Report_BXD_Mortality_Parts1-4_27Oct2026_v1.md`.
 
 Figures are in this folder as SVG (editable text, Arial) with PNG previews. Legends follow *Nature* style, as in Arends et al. 2026: a bold title that states the finding, bold panel letters, italic statistical symbols, the test and *n* for every comparison, and British (Oxford) spelling. Colours: chow (CD) brown and high fat (HF) blue; haplotypes B dark purple and D orange (Arends et al. 2026); inbred parents pink and F1 hybrids green.
 

@@ -2,7 +2,9 @@
 
 **Parts 1–4: diet, proximal Chr 1 and F1 hybrids in the BXD family, Vita1a and Vita1b in UM-HET3 mice, and terminal weight loss**
 
-Exploratory report, 26 October 2026; Part 4 added 27 October 2026. Prepared by Claude (Anthropic) with Rob Williams, for Suheeta Roy, Danny Arends and Khyobeni Mozhui. All code, data and figures: [github.com/robwwilliams/bxd_mortality_rates_2026](https://github.com/robwwilliams/bxd_mortality_rates_2026).
+Exploratory report started 23 October 2026; Part 4 added 27 October 2026. Prepared by Claude (Anthropic) with Rob Williams.
+
+All code, data and figures: [github.com/robwwilliams/bxd_mortality_rates_2026](https://github.com/robwwilliams/bxd_mortality_rates_2026).
 
 ## Summary
 
@@ -18,7 +20,7 @@ Exploratory report, 26 October 2026; Part 4 added 27 October 2026. Prepared by C
   - **Whether it also shortens the MRDT is not settled.** The published Table 2 suggests it does (P ≈ 0.04), but the effect disappears when the miscalls and site differences are taken into account.
   - **The D haplotype acts in opposite directions in the two populations.** In BXD chow females, proximal Chr 1 D lowers mortality relative to B. In UM-HET3 females, paternal D raises it relative to H (C3H).
   - **Neither population shows a convincing proximal Chr 1 effect on MRDT.**
-- **Part 4, terminal weight loss and the per diem cost of late life (BXD and F1 hybrids).**
+- **Part 4, Terminal weight loss and the per diem cost of late life (BXD and F1 hybrids).**
   - **Weight loss marks about the last three months of life.**
   - **Across BXD strains, longer life brings somewhat longer decline:** about 12 more days of decline per 100 more days of life, close to proportional.
   - **Hybrids of short-lived strains live 171 days longer than their parents, with the same three months of decline.** The decline is postponed, not lengthened. It is compressed relative to lifespan, but not in days.

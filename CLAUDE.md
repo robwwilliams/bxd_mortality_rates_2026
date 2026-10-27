@@ -66,4 +66,8 @@ Follow `notes/figure_style.md` (Nature-series style). The colors are fixed:
   - "days" spelled out in legends.
   - Capital P.
   - Legends open with "Fig. N |".
+- **Reports.** The Markdown in `notes/` is the source; `tools/build_report.py` makes the Word file and PDF from it.
+  - **File names follow Rob's convention:** `Report_BXD_Mortality_Parts1-4_27Oct2026_v1` (topic, parts, date as DDMonYYYY, version). The Markdown, Word and PDF share the name.
+  - **Word format is Rob's:** Arial 11 pt for text and tables, headings at 16, 14 and 14 pt, and a blank line under the title.
+  - **Rob edits the Word file.** Carry his edits back into the Markdown, then rebuild.
 - **Commits.** Small, with clear messages. Push to `main` unless Rob asks for a branch.

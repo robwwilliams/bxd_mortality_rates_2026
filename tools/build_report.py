@@ -1,6 +1,7 @@
 """Build a shareable report from a Markdown note: HTML, Word and PDF, with every figure as PNG and SVG, and a ZIP.
 
 Usage: .venv/bin/python tools/build_report.py notes/Report.md <out_dir> [<name>]
+  Name reports as Rob does: Report_BXD_Mortality_Parts1-4_27Oct2026_v1 (topic, parts, date, version).
   Images in the note are written ../output/<Fig>.png; the matching .svg is copied too.
   Writes <out_dir>/<name>/{<name>.html, <name>.docx, <name>.pdf, figures/} and <out_dir>/<name>.zip.
 The PDF comes from tools/html2pdf.swift (macOS WebKit). Needs: markdown, htmldocx, python-docx (see CLAUDE.md).
@@ -56,14 +57,19 @@ html_path = os.path.join(root, name + ".html")
 open(html_path, "w", encoding="utf-8").write(html)
 
 # Word: the same HTML, images scaled to the text width
+# Rob's format (27 October 2026): Arial 11 pt text and tables, headings 16 / 14 / 14 pt, a blank line under the title
 d = docx.Document()
-st = d.styles["Normal"]; st.font.name = "Arial"; st.font.size = Pt(10.5)
+st = d.styles["Normal"]; st.font.name = "Arial"; st.font.size = Pt(11)
+for style, size in (("Heading 1", 16), ("Heading 2", 14), ("Heading 3", 14)):
+    d.styles[style].font.size = Pt(size)
 for s in d.sections:
     s.left_margin = s.right_margin = Inches(1)
 cwd = os.getcwd(); os.chdir(root)          # htmldocx reads images relative to the working directory
 conv = HtmlToDocx(); conv.table_style = "Table Grid"
 conv.add_html_to_document(body.replace("<hr />", ""), d)
 os.chdir(cwd)
+if len(d.paragraphs) > 1:
+    d.paragraphs[1].insert_paragraph_before("")
 for shape in d.inline_shapes:
     ratio = shape.height / shape.width
     shape.width = Inches(6.5); shape.height = int(Inches(6.5) * ratio)
