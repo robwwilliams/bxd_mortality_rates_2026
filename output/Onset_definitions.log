@@ -1,0 +1,112 @@
+Mice: 2242 
+Mice with a peak at least 120 days before death under both weighing settings: 2117 
+Weighings flagged and dropped under K2: 143 
+Definitions: 568 
+Part 4 spans reproduced: 2117 of 2117 mice
+Running the tests for 568 definitions on 16 cores
+
+Part 4's definition:
+     definition  form         conclusion   estimate         lo         hi
+ P1.K1.O1.T1.L1  days            C1 chow  1.295e-01  2.836e-02  2.307e-01
+ P1.K1.O1.T1.L1  days        C1 high fat  1.093e-01  5.040e-02  1.682e-01
+ P1.K1.O1.T1.L1  days   C2 short x short -1.153e-01 -3.238e+01  3.215e+01
+ P1.K1.O1.T1.L1  days     C3 long x long -1.818e+01 -5.331e+01  1.695e+01
+ P1.K1.O1.T1.L1  days C4 high fat - chow -4.218e+01 -5.598e+01 -2.837e+01
+ P1.K1.O1.T1.L1 share            C1 chow  3.965e-05 -1.010e-04  1.803e-04
+ P1.K1.O1.T1.L1 share        C1 high fat  5.330e-05 -2.977e-05  1.364e-04
+ P1.K1.O1.T1.L1 share   C2 short x short -3.921e-02 -8.637e-02  7.944e-03
+ P1.K1.O1.T1.L1 share     C3 long x long -2.114e-02 -6.200e-02  1.972e-02
+ P1.K1.O1.T1.L1 share C4 high fat - chow -4.285e-02 -5.909e-02 -2.661e-02
+       p units family one.at.a.time
+ 0.01450    68     T1          TRUE
+ 0.00300    58     T1          TRUE
+ 1.00000    10     T1          TRUE
+ 0.33940    11     T1          TRUE
+ 0.00000    81     T1          TRUE
+ 0.54100    68     T1          TRUE
+ 0.27850    58     T1          TRUE
+ 0.07143    10     T1          TRUE
+ 0.31520    11     T1          TRUE
+ 0.00000    81     T1          TRUE
+
+Validity: mean concordance over chow BXDs, high-fat BXDs and F1s (top 15)
+  K    rule concordance
+ K1  Pmax.G   0.6613333
+ K2  Pmax.G   0.6593333
+ K2    P3.G   0.6516667
+ K1    P3.G   0.6510000
+ K2    P4.G   0.6363333
+ K1    P4.G   0.6356667
+ K1 Pmax.O9   0.6260000
+ K1   P3.O9   0.6256667
+ K1   P4.O9   0.6256667
+ K2 Pmax.O9   0.6253333
+ K2   P3.O9   0.6250000
+ K2   P4.O9   0.6246667
+ K1   P4.O7   0.6216667
+ K1 Pmax.O3   0.6213333
+ K1   P3.O7   0.6210000
+Definition that best predicts death: K1 Pmax.G -> P1.K1.G1.L2 
+
+Summary:
+         conclusion  form part4.estimate   part4.lo   part4.hi part4.p
+            C1 chow  days      1.295e-01  2.836e-02  2.307e-01 0.01450
+            C1 chow share      3.965e-05 -1.010e-04  1.803e-04 0.54100
+        C1 high fat  days      1.093e-01  5.040e-02  1.682e-01 0.00300
+        C1 high fat share      5.330e-05 -2.977e-05  1.364e-04 0.27850
+   C2 short x short  days     -1.153e-01 -3.238e+01  3.215e+01 1.00000
+   C2 short x short share     -3.921e-02 -8.637e-02  7.944e-03 0.07143
+     C3 long x long  days     -1.818e+01 -5.331e+01  1.695e+01 0.33940
+     C3 long x long share     -2.114e-02 -6.200e-02  1.972e-02 0.31520
+ C4 high fat - chow  days     -4.218e+01 -5.598e+01 -2.837e+01 0.00000
+ C4 high fat - chow share     -4.285e-02 -5.909e-02 -2.661e-02 0.00000
+         claim definitions share.same.direction share.same.verdict
+      positive         568                0.894              0.421
+ no difference         568                0.650              0.989
+      positive         568                1.000              1.000
+ no difference         568                0.981              0.671
+ no difference         568                0.282              0.940
+ no difference         568                0.847              0.856
+ no difference         568                0.606              0.960
+ no difference         568                0.549              0.970
+      negative         568                0.641              0.803
+      negative         568                0.609              0.849
+ oat.same.direction oat.same.verdict best.estimate    best.lo    best.hi
+              18/20            14/20     3.078e+00  3.589e-01  5.798e+00
+              17/20            20/20     1.954e-03 -1.358e-03  5.266e-03
+              20/20            20/20     3.363e+00  1.715e+00  5.012e+00
+              20/20            17/20     3.027e-03  8.940e-04  5.161e-03
+               9/20            20/20     2.048e+02 -4.916e+02  9.011e+02
+              19/20            18/20    -3.039e-01 -1.231e+00  6.227e-01
+              16/20            19/20    -7.207e+01 -1.152e+03  1.008e+03
+              16/20            19/20     2.002e-02 -1.345e+00  1.385e+00
+              16/20            19/20    -7.116e+02 -1.093e+03 -3.305e+02
+              16/20            19/20    -6.777e-01 -1.128e+00 -2.270e-01
+ estimate.min estimate.max   verdict
+   -6.976e-02    3.078e+00 sensitive
+   -1.423e-03    1.954e-03    robust
+    4.284e-02    3.602e+00    robust
+   -1.450e-05    3.708e-03 sensitive
+   -2.128e+01    3.619e+02    robust
+   -5.962e-01    4.050e-01 sensitive
+   -1.160e+02    3.133e+02    robust
+   -5.536e-02    4.377e-01    robust
+   -7.116e+02    3.469e+02 sensitive
+   -6.777e-01    5.159e-01 sensitive
+
+C5: median weight / plateau by days before death
+ diet    window median.rel.P1 median.rel.P2 median.rel.P3 median.rel.P4
+   CD    [0,15)         0.821         0.815         0.842         0.888
+   CD   [15,30)         0.833         0.830         0.861         0.906
+   CD   [30,60)         0.875         0.871         0.903         0.944
+   CD   [60,90)         0.880         0.880         0.909         0.952
+   CD  [90,120)         0.930         0.930         0.956         0.982
+   CD [120,180)         0.957         0.962         0.987         1.000
+   CD [180,300)         0.943         0.991         0.990         1.000
+   HF    [0,15)         0.736         0.717         0.808         0.792
+   HF   [15,30)         0.835         0.809         0.913         0.884
+   HF   [30,60)         0.919         0.910         0.988         0.950
+   HF   [60,90)         0.970         0.970         1.034         0.999
+   HF  [90,120)         1.000         1.000         1.059         1.019
+   HF [120,180)         1.000         1.000         1.028         1.011
+   HF [180,300)         0.930         1.000         1.000         0.973

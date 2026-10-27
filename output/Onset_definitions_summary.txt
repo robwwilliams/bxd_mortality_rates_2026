@@ -1,0 +1,11 @@
+conclusion	form	part4.estimate	part4.lo	part4.hi	part4.p	claim	definitions	share.same.direction	share.same.verdict	oat.same.direction	oat.same.verdict	best.estimate	best.lo	best.hi	estimate.min	estimate.max	verdict
+C1 chow	days	0.1295	0.02836	0.2307	0.0145	positive	568	0.894	0.421	18/20	14/20	3.078	0.3589	5.798	-0.06976	3.078	sensitive
+C1 chow	share	3.965e-05	-0.000101	0.0001803	0.541	no difference	568	0.65	0.989	17/20	20/20	0.001954	-0.001358	0.005266	-0.001423	0.001954	robust
+C1 high fat	days	0.1093	0.0504	0.1682	0.003	positive	568	1	1	20/20	20/20	3.363	1.715	5.012	0.04284	3.602	robust
+C1 high fat	share	5.33e-05	-2.977e-05	0.0001364	0.2785	no difference	568	0.981	0.671	20/20	17/20	0.003027	0.000894	0.005161	-1.45e-05	0.003708	sensitive
+C2 short x short	days	-0.1153	-32.38	32.15	1	no difference	568	0.282	0.94	9/20	20/20	204.8	-491.6	901.1	-21.28	361.9	robust
+C2 short x short	share	-0.03921	-0.08637	0.007944	0.07143	no difference	568	0.847	0.856	19/20	18/20	-0.3039	-1.231	0.6227	-0.5962	0.405	sensitive
+C3 long x long	days	-18.18	-53.31	16.95	0.3394	no difference	568	0.606	0.96	16/20	19/20	-72.07	-1152	1008	-116	313.3	robust
+C3 long x long	share	-0.02114	-0.062	0.01972	0.3152	no difference	568	0.549	0.97	16/20	19/20	0.02002	-1.345	1.385	-0.05536	0.4377	robust
+C4 high fat - chow	days	-42.18	-55.98	-28.37	0	negative	568	0.641	0.803	16/20	19/20	-711.6	-1093	-330.5	-711.6	346.9	sensitive
+C4 high fat - chow	share	-0.04285	-0.05909	-0.02661	0	negative	568	0.609	0.849	16/20	19/20	-0.6777	-1.128	-0.227	-0.6777	0.5159	sensitive
