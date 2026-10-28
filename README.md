@@ -6,7 +6,7 @@ See GeneNetwork.org trait 10002:  https://genenetwork.org/show_trait?trait_id=10
 
 On a high-fat diet, BXD family females die at 1.4 times the rate of chow-fed females at every age. The mortality rate doubling time (MRDT) does not change: 153 d on chow, 149 d on high fat (p = 0.55 for equal slopes). See [notes/MRDT_diet_initial.md](notes/MRDT_diet_initial.md).
 
-Within strains (exploratory), high fat raises mortality 1.8-fold, strains differ in how much (P = 0.0002), and the MRDT is 113 d rather than the pooled 151 d. See Part 1 of the [report](notes/Report_BXD_Mortality_Parts1-4_27Oct2026_v1.md), Fig. 5.
+Within strains (exploratory), high fat raises mortality 1.8-fold, strains differ in how much (P = 0.0002), and the MRDT is 113 d rather than the pooled 151 d. Given an MRDT for each diet, high fat also shortens it within strains, from 117 to 91 d (ratio 0.78, 95% CI 0.69–0.88), which the pooled fit hides. See Part 1 of the [report](notes/Report_BXD_Mortality_Parts1-5_28Oct2026_v2.md), Fig. 5 and Fig. 15d.
 
 ### Planned secondary analyses
 
@@ -20,7 +20,7 @@ Results ([notes/MRDT_secondary_results.md](notes/MRDT_secondary_results.md)):
 
 ### UM-HET3 Vita1a and Vita1b (exploratory)
 
-Part 3 of the report ([notes/Report_BXD_Mortality_Parts1-4_27Oct2026_v1.md](notes/Report_BXD_Mortality_Parts1-4_27Oct2026_v1.md), also as PDF and Word) asks the same level-or-slope question of the Vita1a and Vita1b loci of Arends et al. 2026:
+Part 3 of the report ([notes/Report_BXD_Mortality_Parts1-5_28Oct2026_v2.md](notes/Report_BXD_Mortality_Parts1-5_28Oct2026_v2.md), also as PDF and Word) asks the same level-or-slope question of the Vita1a and Vita1b loci of Arends et al. 2026:
 - **The paternal genotype calls on proximal Chr 1 are biased toward H at UM and UT, not at JL.** This is the source of the 2:1 excess of paternal H over D in Supplementary Table 2, and of the near-absence of BD calls at Vita1b at those sites.
   - The bias follows the genotyping set, not the site. One of the two MonsterPlex marker sets loses heterozygous calls at a few SNPs. It typed half of the UM mice and all of the UT mice; JL is all in the other set.
   - See [notes/Message_Chr1_genotype_error_2026-10-26.md](notes/Message_Chr1_genotype_error_2026-10-26.md).
@@ -37,7 +37,7 @@ Rob's per diem model: a mouse is free until 500 days, then costs 1 unit per day 
 
 ### Definitions of terminal decline, and nicotinamide (exploratory)
 
-Both plans were approved by Rob on 27 October 2026, before they were run. The reading behind them is in [notes/reading_notes_frailty.md](notes/reading_notes_frailty.md).
+Part 5 of the report covers this section. Both plans were approved by Rob on 27 October 2026, before they were run. The reading behind them is in [notes/reading_notes_frailty.md](notes/reading_notes_frailty.md).
 
 **How much the Part 4 conclusions depend on the definition of terminal decline.** Plan: [notes/PLAN_morbidity_definitions.md](notes/PLAN_morbidity_definitions.md). Results: [notes/Onset_definitions_results.md](notes/Onset_definitions_results.md), Fig. 13. 568 definitions were tested.
 - **Graded percent below peak predicts death best.**
@@ -119,14 +119,14 @@ Rscript UMHET3/vcf_set_check.R "$D/S_Table_5_VCF_coded_genotypes_metadata_18Aug2
 Rscript UMHET3/vita_sex_stratified.R data/umhet3/Table2/Vita1a_deathsIn15Dwindows_female.txt data/umhet3/Table2/Vita1a_deathsIn15Dwindows_male.txt paternalD
 Rscript UMHET3/vita1_site_check.R "$X"     # individual mice, by sex, site and cohort
 Rscript UMHET3/Figures_Part3.R             # Figs 9-11
-.venv/bin/python tools/build_report.py notes/Report_BXD_Mortality_Parts1-4_27Oct2026_v1.md reports   # PDF, Word, figures and ZIP
+.venv/bin/python tools/build_report.py notes/Report_BXD_Mortality_Parts1-5_28Oct2026_v2.md reports   # PDF, Word, figures and ZIP
 ```
 
 ### Structure
 
 - [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures. `NAM_rectangularization.R` compares high fat with and without nicotinamide (Fig. 14). `Rectangularization.R` sets the BXD comparisons beside de Cabo's studies (Fig. 15).
 - [output/](./output/) contains the result tables (tab-separated `.txt`) and figures (`.svg` with editable text in Arial, and `.png` previews).
-- [notes/](./notes/) contains write-ups: `Report_BXD_Mortality_Parts1-4_27Oct2026_v1` (Markdown, PDF and Word) for beginners, covering all four parts; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, `reading_notes.md` on the three papers below, and `reading_notes_frailty.md` on mouse frailty, terminal weight loss and rectangularization.
+- [notes/](./notes/) contains write-ups: `Report_BXD_Mortality_Parts1-5_28Oct2026_v2` (Markdown, PDF and Word) for beginners, covering all five parts, with version 1 (Parts 1–4, 27 October) kept for the record; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, `reading_notes.md` on the three papers below, and `reading_notes_frailty.md` on mouse frailty, terminal weight loss and rectangularization.
 - [Genotypes/](./Genotypes/) contains `Chr1_haplotypes.R`, which classifies strains as B, D or recombinant across proximal Chr 1.
 - [BodyWeight/](./BodyWeight/) contains the analysis of terminal weight loss and Rob's per diem model of the cost of late life (Fig. 12). It also holds the comparison of definitions of terminal decline (`morbidity_functions.R`, `onset_definitions.R`; Fig. 13), the weight QC (`weights_QC.R`) and the look at tumors and terminal weight (`masses_notes.R`).
 - [Models/](./Models/) contains an exploratory model of Sewall Wright's question for the F1 experiment: do 10 or 200 recessive loci predict different lifespan gains for short-by-short and long-by-long F1s?
