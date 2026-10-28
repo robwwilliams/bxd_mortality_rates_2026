@@ -125,7 +125,7 @@ Rob, 26 October: "We killed them to harvest tissue when we judge them to be end 
 
 ## Caveats
 
-- **Weighings are about two months apart,** so onset is known to about ±1 month. No mouse was weighed at death.
+- **Weighings are about two months apart,** so onset is known to about ±1 month. The last weighing came a median of 32 days before death. 221 of the 2,117 mice (10%) were weighed on the day they died, 125 of them euthanized mice, and 201 more within a week. (Until 28 October 2026 this note said that no mouse was weighed at death. That was wrong.)
 - **The 90% threshold and the 120-day window for the peak are choices.** The bounds of the span give the same answers.
 - **The per diem units are arbitrary;** only comparisons between groups mean anything.
 - **Exploratory, with many measures** and no correction for multiple tests.
