@@ -93,7 +93,7 @@
 - **This is the reviewer's mechanism at a landmark:** without a gap, weight loss before death enters the classes. A1 excludes the 35 of these 110 mice that died or were censored before 485 days (29 died).
 
 **A3:**
-- **Size versus trajectory:** at 545 days, a single weight no longer predicts survival (concordance 0.493), but class still does.
+- **Size versus trajectory:** at 545 days, no association of a single weight with survival was detected (concordance 0.493), but class still predicts survival.
 - **No prediction within strains:** the class association is not detected within strains (P = 0.28).
 - **The association lies between strains:** the high-gain class (class 3: 46 mice, 16.4 g at 120 days and 40.2 g at 545 days) marks strains that live longer after 665 days. Strains whose mice have a higher probability of membership in that class live longer: the hazard ratio is 0.26 (0.10–0.65; jackknife P = 0.004) for a strain whose mice all belong to the class against one whose mice belong to none.
 - **The contrast rests on few mice:** most strain × diet groups have a mean probability near 0 (median 0.003). The 46 mice of the class are spread over 27 groups, 38 of them on high fat, and only BXD91 on high fat holds several (6 of its 7 mice). The hazard ratio compares a mean probability of 1 with one of 0, and only groups of one to seven mice come near 1.
