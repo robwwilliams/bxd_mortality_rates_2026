@@ -6,7 +6,7 @@
 
 - **Prediction holds:** Latent classes assigned only from weights taken before 365 days predict survival after 485 days, with no weights from near death involved. The test is robust to clustering by strain (P = 0.004).
 - **It holds among mice of the same strain:** P = 0.012. The signal belongs, at least in part, to the individual mouse and not only to its genotype.
-- **It is modest:** Harrell's concordance is 0.539. Among pairs of mice whose order of death is known, the class model puts the pair in the right order 53.9% of the time; chance is 50%.
+- **It is weak:** Harrell's concordance is 0.539. Among pairs of mice whose order of death is known, the class model puts the pair in the right order 53.9% of the time; chance is 50%. The classes explain about 2% of the variation in survival after 485 days (exploratory). In the same mice, diet explains 6% of the variance in age at death, and strain × diet groups 26%. The P values are small because the sample is large.
 - **A single weight does as well:**
   - **The last weight before 365 days:** it has a concordance of 0.538, against 0.539 for the classes. Class and that weight each add a little to the other, and together they reach 0.542.
   - **One weight at a fixed age (exploratory):** within each diet, a weight taken at any one age from 3 to 11 months ranks 50.6% to 56.0% of pairs correctly, against 51.7% to 56.8% for the classes in the same mice.
@@ -223,6 +223,40 @@
 
 **Interpretation, not tested here:** the signal may be the slow start of the decline before death, seen four to six months ahead. Chow mice are already at 96% of their running peak 120–180 days before death. It is a prediction in the landmark sense, because no weight from the 120 days before 665 days is used. But it may reflect illness already under way, not a trajectory type that a mouse carries through life.
 
+### Variance explained
+
+**Source:** this part was added at Rob's request after the results above were seen (Part 3 of the script).
+
+**From the Cox models (stratified by diet):** explained variation by the Kent–O'Quigley and Nagelkerke R².
+
+| Predictor | Mice | Kent–O'Quigley R² | Nagelkerke R² |
+|---|---|---|---|
+| A1: classes | 1,462 | 1.7% | 2.1% |
+| A1: last weight before 365 days | 1,462 | 1.5% | 1.8% |
+| A1: weight within 20 days of 180 days | 941 | 2.5% | 3.0% |
+| A1: classes, in the same 941 mice | 941 | 2.0% | 2.5% |
+| A3: change in weight from 12 to 17 months | 737 | 1.0% | 1.1% |
+| A3: classes, in the same 737 mice | 737 | 1.6% | 2.1% |
+
+- **Royston and Sauerbrei's R² of D:** it is also printed in the output. It gives 1.0% to 1.8% for the single weights, but it assumes a normally distributed prognostic index. For the four classes it disagrees with the other two measures (0.3% to 1.5%), so it is not used here.
+
+**Age at death among the 1,233 A1 mice that died:** the SD is 136 days, and median ages at death are 723 days on chow and 662 days on high fat.
+
+| Source | Share of variance in age at death |
+|---|---|
+| Diet alone | 5.9% |
+| Classes, beyond diet | 1.8% |
+| Last weight before 365 days, beyond diet | 1.6% |
+| Classes and that weight, beyond diet | 2.3% |
+| Weight within 20 days of 180 days, beyond diet (813 mice) | 2.7% |
+| Strain × diet groups: intraclass correlation (119 groups with at least 5 deaths, 1,065 mice) | 25.6% |
+
+- **The weight within 20 days of 180 days:** its correlation with age at death is −0.17.
+
+**What this shows:**
+- **Individual mice:** the classes and single weights each explain 1% to 3% of the variation in survival. For predicting how long an individual mouse will live, they are nearly useless.
+- **Groups:** variance explained is not the size of an effect on a group. High fat lowers the median age at death by 61 days, yet it explains 5.9% of the variance. The heavy-early class dies at 1.82 times the rate of the lean class, a median of 88 days earlier, yet it holds only 11% of the mice.
+
 ### What this means for the classes
 
 As predictors of survival in BXD females, the classes add nothing detectable beyond one weight at a fixed age before 1 year, or two weights at 18 months.
@@ -281,7 +315,8 @@ Only a landmark separates the weights used to assign the classes from the surviv
 
 **Support for the claim:** BXD females support the claim that early weight trajectories predict later survival, without the weights taken near death.
 
-**Three qualifications:**
+**Four qualifications:**
+- **Weak prediction:** the classes explain about 2% of the variation in survival.
 - **Size and recent change:** in the first year, one weight at a fixed age predicts as well as the classes. At 18 months, no association of size with survival was detected, but the change in weight over the previous 5 months predicts as well as the classes.
 - **Inflation:** classes assigned from whole records overstate the hazard ratios. In these mice, the overstatement is from 1.8 to 3.0.
 - **Trimming is not enough:** removing the last months of each record leaves much of the excess.

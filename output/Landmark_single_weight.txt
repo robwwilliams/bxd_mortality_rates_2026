@@ -59,3 +59,17 @@ change beyond size: LR 1.9, 1 df, P = 0.17 ; class alone: LR 2.4 ; size and chan
 Each diet on its own: concordance
 CD : n = 455 0.485 0.533 0.52 0.512 (size, change, size + change, class)
 HF : n = 282 0.5 0.571 0.578 0.571 (size, change, size + change, class)
+
+== Part 3: variance explained ==
+Explained variation from Cox models stratified by diet
+A3: change from 12 to 17 months          n  737  C 0.544  R2.D 0.008  R2.KO 0.010  R2.N 0.011
+A3: classes, same mice                   n  737  C 0.519  R2.D 0.004  R2.KO 0.016  R2.N 0.021
+A1: classes                              n 1462  C 0.539  R2.D 0.015  R2.KO 0.017  R2.N 0.021
+A1: last weight before 365 d             n 1462  C 0.538  R2.D 0.010  R2.KO 0.015  R2.N 0.018
+A1: weight within 20 d of 180 d          n  941  C 0.551  R2.D 0.018  R2.KO 0.025  R2.N 0.030
+A1: classes, same mice as the 180-d weight n  941  C 0.543  R2.D 0.003  R2.KO 0.020  R2.N 0.025
+
+A1 mice that died: 1233 ; SD of age at death 136 d; median age at death, CD and HF: 723 662 
+Share of the variance in age at death: diet alone 0.059 ; beyond diet: classes 0.018 ; last weight before 365 d 0.016 ; classes and that weight 0.023 
+  among the 813 with a weight within 20 d of 180 d: that weight 0.027 ; classes 0.02 ; correlation of that weight with age at death -0.166 
+  strain x diet groups with >= 5 deaths (119 groups, 1065 mice): intraclass correlation 0.256

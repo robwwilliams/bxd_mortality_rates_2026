@@ -14,6 +14,10 @@
 #     Each is standardized within diet. Cox models of survival from 665 d, stratified by diet, robust by strain;
 #     likelihood-ratio tests of each term beyond size, and of class beyond size and change; within-strain versions
 #     stratified by strain x diet; Harrell's concordance, and its difference between models.
+#   Part 3, variance explained (added at Rob's request after Parts 1 and 2 were seen):
+#     from the Cox models, survival::royston (R2 of D, Royston and Sauerbrei 2004; Kent and O'Quigley 1988; Nagelkerke 1991);
+#     among the A1 mice that died, the share of the variance in age at death explained beyond diet, against diet alone
+#     and the intraclass correlation of strain x diet groups (groups with at least 5 deaths).
 #
 # Run from the repository root after landmark_trajectory.R:  Rscript Trajectory/landmark_single_weight.R
 # Writes output/Landmark_single_weight.txt
@@ -33,6 +37,11 @@ near <- function(w, ids, target, lo, hi) {
 zd <- function(v, diet) ave(v, diet, FUN = function(x) (x - mean(x, na.rm = TRUE)) / sd(x, na.rm = TRUE))
 cls.factor <- function(v) relevel(factor(v), ref = names(which.max(table(v))))
 cstat <- function(f) round(unname(f$concordance["concordance"]), 3)
+icc <- function(y, g) {                                         # one-way ANOVA estimator
+  a <- anova(lm(y ~ factor(g))); msb <- a[1, "Mean Sq"]; msw <- a[2, "Mean Sq"]
+  n <- table(g); N <- sum(n); n0 <- (N - sum(n^2) / N) / (length(n) - 1)
+  (msb - msw) / (msb + (n0 - 1) * msw)
+}
 lr <- function(big, small) { s <- 2 * (big$loglik[2] - small$loglik[2]); k <- length(coef(big)) - length(coef(small))
   sprintf("LR %.1f, %d df, P = %.2g", s, k, pchisq(s, k, lower.tail = FALSE)) }
 
@@ -110,4 +119,30 @@ for (dt in c("CD", "HF")) {
   cat(dt, ": n =", nrow(f), sapply(c(size = "w.now.z", change = "change.z", size.change = "w.now.z + change.z", class = "cls"), function(m)
     cstat(coxph(as.formula(paste("Surv(entry, End, event) ~", m)), f))), "(size, change, size + change, class)\n")
 }
+# Part 3: variance explained
+cat("\n== Part 3: variance explained ==\n")
+ev <- function(f, label, n) { r <- royston(f)
+  cat(sprintf("%-40s n %4d  C %.3f  R2.D %.3f  R2.KO %.3f  R2.N %.3f\n", label, n, cstat(f), r["R.D"], r["R.KO"], r["R.N"])) }
+cat("Explained variation from Cox models stratified by diet\n")
+ev(fs$change, "A3: change from 12 to 17 months", nrow(e)); ev(fs$class, "A3: classes, same mice", nrow(e))
+d <- d0[d0[, "analysis"] == "A1 L365 g120", ]; d[, "cls"] <- cls.factor(d[, "cls"])
+pre <- W[W[, "age"] < 365 & W[, "EarTag"] %in% d[, "EarTag"], ]
+d[, "w6"] <- near(pre, d[, "EarTag"], 180, 160, 200)[, "wt"]; d[, "w6z"] <- zd(d[, "w6"], d[, "Diet"])
+e6 <- d[!is.na(d[, "w6z"]), ]
+ev(coxph(Surv(entry, End, event) ~ cls + strata(Diet), d), "A1: classes", nrow(d))
+ev(coxph(Surv(entry, End, event) ~ wz + strata(Diet), d), "A1: last weight before 365 d", nrow(d))
+ev(coxph(Surv(entry, End, event) ~ w6z + strata(Diet), e6), "A1: weight within 20 d of 180 d", nrow(e6))
+ev(coxph(Surv(entry, End, event) ~ cls + strata(Diet), e6), "A1: classes, same mice as the 180-d weight", nrow(e6))
+
+k <- d[d[, "event"] == 1, ]; k6 <- k[!is.na(k[, "w6z"]), ]
+r2 <- function(f, dd) summary(lm(f, dd))[["r.squared"]]
+beyond <- function(term, dd) round(r2(as.formula(paste("End ~ Diet +", term)), dd) - r2(End ~ Diet, dd), 3)
+cat("\nA1 mice that died:", nrow(k), "; SD of age at death", round(sd(k[, "End"])), "d; median age at death, CD and HF:", tapply(k[, "End"], k[, "Diet"], median), "\n")
+cat("Share of the variance in age at death: diet alone", round(r2(End ~ Diet, k), 3), "; beyond diet: classes", beyond("cls", k),
+    "; last weight before 365 d", beyond("wz", k), "; classes and that weight", beyond("cls + wz", k), "\n")
+cat("  among the", nrow(k6), "with a weight within 20 d of 180 d: that weight", beyond("w6z", k6), "; classes", beyond("cls", k6),
+    "; correlation of that weight with age at death", round(cor(k6[, "w6z"], k6[, "End"]), 3), "\n")
+k[, "grp"] <- paste(k[, "Genotype"], k[, "Diet"]); k5 <- k[k[, "grp"] %in% names(which(table(k[, "grp"]) >= 5)), ]
+cat("  strain x diet groups with >= 5 deaths (", length(unique(k5[, "grp"])), " groups, ", nrow(k5), " mice): intraclass correlation ",
+    round(icc(k5[, "End"], k5[, "grp"]), 3), "\n", sep = "")
 sink()
