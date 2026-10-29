@@ -7,7 +7,10 @@
 - **Prediction holds:** Latent classes assigned only from weights taken before 365 days predict survival after 485 days, with no weights from near death involved. The test is robust to clustering by strain (P = 0.004).
 - **It holds among mice of the same strain:** P = 0.012. The signal belongs, at least in part, to the individual mouse and not only to its genotype.
 - **It is modest:** Harrell's concordance is 0.539. Among pairs of mice whose order of death is known, the class model puts the pair in the right order 53.9% of the time; chance is 50%.
-- **A single weight does as well:** The last weight before 365 days has a concordance of 0.538. Class and that weight each add a little to the other, and together they reach 0.542.
+- **A single weight does as well:**
+  - **The last weight before 365 days:** it has a concordance of 0.538, against 0.539 for the classes. Class and that weight each add a little to the other, and together they reach 0.542.
+  - **One weight at a fixed age (exploratory):** within each diet, a weight taken at any one age from 3 to 11 months ranks 50.6% to 56.0% of pairs correctly, against 51.7% to 56.8% for the classes in the same mice.
+- **At 18 months, recent change predicts and size does not (exploratory):** A mouse's weight at 17 months shows no association with survival after 22 months. The change in its weight from 12 to 17 months does predict survival (P = 0.0013), as well as the four classes do.
 - **Whole records inflate the association:** Take the A1 mice and count survival from 485 days, as in A1. When their classes are assigned instead from their whole weight records, the riskiest class's hazard ratio rises from 1.82 to 3.01, and the Wald χ² rises from 13.4 to 80.7 (exploratory, E1).
 - **Removing the last 120 days of each record does not cure the inflation:** The hazard ratio is 2.47 and χ² = 41.8 (exploratory, E2). The excess χ² over A1 falls from 67.3 to 28.4, so 42% of it remains.
 
@@ -44,7 +47,7 @@
 | 4, steady gain | 11, 103 | 22.3, 23.3 | 45.1, 54.0 | 662 | 1.26 (0.95–1.66) |
 | 2, heavy early | 18, 137 | 27.9, 28.8 | 36.6, 62.7 | 640 | 1.82 (1.31–2.52) |
 
-- **Weights:** means of the weighings in each age bin, from `output/Landmark_strain_diet.txt` (exploratory). The weighings before 150 days are mostly the baselines at set-up, when the diets began.
+- **Weights:** means of the weighings in each age bin, from `output/Landmark_strain_diet.txt` (exploratory). The weighings before 150 days are mostly the baselines at set-up. Chow mice stayed on chow; high-fat mice were switched from chow at set-up.
 - **The 18 heavy-early mice on chow:** they peak at 44.6 g at 210–269 days and weigh 36.6 g at 330–364 days.
 - **Class curves:** the first version of this note gave the class model's mean curves for a chow mouse instead (for class 2, 33.1 g at 120 days and 45.6 g at 365 days). Those curves misdescribe classes made up mostly of high-fat mice, and the observed weights replace them. Classes 1 and 4 were renamed to match: from "moderate gain" and "light early, steep gain".
 - **Median ages at death:** Kaplan–Meier estimates among mice alive at 485 days.
@@ -85,7 +88,7 @@
 **What the strain tests above ask:** P2 and P4 ask whether class predicts survival within and between strains. They do not ask whether class depends on strain. This section does.
 
 **Diet:**
-- **Weight:** at the last weighing before 365 days, mice weigh 48.0 g on high fat and 30.2 g on chow. At the first weighing (about 116 days, when the diets began), they weigh 22.4 g and 22.0 g.
+- **Weight:** at the last weighing before 365 days, mice weigh 48.0 g on high fat and 30.2 g on chow. At the first weighing (mean age about 116 days, usually the set-up, when high-fat mice were switched from chow), they weigh 22.4 g and 22.0 g.
 - **Gain:** 12.4 g per 100 days on high fat, against 3.6 g on chow.
 - **Class:** 82% of chow mice are in the lean class, against 38% of high-fat mice. Of the 155 heavy-early mice, 137 (88%) are on high fat (χ² = 327, 3 df).
 - **Why diet shapes the classes:** the class model includes diet terms common to all classes, so it removes the average effect of diet before it forms the classes. High-fat mice depart further from their diet's average curve, so they fill the heavy classes.
@@ -144,6 +147,86 @@
 - **The association lies between strains:** the high-gain class (class 3: 46 mice, 38 of them on high fat, which weigh 21.2 g before 150 days and 52.1 g at 480–544 days) marks strains that live longer after 665 days. Strains whose mice have a higher probability of membership in that class live longer: the hazard ratio is 0.26 (0.10–0.65; jackknife P = 0.004) for a strain whose mice all belong to the class against one whose mice belong to none.
 - **The contrast rests on few mice:** most strain × diet groups have a mean probability near 0 (median 0.003). The 46 mice of the class are spread over 27 groups, 38 of them on high fat, and only BXD91 on high fat holds several (6 of its 7 mice). The hazard ratio compares a mean probability of 1 with one of 0, and only groups of one to seven mice come near 1.
 
+## Single weights and recent change in weight, against the classes (exploratory)
+
+**Source:** added after the results above were seen, at Rob's request, by `Trajectory/landmark_single_weight.R` (`output/Landmark_single_weight.txt`). Claude fixed the definitions before these models were fitted.
+
+### One weight at a fixed age, landmark at 1 year
+
+**Design:**
+- **Mice and survival:** A1 mice, with survival counted from 485 days.
+- **The weight:** for each age from 90 to 330 days in steps of 30, each mouse's weighing within 20 days of that age, standardized within diet.
+- **Models:** a Cox model of that weight on each diet, with the A1 classes fitted to the same mice for comparison.
+
+| Age (d) | Chow: mice | Chow: C of weight (P) | Chow: C of classes | High fat: mice | High fat: C of weight (P) | High fat: C of classes |
+|---|---|---|---|---|---|---|
+| 90 | 273 | 0.529 (0.036) | 0.532 | 254 | 0.527 (0.028) | 0.550 |
+| 120 | 455 | 0.545 (0.0077) | 0.529 | 411 | 0.546 (0.00046) | 0.553 |
+| 150 | 415 | 0.551 (0.0023) | 0.517 | 406 | 0.553 (0.0024) | 0.568 |
+| 180 | 478 | 0.547 (0.00011) | 0.539 | 463 | 0.554 (0.000085) | 0.547 |
+| 210 | 451 | 0.552 (0.0079) | 0.519 | 427 | 0.560 (0.000011) | 0.558 |
+| 240 | 522 | 0.526 (0.055) | 0.521 | 463 | 0.525 (0.012) | 0.532 |
+| 270 | 406 | 0.559 (0.00057) | 0.540 | 411 | 0.557 (0.00030) | 0.563 |
+| 300 | 456 | 0.532 (0.0098) | 0.518 | 394 | 0.506 (0.16) | 0.546 |
+| 330 | 427 | 0.559 (0.00076) | 0.537 | 440 | 0.548 (0.0015) | 0.558 |
+
+**Results:**
+- **Heavier mice die sooner:** at every age and on both diets, the hazard ratio per SD of weight is 1.09 to 1.29.
+- **One weight against the classes:** one weight ranks 50.6% to 56.0% of pairs of mice correctly, and the classes 51.7% to 56.8%, in the same mice.
+
+**The first weighing is not a fixed-age weight:**
+- **Its age varies widely:** in A1 mice, the age of each mouse's first weighing ranges from 37 to 235 days on chow and from 40 to 223 days on high fat (5th to 95th percentiles), and its weight correlates 0.66 and 0.65 with that age.
+- **Taken as is, it hides its signal:** it shows no association with survival (C 0.499, P = 0.18 on chow; 0.513, P = 0.077 on high fat).
+- **Adjusted for the age at which it was taken, it predicts:** C 0.532 (P = 0.0032) on chow and 0.545 (P = 0.00025) on high fat.
+- **A retraction:** an earlier exploratory comparison, reported to Rob in conversation, treated the first weighing as a weight at about 3 months and concluded that it predicted nothing. That conclusion was wrong.
+
+### Recent change in weight, landmark at 18 months
+
+**Design:** A3 mice with weighings near 12 and 17 months: 737 mice of 93 strains, of which 663 later died. Survival is counted from 665 days.
+- **Size:** the weighing nearest 515 days, within 480–544 days.
+- **Change:** size minus the weighing nearest 365 days (within 320–410 days), in grams per 100 days.
+- **Percent of peak:** size as a percentage of the mouse's highest weight before 545 days.
+- **Scaling and models:** each measure is standardized within diet. The Cox models are stratified by diet, with P values robust to clustering by strain.
+
+**The measures, as medians:**
+- **On chow:** change 0.0 g per 100 days (SD 2.4); 49% of mice are lighter at about 515 days than at about 365 days.
+- **On high fat:** change 3.3 g per 100 days (SD 5.2); 20% are lighter.
+
+| Predictor | C | Hazard ratio per SD (P) |
+|---|---|---|
+| Size | 0.489 | 1.02 (0.64) |
+| Change | 0.544 | 0.88 (0.0013) |
+| Percent of peak | 0.538 | 0.87 (0.00019) |
+| Size and change | 0.539 | |
+| The four A3 classes | 0.519 | |
+
+**Nested tests:**
+- **Change beyond size:** LR = 11.4, 1 df, P = 0.00074.
+- **Percent of peak beyond size:** LR = 13.7, 1 df, P = 0.00021.
+- **Class beyond size and change:** LR = 7.1, 3 df, P = 0.07.
+- **Size and change beyond class:** LR = 3.1, 2 df, P = 0.21.
+- **Concordance:** C(size and change) − C(class) = 0.021 (95% CI −0.002 to 0.043).
+
+**Within strains:** no effect of change beyond size was detected (stratified by strain × diet: LR = 1.9, P = 0.17). The hazard ratio per SD, 0.90, points the same way.
+
+**Each diet on its own (C):**
+
+| | Size | Change | Size and change | Classes |
+|---|---|---|---|---|
+| Chow (455 mice) | 0.485 | 0.533 | 0.520 | 0.512 |
+| High fat (282 mice) | 0.500 | 0.571 | 0.578 | 0.571 |
+
+**Results:**
+- **Size:** at 17 months, a mouse's size shows no association with survival after 22 months.
+- **Change:** its change in weight over the previous 5 months, or how far it has fallen below its peak, does predict survival.
+- **Against the classes:** two weights predict at least as well as the four classes.
+
+**Interpretation, not tested here:** the signal may be the slow start of the decline before death, seen four to six months ahead. Chow mice are already at 96% of their running peak 120–180 days before death. It is a prediction in the landmark sense, because no weight from the 120 days before 665 days is used. But it may reflect illness already under way, not a trajectory type that a mouse carries through life.
+
+### What this means for the classes
+
+As predictors of survival in BXD females, the classes add nothing detectable beyond one weight at a fixed age before 1 year, or two weights at 18 months.
+
 ## B, the reviewer's mechanism
 
 **Design:** both analyses fit the class model to mice weighed at least three times in all, and count survival from the age at set-up.
@@ -199,9 +282,11 @@ Only a landmark separates the weights used to assign the classes from the surviv
 **Support for the claim:** BXD females support the claim that early weight trajectories predict later survival, without the weights taken near death.
 
 **Three qualifications:**
-- **Size:** in the first year, the prediction is as strong as that of a single body weight.
+- **Size and recent change:** in the first year, one weight at a fixed age predicts as well as the classes. At 18 months, no association of size with survival was detected, but the change in weight over the previous 5 months predicts as well as the classes.
 - **Inflation:** classes assigned from whole records overstate the hazard ratios. In these mice, the overstatement is from 1.8 to 3.0.
 - **Trimming is not enough:** removing the last months of each record leaves much of the excess.
+
+**Benchmarks:** class models should be compared against one weight at the landmark and the change in weight over the months before it.
 
 **Correction to our earlier advice:** an earlier note to colleagues recommended removing the last 17 weeks of each record as a second test that keeps every mouse. B2 and E2 show that this test does not remove the inflation. Only the landmark design should be recommended.
 
@@ -215,7 +300,10 @@ Only a landmark separates the weights used to assign the classes from the surviv
 
 ## Files
 
-- **Code:** `Trajectory/landmark_trajectory.R` (seed 20261029). Exploratory follow-up: `Trajectory/landmark_strain_diet.R`, which writes `output/Landmark_strain_diet.txt`.
+- **Code:** `Trajectory/landmark_trajectory.R` (seed 20261029).
+  - **Exploratory follow-ups:**
+    - `Trajectory/landmark_strain_diet.R` writes `output/Landmark_strain_diet.txt`;
+    - `Trajectory/landmark_single_weight.R` writes `output/Landmark_single_weight.txt`.
 - **Run:** R 4.6.1, lcmm 2.2.2 and survival 3.8.12, about 30 minutes on 6 cores.
 - **Tables:**
   - `output/Landmark_models.txt` (class models and BIC);
