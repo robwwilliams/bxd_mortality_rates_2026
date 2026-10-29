@@ -35,16 +35,20 @@
 
 **Mice:** 1,462 mice of 99 strains, weighed at least three times before 365 days and alive at 485 days; 1,233 later died.
 
-**Classes, with mean chow weights from the class model:**
+**Classes, with observed mean weights on chow and on high fat:**
 
-| Class | Mice | Share | Weight at 120 d (g) | Weight at 365 d (g) | Median age at death (d) | Hazard ratio (95% CI) |
-|---|---|---|---|---|---|---|
-| 3, lean | 889 | 61% | 22.1 | 27.4 | 728 | 1 (reference) |
-| 1, moderate gain | 304 | 21% | 27.8 | 41.0 | 685 | 1.17 (0.97–1.41) |
-| 4, light early, steep gain | 114 | 8% | 19.1 | 49.4 | 662 | 1.26 (0.95–1.66) |
-| 2, heavy early | 155 | 11% | 33.1 | 45.6 | 640 | 1.82 (1.31–2.52) |
+| Class | Mice: chow, high fat | Weight before 150 d (g): chow, high fat | Weight at 330–364 d (g): chow, high fat | Median age at death (d) | Hazard ratio (95% CI) |
+|---|---|---|---|---|---|
+| 3, lean | 614, 275 | 21.0, 21.1 | 28.3, 36.7 | 728 | 1 (reference) |
+| 1, early gain | 102, 202 | 24.8, 25.2 | 40.7, 54.5 | 685 | 1.17 (0.97–1.41) |
+| 4, steady gain | 11, 103 | 22.3, 23.3 | 45.1, 54.0 | 662 | 1.26 (0.95–1.66) |
+| 2, heavy early | 18, 137 | 27.9, 28.8 | 36.6, 62.7 | 640 | 1.82 (1.31–2.52) |
 
-- **Columns:** median ages at death are Kaplan–Meier estimates among mice alive at 485 days. Hazard ratios come from a Cox model stratified by diet, with confidence intervals robust to clustering by strain.
+- **Weights:** means of the weighings in each age bin, from `output/Landmark_strain_diet.txt` (exploratory). The weighings before 150 days are mostly the baselines at set-up, when the diets began.
+- **The 18 heavy-early mice on chow:** they peak at 44.6 g at 210–269 days and weigh 36.6 g at 330–364 days.
+- **Class curves:** the first version of this note gave the class model's mean curves for a chow mouse instead (for class 2, 33.1 g at 120 days and 45.6 g at 365 days). Those curves misdescribe classes made up mostly of high-fat mice, and the observed weights replace them. Classes 1 and 4 were renamed to match: from "moderate gain" and "light early, steep gain".
+- **Median ages at death:** Kaplan–Meier estimates among mice alive at 485 days.
+- **Hazard ratios:** from a Cox model stratified by diet, with confidence intervals robust to clustering by strain. Each hazard ratio is therefore a comparison within diet. This matters for class 2, 88% of whose mice are on high fat.
 
 **The plan's criteria for support:**
 
@@ -56,7 +60,7 @@
 | Trajectory beyond size | P3: class added to the last weight before 365 days | LR = 14.28, 3 df, P = 0.0026 | Yes |
 
 - **P4 within strains:** the mouse's deviation from its strain's mean probability of class 4 has no association with survival either (HR 1.07, 0.74–1.55).
-- **The high-gain class is not the riskiest:** P4 tests the class that gains most from 120 to 365 days, which the plan defined without using survival. That class is class 4, not the heavy-early class 2.
+- **The high-gain class is not the riskiest:** P4 tests the class whose fitted chow curve gains most from 120 to 365 days, which the plan defined without using survival. That class is class 4, not the heavy-early class 2.
 
 **Class against a single weight (exploratory):** this comparison was computed after the results were seen, from `output/Landmark_mice.txt`. Without clustering:
 
@@ -74,6 +78,44 @@
 
 **Sensitivity, S1:** excluding the 59 Other and LowOutlier mice instead of censoring them changes nothing material: P1 P = 0.0032, P2 P = 0.0068, P3 P = 0.0020, and a heavy-early class with HR 1.81 (1.32–2.49).
 
+## Diet, strain and genotype type in A1 (exploratory)
+
+**Source:** computed after the results were seen, by `Trajectory/landmark_strain_diet.R` (`output/Landmark_strain_diet.txt`).
+
+**What the strain tests above ask:** P2 and P4 ask whether class predicts survival within and between strains. They do not ask whether class depends on strain. This section does.
+
+**Diet:**
+- **Weight:** at the last weighing before 365 days, mice weigh 48.0 g on high fat and 30.2 g on chow. At the first weighing (about 116 days, when the diets began), they weigh 22.4 g and 22.0 g.
+- **Gain:** 12.4 g per 100 days on high fat, against 3.6 g on chow.
+- **Class:** 82% of chow mice are in the lean class, against 38% of high-fat mice. Of the 155 heavy-early mice, 137 (88%) are on high fat (χ² = 327, 3 df).
+- **Why diet shapes the classes:** the class model includes diet terms common to all classes, so it removes the average effect of diet before it forms the classes. High-fat mice depart further from their diet's average curve, so they fill the heavy classes.
+
+**Strain:**
+- **The table:** intraclass correlations within diet: the share of the variation that lies between strains. They are computed over the 126 strain × diet groups with at least 5 mice (1,307 mice).
+
+| | Chow | High fat |
+|---|---|---|
+| Weight at the first weighing | 0.34 | 0.38 |
+| Weight at the last weighing before 365 d | 0.49 | 0.53 |
+| Gain | 0.30 | 0.47 |
+| Membership of class 3, lean | 0.38 | 0.35 |
+| Membership of class 1, early gain | 0.23 | 0.13 |
+| Membership of class 4, steady gain | 0.04 | 0.18 |
+| Membership of class 2, heavy early | 0.20 | 0.37 |
+
+- **Shared class:** on average, 74.1% of a group's mice share its most common class. If class were unrelated to strain, that figure would be 64.8% (95% range 63.9–65.8%, from 2,000 shuffles of the class labels within diet).
+- **Groups of 10 or more mice:** in 18 of the 64 groups this size, every mouse is in the same class.
+- **Class tracks strain less tightly than weight does:** class membership is a coarse, two-valued measure. A mouse near a class boundary can land in either class, and an intraclass correlation computed on values of 0 and 1 is lower than one computed on grams.
+
+**Genotype type:** about half the mice of each type are on high fat.
+
+| Class | BXD strains (1,278 mice) | Parental strains (115) | F1 hybrids (69) |
+|---|---|---|---|
+| 3, lean | 61.5% | 71.3% | 30.4% |
+| 1, early gain | 20.5% | 11.3% | 42.0% |
+| 4, steady gain | 6.9% | 14.8% | 13.0% |
+| 2, heavy early | 11.1% | 2.6% | 14.5% |
+
 ## A2 (no gap) and A3 (landmark 545 days)
 
 | | A1 (365 d, gap 120 d) | A2 (365 d, no gap) | A3 (545 d, gap 120 d) |
@@ -88,14 +130,18 @@
 | Riskiest class: HR (95% CI) | 1.82 (1.31–2.52) | 2.38 (1.65–3.42) | 1.79 (1.26–2.54) |
 
 **A2:**
-- **Without the gap, the riskiest class changes character.** Its 110 mice weigh 34.4 g at 120 days, 49.3 g at 240 days and 39.7 g at 365 days, so they are already losing weight at the landmark.
+- **Without the gap, the riskiest class is heavy from the start.**
+  - **High-fat mice:** 99 of its 110 mice. They weigh 28.9 g before 150 days, and their mean weight levels off at about 57 g from 270 days.
+  - **Chow mice:** the 11 in this class peak at 45.3 g at 210–269 days and weigh 39.1 g at 330–364 days.
 - **Those mice die soon:** their median age at death is 563 days, against 640 days for A1's heavy-early class.
-- **This is the reviewer's mechanism at a landmark:** without a gap, weight loss before death enters the classes. A1 excludes the 35 of these 110 mice that died or were censored before 485 days (29 died).
+- **The gap excludes the early deaths:** A1 excludes the 35 of these 110 mice that died or were censored before 485 days (29 died). The riskiest class's hazard ratio is 2.38 in A2 and 1.82 in A1.
+- **Not shown:** these means do not show whether weight loss before death causes the difference. On high fat, the class's mean weight has stopped rising by 1 year, but it has not fallen.
+- **Correction:** the first version of this note said these mice were already losing weight at the landmark. That came from the class model's chow curve.
 
 **A3:**
 - **Size versus trajectory:** at 545 days, no association of a single weight with survival was detected (concordance 0.493), but class still predicts survival.
 - **No prediction within strains:** the class association is not detected within strains (P = 0.28).
-- **The association lies between strains:** the high-gain class (class 3: 46 mice, 16.4 g at 120 days and 40.2 g at 545 days) marks strains that live longer after 665 days. Strains whose mice have a higher probability of membership in that class live longer: the hazard ratio is 0.26 (0.10–0.65; jackknife P = 0.004) for a strain whose mice all belong to the class against one whose mice belong to none.
+- **The association lies between strains:** the high-gain class (class 3: 46 mice, 38 of them on high fat, which weigh 21.2 g before 150 days and 52.1 g at 480–544 days) marks strains that live longer after 665 days. Strains whose mice have a higher probability of membership in that class live longer: the hazard ratio is 0.26 (0.10–0.65; jackknife P = 0.004) for a strain whose mice all belong to the class against one whose mice belong to none.
 - **The contrast rests on few mice:** most strain × diet groups have a mean probability near 0 (median 0.003). The 46 mice of the class are spread over 27 groups, 38 of them on high fat, and only BXD91 on high fat holds several (6 of its 7 mice). The hazard ratio compares a mean probability of 1 with one of 0, and only groups of one to seven mice come near 1.
 
 ## B, the reviewer's mechanism
@@ -108,7 +154,8 @@
 | Wald χ² per df | 4.45 | 36.7 | 32.4 |
 | Concordance of class | 0.539 | 0.558 | 0.572 |
 | Riskiest class: HR (95% CI) | 1.82 (1.31–2.52) | 2.40 (1.94–2.96) | 2.41 (1.91–3.05) |
-| Age at peak of the riskiest class (d) | — | 360 | 340 |
+| Riskiest class: mice on chow, high fat | 18, 137 | 41, 288 | 32, 179 |
+| Peak of the riskiest class's fitted chow curve (d) | — | 360 | 340 |
 | Its median age at death (d) | 640 | 573 | 563 |
 
 **Expectation:** the plan stated, "Expected if the reviewer is right: B1 is much stronger than B2 and A1."
@@ -119,7 +166,9 @@
 
 **What B2 shows:**
 - **The cut changes little:** removing every weighing in the last 120 days before the end age barely changes the association.
-- **The classes are still early peaks:** in both analyses, the riskiest class is a heavy class whose fitted curve peaks at 340–360 days and then falls.
+- **The classes are still early peaks:** in both analyses, the riskiest class consists mostly of high-fat mice.
+  - **Observed weights:** their mean weight peaks at 390–509 days (63.1 g in B1, 65.5 g in B2) and is lower at later ages.
+  - **Caution:** the later means include only the mice still alive, so they mix weight loss with the earlier deaths of the heaviest mice.
 
 **A caveat:** the B analyses count survival from set-up and so include early deaths, which A1 excludes. Their numbers are not directly comparable with A1. E1 and E2 make the comparison like for like.
 
@@ -166,7 +215,7 @@ Only a landmark separates the weights used to assign the classes from the surviv
 
 ## Files
 
-- **Code:** `Trajectory/landmark_trajectory.R` (seed 20261029).
+- **Code:** `Trajectory/landmark_trajectory.R` (seed 20261029). Exploratory follow-up: `Trajectory/landmark_strain_diet.R`, which writes `output/Landmark_strain_diet.txt`.
 - **Run:** R 4.6.1, lcmm 2.2.2 and survival 3.8.12, about 30 minutes on 6 cores.
 - **Tables:**
   - `output/Landmark_models.txt` (class models and BIC);

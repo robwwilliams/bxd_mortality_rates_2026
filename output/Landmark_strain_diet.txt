@@ -1,0 +1,168 @@
+
+== A1 L365 g120 ==
+Mice by class and diet
+     diet
+class  CD  HF
+    1 102 202
+    2  18 137
+    3 614 275
+    4  11 103
+Mean observed weight (g) by age (days), CD 
+     age
+class [0,150) [150,210) [210,270) [270,330) [330,365)
+    1    24.8      34.9      37.9      39.8      40.8
+    2    27.9      42.3      44.4      42.5      37.3
+    3    20.9      24.9      26.3      27.4      28.3
+    4    22.3      30.5      34.4      42.8      45.1
+Mean observed weight (g) by age (days), HF 
+     age
+class [0,150) [150,210) [210,270) [270,330) [330,365)
+    1    25.1      38.6      45.3      51.4      54.5
+    2    28.8      47.3      54.2      58.7      62.9
+    3    21.1      26.8      30.9      34.9      36.7
+    4    23.3      31.4      38.9      50.6      54.3
+
+== A2 L365 g0 ==
+Mice by class and diet
+     diet
+class  CD  HF
+    1 774 391
+    2  11  99
+    3  11 106
+    4  88 307
+Mean observed weight (g) by age (days), CD 
+     age
+class [0,150) [150,210) [210,270) [270,330) [330,365)
+    1    21.2      25.5      26.9      28.2      29.3
+    2    28.2      40.0      45.3      40.7      39.1
+    3    22.2      30.4      35.1      44.2      47.7
+    4    25.8      36.8      39.7      40.7      40.9
+Mean observed weight (g) by age (days), HF 
+     age
+class [0,150) [150,210) [210,270) [270,330) [330,365)
+    1    21.4      27.9      32.3      36.7      39.2
+    2    28.9      49.0      54.1      56.6      56.7
+    3    23.8      31.9      39.8      51.3      56.2
+    4    26.5      41.9      49.1      54.8      58.2
+
+== A3 L545 g120 ==
+Mice by class and diet
+     diet
+class  CD  HF
+    1   6  54
+    2 464 141
+    3   8  38
+    4  65 110
+Mean observed weight (g) by age (days), CD 
+     age
+class [0,150) [150,240) [240,330) [330,420) [420,480) [480,545)
+    1    27.3      41.2      44.6      43.7      37.0      31.1
+    2    20.8      25.0      27.1      28.0      28.8      28.5
+    3    26.7      33.1      31.5      35.2      41.4      44.7
+    4    24.2      34.5      37.5      39.2      38.2      36.6
+Mean observed weight (g) by age (days), HF 
+     age
+class [0,150) [150,240) [240,330) [330,420) [420,480) [480,545)
+    1    27.1      41.1      55.1      62.8      64.1      62.6
+    2    21.6      28.5      34.4      39.5      42.3      44.8
+    3    21.2      27.2      32.8      38.7      47.8      52.1
+    4    25.6      40.8      50.3      54.9      57.2      60.4
+
+== B1 whole record ==
+Mice by class and diet
+     diet
+class  CD  HF
+    1  13 188
+    2 285 348
+    3 899 280
+    4  41 288
+Mean observed weight (g) by age (days), CD 
+     age
+class [0,150) [150,270) [270,390) [390,510) [510,630) [630,750) [750,2e+03)
+    1    32.1      36.0      29.8      35.7      41.7      46.8        29.2
+    2    23.9      32.8      36.8      37.5      35.4      32.1        27.4
+    3    20.5      24.9      26.6      26.7      26.3      25.4        22.8
+    4    24.9      39.4      44.3      45.7      38.4      30.8          NA
+Mean observed weight (g) by age (days), HF 
+     age
+class [0,150) [150,270) [270,390) [390,510) [510,630) [630,750) [750,2e+03)
+    1    21.8      27.5      33.7      41.0      44.6      47.1        49.3
+    2    25.1      40.5      51.7      57.0      58.0      52.4        42.9
+    3    21.7      31.0      38.5      42.6      44.5      41.2        34.9
+    4    28.0      47.4      59.2      63.1      57.6      49.0        41.1
+
+== B2 whole record minus last 120 d ==
+Mice by class and diet
+     diet
+class  CD  HF
+    1 245 311
+    2  13 220
+    3 777 273
+    4  32 179
+Mean observed weight (g) by age (days), CD 
+     age
+class [0,150) [150,270) [270,390) [390,510) [510,630) [630,750) [750,2e+03)
+    1    24.0      33.0      37.6      38.5      35.6      32.8        28.2
+    2    27.9      33.4      32.7      40.9      43.1      41.2        31.2
+    3    20.6      25.0      26.8      27.1      26.9      26.6        23.2
+    4    24.4      40.5      42.8      41.1      34.2        NA          NA
+Mean observed weight (g) by age (days), HF 
+     age
+class [0,150) [150,270) [270,390) [390,510) [510,630) [630,750) [750,2e+03)
+    1    25.8      42.3      54.5      60.3      62.1      57.3        48.7
+    2    21.2      28.2      36.4      44.4      49.6      51.1        58.5
+    3    21.9      31.8      40.2      44.7      47.4      45.9        47.9
+    4    28.7      51.0      63.5      65.5      62.6      55.5          NA
+
+== A1: diet ==
+Mean age (d) and weight (g) at the first weighing and the last before 365 d, and gain (g per 100 d)
+  Diet    a0   w0    a1   w1 gain
+1   CD 115.7 22.0 328.4 30.2  3.6
+2   HF 117.2 22.4 327.7 48.0 12.4
+     diet
+class  CD  HF
+    1 102 202
+    2  18 137
+    3 614 275
+    4  11 103
+     diet
+class   CD   HF
+    1 13.7 28.2
+    2  2.4 19.1
+    3 82.4 38.4
+    4  1.5 14.4
+
+	Pearson's Chi-squared test
+
+data:  table(d[, "cls"], d[, "Diet"])
+X-squared = 327.36, df = 3, p-value < 2.2e-16
+
+
+== A1: genotype type ==
+     type
+class BXD  F1 parent
+    1 262  29     13
+    2 142  10      3
+    3 786  21     82
+    4  88   9     17
+     type
+class  BXD   F1 parent
+    1 20.5 42.0   11.3
+    2 11.1 14.5    2.6
+    3 61.5 30.4   71.3
+    4  6.9 13.0   14.8
+    type
+diet BXD  F1 parent
+  CD 645  37     63
+  HF 633  32     52
+
+== A1: strain, within diet (strain x diet groups with >= 5 mice: 126 groups, 1307 mice) ==
+ diet mice groups first.weight weight.before.365 gain class1 class2 class3
+   CD  668     64         0.34              0.49 0.30   0.23   0.20   0.38
+   HF  639     62         0.38              0.53 0.47   0.13   0.37   0.35
+ class4
+   0.04
+   0.18
+
+Share of mice in their strain x diet group's most common class: observed 0.741 ; labels shuffled within diet: mean 0.648 , 95% range 0.639-0.658 
+Groups with >= 10 mice: 64 ; with every mouse in one class: 18 
