@@ -1,0 +1,252 @@
+Mice: 2621 ; deaths: 1943 ; status:
+
+Euthanized    Harvest LowOutlier    Natural      Other 
+       542        619         25       1401         34 
+Weighings: 18580 ; flagged and dropped: 186 ; outside 10-100 g: 11 ; after the end age: 0 
+ Numerical problem by computing fn 
+          value of function is : NaN 
+
+Class models
+                         analysis G conv   loglik      BIC min.share selected
+                     A1 L365 g120 1    1 -19367.9  38808.7     1.000    FALSE
+                     A1 L365 g120 2    1 -18840.8  37791.0     0.189    FALSE
+                     A1 L365 g120 3    1 -18686.0  37517.8     0.084    FALSE
+                     A1 L365 g120 4    1 -18583.8  37349.8     0.078     TRUE
+                       A2 L365 g0 1    1 -24094.4  48263.8     1.000    FALSE
+                       A2 L365 g0 2    1 -23435.0  46982.3     0.196    FALSE
+                       A2 L365 g0 3    1 -23277.7  46705.2     0.131    FALSE
+                       A2 L365 g0 4    1 -23122.6  46432.5     0.062     TRUE
+                     A3 L545 g120 1    1 -16824.7  33717.3     1.000    FALSE
+                     A3 L545 g120 2    1 -16272.2  32646.1     0.213    FALSE
+                     A3 L545 g120 3    1 -16115.3  32366.3     0.090    FALSE
+                     A3 L545 g120 4    1 -15944.1  32057.9     0.052     TRUE
+   S1 A1 without Other/LowOutlier 1    1 -19240.6  38554.0     1.000    FALSE
+   S1 A1 without Other/LowOutlier 2    1 -18723.9  37557.1     0.190    FALSE
+   S1 A1 without Other/LowOutlier 3    1 -18569.4  37284.5     0.085    FALSE
+   S1 A1 without Other/LowOutlier 4    1 -18470.1  37122.2     0.080     TRUE
+                  B1 whole record 1    1 -57355.5 114788.6     1.000    FALSE
+                  B1 whole record 2    1 -55106.2 110328.8     0.234    FALSE
+                  B1 whole record 3    1 -54421.7 108998.5     0.141    FALSE
+                  B1 whole record 4    1 -53789.6 107773.1     0.086     TRUE
+ B2 whole record minus last 120 d 1    1 -40523.4  81123.1     1.000    FALSE
+ B2 whole record minus last 120 d 2    1 -39254.6  78623.5     0.265    FALSE
+ B2 whole record minus last 120 d 3    1 -38677.5  77507.5     0.142    FALSE
+ B2 whole record minus last 120 d 4    1 -38186.9  76564.4     0.103     TRUE
+
+Classes
+                         analysis class mice share deaths KM.median w120 w240
+                     A1 L365 g120     1  304 0.208    272       685 27.8 38.7
+                     A1 L365 g120     2  155 0.106    136       640 33.1 49.2
+                     A1 L365 g120     3  889 0.608    738       728 22.1 26.4
+                     A1 L365 g120     4  114 0.078     87       662 19.1 33.9
+                       A2 L365 g0     1 1165 0.652    928       705 22.4 27.1
+                       A2 L365 g0     2  110 0.062     99       563 34.4 49.3
+                       A2 L365 g0     3  117 0.065     87       657 19.2 34.0
+                       A2 L365 g0     4  395 0.221    343       625 29.6 41.7
+                     A3 L545 g120     1   60 0.068     56       716 24.4 42.3
+                     A3 L545 g120     2  605 0.683    537       806 21.9 25.9
+                     A3 L545 g120     3   46 0.052     39       816 16.4 21.0
+                     A3 L545 g120     4  175 0.198    159       763 27.6 37.1
+   S1 A1 without Other/LowOutlier     1  157 0.108    139       640 33.0 49.1
+   S1 A1 without Other/LowOutlier     2  298 0.205    267       685 27.8 38.7
+   S1 A1 without Other/LowOutlier     3  882 0.607    738       728 22.1 26.4
+   S1 A1 without Other/LowOutlier     4  116 0.080     89       662 19.2 34.0
+                  B1 whole record     1   NA    NA     NA       691 18.8   NA
+                  B1 whole record     2   NA    NA     NA       663 26.3   NA
+                  B1 whole record     3   NA    NA     NA       710 22.1   NA
+                  B1 whole record     4   NA    NA     NA       573 27.5   NA
+ B2 whole record minus last 120 d     1   NA    NA     NA       659 26.3   NA
+ B2 whole record minus last 120 d     2   NA    NA     NA       708 17.2   NA
+ B2 whole record minus last 120 d     3   NA    NA     NA       724 21.8   NA
+ B2 whole record minus last 120 d     4   NA    NA     NA       563 30.0   NA
+ w365 w545 w730  w900
+ 41.0   NA   NA    NA
+ 45.6   NA   NA    NA
+ 27.4   NA   NA    NA
+ 49.4   NA   NA    NA
+ 28.2   NA   NA    NA
+ 39.7   NA   NA    NA
+ 49.6   NA   NA    NA
+ 42.3   NA   NA    NA
+   NA 38.5   NA    NA
+   NA 27.4   NA    NA
+   NA 40.2   NA    NA
+   NA 37.2   NA    NA
+ 45.5   NA   NA    NA
+ 41.0   NA   NA    NA
+ 27.4   NA   NA    NA
+ 49.4   NA   NA    NA
+ 22.0 25.9 31.4  37.7
+ 38.1 38.0 30.1  15.9
+ 26.5 26.7 24.3  19.7
+ 46.3 35.3  1.9 -48.5
+ 38.9 38.7 30.0  14.5
+ 24.3 31.6 40.7  50.6
+ 26.9 27.2 24.6  19.6
+ 47.9 32.4 -8.7 -69.2
+
+Tests
+                 A1             A2           A3            
+analysis         "A1 L365 g120" "A2 L365 g0" "A3 L545 g120"
+mice             "1462"         "1787"       " 886"        
+deaths           "1233"         "1457"       " 791"        
+strains          " 99"          "109"        " 99"         
+classes          "4"            "4"          "4"           
+P1.wald          " 13.35"       " 28.79"     " 15.65"      
+P1.df            "3"            "3"          "3"           
+P1.P             "3.94e-03"     "2.47e-06"   "1.34e-03"    
+concordance      "0.539"        "0.553"      "0.522"       
+P2.LR            "10.95"        "13.26"      " 3.83"       
+P2.P             "1.20e-02"     "4.11e-03"   "2.80e-01"    
+weight.HR.perSD  "1.173"        "1.166"      "1.028"       
+weight.P         "2.10e-07"     "3.35e-08"   "4.65e-01"    
+P3.LR            "14.28"        "36.95"      "19.21"       
+P3.P             "2.55e-03"     "4.73e-08"   "2.47e-04"    
+P4.between.HR    "0.777"        "0.587"      "0.257"       
+P4.between.lo    "0.397"        "0.280"      "0.103"       
+P4.between.hi    "1.520"        "1.230"      "0.645"       
+P4.between.P     "0.45800"      "0.15600"    "0.00421"     
+P4.within.HR     "1.074"        "0.984"      "0.992"       
+P4.within.lo     "0.742"        "0.730"      "0.731"       
+P4.within.hi     "1.553"        "1.326"      "1.347"       
+P4.within.P      "0.706"        "0.916"      "0.961"       
+high.gain.class  " 4"           " 3"         " 3"          
+early.peak.class NA             NA           NA            
+class.peak.ages  NA             NA           NA            
+                 S1                               B1                
+analysis         "S1 A1 without Other/LowOutlier" "B1 whole record" 
+mice             "1453"                           "2343"            
+deaths           "1233"                           "1835"            
+strains          " 99"                            "125"             
+classes          "4"                              "4"               
+P1.wald          " 13.78"                         "110.22"          
+P1.df            "3"                              "3"               
+P1.P             "3.22e-03"                       "9.85e-24"        
+concordance      "0.539"                          "0.558"           
+P2.LR            "12.19"                          "34.04"           
+P2.P             "6.75e-03"                       "1.94e-07"        
+weight.HR.perSD  "1.175"                          "0.987"           
+weight.P         "1.41e-07"                       "7.09e-01"        
+P3.LR            "14.81"                          "98.10"           
+P3.P             "1.99e-03"                       "3.98e-21"        
+P4.between.HR    "0.783"                          NA                
+P4.between.lo    "0.401"                          NA                
+P4.between.hi    "1.529"                          NA                
+P4.between.P     "0.47100"                        NA                
+P4.within.HR     "1.070"                          NA                
+P4.within.lo     "0.740"                          NA                
+P4.within.hi     "1.547"                          NA                
+P4.within.P      "0.721"                          NA                
+high.gain.class  " 4"                             NA                
+early.peak.class NA                               " 4"              
+class.peak.ages  NA                               "1300/455/470/360"
+                 B2                                
+analysis         "B2 whole record minus last 120 d"
+mice             "2051"                            
+deaths           "1664"                            
+strains          "124"                             
+classes          "4"                               
+P1.wald          " 97.29"                          
+P1.df            "3"                               
+P1.P             "5.94e-21"                        
+concordance      "0.572"                           
+P2.LR            "34.25"                           
+P2.P             "1.75e-07"                        
+weight.HR.perSD  "0.972"                           
+weight.P         "4.49e-01"                        
+P3.LR            "99.53"                           
+P3.P             "1.96e-21"                        
+P4.between.HR    NA                                
+P4.between.lo    NA                                
+P4.between.hi    NA                                
+P4.between.P     NA                                
+P4.within.HR     NA                                
+P4.within.lo     NA                                
+P4.within.hi     NA                                
+P4.within.P      NA                                
+high.gain.class  NA                                
+early.peak.class " 4"                              
+class.peak.ages  "450/1300/475/340"                
+                 E1                                 
+analysis         "E1 B1 classes, A1 mice from 485 d"
+mice             "1460"                             
+deaths           "1231"                             
+strains          " 99"                              
+classes          "4"                                
+P1.wald          " 80.68"                           
+P1.df            "3"                                
+P1.P             "2.20e-17"                         
+concordance      "0.567"                            
+P2.LR            "36.87"                            
+P2.P             "4.91e-08"                         
+weight.HR.perSD  "1.172"                            
+weight.P         "2.29e-07"                         
+P3.LR            "89.34"                            
+P3.P             "3.04e-19"                         
+P4.between.HR    NA                                 
+P4.between.lo    NA                                 
+P4.between.hi    NA                                 
+P4.between.P     NA                                 
+P4.within.HR     NA                                 
+P4.within.lo     NA                                 
+P4.within.hi     NA                                 
+P4.within.P      NA                                 
+high.gain.class  NA                                 
+early.peak.class NA                                 
+class.peak.ages  NA                                 
+                 E2                                 
+analysis         "E2 B2 classes, A1 mice from 485 d"
+mice             "1460"                             
+deaths           "1231"                             
+strains          " 99"                              
+classes          "4"                                
+P1.wald          " 41.75"                           
+P1.df            "3"                                
+P1.P             "4.54e-09"                         
+concordance      "0.549"                            
+P2.LR            "13.22"                            
+P2.P             "4.17e-03"                         
+weight.HR.perSD  "1.172"                            
+weight.P         "2.29e-07"                         
+P3.LR            "39.51"                            
+P3.P             "1.35e-08"                         
+P4.between.HR    NA                                 
+P4.between.lo    NA                                 
+P4.between.hi    NA                                 
+P4.between.P     NA                                 
+P4.within.HR     NA                                 
+P4.within.lo     NA                                 
+P4.within.hi     NA                                 
+P4.within.P      NA                                 
+high.gain.class  NA                                 
+early.peak.class NA                                 
+class.peak.ages  NA                                 
+
+Hazard ratios against the largest class (robust 95% CI)
+                          analysis class ref    HR    lo    hi        P
+                      A1 L365 g120     1   3 1.169 0.972 1.405 9.66e-02
+                      A1 L365 g120     2   3 1.817 1.311 2.517 3.35e-04
+                      A1 L365 g120     4   3 1.256 0.952 1.656 1.07e-01
+                        A2 L365 g0     2   1 2.379 1.654 3.422 2.97e-06
+                        A2 L365 g0     3   1 1.101 0.856 1.417 4.53e-01
+                        A2 L365 g0     4   1 1.419 1.177 1.711 2.41e-04
+                      A3 L545 g120     1   2 1.789 1.258 2.544 1.20e-03
+                      A3 L545 g120     3   2 0.724 0.493 1.063 9.96e-02
+                      A3 L545 g120     4   2 1.098 0.880 1.369 4.09e-01
+    S1 A1 without Other/LowOutlier     1   3 1.811 1.317 2.491 2.61e-04
+    S1 A1 without Other/LowOutlier     2   3 1.156 0.961 1.392 1.25e-01
+    S1 A1 without Other/LowOutlier     4   3 1.267 0.960 1.672 9.50e-02
+                   B1 whole record     1   3 0.783 0.630 0.974 2.79e-02
+                   B1 whole record     2   3 1.237 1.096 1.397 5.93e-04
+                   B1 whole record     4   3 2.395 1.938 2.958 5.51e-16
+  B2 whole record minus last 120 d     1   3 1.263 1.125 1.418 7.57e-05
+  B2 whole record minus last 120 d     2   3 0.713 0.590 0.862 4.67e-04
+  B2 whole record minus last 120 d     4   3 2.412 1.908 3.050 1.90e-13
+ E1 B1 classes, A1 mice from 485 d     1   3 1.125 0.880 1.439 3.48e-01
+ E1 B1 classes, A1 mice from 485 d     2   3 1.301 1.151 1.470 2.44e-05
+ E1 B1 classes, A1 mice from 485 d     4   3 3.013 2.366 3.839 4.19e-19
+ E2 B2 classes, A1 mice from 485 d     1   3 1.173 1.040 1.323 9.39e-03
+ E2 B2 classes, A1 mice from 485 d     2   3 0.966 0.776 1.204 7.62e-01
+ E2 B2 classes, A1 mice from 485 d     4   3 2.471 1.854 3.292 6.46e-10
+
+R 4 6.1 ; lcmm 2.2.2 ; survival 3.8.12 
