@@ -92,7 +92,7 @@ Her model, in `flexsurvreg`: `Surv(entry, death, event) ~ Diet + Strain, anc = l
 | NAM 5026 | BXD62 | 483 | 620 | weighed at 526 days |
 
 - **The other two flagged mice,** NAM 2887 (BXD40) and NAM 3031 (BXD62), are the same in both files.
-- **We do not know where her corrections came from.**
+- **Her corrections came from Suheeta Roy and Casey Bohl after an initial data QC run by Opus 5.5 by Rob on 27Oct2026.**
 
 **Vivarium.** All her NAM mice were housed at TSRB, but only 63 of her 243 high-fat controls and 104 of her 273 chow controls were. Her model has no term for vivarium. Part 5's primary design used TSRB mice only.
 
