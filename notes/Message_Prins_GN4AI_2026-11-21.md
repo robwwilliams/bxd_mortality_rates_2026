@@ -1,0 +1,54 @@
+# Draft message to Pjotr Prins: the GN4AI-beta test drive
+
+*Draft by Claude for Rob, 21 November 2026. Not yet sent. Pjotr asked for the Claude chat, copied or exported as Markdown. This file is that export, condensed; the full record is `notes/GN4AI_test_drive_2026-11-21.md`. Send this rather than the chat itself, which contains the GN4AI token.*
+
+---
+
+**Subject:** GN4AI-beta test drive: BXD lifespan mapping, 22 items
+
+Hi Pjotr,
+
+We gave GN4AI-beta a full drive on 21 November (build `5b68da6-dirty`). We repeated Danny Arends's BXD lifespan maps with strain means from Beni Mozhui's corrected file. That covered:
+- baskets;
+- R/qtl, with and without 1,000 permutations;
+- R/qtl2, with LOCO kinship and without;
+- GEMMA through both runners;
+- covariates and plots;
+- the full actuarial scan: 108 R/qtl2 scans, from 20 to 770 days of age in 30-day steps, on chow and high fat.
+
+The full write-up has every request, reply and timing (179 calls). The scripts are in `GN4AI/` of the same repository: https://github.com/robwwilliams/bxd_mortality_rates_2026/blob/main/notes/GN4AI_test_drive_2026-11-21.md
+
+**It works, and it is fast.** An R/qtl2 scan takes 3 s, and the 108 actuarial scans took 6 minutes, sent inline so that nothing stayed on the server. R/qtl2's LOCO kinship works: on high fat, scans with it correlate with scans without it at r = 0.88 to 0.94 over markers, up to 470 days.
+
+**Four faults matter most:**
+1. **Repeated sample names are collapsed to the last one, without warning** (item 20). We sent 818 high-fat mice under 99 strain names to `/compute/qtl2`. The reply noted "99 values used", and the scan is identical to one of the last mouse per strain. A user who sends individual mice gets a map of one mouse per strain, from a reply that looks normal.
+2. **R/qtl2 drops covariates** (item 15). The reply acknowledges the covariate, but the LODs equal those without it. The command line passes the covariate-structure file twice (`--covariates …-covarstruct.txt --covarstruct …-covarstruct.txt`), so the values never reach the scan.
+3. **No GEMMA route takes covariates** (items 6 and 14). `/compute/gemma` now runs ravanan: its rows equal `/compute/gemma/ravanan`'s to the last digit. Its 422 sends the user back to `/compute/gemma` for a covariate fit.
+4. **`/plot/rqtl` refuses `/compute/qtl2` replies** (item 12), though SKILL.md says it draws them.
+
+**Three requests, in the order we need them.** R/qtl2's `scan1()` already does each of them (Karl Broman's documentation), so GN4AI only has to pass them through:
+- **Individual mice, with cofactors and kinship** (item 18). This is Rob's preferred design: "I actually prefer to use ALL of the data and map at the individual level with full cofactors. The kinship handles the variable number of individuals per genotype well." It needs repeated strain names, per-mouse covariates (diet, vivarium, birth year) and `intcovar` for gene × diet.
+- **Weights for strain means** (item 19). `scan1(weights = )` works with kinship. Danny's strain-mean maps weight by mice per strain, and without weights the chow maps rank their weak peaks differently. Rob: "The mean survivorship data MUST be mapped with kinship to be accurate. There is strong kinship in the BXD family." With weights and kinship together, one scan would satisfy both.
+- **The direction of each effect** (item 21). R/qtl2 replies give the LOD only. The B − D effect per marker (`scan1coef`), or its sign, would let a map show which allele raises the trait.
+
+**The other items:**
+- **In SKILL.md:**
+  - the sparse clone fails (item 1);
+  - "There are no write endpoints" is wrong (2);
+  - baskets can be mapped by every engine, not just `/compute/qtl2` (3);
+  - permutation timings (4);
+  - the inline route deserves a mention beside baskets (22).
+- **In the replies:**
+  - PATCH reports 186 values for a column of 93 (5);
+  - R/qtl rows sit in `.data.markers` (7);
+  - `next` links hold unfilled templates (8);
+  - server paths appear in notes (9);
+  - R/qtl drops heterozygous calls without saying so (10);
+  - a duplicate basket gets 422 rather than 409 (11);
+  - R/qtl2 calls its LODs −log10 *p* (13).
+- **In the data, for Arthur and Suheeta as much as for you:**
+  - the lifespan traits 18441, 18435 and 24754 are older than the curated file (16);
+  - their stored LODs cannot be reproduced from their current values (17).
+
+Best,
+Opus 5.5 Extra (prompted by Rob)

@@ -1,0 +1,84 @@
+Reciprocal F1s and their parents, BXD family females; ages in days. Vivarium 1 Nash, 2 Nash then TSRB, 3 TSRB.
+Mice matched to the body-weight workbook: 187 of 216 
+
+   Strain Diet  n median           IQR    range   setup      vivarium                                                                                   born euthanized
+   B6D2F1   CD 20  822.5 691.25-886.25 435-1080  37-258  1:1 2:3 3:16                                                                  2013:1 2015:5 2022:14         10
+ C57BL/6J   CD 31  805.0     740-887.5 397-1109  93-713 1:8 2:10 3:13                        2011:4 2012:2 2013:1 2014:11 2018:1 2019:4 2020:2 2022:5 2023:1         12
+   D2B6F1   CD  7  791.0   665.5-847.5  585-996 140-210       1:5 2:2                                                            2011:1 2012:3 2013:1 2014:2          0
+   DBA/2J   CD 57  619.0       531-719 176-1071  32-597 1:6 2:11 3:40 2011:1 2012:2 2013:1 2014:6 2015:2 2016:11 2017:4 2018:10 2019:2 2021:1 2022:7 2023:10         22
+   B6D2F1   HF 15  664.0   493.5-790.5  342-898  28-186      1:3 3:12                                                                  2013:2 2015:1 2022:12         11
+ C57BL/6J   HF 30  713.5     641.5-758 128-1004  93-486 1:12 2:13 3:5                                                    2011:1 2012:6 2013:3 2014:15 2019:5          2
+   D2B6F1   HF 10  878.0    695.25-964 421-1161 113-487       1:8 2:2                                                            2011:4 2012:2 2013:1 2014:3          0
+   DBA/2J   HF 17  667.0       585-702  500-816  99-311      1:7 2:10                                                     2011:3 2012:2 2013:2 2014:7 2015:3          0
+ C57BL/6J  NAM  8  606.5    561.75-731  329-836 183-188           3:8                                                                                                 0
+   DBA/2J  NAM 21  591.0       524-656  232-771 151-288          3:21                                                                                                 0
+
+Cox models, entry at set-up age
+CD all                     20 B6D2F1,  7 D2B6F1: hazard ratio D2B6F1 / B6D2F1 1.27 (95% CI 0.53-3.04), P = 0.6
+CD born 2011-2015           6 B6D2F1,  7 D2B6F1: hazard ratio D2B6F1 / B6D2F1 2.66 (95% CI 0.82-8.65), P = 0.11
+HF all                     15 B6D2F1, 10 D2B6F1: hazard ratio D2B6F1 / B6D2F1 0.34 (95% CI 0.13-0.87), P = 0.025
+HF born 2011-2015           3 B6D2F1, 10 D2B6F1: hazard ratio D2B6F1 / B6D2F1 0.08 (95% CI 0.01-0.80), P = 0.031
+Cross x diet interaction, all: likelihood ratio P = 0.019
+Cross x diet interaction, born 2011-2015: likelihood ratio P = 0.00034
+
+Ages at death of F1s born 2011-2015:
+       CD                            HF                                         
+B6D2F1 "856 879 880 912 992 1080"    "342 447 450"                              
+D2B6F1 "585 641 690 791 816 879 996" "421 657 692 705 865 891 898 986 1107 1161"
+
+B6D2F1 born 2022: 26 ; of them euthanized: 21 ; D2B6F1 euthanized: 0 of 17 
+
+Every F1:
+ Diet Strain EarTag  Age SetupAge Vivarium Born     Status
+   CD B6D2F1   4894  435       66        3 2022 Euthanized
+   CD B6D2F1   4971  511       37        3 2022 Euthanized
+   CD B6D2F1   4897  537       53        3 2022 Euthanized
+   CD B6D2F1   4896  563       66        3 2022 Euthanized
+   CD B6D2F1   4972  680       37        3 2022 Euthanized
+   CD B6D2F1   4904  695       40        3 2022    Natural
+   CD B6D2F1   4905  695       40        3 2022    Natural
+   CD B6D2F1   4970  715       37        3 2022    Natural
+   CD B6D2F1   4908  801       40        3 2022    Natural
+   CD B6D2F1   4968  816       37        3 2022 Euthanized
+   CD B6D2F1   4906  829       40        3 2022 Euthanized
+   CD B6D2F1   2284  856       99        2 2015    Natural
+   CD B6D2F1   2281  879       99        2 2015    Natural
+   CD B6D2F1   1570  880      258        1 2013    Natural
+   CD B6D2F1   4893  886       66        3 2022 Euthanized
+   CD B6D2F1   4907  887       40        3 2022 Euthanized
+   CD B6D2F1   2283  912       99        2 2015    Natural
+   CD B6D2F1   2282  992       99        3 2015    Natural
+   CD B6D2F1   4895  996       66        3 2022 Euthanized
+   CD B6D2F1   2285 1080       99        3 2015    Natural
+   CD D2B6F1   1155  585      140        1 2013    Natural
+   CD D2B6F1   2004  641      156        2 2014    Natural
+   CD D2B6F1   2005  690      156        2 2014    Natural
+   CD D2B6F1    650  791      148        1 2012    Natural
+   CD D2B6F1    648  816      148        1 2012    Natural
+   CD D2B6F1    649  879      148        1 2012    Natural
+   CD D2B6F1    647  996      210        1 2011    Natural
+   HF B6D2F1   2289  342       99        1 2015    Natural
+   HF B6D2F1   4911  376       33        3 2022 Euthanized
+   HF B6D2F1   1235  447      106        1 2013    Natural
+   HF B6D2F1   1229  450      186        1 2013    Natural
+   HF B6D2F1   4952  537       28        3 2022 Euthanized
+   HF B6D2F1   4965  620       37        3 2022 Euthanized
+   HF B6D2F1   4951  659       28        3 2022 Euthanized
+   HF B6D2F1   4949  664       28        3 2022 Euthanized
+   HF B6D2F1   4944  677       38        3 2022 Euthanized
+   HF B6D2F1   4950  728       28        3 2022 Euthanized
+   HF B6D2F1   4943  789       38        3 2022 Euthanized
+   HF B6D2F1   4948  792       28        3 2022 Euthanized
+   HF B6D2F1   4964  802       37        3 2022 Euthanized
+   HF B6D2F1   4913  877       33        3 2022 Euthanized
+   HF B6D2F1   4963  898       37        3 2022    Natural
+   HF D2B6F1    640  421      205        1 2011    Natural
+   HF D2B6F1    639  657      205        1 2011    Natural
+   HF D2B6F1    641  692      205        1 2011    Natural
+   HF D2B6F1    644  705      210        1 2011    Natural
+   HF D2B6F1   2001  865      156        2 2014    Natural
+   HF D2B6F1   2003  891      156        1 2014    Natural
+   HF D2B6F1   2002  898      156        2 2014    Natural
+   HF D2B6F1   1173  986      113        1 2013    Natural
+   HF D2B6F1   1164 1107      487        1 2012    Natural
+   HF D2B6F1   1166 1161      487        1 2012    Natural
