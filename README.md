@@ -103,6 +103,7 @@ Rscript BodyWeight/weights_QC.R           # odd weighings, listed in qc/ for rev
 Rscript BodyWeight/onset_definitions.R     # 568 definitions of terminal decline against the Part 4 conclusions (about 25 s)
 Rscript BodyWeight/Figures_onset_definitions.R  # Fig. 13
 Rscript Gompertz/NAM_rectangularization.R  # nicotinamide against high fat within strains (about 5 s)
+Rscript Gompertz/NAM_rectangularization.R mozhui   # exploratory: the same with four corrected NAM ages at death
 Rscript Gompertz/Figures_NAM.R             # Fig. 14
 .venv/bin/python tools/digitize_km.py      # reads de Cabo's published survival curves into data/digitized/
 Rscript Gompertz/Rectangularization.R      # rectangularization side by side (about 10 s)

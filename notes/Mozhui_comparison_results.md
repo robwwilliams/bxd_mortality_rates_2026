@@ -96,4 +96,5 @@ Her model, in `flexsurvreg`: `Surv(entry, death, event) ~ Diet + Strain, anc = l
 **What this means for Part 5.** Part 5 used our older ages.
 - **Two of the four mice are in its primary design:** NAM 3527 (BXD172) and NAM 4558 (BXD15). NAM 4558 entered with a death recorded before its set-up age.
 - **All four corrections lengthen NAM lives,** so if Part 5 is biased, it is biased against NAM.
-- **Part 5 has not been rerun** with her ages.
+- **Rerun with her ages, nothing changes** (`notes/NAM_rectangularization_results.md`, "Check with four corrected ages at death"). The mean lifespan difference, NAM − high fat, goes from +26 to +28 days (95% CI −93 to 149), and the MRDT ratio from 1.02 to 1.00.
+- **So her +35-day benefit does not come from these four ages.** It more likely comes from her design: controls from every vivarium, born years before the NAM mice.

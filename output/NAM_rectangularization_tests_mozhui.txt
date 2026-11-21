@@ -1,0 +1,104 @@
+design	deaths	question	measure	estimate	lo	hi	p	strains	units	note
+TSRB	all	N1	mean age at death (days)	28.09	-92.59	148.8	0.602	9	days, NAM - high fat	
+TSRB	all	N3	SD of age at death	-0.1224	-1.027	0.7819	0.77	9	log2 ratio, NAM / high fat	
+TSRB	all	N3	interquartile range of age at death	0.1448	-0.9724	1.262	0.781	9	log2 ratio, NAM / high fat	strains with a zero range dropped
+TSRB	all	N3	CV of age at death	-0.1829	-1.261	0.8948	0.719	9	log2 ratio, NAM / high fat	
+TSRB	all	N3	Keyfitz's H	0.008286	-0.08967	0.1062	0.852	9	difference, NAM - high fat	
+TSRB	all	N2	MRDT	0.00689	-0.697	0.7107	NA	9	log2 ratio, NAM / high fat	MRDT high fat 86 d, NAM 87 d; animal-level LRT P = 0.98
+TSRB	all	N2	level of mortality at 600 days	-0.2489	-1.428	0.93	0.637	9	log2 ratio, NAM / high fat	
+TSRB	all	N3	Gompertz-implied SD of age at death (1.85 x MRDT)	0.7641	NA	NA	NA	9	days, NAM - high fat	high fat 160 d, NAM 160 d
+TSRB	all	N4	P1.K1.O1.T1.L1 days	-16.73	-60.45	27	0.402	9	days (or burden), NAM - high fat	Part 4's definition
+TSRB	all	N4	P1.K1.O1.T1.L1 share	-0.03675	-0.09684	0.02334	0.184	9	share of life, NAM - high fat	Part 4's definition
+TSRB	all	N4	P2.K1.O1.T1.L1 days	-14.28	-57.89	29.33	0.441	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P2.K1.O1.T1.L1 share	-0.02961	-0.08759	0.02838	0.25	9	share of life, NAM - high fat	
+TSRB	all	N4	P3.K1.O1.T1.L1 days	-12.33	-53.32	28.66	0.504	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P3.K1.O1.T1.L1 share	-0.02734	-0.08253	0.02785	0.27	9	share of life, NAM - high fat	
+TSRB	all	N4	P4.K1.O1.T1.L1 days	-14	-46.03	18.04	0.348	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P4.K1.O1.T1.L1 share	-0.02808	-0.07851	0.02236	0.227	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K2.O1.T1.L1 days	-17.88	-62.14	26.37	0.375	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K2.O1.T1.L1 share	-0.03942	-0.101	0.02214	0.168	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O2.T1.L1 days	-11.91	-59.71	35.88	0.562	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O2.T1.L1 share	-0.02964	-0.09319	0.03391	0.301	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O3.T1.L1 days	-14.34	-59.3	30.61	0.477	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O3.T1.L1 share	-0.03225	-0.09696	0.03246	0.281	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O4.T1.L1 days	-12.42	-47.13	22.28	0.422	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O4.T1.L1 share	-0.02975	-0.08523	0.02573	0.246	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O5.T1.L1 days	-18.13	-53.76	17.49	0.266	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O5.T1.L1 share	-0.03943	-0.09075	0.0119	0.0938	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O6.L1 days	-39.31	-68.73	-9.88	0.0273	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O6.L1 share	-0.06245	-0.1002	-0.02464	0.0156	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O7.T1.L1 days	-15.75	-59.96	28.47	0.418	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O7.T1.L1 share	-0.03507	-0.09557	0.02544	0.199	9	share of life, NAM - high fat	
+TSRB	all	N4	K1.O8.L1 days	-10	-60.28	40.28	0.637	9	days (or burden), NAM - high fat	
+TSRB	all	N4	K1.O8.L1 share	-0.03006	-0.1092	0.04905	0.41	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O9.L1 days	-24.39	-75.2	26.43	0.293	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O9.L1 share	-0.04875	-0.1269	0.02941	0.172	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O10.T1.L1 days	-13.92	-57.36	29.53	0.473	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O10.T1.L1 share	-0.03089	-0.09399	0.0322	0.277	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O1.T2.L1 days	-17.59	-65.78	30.59	0.418	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O1.T2.L1 share	-0.03955	-0.1066	0.02753	0.207	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O1.T1.L2 days	-18.13	-68.34	32.09	0.418	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O1.T1.L2 share	-0.03614	-0.1058	0.03355	0.258	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O1.T1.L3 days	-17.48	-67.15	32.18	0.441	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O1.T1.L3 share	-0.03532	-0.1047	0.03401	0.27	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.O1.T1.L4 days	-15.46	-58.3	27.38	0.418	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.O1.T1.L4 share	-0.03416	-0.09403	0.0257	0.211	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.G1.L2 days	-415.1	-1696	865.5	0.48	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.G1.L2 share	-0.7533	-2.571	1.065	0.367	9	share of life, NAM - high fat	
+TSRB	all	N4	P1.K1.G2.L2 days	-76.98	-312.8	158.9	0.496	9	days (or burden), NAM - high fat	
+TSRB	all	N4	P1.K1.G2.L2 share	-0.116	-0.4416	0.2096	0.434	9	share of life, NAM - high fat	
+TSRB	natural	N1	mean age at death (days)	-47.87	-487.9	392.2	0.875	4	days, NAM - high fat	
+TSRB	natural	N3	SD of age at death	-0.564	-1.409	0.2813	0.125	4	log2 ratio, NAM / high fat	
+TSRB	natural	N3	interquartile range of age at death	-0.3129	-0.9048	0.279	0.25	4	log2 ratio, NAM / high fat	strains with a zero range dropped
+TSRB	natural	N3	CV of age at death	-0.3709	-1.969	1.228	0.625	4	log2 ratio, NAM / high fat	
+TSRB	natural	N3	Keyfitz's H	-0.004424	-0.1578	0.1489	1	4	difference, NAM - high fat	
+TSRB	natural	N2	MRDT	0.3923	-2.939	3.724	NA	4	log2 ratio, NAM / high fat	MRDT high fat 78 d, NAM 103 d; animal-level LRT P = 0.42
+TSRB	natural	N2	level of mortality at 600 days	-0.145	-3.321	3.031	1	4	log2 ratio, NAM / high fat	
+TSRB	natural	N3	Gompertz-implied SD of age at death (1.85 x MRDT)	45.26	NA	NA	NA	4	days, NAM - high fat	high fat 145 d, NAM 190 d
+TSRB	natural	N4	P1.K1.O1.T1.L1 days	-53.38	-131.5	24.7	0.25	4	days (or burden), NAM - high fat	Part 4's definition
+TSRB	natural	N4	P1.K1.O1.T1.L1 share	-0.06239	-0.1541	0.02927	0.125	4	share of life, NAM - high fat	Part 4's definition
+TSRB	natural	N4	P2.K1.O1.T1.L1 days	-49.59	-131.9	32.76	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P2.K1.O1.T1.L1 share	-0.04729	-0.1643	0.0697	0.375	4	share of life, NAM - high fat	
+TSRB	natural	N4	P3.K1.O1.T1.L1 days	-48.7	-144.3	46.92	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P3.K1.O1.T1.L1 share	-0.05175	-0.1595	0.05599	0.375	4	share of life, NAM - high fat	
+TSRB	natural	N4	P4.K1.O1.T1.L1 days	-31.91	-84.85	21.02	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P4.K1.O1.T1.L1 share	-0.02684	-0.1208	0.06715	0.625	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K2.O1.T1.L1 days	-53.38	-131.5	24.7	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K2.O1.T1.L1 share	-0.06239	-0.1541	0.02927	0.125	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O2.T1.L1 days	-62.54	-179.8	54.69	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O2.T1.L1 share	-0.0729	-0.1977	0.05193	0.25	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O3.T1.L1 days	-48.08	-141.9	45.76	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O3.T1.L1 share	-0.05252	-0.1616	0.05654	0.375	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O4.T1.L1 days	-43.63	-135.3	48	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O4.T1.L1 share	-0.05346	-0.167	0.06004	0.375	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O5.T1.L1 days	-53.38	-131.5	24.7	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O5.T1.L1 share	-0.06239	-0.1541	0.02927	0.125	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O6.L1 days	-62.94	-146	20.14	0.125	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O6.L1 share	-0.05655	-0.2145	0.1014	0.375	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O7.T1.L1 days	-54.46	-131.6	22.7	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O7.T1.L1 share	-0.06445	-0.1541	0.02521	0.125	4	share of life, NAM - high fat	
+TSRB	natural	N4	K1.O8.L1 days	-59.46	-166.7	47.8	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	K1.O8.L1 share	-0.06298	-0.1819	0.05597	0.25	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O9.L1 days	-60.08	-142	21.82	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O9.L1 share	-0.06308	-0.1836	0.05744	0.125	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O10.T1.L1 days	-47.63	-132.8	37.51	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O10.T1.L1 share	-0.04908	-0.1623	0.06412	0.375	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O1.T2.L1 days	-56.69	-157	43.59	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O1.T2.L1 share	-0.0669	-0.1802	0.04643	0.125	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O1.T1.L2 days	-57.32	-138.5	23.81	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O1.T1.L2 share	-0.06502	-0.1784	0.04835	0.25	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O1.T1.L3 days	-57.67	-138	22.63	0.125	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O1.T1.L3 share	-0.06552	-0.1779	0.04691	0.125	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.O1.T1.L4 days	-53.05	-132.5	26.37	0.25	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.O1.T1.L4 share	-0.06034	-0.1562	0.03549	0.125	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.G1.L2 days	-1238	-4684	2208	0.375	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.G1.L2 share	-1.159	-5.885	3.566	0.625	4	share of life, NAM - high fat	
+TSRB	natural	N4	P1.K1.G2.L2 days	-191.5	-940.1	557.2	1	4	days (or burden), NAM - high fat	
+TSRB	natural	N4	P1.K1.G2.L2 share	-0.1417	-1.12	0.8367	0.75	4	share of life, NAM - high fat	
+every vivarium	all	N1	mean age at death (days), adjusted for vivarium	11.32	-61.75	84.39	0.751	22	days, NAM - high fat	P from the jackknife t
+every vivarium	all	N2	MRDT	-0.01288	-0.3703	0.3446	NA	22	log2 ratio, NAM / high fat	MRDT high fat 79 d, NAM 78 d; animal-level LRT P = 0.92
+TSRB, birth cohort	all	N1 cohort	hazard ratio per later birth year, chow and high fat	1.133	1.003	1.28	0.044	NA	hazard ratio	503 mice born 2015-2021
+TSRB, birth cohort	all	N1 cohort	change in age at death per later birth year, chow and high fat	-33.37	-50.28	-16.47	0.000126	NA	days per year	linear model with strain, diet and age at set-up
+TSRB, birth cohort	all	N1 cohort	NAM / high fat hazard ratio, primary design	0.8858	0.5872	1.336	0.563	NA	hazard ratio	no adjustment for birth year
+TSRB, birth cohort	all	N1 cohort	NAM / high fat hazard ratio, primary design, adjusted for birth year	0.5954	0.3944	0.8991	0.0137	NA	hazard ratio	trend per birth year fixed at the chow and high-fat estimate
+TSRB, birth cohort	all	N1 cohort	NAM / high fat hazard ratio, both born 2018-2020	1.039	0.5102	2.117	0.916	11	hazard ratio	26 NAM and 25 high-fat mice

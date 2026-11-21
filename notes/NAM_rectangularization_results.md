@@ -124,6 +124,36 @@ If the mice refused the NAM diet at first, they had a short spell of food restri
 
 **How strongly this argues against an effect.** With 9 strains, the 95% CI for lifespan spans −95 to +148 days. These data can rule out a large NAM effect on lifespan in BXD females on high fat, but not a moderate one.
 
+## Check with four corrected ages at death (21 November 2026, exploratory)
+
+**Beni Mozhui's newer mapping file gives later ages at death for four NAM mice** that `qc/BodyWeight_QC.md` flags as weighed after their recorded death. The file is `data/original/BXD_Lifespan_AllDiets_Dataset_Mapping_Arends.csv`; the comparison is in `notes/Mozhui_comparison_results.md`.
+- NAM 3527 (BXD172): 638 → 730 days;
+- NAM 4558 (BXD15): 155 → 229 days;
+- NAM 4590 (BXD32): 421 → 786 days;
+- NAM 5026 (BXD62): 483 → 620 days.
+
+In each, the later age falls after the mouse's last weighing or set-up. Where the corrections came from is not yet known, so they are used here only as a check.
+
+**How it was run.** `Rscript Gompertz/NAM_rectangularization.R mozhui` takes the NAM ages from that file and keeps everything else. The rule E flags of these four mice ("weighed after death") no longer apply, so their weighings are kept in the cleaned-weighing setting. Results are in `output/NAM_rectangularization_tests_mozhui.txt` and `output/NAM_by_strain_mozhui.txt`. NAM 3527 and NAM 4558 are in the primary design; the other two enter only the secondary design.
+
+**Nothing changes.** All estimates move by a few days or a few hundredths:
+
+| Measure | As run | With the corrected ages |
+|---|---|---|
+| Mean age at death, NAM − high fat | +26 days (−95 to 148), *P* = 0.62 | +28 days (−93 to 149), *P* = 0.60 |
+| The same, every vivarium | +8 days (−66 to 81), *P* = 0.83 | +11 days (−62 to 84), *P* = 0.75 |
+| Mortality at 600 days, NAM / high fat | 0.84× (0.37 to 1.90) | 0.84× (0.37 to 1.91) |
+| MRDT, high fat and NAM | 86 and 88 days, ratio 1.02 (0.63 to 1.66) | 86 and 87 days, ratio 1.00 (0.62 to 1.64) |
+| SD of age at death, NAM / high fat | 0.92× (0.49 to 1.74) | 0.92× (0.49 to 1.72) |
+| Days in decline (Part 4's definition) | −18 days (−62 to 26) | −17 days (−60 to 27) |
+| The 18 day-based definitions | −11 to −40 days, all negative; one with *P* < 0.05 | −10 to −39 days, all negative; the same one with *P* < 0.05 |
+| Hazard ratio, NAM / high fat | 0.87 (0.58–1.32) | 0.89 (0.59–1.34) |
+| The same, adjusted for birth year | 0.59 (0.39–0.89) | 0.60 (0.39–0.90) |
+| The same, both arms born 2018–2020 | 1.04 (0.51–2.12) | 1.04 (0.51–2.12) |
+
+- **Why so little:** the primary design holds two of the corrected mice among 69 NAM mice in 9 strains. The unit is the strain, so each correction moves the mean lifespan difference by its change divided by the strain's number of NAM mice and by 9.
+- **The same-years row is untouched,** because all four mice were born in 2021 or 2022.
+
 ## Caveats
 
 - **Exploratory,** with no correction for multiple tests.
@@ -138,4 +168,4 @@ If the mice refused the NAM diet at first, they had a short spell of food restri
 
 - **N5 from the published curves is done:** `notes/Rectangularization_results.md` and Fig. 15. The individual ages at death and weights from Rafa and Sarah would replace the rebuilt ones.
 - **NAM and high-fat controls born in the same months,** if any exist that are not in the mapping file.
-- **Suheeta's answers on the flagged NAM records** (`qc/BodyWeight_QC.md`), in particular NAM 4558 (death recorded at 155 days, set-up at 190) and NAM 4590 (weighed until 709 days, death recorded at 421).
+- **Suheeta's answers on the flagged NAM records** (`qc/BodyWeight_QC.md`), in particular NAM 4558 (death recorded at 155 days, set-up at 190) and NAM 4590 (weighed until 709 days, death recorded at 421). Beni Mozhui's newer mapping file has later ages for four of them (see "Check with four corrected ages at death"); where those came from is still to be asked. NAM 2887 and NAM 3031 are unchanged there.

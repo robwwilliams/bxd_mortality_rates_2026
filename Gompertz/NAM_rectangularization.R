@@ -18,6 +18,11 @@
 # Run from the repository root:  Rscript Gompertz/NAM_rectangularization.R
 # Writes output/NAM_rectangularization_tests.txt and output/NAM_by_strain.txt
 #
+# Check with corrected ages (exploratory, 21 November 2026):  Rscript Gompertz/NAM_rectangularization.R mozhui
+# takes the ages at death of NAM mice from Beni Mozhui's newer mapping file, which corrects four of the NAM mice that
+# qc/BodyWeight_QC.md flags as weighed after their recorded death (see data/original/README.md). Their rule E flags
+# then no longer apply. Writes output/NAM_rectangularization_tests_mozhui.txt and output/NAM_by_strain_mozhui.txt
+#
 
 library(readxl)
 source("Gompertz/gompertz.R")
@@ -29,6 +34,18 @@ num <- function(v) suppressWarnings(as.numeric(v))
 m <- as.data.frame(read_excel("data/original/BXD_Mortality_for_Mapping_Arends.xlsx", skip = 9, .name_repair = "minimal"))[, 1:7]
 colnames(m) <- c("Index", "EarTag", "Diet", "Strain", "Age", "SetupAge", "Vivarium")
 m <- m[!is.na(m[, "EarTag"]), ]
+mozhui <- "mozhui" %in% commandArgs(trailingOnly = TRUE); corrected <- c()
+if (mozhui) {
+  bm <- read.csv("data/original/BXD_Lifespan_AllDiets_Dataset_Mapping_Arends.csv", skip = 15, check.names = FALSE,
+                 fileEncoding = "UTF-8-BOM")[, 1:7]
+  colnames(bm) <- c("Index", "EarTag", "Diet", "Strain", "Age", "SetupAge", "Vivarium")
+  bm <- bm[!is.na(bm[, "EarTag"]) & bm[, "Diet"] == "NAM", ]
+  i <- which(m[, "Diet"] == "NAM" & m[, "EarTag"] %in% bm[, "EarTag"])
+  age.new <- bm[match(m[i, "EarTag"], bm[, "EarTag"]), "Age"]
+  print(data.frame(m[i, c("EarTag", "Strain")], recorded = m[i, "Age"], corrected = age.new)[age.new != m[i, "Age"], ], row.names = FALSE)
+  corrected <- m[i[age.new != m[i, "Age"]], "EarTag"]
+  m[i, "Age"] <- age.new
+}
 b <- suppressWarnings(as.data.frame(read_excel("data/original/AgingBXD_BodyWeightData_updated31Dec2024.xlsx", sheet = "BXD_Females",
                                                .name_repair = "minimal")))
 nm <- suppressWarnings(as.data.frame(read_excel("data/original/AgingBXD_NAM_BodyWeight_Feb2026.xlsx", .name_repair = "minimal")))
@@ -52,6 +69,7 @@ cat("NAM baseline weighings whose age (date - birth) differs from AgeAtSettingUp
     sum(abs(wt.nam[seq_len(nrow(nm)), "age"] - num(nm[, "AgeAtSettingUp"])) > 2, na.rm = TRUE), "of", nrow(nm), "\n")
 wt.bxd <- wt.bxd[!is.na(wt.bxd[, "age"]) & !is.na(wt.bxd[, "w"]), ]; wt.nam <- wt.nam[!is.na(wt.nam[, "age"]) & !is.na(wt.nam[, "w"]), ]
 fl <- read.delim("qc/BodyWeight_flags.txt", quote = ""); fl <- fl[grepl("(^|; )[ABEG] ", fl[, "Rule"]), ]
+fl <- fl[!(fl[, "Workbook"] == "NAM" & fl[, "EarTag"] %in% corrected & !grepl("(^|; )[ABG] ", fl[, "Rule"])), ]   # mozhui: E no longer applies
 wt.bxd[, "flagged"] <- paste(wt.bxd[, "EarTag"], wt.bxd[, "age"]) %in% paste(fl[fl[, "Workbook"] == "BXD", "EarTag"], fl[fl[, "Workbook"] == "BXD", "Age"])
 wt.nam[, "flagged"] <- paste(wt.nam[, "EarTag"], wt.nam[, "column"]) %in% paste(fl[fl[, "Workbook"] == "NAM", "EarTag"], fl[fl[, "Workbook"] == "NAM", "Column"])
 cat("NAM weighings flagged by rules A, B, E or G (dropped for the K2 setting):", sum(wt.nam[, "flagged"]), "\n")
@@ -180,8 +198,9 @@ tb <- table(y[, "Strain"], y[, "Arm"]); y <- y[y[, "Strain"] %in% rownames(tb)[t
 add("TSRB, birth cohort", "all", "N1 cohort", "NAM / high fat hazard ratio, both born 2018-2020", c(cox.hr(Surv(SetupAge, Age, rep(1, nrow(y))) ~ strata(Strain) + Arm, y, "ArmNAM"),
     length(unique(y[, "Strain"]))), "hazard ratio", sprintf("%d NAM and %d high-fat mice", sum(y[, "Arm"] == "NAM"), sum(y[, "Arm"] == "HF")))
 
-write.table(tests, "output/NAM_rectangularization_tests.txt", sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(by.strain, "output/NAM_by_strain.txt", sep = "\t", quote = FALSE, row.names = FALSE)
+sfx <- if (mozhui) "_mozhui" else ""
+write.table(tests, paste0("output/NAM_rectangularization_tests", sfx, ".txt"), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(by.strain, paste0("output/NAM_by_strain", sfx, ".txt"), sep = "\t", quote = FALSE, row.names = FALSE)
 cat("\n"); print(tests[tests[, "question"] != "N4" | grepl("Part 4", tests[, "note"]), ], row.names = FALSE)
 cat("\nN4, all 20 definitions, all deaths, in days:\n"); print(tests[tests[, "question"] == "N4" & tests[, "deaths"] == "all" & grepl(" days$", tests[, "measure"]), c("measure", "estimate", "lo", "hi", "p", "strains")], row.names = FALSE)
 cat("\nBy strain (all deaths):\n"); print(by.strain[by.strain[, "deaths"] == "all", ], row.names = FALSE)

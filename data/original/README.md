@@ -52,6 +52,23 @@ Suheeta Roy's curated file of BXD family females used for actuarial mapping by D
 
 The Gompertz analysis in `Gompertz/` uses this file.
 
+## BXD_Lifespan_AllDiets_Dataset_Mapping_Arends.csv
+
+A newer version of `BXD_Mortality_for_Mapping_Arends.xlsx`, as a CSV, from Beni Mozhui's public repository [github.com/squirrelB/BXD-Diet-Gompertz](https://github.com/squirrelB/BXD-Diet-Gompertz) (commit `ae85d295b905`, 21 November 2026). Downloaded on 21 November 2026 and kept unchanged.
+- **SHA-256:** `fd43d919853b058c5ff3873d53773545a21f4828470a22464cc3bc810c6f98e7`
+
+**Layout.** Rows 1–15 are notes on sample sizes; the column headers are on row 16. The first seven columns are as in the workbook. Columns 8–9 hold the Vita1a and Vita1b genotypes, and the rest hold body weights joined from `BXD_BodyWeight_AllDiets_Dataset_Mapping_Arends.xlsx` (not in this repository). There are 2,077 females:
+- CD 1,044
+- HF 890
+- HF + 1% NAM 143
+
+**Compared with the workbook** (`notes/Mozhui_comparison_results.md`):
+- **The 1,934 chow and high-fat rows are the same** in all seven columns.
+- **The 29 NAM mice of C57BL/6J (8) and DBA/2J (21) are left out,** as parental strains not used for mapping.
+- **Four NAM mice die later:** ear tags 3527 (730 days, against 638), 4558 (229, against 155), 4590 (786, against 421) and 5026 (620, against 483). All four are flagged in `qc/BodyWeight_QC.md` as weighed after their recorded death, and each later age falls after the mouse's last weighing or set-up. Where the corrections came from is not yet known.
+
+**Used by** `Gompertz/NAM_rectangularization.R mozhui`, which reruns Part 5's nicotinamide analysis with these four ages.
+
 ## Arends_2026_Supplementary_Table_2.zip
 
 Supplementary Data Table 2 of Arends et al. 2026 (*Nature* 654:437), as published (file `S_Table_2_Vita_mortality_by_age_and_genotype_text_files.zip` in `Arends_Supplementary_Tables_10Apr2026`).
