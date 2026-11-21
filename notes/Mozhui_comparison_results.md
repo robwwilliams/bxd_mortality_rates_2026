@@ -70,7 +70,30 @@ Her model, in `flexsurvreg`: `Surv(entry, death, event) ~ Diet + Strain, anc = l
 ## Her nicotinamide section
 
 - **The slope agrees with ours.** Her within-strain fits give nicotinamide (NAM) the same steep slope as high fat (MRDT 92 against 96 days). Our Part 5 found an MRDT ratio of 1.02 for NAM against high fat.
-- **In her fits, the median NAM mouse lives 35 days longer than the median high-fat mouse (95% CI 2–67).** Part 5 found no difference. Two cautions from Part 5 apply:
-  - **Vivarium.** All 172 NAM mice were housed at TSRB. In the strains with NAM mice, only 68 high-fat mice were at TSRB, so most of her 243 high-fat controls were housed elsewhere. Her model has no term for vivarium.
-  - **Birth year.** NAM mice were born about three years after their high-fat controls. With controls born in the same years, the hazard ratio is 1.04 (95% CI 0.51–2.12).
-- **Her counts (273 chow, 243 high fat, 143 NAM) do not match any subset we tried,** so her NAM data may differ from our file. Her chow and high-fat counts for Part A match ours exactly.
+- **In her fits, the median NAM mouse lives 35 days longer than the median high-fat mouse (95% CI 2–67).** Part 5 found no difference. Her comparison differs from ours in its data, its controls and the birth years of the mice.
+
+**Her data file.** `BXD_Lifespan_AllDiets_Dataset_Mapping_Arends.csv` in her repository ([github.com/squirrelB/BXD-Diet-Gompertz](https://github.com/squirrelB/BXD-Diet-Gompertz), downloaded 21 November 2026) is a newer version of our `data/original/BXD_Mortality_for_Mapping_Arends.xlsx`.
+- **Its 1,934 chow and high-fat rows match ours exactly.**
+- **It has 143 NAM mice in 26 strains, against our 172 in 28.** It leaves out the 29 NAM mice of C57BL/6J (8) and DBA/2J (21), as parental strains not used for mapping.
+- **Her filter explains her counts.** She keeps every strain with a NAM mouse, with all its chow, high-fat and NAM mice from every vivarium. On her file that gives 273, 243 and 143 mice, as on her page.
+
+**Four corrected ages at death.** Four NAM mice die later in her file than in ours. They are four of the six we flagged on 27 October 2026 as weighed after their recorded death (`qc/BodyWeight_QC.md`). In each, her age falls after the mouse's last weighing or set-up:
+
+| Mouse | Strain | Our age at death (days) | Hers | Evidence |
+|---|---|---|---|---|
+| NAM 3527 | BXD172 | 638 | 730 | weighed at 698 days |
+| NAM 4558 | BXD15 | 155 | 229 | set up at 190 days |
+| NAM 4590 | BXD32 | 421 | 786 | weighed at 709 days |
+| NAM 5026 | BXD62 | 483 | 620 | weighed at 526 days |
+
+- **The other two flagged mice,** NAM 2887 (BXD40) and NAM 3031 (BXD62), are the same in both files.
+- **We do not know where her corrections came from.**
+
+**Vivarium.** All her NAM mice were housed at TSRB, but only 63 of her 243 high-fat controls and 104 of her 273 chow controls were. Her model has no term for vivarium. Part 5's primary design used TSRB mice only.
+
+**Birth year.** NAM mice were born about three years after their high-fat controls. With controls born in the same years, Part 5 found a hazard ratio of 1.04 (95% CI 0.51–2.12).
+
+**What this means for Part 5.** Part 5 used our older ages.
+- **Two of the four mice are in its primary design:** NAM 3527 (BXD172) and NAM 4558 (BXD15). NAM 4558 entered with a death recorded before its set-up age.
+- **All four corrections lengthen NAM lives,** so if Part 5 is biased, it is biased against NAM.
+- **Part 5 has not been rerun** with her ages.
