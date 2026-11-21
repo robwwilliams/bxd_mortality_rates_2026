@@ -120,6 +120,9 @@ Rscript qc/mapping_files_QC.R             # exploratory: Danny Arends's mapping 
 Rscript GN4AI/strain_means.R               # exploratory: strain means for the GN4AI test drive, as baskets
 GN4AI_TOKEN_FILE=/path/to/token bash GN4AI/test_drive.sh   # maps them in GeneNetwork (needs a GN4AI token; about 15 min)
 Rscript GN4AI/compare_Danny.R             # the scans beside Danny's strain-means maps
+Rscript GN4AI/actuarial_means.R           # exploratory: strain means at every T-age, 20 to 800 days
+GN4AI_TOKEN_FILE=/path/to/token bash GN4AI/actuarial_scan.sh   # 108 R/qtl2 scans in GeneNetwork (about 6 min)
+Rscript GN4AI/actuarial_compare.R         # the actuarial scans beside Danny's, and the heat maps
 ```
 
 The UM-HET3 analyses read Arends et al. Supplementary Table 7 (the R/qtl cross file), kept in `data/local/`:

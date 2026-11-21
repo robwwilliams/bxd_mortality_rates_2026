@@ -89,4 +89,4 @@ These are the mice of rule E in [`qc/BodyWeight_QC.md`](BodyWeight_QC.md). Rob s
 - **For any NAM mapping:** use Beni's four ages, and fix the slipped row of the 6 NAM mice.
 - **For the GN4AI test drive:** GeneNetwork's lifespan values carry the old NAM ages, and BXD 2325 differs by 9 days. Chow and high-fat mapping from GeneNetwork should match Danny's input; NAM mapping would not.
 
-**For Danny, a small point about his results:** in each sheet of `QTL_Lifespan_05Nov2026.xlsx`, the last two columns are both headed 770 but hold different values. In `QTL_BW_5Nov.xlsx`, the last two are both headed 740.
+**For Danny, a small point about his results:** in each sheet of `QTL_Lifespan_05Nov2026.xlsx`, the last two columns are both headed 770, and the second is empty. In `QTL_BW_5Nov.xlsx`, the last two are both headed 740, and the second is empty. (Corrected on 21 November 2026: this note first said the two columns hold different values. Both readers, readxl and openpyxl, find no values in the second.)

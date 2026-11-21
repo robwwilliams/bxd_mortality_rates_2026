@@ -6,8 +6,8 @@
 # Strain means of age at death at every T-age of Danny Arends's actuarial maps (Fig. 2, top two rows), for mapping on
 # GN4AI-beta. Rob, 21 November 2026: "You are not doing the full actuarial scan in 30 day truncation steps right? That
 # is what we want to do emulating Danny's figures." Exploratory.
-#   - T-ages 20 to 800 days in 30-day steps: 27 columns, as in his QTL_Lifespan_05Nov2026.xlsx, whose last two are both
-#     headed 770 (qc/Mapping_files_QC.md). The last is mapped here as 800, to see whether that is what it holds.
+#   - T-ages 20 to 800 days in 30-day steps. Danny's QTL_Lifespan_05Nov2026.xlsx runs from 20 to 770; its 27th column,
+#     headed 770 like the 26th, is empty. 800 days was added to test that column before it was found empty.
 #   - His rule: each strain with at least 3 mice alive at T (age at death >= T), set-up age ignored, parents and F1s left
 #     out. Alive at T, not beyond it as in GN4AI/strain_means.R: only that gives the strain counts printed on his Fig. 2
 #     (52 on high fat at 650 days and 30 at 710, against 50 and 29). The two rules agree at 20 days.

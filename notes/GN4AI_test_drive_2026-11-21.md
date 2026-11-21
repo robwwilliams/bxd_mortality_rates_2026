@@ -7,7 +7,7 @@
 
 ## In brief
 
-- **It works, with four faults that matter.** 71 timed calls: baskets, R/qtl, R/qtl2, GEMMA through both runners, permutations, covariates and plots.
+- **It works, with four faults that matter.** 179 timed calls: baskets, R/qtl, R/qtl2, GEMMA through both runners, permutations, covariates and plots.
   - **Given one value per mouse, R/qtl2 keeps the last mouse of each strain and drops the rest without saying so** (item 20).
   - **No GEMMA route fits covariates,** because `/compute/gemma` now runs ravanan (items 6 and 14).
   - **R/qtl2 accepts a covariate and then leaves it out** (item 15).
@@ -17,6 +17,7 @@
 - **Chow: nothing is significant, in GeneNetwork or in Danny's maps.** The top marker differs: Chr 10 in GeneNetwork, Chr 2 in Danny's.
 - **The two differ because Danny weights each strain mean by its number of mice.** GeneNetwork cannot weight. A local check reproduces both maps (r = 0.98 to 0.999).
 - **Beni's corrected NAM ages change three strain means, by 8 to 24 days, but not the map.** The largest change in LOD is 0.11, and nothing is significant either way.
+- **The full actuarial scan, 20 to 770 days in 30-day steps, ran in 6 minutes** (108 R/qtl2 scans, with and without kinship). Danny's maps are a regression of strain means weighted by mice, without kinship, at every T-age on chow and to 620 days on high fat. From 650 days on high fat, they match nothing we tried.
 - **Danny's strain-mean maps look uncorrected for kinship.** His high-fat map matches scans without kinship better than scans with it (r = 0.80 against 0.71).
 - **Rob prefers mapping every mouse, with full cofactors and kinship.** GN4AI cannot do that yet, so it heads the feature requests (item 18). The limit is GN4AI's, not R/qtl2's: R/qtl2 itself takes kinship, cofactors and weights together.
 - **Speed.** An R/qtl scan takes 8 s and an R/qtl2 scan 3 s. GEMMA takes 10–22 s the first time and 4 s when cached. 1,000 permutations take from 22 s to nearly 8 minutes.
@@ -26,7 +27,7 @@
 
 ## What we sent
 
-Strain means of age at death, following Danny's rule: at a T-age, each strain with at least 3 mice alive beyond it, set-up age ignored, parents and F1s left out. This rule gives his strain counts (`qc/Mapping_files_QC.md`). Each column went to GeneNetwork as a basket, a private column of values that the compute calls can map by name.
+Strain means of age at death, following Danny's rule: at a T-age, each strain with at least 3 mice alive beyond it, set-up age ignored, parents and F1s left out. This rule gives his strain counts at 20 days (`qc/Mapping_files_QC.md`). His actuarial maps count mice alive *at* T (age ≥ T), which gives the same strains at 20 days (see "Actuarial scans" below). Each column went to GeneNetwork as a basket, a private column of values that the compute calls can map by name.
 
 | Basket | Diet | Ages from | Strains | Mice |
 |---|---|---|---|---|
@@ -52,6 +53,7 @@ Wall-clock times from Rob's Mac, every call in `output/GN4AI/timings.txt`.
 | GEMMA, repeated (cached) | 4.3 | 2.1 MB |
 | `/compute/gemma` (the wrapper runner) | 4.2–4.4 | 2.1 MB |
 | A plot | 0.8–1.5 (one of 4.9) | 0.26 MB |
+| R/qtl2 actuarial scans, 108 sent inline | 2.9–4.6 each, 359 in all | 0.85 MB each |
 
 ## Results
 
@@ -119,6 +121,55 @@ Rob: "I am not sure what method and model Danny Arends is using, but I hope R/qt
 - **It answered 200 and noted "99 values used":** one per strain, with no warning that 719 mice were left out.
 - **It keeps the last mouse of each strain.** The scan is identical, to the last digit, to one sent with only the last mouse of each strain in the file. It correlates 0.07 with the scan of the first mouse and 0.46 with the scan of strain means.
 - **So a user who sends individual mice gets a map of one mouse per strain,** with a reply that looks normal (item 20).
+
+### Actuarial scans: Danny's Fig. 2, top two rows
+
+Rob: "You are not doing the full actuarial scan in 30 day truncation steps right? That is what we want to do emulating Danny's figures." And: "Computed from 20 days of age in 30 day steps and the plots give the increments of 60 days on the y axis."
+
+**What we ran.** Strain means at every T-age from 20 to 770 days in 30-day steps, on chow and high fat, through GN4AI's R/qtl2 with LOCO kinship and without. 800 days was run too, as explained below.
+- **108 scans, all answered 200,** at 2.9–4.6 s each: 6 minutes in all.
+- **The means went inline** (`samples` in the body), not as baskets, so nothing stays on the server.
+- **Code:** [`GN4AI/actuarial_means.R`](../GN4AI/actuarial_means.R), [`GN4AI/actuarial_scan.sh`](../GN4AI/actuarial_scan.sh) and [`GN4AI/actuarial_compare.R`](../GN4AI/actuarial_compare.R).
+- **Outputs:** [`output/GN4AI/actuarial/`](../output/GN4AI/actuarial/), with every scan as LOD by marker and T-age, and [`compare_Danny.txt`](../output/GN4AI/actuarial/compare_Danny.txt).
+
+**Two facts about Danny's maps, found on the way.**
+- **His rule is "alive at T", not "beyond T".** Only age ≥ T gives the strain counts printed on his Fig. 2: 52 high-fat strains at 650 days and 30 at 710 (50 and 29 for "beyond T"). The two rules agree at 20 days, so the T20 baskets above are unaffected.
+- **His 27th column is empty.** In every sheet of `QTL_Lifespan_05Nov2026.xlsx` it repeats the header 770 and holds no values. The repeated 740 of `QTL_BW_5Nov.xlsx` is empty too. `qc/Mapping_files_QC.md` had said they hold different values; it is corrected. The scans at 800 days were run to test that column, before it turned out to be empty.
+
+![Actuarial maps: Danny Arends's beside GN4AI's R/qtl2 with LOCO kinship](../output/GN4AI/actuarial/actuarial_maps.png)
+
+*a, c, Danny's maps; b, d, GN4AI's R/qtl2 with LOCO kinship, on the same strain means. Chow in a and b, high fat in c and d. Each panel shows one row per T-age (20 to 770 days, labelled every 60 days) and one column per chromosome, with markers placed by position. The shade is −log10 P, purple where the B allele's strains live longer and orange where the D allele's do; white is below 1. The number of strains at each T-age is on the right. GN4AI's R/qtl2 maps autosomes only. Exploratory; no permutation thresholds.*
+
+**Danny's maps are a weighted regression without kinship, at nearly every T-age.** The local check of `actuarial_compare.R` (strain means regressed on B against D, weighted by mice per strain) matches his maps over markers:
+- **On chow, r = 0.97 to 0.999 at every T-age.**
+- **On high fat, r = 0.91 to 0.997 up to 620 days.**
+- **On high fat from 650 days on, nothing we tried matches.** r is 0.66 at 650 days, 0.59 at 680, 0.39 at 710, 0.27 at 740 and 0.35 at 770.
+  - **The strains are the same,** because his printed counts match ours.
+  - **We tried other rules:** "beyond T"; at least 2 or 5 mice; weights of √*n* or of all mice; medians; all-mouse means on the same strains; set-up age at or before T; high fat pooled with NAM. None does better than r = 0.66, and neither does matching each of his columns against the regression at any other T-age (best 0.71).
+  - **His late high-fat maps carry peaks no GN4AI scan shows,** such as Chr 15 at 28 Mb (4.57 at 650 days).
+  - **This is a question for Danny.**
+
+**Kinship.** Rob: "The mean survivorship data MUST be mapped with kinship to be accurate. There is strong kinship in the BXD family." So the GN4AI panels of the figure are the scans with LOCO kinship. Over markers, the scans with kinship correlate with those without:
+- **On chow, at r = 0.96 to 1.00 at every T-age,** so kinship barely changes the chow maps. This agrees with GEMMA's PVE on chow, 0 to 0.08 (above).
+- **On high fat, at r = 0.88 to 0.94 up to 470 days,** where kinship moves the maps most; at 0.96 to 1.00 from 500 to 710 days; and at 0.94 and 0.90 at 740 and 770 days (19 and 14 strains).
+
+**The strongest peaks with LOCO kinship**, each the strongest on its chromosome over all T-ages (from `compare_Danny.txt`):
+
+| Diet | Chr, Mb | Allele that lives longer | GN4AI with kinship, −log10 P (T-age) | Danny's map, same chromosome |
+|---|---|---|---|---|
+| High fat | 1, 24 | D | 5.01 (20 days) | 5.97 at 38 Mb (500 days) |
+| High fat | 2, 157 | B | 4.84 (200 days) | 6.28 at 157 Mb (200 days) |
+| High fat | 10, 40 | D | 3.81 (500 days) | 4.89 at 40 Mb (500 days) |
+| High fat | 15, 14 | B | 3.54 (50 days) | 4.57 at 28 Mb, D (650 days) |
+| Chow | 1, 5 | D | 6.27 (770 days, 46 strains) | 5.64 at 5 Mb (770 days) |
+| Chow | 9, 107 | B | 4.56 (680 days) | 4.12 at 107 Mb (680 days) |
+| Chow | 14, 49 | B | 3.41 (380 days) | 3.61 at 28 Mb (260 days) |
+
+- **Most peaks are in the same places in both.** The high-fat Chr 2 peak drops most, from 6.28 in Danny's map to 5.50 with equal weights (GN4AI without kinship), and to 4.84 with kinship added.
+- **These are −log10 P values of single scans.** There are 26 T-ages and 20,453 markers, neighboring T-ages share most of their mice, and no permutations were run. Read them as a map of where to look, not as tests.
+- **GN4AI's scans differ from Danny's in two ways at once:** kinship, and equal weights. R/qtl2 can do weights and kinship together (above), but GN4AI cannot yet pass weights (item 19). Until it can, the kinship maps here are unweighted.
+- **The X chromosome is missing from the GN4AI panels,** because GN4AI's R/qtl2 maps autosomes only.
+- **Danny's rows 3–4 (individual mice, main effect and gene × diet) cannot be run on GN4AI yet** (items 18 and 20).
 
 ### NAM: do Beni's corrected ages change the map?
 
@@ -192,6 +243,8 @@ These are traits 18441 (chow), 18435 (high fat) and 24754 (NAM), from Suheeta Ro
 18. **Mapping individual mice, with cofactors and a strain-level kinship.** This is Rob's preferred design (quoted above), and Danny's Fig. 2, rows 3–4, maps individuals on both diets for main effects and gene × diet interaction. It needs samples that repeat a strain's name, and cofactors for each mouse (diet, vivarium, birth year), in R/qtl2 and GEMMA. R/qtl2 already supports it: give each mouse its own ID and its strain's genotype probabilities, and pass `addcovar` and `intcovar` to `scan1()`.
 19. **Weights for strain means:** per-strain *n* or SE, as in GeneNetwork's "replicate average, SE, N". Danny's strain-mean maps need them, and without them a chow map ranks its weak peaks differently. R/qtl2's `scan1()` already takes `weights`, with or without kinship; GN4AI only has to pass them through.
 20. **Repeated sample names are collapsed to the last one, silently.** `/compute/qtl2` given 818 high-fat mice under 99 strain names maps the last mouse of each strain and notes only "99 values used". Either refuse repeated names with a 422, or average them and say so, or (better) map them as individuals (item 18).
+21. **The direction of each effect.** R/qtl2 replies give the LOD only, so a map cannot show which allele raises the trait, as Danny's signed maps do. The actuarial figure above takes the sign from the strain means. Returning the B − D effect per marker (R/qtl2's `scan1coef`), or at least its sign, would fix that.
+22. **Inline samples worked well for a large batch:** 108 scans in 6 minutes, with nothing stored on the server. SKILL.md could show that route beside baskets.
 
 ## Reproduce
 
@@ -199,6 +252,10 @@ These are traits 18441 (chow), 18435 (high fat) and 24754 (NAM), from Suheeta Ro
 Rscript GN4AI/strain_means.R
 GN4AI_TOKEN_FILE=/path/to/token bash GN4AI/test_drive.sh
 Rscript GN4AI/compare_Danny.R
+GN4AI_TOKEN_FILE=/path/to/token bash GN4AI/individual_mice.sh
+Rscript GN4AI/actuarial_means.R
+GN4AI_TOKEN_FILE=/path/to/token bash GN4AI/actuarial_scan.sh
+Rscript GN4AI/actuarial_compare.R
 ```
 
 The token is never stored in the repository. `compare_Danny.R` also needs two files kept in `data/local/` (not in git): Danny's `QTL_Lifespan_05Nov2026.xlsx`, from `Arends_Figures_09Nov2026.zip`, and the BXD.8 genotypes in `BXD_final_Genotypes_DGA_RWW_21Dec2025_based_on_v050423.xlsx`.
