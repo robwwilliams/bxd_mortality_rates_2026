@@ -70,7 +70,10 @@ Her model, in `flexsurvreg`: `Surv(entry, death, event) ~ Diet + Strain, anc = l
 ## Her nicotinamide section
 
 - **The slope agrees with ours.** Her within-strain fits give nicotinamide (NAM) the same steep slope as high fat (MRDT 92 against 96 days). Our Part 5 found an MRDT ratio of 1.02 for NAM against high fat.
-- **In her fits, the median NAM mouse lives 35 days longer than the median high-fat mouse (95% CI 2–67).** Part 5 found no difference. Her comparison differs from ours in its data, its controls and the birth years of the mice.
+- **Her page gives two differences in median lifespan, NAM − high fat, and calls neither significant.**
+  - **Observed medians:** 620 against 595 days, a difference of 25 days.
+  - **Her strain-adjusted fits, for a typical strain:** 35 days, with a 95% interval of 2–67 days. The interval comes from draws of the model's parameters, so the mouse is the unit, not the strain.
+  - **Part 5 found no difference.** Her comparison differs from ours in its data, its controls and the birth years of the mice.
 
 **Her data file.** `BXD_Lifespan_AllDiets_Dataset_Mapping_Arends.csv` in her repository ([github.com/squirrelB/BXD-Diet-Gompertz](https://github.com/squirrelB/BXD-Diet-Gompertz), downloaded 21 November 2026) is a newer version of our `data/original/BXD_Mortality_for_Mapping_Arends.xlsx`.
 - **Its 1,934 chow and high-fat rows match ours exactly.**
@@ -97,4 +100,4 @@ Her model, in `flexsurvreg`: `Surv(entry, death, event) ~ Diet + Strain, anc = l
 - **Two of the four mice are in its primary design:** NAM 3527 (BXD172) and NAM 4558 (BXD15). NAM 4558 entered with a death recorded before its set-up age.
 - **All four corrections lengthen NAM lives,** so if Part 5 is biased, it is biased against NAM.
 - **Rerun with her ages, nothing changes** (`notes/NAM_rectangularization_results.md`, "Check with four corrected ages at death"). The mean lifespan difference, NAM − high fat, goes from +26 to +28 days (95% CI −93 to 149), and the MRDT ratio from 1.02 to 1.00.
-- **So her +35-day benefit does not come from these four ages.** It more likely comes from her design: controls from every vivarium, born years before the NAM mice.
+- **So her 25- to 35-day difference does not come from these four ages.** It more likely comes from her design: controls from every vivarium, born years before the NAM mice.
