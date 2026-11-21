@@ -1,0 +1,60 @@
+
+===== CD ( chow ): 93 strain means; 21056 markers in Danny's map; 21056 in R/qtl, 21055 in GEMMA
+Correlation over markers, -log10 P: Danny with R/qtl 0.688 ; Danny with GEMMA 0.689 ; R/qtl with GEMMA 0.988 
+GEMMA, ravanan against the wrapper: largest difference in -log10 p 0 
+  peak Danny  rsm10000001144   Chr 2   157.31 Mb  -log10 P 3.00
+  peak Rqtl   rsm10000007009   Chr 10   66.60 Mb  -log10 P 2.74
+  peak GEMMA  rsm10000007009   Chr 10   66.60 Mb  -log10 P 2.67
+Local regressions on 2106 markers. Unweighted: with R/qtl 0.997 , with Danny 0.682 . Weighted by mice per strain: with Danny 0.988 (largest difference 0.27 )
+Strongest marker per chromosome (-log10 P):
+ chr Danny Rqtl GEMMA
+   1  2.34 2.09  2.17
+   2  3.00 2.62  2.64
+   3  2.48 1.92  2.04
+   4  1.75 1.48  1.73
+   5  2.09 2.60  2.66
+   6  2.46 2.18  2.23
+   7  1.27 1.18  1.48
+   8  1.33 1.16  1.08
+   9  1.73 1.59  1.41
+  10  1.75 2.74  2.67
+  11  1.74 2.15  2.18
+  12  1.80 1.78  1.85
+  13  2.13 2.17  2.17
+  14  1.84 0.88  1.17
+  15  1.33 1.50  1.64
+  16  1.67 1.60  1.63
+  17  1.03 1.33  1.55
+  18  1.58 1.32  1.39
+  19  1.61 1.25  1.21
+   X  1.81 1.65  1.64
+
+===== HF ( high fat ): 87 strain means; 21056 markers in Danny's map; 21056 in R/qtl, 21056 in GEMMA
+Correlation over markers, -log10 P: Danny with R/qtl 0.797 ; Danny with GEMMA 0.705 ; R/qtl with GEMMA 0.896 
+GEMMA, ravanan against the wrapper: largest difference in -log10 p 0 
+  peak Danny  rsm10000001144   Chr 2   157.31 Mb  -log10 P 5.65
+  peak Rqtl   rsm10000001145   Chr 2   157.49 Mb  -log10 P 5.11
+  peak GEMMA  rsm10000000055   Chr 1    22.85 Mb  -log10 P 5.08
+Local regressions on 2106 markers. Unweighted: with R/qtl 0.999 , with Danny 0.798 . Weighted by mice per strain: with Danny 0.981 (largest difference 0.53 )
+Strongest marker per chromosome (-log10 P):
+ chr Danny Rqtl GEMMA
+   1  5.24 5.08  5.08
+   2  5.65 5.11  4.69
+   3  2.92 2.49  2.26
+   4  1.56 2.03  1.74
+   5  1.90 1.95  2.61
+   6  1.77 1.36  1.71
+   7  2.96 2.04  2.42
+   8  1.50 1.53  1.80
+   9  0.84 1.29  1.85
+  10  2.31 1.46  1.70
+  11  1.59 1.29  1.53
+  12  1.67 1.44  2.58
+  13  1.52 1.69  1.55
+  14  1.30 1.10  1.08
+  15  2.26 2.80  3.60
+  16  1.86 1.78  1.85
+  17  1.52 1.56  1.25
+  18  1.19 1.58  1.52
+  19  1.82 2.04  1.95
+   X  1.65 1.74  1.58

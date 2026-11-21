@@ -67,6 +67,10 @@ Part 5 of the report covers this section. Both plans were approved by Rob on 27 
 
 **Danny Arends's mapping files** (4 November 2026) are checked against ours and Beni Mozhui's in [qc/Mapping_files_QC.md](qc/Mapping_files_QC.md). Chow and high-fat ages are the same in all three; Danny's file has one of the four NAM corrections in Beni's, and his body-weight file has a slipped row in 6 NAM mice.
 
+**GN4AI-beta test drive** (exploratory, 21 November 2026): Danny's strain-means maps repeated through GeneNetwork's new interface for AI agents, with strain means from Beni's corrected file. See [notes/GN4AI_test_drive_2026-11-21.md](notes/GN4AI_test_drive_2026-11-21.md).
+- **High fat:** GeneNetwork finds Danny's two peaks, Chr 1 at 23.5 Mb and Chr 2 at 157.5 Mb, both significant.
+- **Chow:** neither finds a significant peak. Their maps differ because Danny weights strain means by the number of mice.
+
 ### Installation
 
 To obtain the code, run the following command in your terminal:
@@ -113,6 +117,9 @@ Rscript Gompertz/Figures_Rectangularization.R   # Fig. 15
 Rscript BodyWeight/masses_notes.R          # tumors, swelling and terminal weight, from the free-text notes
 Rscript Gompertz/Mozhui_comparison.R       # exploratory: Beni Mozhui's strain-adjusted fits beside ours (about 6 s)
 Rscript qc/mapping_files_QC.R             # exploratory: Danny Arends's mapping files against ours and Beni's
+Rscript GN4AI/strain_means.R               # exploratory: strain means for the GN4AI test drive, as baskets
+GN4AI_TOKEN_FILE=/path/to/token bash GN4AI/test_drive.sh   # maps them in GeneNetwork (needs a GN4AI token; about 15 min)
+Rscript GN4AI/compare_Danny.R             # the scans beside Danny's strain-means maps
 ```
 
 The UM-HET3 analyses read Arends et al. Supplementary Table 7 (the R/qtl cross file), kept in `data/local/`:
@@ -133,7 +140,7 @@ Rscript UMHET3/Figures_Part3.R             # Figs 9-11
 
 - [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures. `NAM_rectangularization.R` compares high fat with and without nicotinamide (Fig. 14). `Rectangularization.R` sets the BXD comparisons beside de Cabo's studies (Fig. 15). `Mozhui_comparison.R` refits Beni Mozhui's strain-adjusted model beside ours.
 - [output/](./output/) contains the result tables (tab-separated `.txt`) and figures (`.svg` with editable text in Arial, and `.png` previews).
-- [notes/](./notes/) contains write-ups: `Report_BXD_Mortality_Parts1-5_28Oct2026_v2.2` (Markdown, PDF and Word) for beginners, covering all five parts, with version 2 (28 October) and version 1 (Parts 1–4, 27 October) kept for the record; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `Mozhui_comparison_results.md` for Beni Mozhui's diet analysis beside ours, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, `reading_notes.md` on the three papers below, and `reading_notes_frailty.md` on mouse frailty, terminal weight loss and rectangularization.
+- [notes/](./notes/) contains write-ups: `Report_BXD_Mortality_Parts1-5_28Oct2026_v2.2` (Markdown, PDF and Word) for beginners, covering all five parts, with version 2 (28 October) and version 1 (Parts 1–4, 27 October) kept for the record; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `Mozhui_comparison_results.md` for Beni Mozhui's diet analysis beside ours, `GN4AI_test_drive_2026-11-21.md` for the GN4AI-beta test drive, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, `reading_notes.md` on the three papers below, and `reading_notes_frailty.md` on mouse frailty, terminal weight loss and rectangularization.
 - [Genotypes/](./Genotypes/) contains `Chr1_haplotypes.R`, which classifies strains as B, D or recombinant across proximal Chr 1.
 - [BodyWeight/](./BodyWeight/) contains the analysis of terminal weight loss and Rob's per diem model of the cost of late life (Fig. 12). It also holds the comparison of definitions of terminal decline (`morbidity_functions.R`, `onset_definitions.R`; Fig. 13), the weight QC (`weights_QC.R`) and the look at tumors and terminal weight (`masses_notes.R`).
 - [Models/](./Models/) contains an exploratory model of Sewall Wright's question for the F1 experiment: do 10 or 200 recessive loci predict different lifespan gains for short-by-short and long-by-long F1s?
@@ -151,6 +158,7 @@ Rscript UMHET3/Figures_Part3.R             # Figs 9-11
   - the GeneNetwork export of BDL_10002 (natural lifespan, 22 October 2026);
   - Suheeta Roy's curated file of females used for actuarial mapping;
   - Supplementary Table 2 of Arends et al. 2026, as published.
+- [GN4AI/](./GN4AI/) contains the test drive of GN4AI-beta, GeneNetwork's interface for AI agents; its outputs are in `output/GN4AI/`.
 - [qc/](./qc/) contains quality checks of the GeneNetwork export, of the body weights and of Danny Arends's mapping files, the annotated workbooks for curation, and the scripts that produce them.
 - [papers/](./papers/) contains the papers that frame this analysis, with citations, licenses and links to their data and code.
 
