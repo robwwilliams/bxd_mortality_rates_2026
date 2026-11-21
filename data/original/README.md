@@ -65,7 +65,7 @@ A newer version of `BXD_Mortality_for_Mapping_Arends.xlsx`, as a CSV, from Beni 
 **Compared with the workbook** (`notes/Mozhui_comparison_results.md`):
 - **The 1,934 chow and high-fat rows are the same** in all seven columns.
 - **The 29 NAM mice of C57BL/6J (8) and DBA/2J (21) are left out,** as parental strains not used for mapping.
-- **Four NAM mice die later:** ear tags 3527 (730 days, against 638), 4558 (229, against 155), 4590 (786, against 421) and 5026 (620, against 483). All four are flagged in `qc/BodyWeight_QC.md` as weighed after their recorded death, and each later age falls after the mouse's last weighing or set-up. Where the corrections came from is not yet known.
+- **Four NAM mice die later:** ear tags 3527 (730 days, against 638), 4558 (229, against 155), 4590 (786, against 421) and 5026 (620, against 483). All four are flagged in `qc/BodyWeight_QC.md` as weighed after their recorded death, and each later age falls after the mouse's last weighing or set-up. Suheeta Roy and Casey Bohl made them after the QC of 27 October 2026 (Rob, 21 November 2026).
 
 **Used by** `Gompertz/NAM_rectangularization.R mozhui`, which reruns Part 5's nicotinamide analysis with these four ages.
 

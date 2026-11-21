@@ -132,7 +132,7 @@ If the mice refused the NAM diet at first, they had a short spell of food restri
 - NAM 4590 (BXD32): 421 → 786 days;
 - NAM 5026 (BXD62): 483 → 620 days.
 
-In each, the later age falls after the mouse's last weighing or set-up. Where the corrections came from is not yet known, so they are used here only as a check.
+In each, the later age falls after the mouse's last weighing or set-up. Suheeta Roy and Casey Bohl made them after the QC of 27 October 2026 (Rob, 21 November 2026). The report still uses the older ages, so they are used here only as a check.
 
 **How it was run.** `Rscript Gompertz/NAM_rectangularization.R mozhui` takes the NAM ages from that file and keeps everything else. The rule E flags of these four mice ("weighed after death") no longer apply, so their weighings are kept in the cleaned-weighing setting. Results are in `output/NAM_rectangularization_tests_mozhui.txt` and `output/NAM_by_strain_mozhui.txt`. NAM 3527 and NAM 4558 are in the primary design; the other two enter only the secondary design.
 
