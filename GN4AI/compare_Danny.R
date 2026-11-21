@@ -9,6 +9,8 @@
 #   - R/qtl's Haley-Knott LOD for two genotype classes is converted to -log10 P with the F test of the same regression:
 #     F = (n - 2) (10^(2 LOD / n) - 1) on 1 and n - 2 d.f., n the strains mapped.
 #   - GEMMA's -log10 p_lrt is used as it is, from both runners (ravanan and the wrapper), which should agree.
+#   - R/qtl2 with LOCO kinship and without kinship (added after Rob asked whether Danny's maps correct for kinship):
+#     its LOD is converted with the chi-square test on 1 d.f., -log10 P of 2 ln(10) LOD.
 #   - Local check, on every 10th marker: strain means regressed on genotype (B against D; H and U left out), unweighted
 #     as GeneNetwork maps them, and weighted by the number of mice per strain.
 #
@@ -36,12 +38,18 @@ for (d in names(diets)) {
   x <- data.frame(marker = x[-1, 1], chr = x[-1, 2], Mb = as.numeric(x[-1, 5]), Danny = as.numeric(x[-1, which(unlist(x[1, ]) == "20")]))
   r <- gz(b, "rqtl"); g1 <- gz(b, "gemma_ravanan"); g2 <- gz(b, "gemma_wrapper")
   x[, "Rqtl.LOD"] <- r[match(x[, "marker"], r[, "name"]), "lod"]; x[, "Rqtl"] <- neglog.lod(x[, "Rqtl.LOD"], n)
+  q1 <- gz(b, "qtl2_loco"); q0 <- gz(b, "qtl2_none")
+  x[, "qtl2.kinship"] <- -pchisq(2 * log(10) * q1[match(x[, "marker"], q1[, "marker"]), "lod"], 1, lower.tail = FALSE, log.p = TRUE) / log(10)
+  x[, "qtl2.none"] <- -pchisq(2 * log(10) * q0[match(x[, "marker"], q0[, "marker"]), "lod"], 1, lower.tail = FALSE, log.p = TRUE) / log(10)
   x[, "GEMMA"] <- -log10(g1[match(x[, "marker"], g1[, "rs"]), "p_lrt"]); x[, "GEMMA.wrapper"] <- -log10(g2[match(x[, "marker"], g2[, "rs"]), "p_lrt"])
   cat("\n=====", d, "(", diets[d], "):", n, "strain means;", nrow(x), "markers in Danny's map;", sum(!is.na(x[, "Rqtl"])), "in R/qtl,", sum(!is.na(x[, "GEMMA"])), "in GEMMA\n")
   cat("Correlation over markers, -log10 P: Danny with R/qtl", round(cor(abs(x[, "Danny"]), x[, "Rqtl"], use = "complete"), 3),
       "; Danny with GEMMA", round(cor(abs(x[, "Danny"]), x[, "GEMMA"], use = "complete"), 3), "; R/qtl with GEMMA", round(cor(x[, "Rqtl"], x[, "GEMMA"], use = "complete"), 3), "\n")
+  cat("Correlation with Danny over autosomal markers: R/qtl2 without kinship", round(cor(abs(x[, "Danny"]), x[, "qtl2.none"], use = "complete"), 3),
+      "; R/qtl2 with LOCO kinship", round(cor(abs(x[, "Danny"]), x[, "qtl2.kinship"], use = "complete"), 3), "; R/qtl2 with kinship against without",
+      round(cor(x[, "qtl2.kinship"], x[, "qtl2.none"], use = "complete"), 3), "\n")
   cat("GEMMA, ravanan against the wrapper: largest difference in -log10 p", signif(max(abs(x[, "GEMMA"] - x[, "GEMMA.wrapper"]), na.rm = TRUE), 3), "\n")
-  for (v in c("Danny", "Rqtl", "GEMMA")) { y <- abs(x[, v]); i <- which.max(y); cat(sprintf("  peak %-6s %-16s Chr %-2s %7.2f Mb  -log10 P %.2f\n", v, x[i, "marker"], x[i, "chr"], x[i, "Mb"], y[i])) }
+  for (v in c("Danny", "Rqtl", "GEMMA", "qtl2.kinship")) { y <- abs(x[, v]); i <- which.max(y); cat(sprintf("  peak %-6s %-16s Chr %-2s %7.2f Mb  -log10 P %.2f\n", v, x[i, "marker"], x[i, "chr"], x[i, "Mb"], y[i])) }
   # local regressions on every 10th marker
   k <- seq(1, nrow(geno), by = 10); G <- as.matrix(geno[k, s[, "Strain"]]); G[G %in% c("H", "U")] <- NA
   fit <- function(w) sapply(seq_len(nrow(G)), function(i) { z <- G[i, ]; j <- !is.na(z); if (length(unique(z[j])) < 2) return(NA)

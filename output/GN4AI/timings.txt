@@ -36,3 +36,17 @@ when	basket	step	http	seconds	bytes	server_ms	request_id
 2026-11-21T18:54:44Z	lifespan_NAM_T20_Danny	plot_gemma_ravanan	200	1.042536	257737		3663a7af-15b7-4b38-b5d1-5b84d6be2c1f
 2026-11-21T18:54:48Z	lifespan_NAM_T20_Danny	gemma_wrapper	200	4.419817	2074543	3821	05186210-e2fe-4be8-9cfe-c50205f329c6
 2026-11-21T18:54:49Z	lifespan_NAM_T20_Danny	plot_gemma_wrapper	200	1.097470	257737		545a02ba-4469-4abc-b5f8-66d1f1b17d65
+2026-11-21T19:58:38Z	lifespan_CD_T20	basket_create	422	0.161463	335		8a2f07e0-eab3-40fc-83ed-f0c3749234a2
+2026-11-21T19:58:38Z	lifespan_CD_T20	basket_values			
+2026-11-21T19:58:38Z	lifespan_CD_T20	basket_revise	200	0.155723	1015	6	1087deae-f0df-48f7-90b3-c63ea71bce7c
+2026-11-21T19:58:41Z	lifespan_CD_T20	qtl2_loco	200	3.270809	847116	2818	f5187d32-868a-4111-aa85-2d20ed1c5e11
+2026-11-21T19:58:42Z	lifespan_CD_T20	plot_qtl2_loco	422	0.495840	378		1f7ba3e0-eaf2-41bc-b0ca-562f0ae44a63
+2026-11-21T19:58:45Z	lifespan_CD_T20	qtl2_none	200	3.131118	847151	2711	d13eb154-0d32-47fa-8cfc-25282a26b144
+2026-11-21T19:58:45Z	lifespan_CD_T20	plot_qtl2_none	422	0.579555	378		f643a81a-c7d7-42e9-abf0-1df7e72bc2dd
+2026-11-21T19:58:46Z	lifespan_HF_T20	basket_create	422	0.159712	335		1ac67d7e-caf9-4bef-a6f9-64831d629165
+2026-11-21T19:58:46Z	lifespan_HF_T20	basket_values			
+2026-11-21T19:58:46Z	lifespan_HF_T20	basket_revise	200	0.169879	1015	5	9b7ac91f-ec69-42c4-af0f-42094a783eb1
+2026-11-21T19:58:49Z	lifespan_HF_T20	qtl2_loco	200	3.230670	847256	2810	e394d2f8-26a3-47ac-8105-554468073672
+2026-11-21T19:58:50Z	lifespan_HF_T20	plot_qtl2_loco	422	0.515967	378		b9f26a27-44df-407c-9473-38ed861b36ad
+2026-11-21T19:58:53Z	lifespan_HF_T20	qtl2_none	200	3.193115	846626	2718	ba57a329-2e41-4423-a6e0-dd0aa874cc3f
+2026-11-21T19:58:54Z	lifespan_HF_T20	plot_qtl2_none	422	0.493343	378		1d02bf9d-08d2-45df-b9e6-16abb2170fbb

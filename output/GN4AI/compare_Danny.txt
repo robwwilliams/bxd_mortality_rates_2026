@@ -1,10 +1,12 @@
 
 ===== CD ( chow ): 93 strain means; 21056 markers in Danny's map; 21056 in R/qtl, 21055 in GEMMA
 Correlation over markers, -log10 P: Danny with R/qtl 0.688 ; Danny with GEMMA 0.689 ; R/qtl with GEMMA 0.988 
+Correlation with Danny over autosomal markers: R/qtl2 without kinship 0.692 ; R/qtl2 with LOCO kinship 0.692 ; R/qtl2 with kinship against without 0.993 
 GEMMA, ravanan against the wrapper: largest difference in -log10 p 0 
   peak Danny  rsm10000001144   Chr 2   157.31 Mb  -log10 P 3.00
   peak Rqtl   rsm10000007009   Chr 10   66.60 Mb  -log10 P 2.74
   peak GEMMA  rsm10000007009   Chr 10   66.60 Mb  -log10 P 2.67
+  peak qtl2.kinship rsm10000007009   Chr 10   66.60 Mb  -log10 P 2.67
 Local regressions on 2106 markers. Unweighted: with R/qtl 0.997 , with Danny 0.682 . Weighted by mice per strain: with Danny 0.988 (largest difference 0.27 )
 Strongest marker per chromosome (-log10 P):
  chr Danny Rqtl GEMMA
@@ -31,10 +33,12 @@ Strongest marker per chromosome (-log10 P):
 
 ===== HF ( high fat ): 87 strain means; 21056 markers in Danny's map; 21056 in R/qtl, 21056 in GEMMA
 Correlation over markers, -log10 P: Danny with R/qtl 0.797 ; Danny with GEMMA 0.705 ; R/qtl with GEMMA 0.896 
+Correlation with Danny over autosomal markers: R/qtl2 without kinship 0.8 ; R/qtl2 with LOCO kinship 0.713 ; R/qtl2 with kinship against without 0.913 
 GEMMA, ravanan against the wrapper: largest difference in -log10 p 0 
   peak Danny  rsm10000001144   Chr 2   157.31 Mb  -log10 P 5.65
   peak Rqtl   rsm10000001145   Chr 2   157.49 Mb  -log10 P 5.11
   peak GEMMA  rsm10000000055   Chr 1    22.85 Mb  -log10 P 5.08
+  peak qtl2.kinship rsm10000000521   Chr 1    23.52 Mb  -log10 P 5.01
 Local regressions on 2106 markers. Unweighted: with R/qtl 0.999 , with Danny 0.798 . Weighted by mice per strain: with Danny 0.981 (largest difference 0.53 )
 Strongest marker per chromosome (-log10 P):
  chr Danny Rqtl GEMMA

@@ -7,14 +7,18 @@
 
 ## In brief
 
-- **It works.** 37 timed calls, all answered: baskets, R/qtl, GEMMA through both runners, permutations and plots. The only refusal was the intended one, a basket name already in use.
+- **It works.** 51 timed calls: baskets, R/qtl, R/qtl2, GEMMA through both runners, permutations and plots. Two kinds of call were refused: a basket name already in use (deliberately) and plots of R/qtl2 scans (item 12 below).
 - **We repeated Danny Arends's strain-means maps (his Fig. 2, top two rows).** The strain means are at T-age 20, so every mouse counts, and they come from Beni Mozhui's corrected file.
 - **High fat: GeneNetwork finds Danny's two peaks,** on proximal Chr 1 at 23.5 Mb, in the Vita1a–Vita1b interval, and on Chr 2 at 157.5 Mb. Both clear R/qtl's significance threshold from 1,000 permutations.
 - **Chow: nothing is significant, in GeneNetwork or in Danny's maps.** The top marker differs: Chr 10 in GeneNetwork, Chr 2 in Danny's.
 - **The two differ because Danny weights each strain mean by its number of mice.** GeneNetwork cannot weight. A local check reproduces both maps (r = 0.98 to 0.999).
 - **Beni's corrected NAM ages change three strain means, by 8 to 24 days, but not the map.** The largest change in LOD is 0.11, and nothing is significant either way.
-- **Speed.** One scan takes 8 s. GEMMA takes 10–22 s the first time and 4 s when cached. 1,000 permutations take from 22 s to nearly 8 minutes.
-- **GeneNetwork's published lifespan traits are older than the curated file.** They have fewer strains, and some strain means differ: BXD86 on high fat is 610 days in GeneNetwork against 724 in the file.
+- **Danny's strain-mean maps look uncorrected for kinship.** His high-fat map matches scans without kinship better than scans with it (r = 0.80 against 0.71).
+- **Rob prefers mapping every mouse, with full cofactors and kinship.** GN4AI cannot do that yet, so it heads the feature requests.
+- **Speed.** An R/qtl scan takes 8 s and an R/qtl2 scan 3 s. GEMMA takes 10–22 s the first time and 4 s when cached. 1,000 permutations take from 22 s to nearly 8 minutes.
+- **GeneNetwork's published lifespan traits are older than the curated file.** Their descriptions date them to December 2024 (chow, high fat) and April 2024 (NAM).
+  - **They leave out strains with fewer than 3 mice,** as Rob guessed.
+  - **Some strain means differ:** BXD86 on high fat is 610 days in GeneNetwork against 724 in the file.
 
 ## What we sent
 
@@ -38,6 +42,7 @@ Wall-clock times from Rob's Mac, every call in `output/GN4AI/timings.txt`.
 | Store or revise a basket | 0.2 | 1 kB |
 | Fetch a trait's values | 0.2 | 4–12 kB |
 | R/qtl scan, 21,056 markers | 7.5–7.9 | 1.1 MB |
+| R/qtl2 scan, with or without kinship, 20,453 autosomal markers | 3.1–3.3 | 0.85 MB |
 | R/qtl with 1,000 permutations | 221 (chow, 93 strains), 463 (high fat, 87), 21–22 (NAM, 21) | 1.1 MB |
 | GEMMA through ravanan, first run | 21.6 (chow), 15.3 (high fat), 15.4 and 9.8 (NAM) | 2.1 MB |
 | GEMMA, repeated (cached) | 4.3 | 2.1 MB |
@@ -75,7 +80,30 @@ Wall-clock times from Rob's Mac, every call in `output/GN4AI/timings.txt`.
 - **Danny's maps give each strain mean a weight equal to its number of mice.** Locally, on every 10th marker, a regression of strain means weighted that way matches his maps at r = 0.988 on chow and 0.981 on high fat.
 - **GeneNetwork gives every strain the same weight.** The same regression without weights matches GN4AI's R/qtl at r = 0.997 and 0.999.
 - **So each map is right for its own model.** The chow peak moves because the strains that carry it differ in how many mice they have.
-- **Weighting is the better choice for these data,** where the number of mice per strain ranges from 3 to 23. GN4AI cannot do it yet (item 14 below).
+- **Weighting is the better choice for strain means,** because the number of mice per strain ranges from 3 to 23. GN4AI cannot do it yet (item 17 below).
+
+### Does Danny's map correct for kinship?
+
+Rob: "I am not sure what method and model Danny Arends is using, but I hope R/qtl2 that does correct for kinship." To test it, the same baskets went through R/qtl2 with LOCO kinship and without kinship, and each scan was compared with Danny's map over markers.
+
+| Scan | Kinship | Correlation with Danny's map, chow | High fat |
+|---|---|---|---|
+| Strain means weighted by mice per strain (local, every 10th marker) | none | 0.988 | 0.981 |
+| GN4AI R/qtl | none | 0.688 | 0.797 |
+| GN4AI R/qtl2 | none | 0.692 | 0.800 |
+| GN4AI R/qtl2 | LOCO | 0.692 | 0.713 |
+| GN4AI GEMMA | LOCO | 0.689 | 0.705 |
+
+- **On chow, kinship changes little,** so this test cannot tell the models apart there.
+- **On high fat, kinship matters,** and Danny's map sides with the scans without it (0.80 against 0.71).
+- **The weighted regression without kinship reproduces his map almost exactly.** A scan with kinship would likely differ from his by about as much as GN4AI's two R/qtl2 scans differ from each other (r = 0.91 on high fat).
+- **So his strain-mean maps most likely do not correct for kinship.** Only Danny can confirm it, and his maps of individual mice (his Fig. 2, rows 3–4) may use a different model.
+- **With kinship, the high-fat peaks hold.** R/qtl2 with LOCO kinship peaks on Chr 1 at 23.5 Mb (LOD 4.25).
+
+**Rob's preference.** Rob: "I actually prefer to use ALL of the data and map at the individual level with full cofactors. The kinship handles the variable number of individuals per genotype well."
+- **This replaces the weighting question:** each mouse enters once, and the kinship matrix accounts for mice of the same strain.
+- **In these data the cofactors could include diet, vivarium and birth year.** Part 5 showed the last two matter for nicotinamide.
+- **GN4AI cannot do it yet.** A basket or matrix holds one value per strain (item 16).
 
 ### NAM: do Beni's corrected ages change the map?
 
@@ -85,7 +113,7 @@ Wall-clock times from Rob's Mac, every call in `output/GN4AI/timings.txt`.
 
 ### GeneNetwork's own published lifespan traits
 
-These are traits 18441 (chow), 18435 (high fat) and 24754 (NAM), from Suheeta Roy and colleagues. They are older than the curated mapping file.
+These are traits 18441 (chow), 18435 (high fat) and 24754 (NAM), from Suheeta Roy and colleagues. They are older than the curated mapping file: their descriptions say "updated Dec 2024 at n deaths = 1056" (chow), "updated Dec 2024 (n = 896)" (high fat) and "updated Apr 2024 (n = 180)" (NAM).
 
 | Trait | BXD strains in GeneNetwork | In the file | Shared strains that differ by more than 1 day |
 |---|---|---|---|
@@ -93,9 +121,17 @@ These are traits 18441 (chow), 18435 (high fat) and 24754 (NAM), from Suheeta Ro
 | 18435, high fat | 85 | 99 | BXD22 (615, 563), BXD48 (522, 523), BXD86 (610, 724) |
 | 24754, NAM | 23 | 26 | 11 of 23, among them BXD32 (602, 626), BXD65 (590, 658) and BXD70 (586, 655) |
 
-- **The NAM trait was probably computed before the last NAM mice died.** In 9 of the 11 strains that differ, GeneNetwork's mean is the lower.
+- **The missing strains have fewer than 3 mice,** as Rob guessed. On chow, 22 of the 23 strains absent from GeneNetwork have 1 or 2 mice and one has 3. On high fat, 12 of 14 have 1 or 2 and two have 4. Every strain GeneNetwork keeps has at least 3 mice (2 on NAM). The F1s are counted apart on both sides.
+- **The NAM trait was computed before the last NAM mice died.** In 9 of the 11 strains that differ, GeneNetwork's mean is the lower.
 - **Mapped through GeneNetwork's own route,** 18441 peaks on Chr 2 at 157.3 Mb with LOD 2.67, and 18435 on Chr 1 at 23.5 Mb with LOD 4.47. These are the same regions as our baskets.
-- **The trait records store higher LODs** at rsm10000001144: 3.13 for 18441 and 5.08 for 18435, against 2.67 and 3.95 recomputed. They probably come from an older mapping.
+- **The trait records store higher LODs** at rsm10000001144: 3.13 for 18441 and 5.08 for 18435.
+  - **Rob:** "GN stored peak LODs are computed as Haley-Knott approximation and without kinship correction." That is the same model as GN4AI's R/qtl scan.
+  - **The stored values do not come back from the current inputs.** With either genotype file (BXD.8, or the array-based BXD of 2017–2021), and with or without the F1s, the scans give 2.55–2.68 for chow and 3.95–4.52 for high fat.
+  - **So the stored LODs most likely come from earlier strain means,** before the December 2024 update.
+- **The F1s.** GeneNetwork's chow and high-fat traits each include 13 types of BXD × BXD F1, which GN4AI leaves out by default. Rob: "There are two types of F1 that we made—short-lived-by-short-lived (that on average lived longer than the parent due to heterosis) and long-lived-by-long-lived that in general highlight the limits of heterosis or perhaps the small number of strong loci modulating the survivorships."
+  - **Putting them back in raises the high-fat LOD** at rsm10000001144 from 3.95 to 4.52, and the Chr 1 peak from 4.47 to 4.79.
+  - **That gain should be read with care.** R/qtl drops heterozygous calls, so an F1 counts only at markers where its two parents agree, and heterosis raises the short × short F1 means. Mapping F1s as if they were strains mixes the two.
+  - **Leaving them out, GeneNetwork's default, is the safer choice for these traits.** The F1s belong in a model that knows they are heterozygous, as in Part 2 of our report.
 
 ## For Pjotr: what to fix or consider
 
@@ -112,18 +148,20 @@ These are traits 18441 (chow), 18435 (high fat) and 24754 (NAM), from Suheeta Ro
 7. **R/qtl replies put the rows in `.data.markers`,** beside `.data.permutation`, while GEMMA replies put them in `.data` itself. Scripts written from SKILL.md ("rows are positional") break on the first.
 8. **Compute replies' `next` holds unfilled templates:** `/gn4/groups/BXD/genotypes/%7Bversion%7D/markers/rsm10000007009/classes?trait={trait_id}` and `/gn4/groups/unlisted/genotypes/{name}/frequencies`. A basket has no trait id. SKILL.md says every `next` link is a GET that returns 200.
 9. **Notes and `x-plot-summary` show server paths,** such as `/home/wrk/tmp/ai-root/...` and `/gnu/store/...`. They end up in users' chats and repositories.
-10. **R/qtl drops heterozygous calls silently.** Its status log shows "Omitting 230532 genotypes with code==2", 5,513 male X heterozygotes dropped, and X converted to an autosome. That is expected for `riself`, but the reply's notes do not say it, while GEMMA keeps H as 0.5.
+10. **R/qtl drops heterozygous calls without saying so.** Its status log shows "Omitting 230532 genotypes with code==2", 5,513 male X heterozygotes dropped, and X converted to an autosome. That is expected for `riself`, but the reply's notes do not say it, while GEMMA keeps H as 0.5.
 11. **A basket name already in use gets a 422.** A 409 would be the usual code, with a pointer to PATCH.
+12. **`/plot/rqtl` refuses `/compute/qtl2` replies** with `422 not_an_rqtl_result` ("`data.markers` must be the R/qtl marker array"). SKILL.md says it draws them unchanged.
+13. **R/qtl2's note says "LOD is -log10 of the LMM's p-value".** Without kinship its values equal R/qtl's LODs (median ratio 1.00, r = 0.9995), so they are LODs, not −log10 *p*. R/qtl2's own note on heterozygous calls (12.7% dropped and re-imputed) is the kind R/qtl's reply lacks (item 10).
 
 **In the data (for Arthur Centeno and Suheeta Roy as much as for Pjotr)**
 
-12. **The lifespan traits 18441, 18435 and 24754 are older than the curated file** (table above).
-13. **A trait record's LOD differs from a fresh scan of the same values** (above). Saying where the stored LOD came from would help.
+14. **The lifespan traits 18441, 18435 and 24754 are older than the curated file** (table above). Their dates are in the description text; a date field in the trait record would help.
+15. **A trait record's LOD cannot be reproduced from the trait's current values** (above). Storing the date and inputs of that mapping would help.
 
 **Feature requests**
 
-14. **Weights for strain means:** per-strain *n* or SE, as in GeneNetwork's "replicate average, SE, N". Danny's maps need them, and without them a chow map ranks its weak peaks differently.
-15. **Mapping individual mice with a strain-level kinship,** as in Danny's Fig. 2, rows 3–4: individuals on both diets, main effects and gene × diet interaction. This needs samples that repeat a strain's name, and a covariate (diet) for each mouse.
+16. **Mapping individual mice, with cofactors and a strain-level kinship.** This is Rob's preferred design (quoted above), and Danny's Fig. 2, rows 3–4, maps individuals on both diets for main effects and gene × diet interaction. It needs samples that repeat a strain's name, and cofactors for each mouse (diet, vivarium, birth year), in R/qtl2 and GEMMA.
+17. **Weights for strain means:** per-strain *n* or SE, as in GeneNetwork's "replicate average, SE, N". Danny's strain-mean maps need them, and without them a chow map ranks its weak peaks differently.
 
 ## Reproduce
 
