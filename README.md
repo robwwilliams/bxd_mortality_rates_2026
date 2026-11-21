@@ -4,9 +4,11 @@ See GeneNetwork.org trait 10002:  https://genenetwork.org/show_trait?trait_id=10
 
 ### First result
 
-On a high-fat diet, BXD family females die at 1.4 times the rate of chow-fed females at every age. The mortality rate doubling time (MRDT) does not change: 153 d on chow, 149 d on high fat (p = 0.55 for equal slopes). See [notes/MRDT_diet_initial.md](notes/MRDT_diet_initial.md).
+Pooled over strains, BXD family females on a high-fat diet die at 1.4 times the rate of chow-fed females at every age, and the mortality rate doubling time (MRDT) does not change: 153 d on chow, 149 d on high fat (p = 0.55 for equal slopes). See [notes/MRDT_diet_initial.md](notes/MRDT_diet_initial.md).
 
 Within strains (exploratory), high fat raises mortality 1.8-fold, strains differ in how much (P = 0.0002), and the MRDT is 113 d rather than the pooled 151 d. Given an MRDT for each diet, high fat also shortens it within strains, from 117 to 91 d (ratio 0.78, 95% CI 0.69–0.88), which the pooled fit hides. See Part 1 of the [report](notes/Report_BXD_Mortality_Parts1-5_28Oct2026_v2.2.md), Fig. 5 and Fig. 15d.
+
+Beni Mozhui's independent analysis ([squirrelb.github.io/BXD-Diet-Gompertz](https://squirrelb.github.io/BXD-Diet-Gompertz/), 20 November 2026) agrees that high fat steepens the rise of mortality within strains (MRDT 119.5 against 104 d). Her model gives a smaller change than ours (ratio 0.87 against 0.78) and measures the level at birth, where the diets barely differ. At 600 d her fit puts high-fat mortality at 1.76-fold that of chow. See [notes/Mozhui_comparison_results.md](notes/Mozhui_comparison_results.md).
 
 ### Planned secondary analyses
 
@@ -106,6 +108,7 @@ Rscript Gompertz/Figures_NAM.R             # Fig. 14
 Rscript Gompertz/Rectangularization.R      # rectangularization side by side (about 10 s)
 Rscript Gompertz/Figures_Rectangularization.R   # Fig. 15
 Rscript BodyWeight/masses_notes.R          # tumors, swelling and terminal weight, from the free-text notes
+Rscript Gompertz/Mozhui_comparison.R       # exploratory: Beni Mozhui's strain-adjusted fits beside ours (about 6 s)
 ```
 
 The UM-HET3 analyses read Arends et al. Supplementary Table 7 (the R/qtl cross file), kept in `data/local/`:
@@ -124,9 +127,9 @@ Rscript UMHET3/Figures_Part3.R             # Figs 9-11
 
 ### Structure
 
-- [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures. `NAM_rectangularization.R` compares high fat with and without nicotinamide (Fig. 14). `Rectangularization.R` sets the BXD comparisons beside de Cabo's studies (Fig. 15).
+- [Gompertz/](./Gompertz/) contains the Gompertz code. `gompertz.R` holds the functions: maximum-likelihood fits with left truncation at the age of set up, likelihood-ratio tests between groups, the bootstrap, and the classic binned regression of de Magalhães et al. `MRDT_Diet.R` compares chow and high-fat females, and `Figures_MRDT_Diet.R` draws the figures. `MRDT_Secondary.R` runs the pre-registered secondary tests, and `Figures_MRDT_Secondary.R` draws their figures. `NAM_rectangularization.R` compares high fat with and without nicotinamide (Fig. 14). `Rectangularization.R` sets the BXD comparisons beside de Cabo's studies (Fig. 15). `Mozhui_comparison.R` refits Beni Mozhui's strain-adjusted model beside ours.
 - [output/](./output/) contains the result tables (tab-separated `.txt`) and figures (`.svg` with editable text in Arial, and `.png` previews).
-- [notes/](./notes/) contains write-ups: `Report_BXD_Mortality_Parts1-5_28Oct2026_v2.2` (Markdown, PDF and Word) for beginners, covering all five parts, with version 2 (28 October) and version 1 (Parts 1–4, 27 October) kept for the record; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, `reading_notes.md` on the three papers below, and `reading_notes_frailty.md` on mouse frailty, terminal weight loss and rectangularization.
+- [notes/](./notes/) contains write-ups: `Report_BXD_Mortality_Parts1-5_28Oct2026_v2.2` (Markdown, PDF and Word) for beginners, covering all five parts, with version 2 (28 October) and version 1 (Parts 1–4, 27 October) kept for the record; `MRDT_diet_initial.md` for the first analysis, `PREREGISTRATION_secondary.md` for the registered secondary tests, `MRDT_secondary_results.md` for their results, `Mozhui_comparison_results.md` for Beni Mozhui's diet analysis beside ours, `HANDOFF_2026-10-24.md` on where the work stands and what comes next, `reading_notes.md` on the three papers below, and `reading_notes_frailty.md` on mouse frailty, terminal weight loss and rectangularization.
 - [Genotypes/](./Genotypes/) contains `Chr1_haplotypes.R`, which classifies strains as B, D or recombinant across proximal Chr 1.
 - [BodyWeight/](./BodyWeight/) contains the analysis of terminal weight loss and Rob's per diem model of the cost of late life (Fig. 12). It also holds the comparison of definitions of terminal decline (`morbidity_functions.R`, `onset_definitions.R`; Fig. 13), the weight QC (`weights_QC.R`) and the look at tumors and terminal weight (`masses_notes.R`).
 - [Models/](./Models/) contains an exploratory model of Sewall Wright's question for the F1 experiment: do 10 or 200 recessive loci predict different lifespan gains for short-by-short and long-by-long F1s?

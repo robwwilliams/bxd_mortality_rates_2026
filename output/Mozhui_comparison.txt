@@ -1,0 +1,5 @@
+mice	model	MRDT.CD	MRDT.HF	ratio	ratio.lo	ratio.hi	LR.slope	P.slope	HR.birth	HR.600	LR.level.birth	P.level.birth	LR.level.600	P.level.600
+all genotypes	Mozhui: level per strain, one diet multiplier	119.5	104	0.8704	0.7664	0.9885	12.91	0.000327	1.046	1.756	0.08431	0.7715	123.3	1.178e-28
+all genotypes	ours: level per strain x diet cell	114.1	89.55	0.7847	0.6996	0.8803	31.92	1.604e-08	NA	NA	NA	NA	NA	NA
+76 strains with >= 5 mice on each diet	Mozhui: level per strain, one diet multiplier	121.2	105.1	0.8675	0.7572	0.9938	11.96	0.0005435	1.071	1.809	0.1775	0.6735	127.7	1.294e-29
+76 strains with >= 5 mice on each diet	ours: level per strain x diet cell	117.2	91.42	0.7803	0.6917	0.8803	30.3	3.696e-08	NA	NA	NA	NA	NA	NA
