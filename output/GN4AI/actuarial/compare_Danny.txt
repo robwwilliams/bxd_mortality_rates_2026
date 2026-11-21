@@ -4,61 +4,61 @@
 ===== CD ( chow ): 21056 markers in Danny's map, 20453 autosomal
 Danny's sign at 20 days agrees with the sign of the B mean minus the D mean at 5.6 % of markers
   so his values are negated here: positive means the B allele lives longer
-Correlation over autosomal markers of |-log10 P|, Danny against: the local weighted regression, GN4AI R/qtl2 without and with LOCO kinship; then GN4AI with kinship against without. Peaks are autosomal, with the allele whose strains live longer.
-   T strains r.weighted r.qtl2.none r.qtl2.loco r.loco.none
-  20      93      0.988       0.692       0.692       0.993
-  50      93      0.988       0.692       0.692       0.993
-  80      93      0.990       0.683       0.686       0.999
- 110      91      0.993       0.764       0.764       1.000
- 140      90      0.991       0.784       0.784       1.000
- 170      90      0.992       0.769       0.769       1.000
- 200      90      0.986       0.776       0.776       1.000
- 230      90      0.996       0.795       0.792       0.999
- 260      90      0.997       0.802       0.797       0.999
- 290      90      0.997       0.779       0.775       0.999
- 320      90      0.997       0.776       0.769       0.998
- 350      89      0.997       0.773       0.772       0.999
- 380      89      0.999       0.786       0.785       0.999
- 410      88      0.999       0.833       0.831       0.998
- 440      88      0.995       0.819       0.820       1.000
- 470      86      0.993       0.844       0.843       1.000
- 500      86      0.994       0.843       0.835       0.998
- 530      84      0.993       0.844       0.839       0.999
- 560      80      0.995       0.900       0.857       0.962
- 590      80      0.989       0.888       0.842       0.970
- 620      73      0.994       0.895       0.841       0.959
- 650      69      0.987       0.906       0.865       0.964
- 680      65      0.978       0.891       0.850       0.970
- 710      61      0.971       0.879       0.850       0.979
- 740      53      0.983       0.882       0.881       1.000
- 770      46      0.982       0.894       0.877       0.977
-            peak.Danny         peak.qtl2.loco
- Chr 2 157.3 Mb B 3.00  Chr 10 66.6 Mb D 2.67
- Chr 2 157.3 Mb B 3.00  Chr 10 66.6 Mb D 2.67
- Chr 2 157.3 Mb B 2.98   Chr 5 53.6 Mb D 2.76
- Chr 2 157.3 Mb B 3.19  Chr 2 157.3 Mb B 3.15
- Chr 2 157.3 Mb B 3.03  Chr 2 157.3 Mb B 2.78
- Chr 2 157.3 Mb B 3.12  Chr 2 157.3 Mb B 2.86
- Chr 14 28.1 Mb B 3.07  Chr 2 157.3 Mb B 2.61
- Chr 14 28.1 Mb B 3.41  Chr 14 48.9 Mb B 2.95
- Chr 14 28.1 Mb B 3.61  Chr 14 48.9 Mb B 3.19
- Chr 6 115.1 Mb D 3.44  Chr 14 48.9 Mb B 3.14
- Chr 14 28.1 Mb B 3.30  Chr 14 48.9 Mb B 3.39
-  Chr 6 21.8 Mb B 3.31  Chr 14 48.9 Mb B 3.02
-  Chr 6 21.8 Mb B 3.27  Chr 14 49.0 Mb B 3.41
-  Chr 6 21.8 Mb B 3.72  Chr 14 48.9 Mb B 3.37
-  Chr 6 21.8 Mb B 3.68  Chr 14 58.5 Mb B 2.68
- Chr 14 48.9 Mb B 3.06 Chr 10 121.6 Mb B 2.64
-  Chr 6 21.8 Mb B 3.41 Chr 10 121.6 Mb B 2.83
-  Chr 6 18.0 Mb B 3.06  Chr 2 168.6 Mb D 2.80
- Chr 9 103.9 Mb B 3.41  Chr 9 103.9 Mb B 3.53
- Chr 9 103.9 Mb B 3.53  Chr 9 103.9 Mb B 3.37
- Chr 9 106.9 Mb B 3.98  Chr 9 106.9 Mb B 4.24
- Chr 9 106.9 Mb B 4.04  Chr 9 106.9 Mb B 4.04
- Chr 9 106.9 Mb B 4.12  Chr 9 106.9 Mb B 4.56
- Chr 9 106.0 Mb B 3.86  Chr 9 106.6 Mb B 4.07
-   Chr 1 4.9 Mb D 3.52   Chr 7 87.7 Mb B 3.17
-   Chr 1 4.9 Mb D 5.64    Chr 1 4.9 Mb D 6.27
+Correlation over autosomal markers of |-log10 P|, Danny against: the local weighted regression (r.weighted; r.signed keeps the direction of each effect), GN4AI R/qtl2 without and with LOCO kinship; then GN4AI with kinship against without. next.Danny and next.weighted: signed correlation of each map with the same map 30 days later (added after Rob saw no discontinuities in Danny's high-fat map). Peaks are autosomal, with the allele whose strains live longer.
+   T strains r.weighted r.signed next.Danny next.weighted r.qtl2.none
+  20      93      0.988    0.994      1.000         1.000       0.692
+  50      93      0.988    0.994      0.996         0.996       0.692
+  80      93      0.990    0.995      0.984         0.984       0.683
+ 110      91      0.993    0.997      0.991         0.992       0.764
+ 140      90      0.991    0.996      0.992         0.992       0.784
+ 170      90      0.992    0.996      0.987         0.988       0.769
+ 200      90      0.986    0.994      0.992         0.994       0.776
+ 230      90      0.996    0.998      0.993         0.993       0.795
+ 260      90      0.997    0.998      0.979         0.980       0.802
+ 290      90      0.997    0.999      0.989         0.989       0.779
+ 320      90      0.997    0.999      0.977         0.977       0.776
+ 350      89      0.997    0.999      0.986         0.987       0.773
+ 380      89      0.999    0.999      0.974         0.975       0.786
+ 410      88      0.999    0.999      0.979         0.978       0.833
+ 440      88      0.995    0.998      0.968         0.967       0.819
+ 470      86      0.993    0.996      0.967         0.967       0.844
+ 500      86      0.994    0.997      0.968         0.965       0.843
+ 530      84      0.993    0.997      0.950         0.949       0.844
+ 560      80      0.995    0.997      0.975         0.977       0.900
+ 590      80      0.989    0.994      0.940         0.939       0.888
+ 620      73      0.994    0.997      0.968         0.963       0.895
+ 650      69      0.987    0.992      0.904         0.918       0.906
+ 680      65      0.978    0.988      0.922         0.931       0.891
+ 710      61      0.971    0.986      0.858         0.874       0.879
+ 740      53      0.983    0.992      0.831         0.836       0.882
+ 770      46      0.982    0.990         NA            NA       0.894
+ r.qtl2.loco r.loco.none            peak.Danny         peak.qtl2.loco
+       0.692       0.993 Chr 2 157.3 Mb B 3.00  Chr 10 66.6 Mb D 2.67
+       0.692       0.993 Chr 2 157.3 Mb B 3.00  Chr 10 66.6 Mb D 2.67
+       0.686       0.999 Chr 2 157.3 Mb B 2.98   Chr 5 53.6 Mb D 2.76
+       0.764       1.000 Chr 2 157.3 Mb B 3.19  Chr 2 157.3 Mb B 3.15
+       0.784       1.000 Chr 2 157.3 Mb B 3.03  Chr 2 157.3 Mb B 2.78
+       0.769       1.000 Chr 2 157.3 Mb B 3.12  Chr 2 157.3 Mb B 2.86
+       0.776       1.000 Chr 14 28.1 Mb B 3.07  Chr 2 157.3 Mb B 2.61
+       0.792       0.999 Chr 14 28.1 Mb B 3.41  Chr 14 48.9 Mb B 2.95
+       0.797       0.999 Chr 14 28.1 Mb B 3.61  Chr 14 48.9 Mb B 3.19
+       0.775       0.999 Chr 6 115.1 Mb D 3.44  Chr 14 48.9 Mb B 3.14
+       0.769       0.998 Chr 14 28.1 Mb B 3.30  Chr 14 48.9 Mb B 3.39
+       0.772       0.999  Chr 6 21.8 Mb B 3.31  Chr 14 48.9 Mb B 3.02
+       0.785       0.999  Chr 6 21.8 Mb B 3.27  Chr 14 49.0 Mb B 3.41
+       0.831       0.998  Chr 6 21.8 Mb B 3.72  Chr 14 48.9 Mb B 3.37
+       0.820       1.000  Chr 6 21.8 Mb B 3.68  Chr 14 58.5 Mb B 2.68
+       0.843       1.000 Chr 14 48.9 Mb B 3.06 Chr 10 121.6 Mb B 2.64
+       0.835       0.998  Chr 6 21.8 Mb B 3.41 Chr 10 121.6 Mb B 2.83
+       0.839       0.999  Chr 6 18.0 Mb B 3.06  Chr 2 168.6 Mb D 2.80
+       0.857       0.962 Chr 9 103.9 Mb B 3.41  Chr 9 103.9 Mb B 3.53
+       0.842       0.970 Chr 9 103.9 Mb B 3.53  Chr 9 103.9 Mb B 3.37
+       0.841       0.959 Chr 9 106.9 Mb B 3.98  Chr 9 106.9 Mb B 4.24
+       0.865       0.964 Chr 9 106.9 Mb B 4.04  Chr 9 106.9 Mb B 4.04
+       0.850       0.970 Chr 9 106.9 Mb B 4.12  Chr 9 106.9 Mb B 4.56
+       0.850       0.979 Chr 9 106.0 Mb B 3.86  Chr 9 106.6 Mb B 4.07
+       0.881       1.000   Chr 1 4.9 Mb D 3.52   Chr 7 87.7 Mb B 3.17
+       0.877       0.977   Chr 1 4.9 Mb D 5.64    Chr 1 4.9 Mb D 6.27
 Strongest -log10 P on each autosome over all T-ages (position, T-age, allele whose strains live longer):
  chr                  Danny              qtl2.none              qtl2.loco
    1   5.64 (5 Mb, T770, D)   6.26 (5 Mb, T770, D)   6.27 (5 Mb, T770, D)
@@ -86,61 +86,61 @@ Strongest -log10 P on each autosome over all T-ages (position, T-age, allele who
 ===== HF ( high fat ): 21056 markers in Danny's map, 20453 autosomal
 Danny's sign at 20 days agrees with the sign of the B mean minus the D mean at 4.2 % of markers
   so his values are negated here: positive means the B allele lives longer
-Correlation over autosomal markers of |-log10 P|, Danny against: the local weighted regression, GN4AI R/qtl2 without and with LOCO kinship; then GN4AI with kinship against without. Peaks are autosomal, with the allele whose strains live longer.
-   T strains r.weighted r.qtl2.none r.qtl2.loco r.loco.none
-  20      87      0.981       0.800       0.713       0.913
-  50      87      0.981       0.800       0.715       0.915
-  80      87      0.981       0.800       0.715       0.915
- 110      87      0.982       0.785       0.706       0.924
- 140      87      0.983       0.787       0.697       0.914
- 170      87      0.984       0.777       0.686       0.911
- 200      87      0.989       0.781       0.701       0.923
- 230      87      0.990       0.776       0.697       0.925
- 260      87      0.992       0.780       0.713       0.935
- 290      87      0.997       0.771       0.702       0.939
- 320      85      0.997       0.788       0.698       0.923
- 350      84      0.996       0.759       0.663       0.908
- 380      81      0.985       0.768       0.683       0.924
- 410      78      0.984       0.789       0.674       0.884
- 440      76      0.967       0.733       0.628       0.914
- 470      75      0.978       0.720       0.630       0.923
- 500      71      0.973       0.809       0.747       0.961
- 530      69      0.962       0.757       0.746       0.996
- 560      66      0.972       0.790       0.788       0.999
- 590      63      0.954       0.733       0.733       1.000
- 620      60      0.910       0.718       0.705       0.994
- 650      52      0.661       0.384       0.377       0.999
- 680      35      0.586       0.404       0.405       1.000
- 710      30      0.394       0.280       0.280       1.000
- 740      19      0.270       0.140       0.146       0.935
- 770      14      0.348       0.214       0.225       0.896
-            peak.Danny         peak.qtl2.loco
- Chr 2 157.3 Mb B 5.65   Chr 1 23.5 Mb D 5.01
- Chr 2 157.3 Mb B 5.79   Chr 1 23.5 Mb D 4.83
- Chr 2 157.3 Mb B 5.79   Chr 1 23.5 Mb D 4.83
- Chr 2 157.3 Mb B 6.01  Chr 2 157.5 Mb B 4.83
- Chr 2 157.3 Mb B 6.09  Chr 2 157.4 Mb B 4.77
- Chr 2 157.3 Mb B 6.11  Chr 2 156.9 Mb B 4.74
- Chr 2 157.3 Mb B 6.28  Chr 2 157.5 Mb B 4.84
- Chr 2 157.3 Mb B 6.18  Chr 2 157.5 Mb B 4.78
- Chr 2 157.3 Mb B 6.14  Chr 2 157.5 Mb B 4.82
- Chr 2 157.3 Mb B 5.43  Chr 2 157.5 Mb B 3.95
- Chr 2 157.3 Mb B 4.97   Chr 1 23.5 Mb D 3.91
- Chr 2 157.3 Mb B 4.76   Chr 1 23.5 Mb D 3.62
-   Chr 1 5.3 Mb D 4.56  Chr 15 12.8 Mb B 3.15
-  Chr 1 37.6 Mb D 4.65  Chr 10 40.4 Mb D 3.49
- Chr 2 157.3 Mb B 5.05   Chr 1 23.5 Mb D 2.93
- Chr 2 155.2 Mb B 5.29   Chr 1 23.1 Mb D 3.19
-  Chr 1 37.6 Mb D 5.97   Chr 1 37.6 Mb D 4.73
-  Chr 1 37.6 Mb D 4.62   Chr 1 22.9 Mb D 3.61
-  Chr 1 37.6 Mb D 4.25   Chr 1 22.9 Mb D 3.25
-  Chr 1 37.6 Mb D 4.01 Chr 10 123.0 Mb B 3.02
-  Chr 1 32.3 Mb D 3.95 Chr 10 123.0 Mb B 3.26
- Chr 15 27.7 Mb D 4.57   Chr 1 22.9 Mb D 2.60
-   Chr 1 4.9 Mb D 3.52   Chr 3 67.8 Mb D 2.50
-  Chr 9 58.8 Mb B 2.56 Chr 10 100.2 Mb B 1.91
- Chr 12 54.6 Mb B 2.59  Chr 7 131.9 Mb D 2.48
-  Chr 2 14.4 Mb D 3.61   Chr 2 14.4 Mb D 3.09
+Correlation over autosomal markers of |-log10 P|, Danny against: the local weighted regression (r.weighted; r.signed keeps the direction of each effect), GN4AI R/qtl2 without and with LOCO kinship; then GN4AI with kinship against without. next.Danny and next.weighted: signed correlation of each map with the same map 30 days later (added after Rob saw no discontinuities in Danny's high-fat map). Peaks are autosomal, with the allele whose strains live longer.
+   T strains r.weighted r.signed next.Danny next.weighted r.qtl2.none
+  20      87      0.981    0.990      0.999         0.999       0.800
+  50      87      0.981    0.990      1.000         1.000       0.800
+  80      87      0.981    0.990      0.995         0.995       0.800
+ 110      87      0.982    0.991      0.996         0.996       0.785
+ 140      87      0.983    0.991      0.995         0.995       0.787
+ 170      87      0.984    0.992      0.995         0.995       0.777
+ 200      87      0.989    0.994      0.998         0.998       0.781
+ 230      87      0.990    0.994      0.991         0.991       0.776
+ 260      87      0.992    0.995      0.989         0.989       0.780
+ 290      87      0.997    0.998      0.992         0.992       0.771
+ 320      85      0.997    0.998      0.989         0.989       0.788
+ 350      84      0.996    0.998      0.963         0.964       0.759
+ 380      81      0.985    0.992      0.971         0.971       0.768
+ 410      78      0.984    0.992      0.981         0.982       0.789
+ 440      76      0.967    0.982      0.985         0.986       0.733
+ 470      75      0.978    0.988      0.968         0.968       0.720
+ 500      71      0.973    0.984      0.956         0.959       0.809
+ 530      69      0.962    0.979      0.976         0.972       0.757
+ 560      66      0.972    0.983      0.962         0.961       0.790
+ 590      63      0.954    0.976      0.961         0.962       0.733
+ 620      60      0.910    0.954      0.888         0.948       0.718
+ 650      52      0.661    0.824      0.837         0.851       0.384
+ 680      35      0.586    0.769      0.883         0.893       0.404
+ 710      30      0.394    0.691      0.771         0.849       0.280
+ 740      19      0.270    0.656      0.763         0.856       0.140
+ 770      14      0.348    0.631         NA            NA       0.214
+ r.qtl2.loco r.loco.none            peak.Danny         peak.qtl2.loco
+       0.713       0.913 Chr 2 157.3 Mb B 5.65   Chr 1 23.5 Mb D 5.01
+       0.715       0.915 Chr 2 157.3 Mb B 5.79   Chr 1 23.5 Mb D 4.83
+       0.715       0.915 Chr 2 157.3 Mb B 5.79   Chr 1 23.5 Mb D 4.83
+       0.706       0.924 Chr 2 157.3 Mb B 6.01  Chr 2 157.5 Mb B 4.83
+       0.697       0.914 Chr 2 157.3 Mb B 6.09  Chr 2 157.4 Mb B 4.77
+       0.686       0.911 Chr 2 157.3 Mb B 6.11  Chr 2 156.9 Mb B 4.74
+       0.701       0.923 Chr 2 157.3 Mb B 6.28  Chr 2 157.5 Mb B 4.84
+       0.697       0.925 Chr 2 157.3 Mb B 6.18  Chr 2 157.5 Mb B 4.78
+       0.713       0.935 Chr 2 157.3 Mb B 6.14  Chr 2 157.5 Mb B 4.82
+       0.702       0.939 Chr 2 157.3 Mb B 5.43  Chr 2 157.5 Mb B 3.95
+       0.698       0.923 Chr 2 157.3 Mb B 4.97   Chr 1 23.5 Mb D 3.91
+       0.663       0.908 Chr 2 157.3 Mb B 4.76   Chr 1 23.5 Mb D 3.62
+       0.683       0.924   Chr 1 5.3 Mb D 4.56  Chr 15 12.8 Mb B 3.15
+       0.674       0.884  Chr 1 37.6 Mb D 4.65  Chr 10 40.4 Mb D 3.49
+       0.628       0.914 Chr 2 157.3 Mb B 5.05   Chr 1 23.5 Mb D 2.93
+       0.630       0.923 Chr 2 155.2 Mb B 5.29   Chr 1 23.1 Mb D 3.19
+       0.747       0.961  Chr 1 37.6 Mb D 5.97   Chr 1 37.6 Mb D 4.73
+       0.746       0.996  Chr 1 37.6 Mb D 4.62   Chr 1 22.9 Mb D 3.61
+       0.788       0.999  Chr 1 37.6 Mb D 4.25   Chr 1 22.9 Mb D 3.25
+       0.733       1.000  Chr 1 37.6 Mb D 4.01 Chr 10 123.0 Mb B 3.02
+       0.705       0.994  Chr 1 32.3 Mb D 3.95 Chr 10 123.0 Mb B 3.26
+       0.377       0.999 Chr 15 27.7 Mb D 4.57   Chr 1 22.9 Mb D 2.60
+       0.405       1.000   Chr 1 4.9 Mb D 3.52   Chr 3 67.8 Mb D 2.50
+       0.280       1.000  Chr 9 58.8 Mb B 2.56 Chr 10 100.2 Mb B 1.91
+       0.146       0.935 Chr 12 54.6 Mb B 2.59  Chr 7 131.9 Mb D 2.48
+       0.225       0.896  Chr 2 14.4 Mb D 3.61   Chr 2 14.4 Mb D 3.09
 Strongest -log10 P on each autosome over all T-ages (position, T-age, allele whose strains live longer):
  chr                  Danny              qtl2.none              qtl2.loco
    1  5.97 (38 Mb, T500, D)   5.26 (24 Mb, T20, D)   5.01 (24 Mb, T20, D)
@@ -162,3 +162,7 @@ Strongest -log10 P on each autosome over all T-ages (position, T-age, allele who
   17  1.82 (45 Mb, T770, D)  1.64 (68 Mb, T440, B)  1.48 (68 Mb, T440, B)
   18  2.48 (59 Mb, T680, D)  2.28 (73 Mb, T740, D)  2.28 (73 Mb, T740, D)
   19   2.57 (4 Mb, T620, B)  2.39 (35 Mb, T290, D)  2.41 (35 Mb, T290, D)
+
+Weights for strain means, T-age 20:
+  chow: 93 strains, 3 to 23 mice; SD within strains 183 days, SD of true strain means 105 days. A 23-mouse strain against a 3-mouse one counts 1.78 times as much with variance weights, 7.7 with N.
+  high fat: 87 strains, 3 to 22 mice; SD within strains 154 days, SD of true strain means 103 days. A 22-mouse strain against a 3-mouse one counts 1.59 times as much with variance weights, 7.3 with N.

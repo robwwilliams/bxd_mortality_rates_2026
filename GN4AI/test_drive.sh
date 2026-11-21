@@ -8,7 +8,8 @@
 # Stores the strain means of GN4AI/strain_means.R as baskets, maps each with R/qtl (with and without permutations) and
 # with both GEMMA runners, plots each scan, and records every call's status, wall-clock time and size. R/qtl2 with and
 # without kinship (qtl2_loco, qtl2_none) was added on 21 November 2026, after Rob asked whether Danny's maps correct for
-# kinship; choose engines with ENGINES="...".
+# kinship; choose engines with ENGINES="...". pangemma (GeneNetwork's fork of GEMMA, engine "pangemma" on the ravanan route)
+# was added the same day, after Rob asked whether we were using it.
 #
 # The token is never written here: put it in a file outside the repository and pass its path.
 # Run from the repository root:  GN4AI_TOKEN_FILE=/path/to/token [ENGINES="qtl2_loco qtl2_none"] bash GN4AI/test_drive.sh [basket names]
@@ -52,6 +53,7 @@ for b in $BASKETS; do
       gemma_wrapper) path=/compute/gemma;         plot=gemma; extra='{}';;
       qtl2_loco)     path=/compute/qtl2;          plot=rqtl;  extra='{"kinship":"loco"}';;
       qtl2_none)     path=/compute/qtl2;          plot=rqtl;  extra='{"kinship":"none"}';;
+      pangemma)      path=/compute/gemma/ravanan; plot=gemma; extra='{"engine":"pangemma"}';;
     esac
     jq -n --arg b $b --argjson x "$extra" '{group: "BXD", basket: $b, trait_name: ("BXD::" + $b)} + $x' > $RAW/${b}_${e}_body.json
     s=$(call $e $b POST "$path?id=${b}_$e" $RAW/${b}_$e.json $RAW/${b}_${e}_body.json)

@@ -4,7 +4,7 @@
 
 ---
 
-**Subject:** GN4AI-beta test drive: BXD lifespan mapping, 22 items
+**Subject:** GN4AI-beta test drive: BXD lifespan mapping, 23 items
 
 Hi Pjotr,
 
@@ -12,11 +12,11 @@ We gave GN4AI-beta a full drive on 21 November (build `5b68da6-dirty`). We repea
 - baskets;
 - R/qtl, with and without 1,000 permutations;
 - R/qtl2, with LOCO kinship and without;
-- GEMMA through both runners;
+- GEMMA through both runners, and pangemma;
 - covariates and plots;
 - the full actuarial scan: 108 R/qtl2 scans, from 20 to 770 days of age in 30-day steps, on chow and high fat.
 
-The full write-up has every request, reply and timing (179 calls). The scripts are in `GN4AI/` of the same repository: https://github.com/robwwilliams/bxd_mortality_rates_2026/blob/main/notes/GN4AI_test_drive_2026-11-21.md
+The full write-up has every request, reply and timing (187 calls). The scripts are in `GN4AI/` of the same repository: https://github.com/robwwilliams/bxd_mortality_rates_2026/blob/main/notes/GN4AI_test_drive_2026-11-21.md
 
 **It works, and it is fast.** An R/qtl2 scan takes 3 s, and the 108 actuarial scans took 6 minutes, sent inline so that nothing stayed on the server. R/qtl2's LOCO kinship works: on high fat, scans with it correlate with scans without it at r = 0.88 to 0.94 over markers, up to 470 days.
 
@@ -26,10 +26,13 @@ The full write-up has every request, reply and timing (179 calls). The scripts a
 3. **No GEMMA route takes covariates** (items 6 and 14). `/compute/gemma` now runs ravanan: its rows equal `/compute/gemma/ravanan`'s to the last digit. Its 422 sends the user back to `/compute/gemma` for a covariate fit.
 4. **`/plot/rqtl` refuses `/compute/qtl2` replies** (item 12), though SKILL.md says it draws them.
 
-**Three requests, in the order we need them.** R/qtl2's `scan1()` already does each of them (Karl Broman's documentation), so GN4AI only has to pass them through:
+**Two requests, in the order we need them.** R/qtl2's `scan1()` already does both (Karl Broman's documentation), so GN4AI only has to pass them through:
 - **Individual mice, with cofactors and kinship** (item 18). This is Rob's preferred design: "I actually prefer to use ALL of the data and map at the individual level with full cofactors. The kinship handles the variable number of individuals per genotype well." It needs repeated strain names, per-mouse covariates (diet, vivarium, birth year) and `intcovar` for gene × diet.
-- **Weights for strain means** (item 19). `scan1(weights = )` works with kinship. Danny's strain-mean maps weight by mice per strain, and without weights the chow maps rank their weak peaks differently. Rob: "The mean survivorship data MUST be mapped with kinship to be accurate. There is strong kinship in the BXD family." With weights and kinship together, one scan would satisfy both.
 - **The direction of each effect** (item 21). R/qtl2 replies give the LOD only. The B − D effect per marker (`scan1coef`), or its sign, would let a map show which allele raises the trait.
+
+**Strain means: please keep equal weights.** Rob: "The mean survivorship data MUST be mapped with kinship to be accurate. There is strong kinship in the BXD family." And: "It is a really bad idea to weight each strain by the number of mice... Much better would be to forget about any weighting, provided a strain has 3 or more per group. But even better is to simply map the individuals with a full kinship correction." GN4AI's R/qtl2 already does equal weights with LOCO kinship, so weights for strain means (item 19) are low priority.
+
+**pangemma agrees with GEMMA** (item 23). On chow its rows are identical to gemma-gn2's; on high fat they differ by at most 0.001 in −log10 *p*. Each run took 15 s.
 
 **The other items:**
 - **In SKILL.md:**

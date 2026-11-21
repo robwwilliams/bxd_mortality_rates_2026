@@ -69,7 +69,7 @@ Part 5 of the report covers this section. Both plans were approved by Rob on 27 
 
 **GN4AI-beta test drive** (exploratory, 21 November 2026): Danny's strain-means maps repeated through GeneNetwork's new interface for AI agents, with strain means from Beni's corrected file. See [notes/GN4AI_test_drive_2026-11-21.md](notes/GN4AI_test_drive_2026-11-21.md).
 - **High fat:** GeneNetwork finds Danny's two peaks, Chr 1 at 23.5 Mb and Chr 2 at 157.5 Mb, both significant.
-- **Chow:** neither finds a significant peak. Their maps differ because Danny weights strain means by the number of mice.
+- **Chow:** neither finds a significant peak. Their maps differ because Danny weights strain means by the number of mice, which Rob advises against: equal weights with at least 3 mice per strain, or better, individual mice with full kinship.
 
 ### Installation
 

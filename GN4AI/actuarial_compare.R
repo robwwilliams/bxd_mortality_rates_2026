@@ -75,19 +75,38 @@ for (d in names(diets)) {
   pk <- function(v) { v[!auto] <- NA; i <- which.max(abs(v)); sprintf("Chr %s %.1f Mb %s %.2f", map[i, "chr"], map[i, "Mb"], c("D", "", "B")[sign(v[i]) + 2], abs(v[i])) }
   tab <- data.frame(T = Tages, strains = as.numeric(table(m[m[, "Diet"] == d, "T"])[as.character(Tages)]),
                     r.weighted = sapply(seq_along(Tages), function(i) r(danny[, i], local[, i])),
+                    r.signed = sapply(seq_along(Tages), function(i) round(cor(danny[auto, i], local[auto, i], use = "complete"), 3)),
+                    next.Danny = c(sapply(seq_along(Tages)[-1], function(i) round(cor(danny[auto, i - 1], danny[auto, i], use = "complete"), 3)), NA),
+                    next.weighted = c(sapply(seq_along(Tages)[-1], function(i) round(cor(local[auto, i - 1], local[auto, i], use = "complete"), 3)), NA),
                     r.qtl2.none = sapply(seq_along(Tages), function(i) r(danny[, i], out$none[, i])),
                     r.qtl2.loco = sapply(seq_along(Tages), function(i) r(danny[, i], out$loco[, i])),
                     r.loco.none = sapply(seq_along(Tages), function(i) r(out$loco[, i], out$none[, i])),
                     peak.Danny = sapply(seq_along(Tages), function(i) pk(danny[, i])),
                     peak.qtl2.loco = sapply(seq_along(Tages), function(i) pk(out$loco[, i])))
-  cat("Correlation over autosomal markers of |-log10 P|, Danny against: the local weighted regression, GN4AI R/qtl2 without and with LOCO kinship;",
-      "then GN4AI with kinship against without. Peaks are autosomal, with the allele whose strains live longer.\n")
+  cat("Correlation over autosomal markers of |-log10 P|, Danny against: the local weighted regression (r.weighted; r.signed keeps the direction of",
+      "each effect), GN4AI R/qtl2 without and with LOCO kinship; then GN4AI with kinship against without. next.Danny and next.weighted: signed",
+      "correlation of each map with the same map 30 days later (added after Rob saw no discontinuities in Danny's high-fat map). Peaks are",
+      "autosomal, with the allele whose strains live longer.\n")
   print(tab, row.names = FALSE)
   top <- function(v) sapply(chrs[-20], function(ch) { k <- which(map[, "chr"] == ch); a <- abs(v[k, , drop = FALSE]); i <- which(a == max(a, na.rm = TRUE), arr.ind = TRUE)[1, ]
                                                       sprintf("%.2f (%.0f Mb, T%d, %s)", a[i[1], i[2]], map[k[i[1]], "Mb"], Tages[i[2]], c("D", "", "B")[sign(v[k[i[1]], i[2]]) + 2]) })
   cat("Strongest -log10 P on each autosome over all T-ages (position, T-age, allele whose strains live longer):\n")
   print(data.frame(chr = chrs[-20], Danny = top(danny), qtl2.none = top(out$none), qtl2.loco = top(out$loco)), row.names = FALSE)
   res[[d]] <- list(map = map, Danny = danny, loco = out$loco, n = tab[, "strains"])
+}
+
+# How much should a strain mean count? Its variance is the variance of true strain means plus the within-strain variance over N,
+# so the right weight is 1 / (between + within / N). Rob: "It is a really bad idea to weight each strain by the number of mice."
+# One-way analysis of variance on every mouse (T-age 20), strains with at least 3 mice.
+cat("\nWeights for strain means, T-age 20:\n")
+for (d in names(diets)) {
+  x <- m[m[, "Diet"] == d & m[, "T"] == 20, ]
+  a <- read.csv("data/original/BXD_Lifespan_AllDiets_Dataset_Mapping_Arends.csv", skip = 15, check.names = FALSE, fileEncoding = "UTF-8-BOM")[, 1:7]
+  a <- a[!is.na(a[, 2]) & a[, 3] == d & a[, 4] %in% x[, "Strain"], ]; n <- table(a[, 4])
+  ms <- anova(lm(a[, 5] ~ factor(a[, 4])))[, 3]; n0 <- (sum(n) - sum(n^2) / sum(n)) / (length(n) - 1); within <- ms[2]; between <- (ms[1] - within) / n0
+  w <- function(k) 1 / (between + within / k)
+  cat(sprintf("  %s: %d strains, %d to %d mice; SD within strains %.0f days, SD of true strain means %.0f days. A %d-mouse strain against a %d-mouse one counts %.2f times as much with variance weights, %.1f with N.\n",
+              diets[d], length(n), min(n), max(n), sqrt(within), sqrt(between), max(n), min(n), w(max(n)) / w(min(n)), max(n) / min(n)))
 }
 sink()
 
