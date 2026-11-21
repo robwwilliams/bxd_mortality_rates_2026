@@ -65,6 +65,8 @@ Part 5 of the report covers this section. Both plans were approved by Rob on 27 
 
 **Odd body weighings** are listed for Suheeta's review in [qc/BodyWeight_QC.md](qc/BodyWeight_QC.md), now including the NAM workbook.
 
+**Danny Arends's mapping files** (4 November 2026) are checked against ours and Beni Mozhui's in [qc/Mapping_files_QC.md](qc/Mapping_files_QC.md). Chow and high-fat ages are the same in all three; Danny's file has one of the four NAM corrections in Beni's, and his body-weight file has a slipped row in 6 NAM mice.
+
 ### Installation
 
 To obtain the code, run the following command in your terminal:
@@ -110,6 +112,7 @@ Rscript Gompertz/Rectangularization.R      # rectangularization side by side (ab
 Rscript Gompertz/Figures_Rectangularization.R   # Fig. 15
 Rscript BodyWeight/masses_notes.R          # tumors, swelling and terminal weight, from the free-text notes
 Rscript Gompertz/Mozhui_comparison.R       # exploratory: Beni Mozhui's strain-adjusted fits beside ours (about 6 s)
+Rscript qc/mapping_files_QC.R             # exploratory: Danny Arends's mapping files against ours and Beni's
 ```
 
 The UM-HET3 analyses read Arends et al. Supplementary Table 7 (the R/qtl cross file), kept in `data/local/`:
@@ -148,7 +151,7 @@ Rscript UMHET3/Figures_Part3.R             # Figs 9-11
   - the GeneNetwork export of BDL_10002 (natural lifespan, 22 October 2026);
   - Suheeta Roy's curated file of females used for actuarial mapping;
   - Supplementary Table 2 of Arends et al. 2026, as published.
-- [qc/](./qc/) contains quality checks of the GeneNetwork export and of the body weights, the annotated workbooks for curation, and the scripts that produce them.
+- [qc/](./qc/) contains quality checks of the GeneNetwork export, of the body weights and of Danny Arends's mapping files, the annotated workbooks for curation, and the scripts that produce them.
 - [papers/](./papers/) contains the papers that frame this analysis, with citations, licenses and links to their data and code.
 
 ### Related repositories

@@ -69,6 +69,25 @@ A newer version of `BXD_Mortality_for_Mapping_Arends.xlsx`, as a CSV, from Beni 
 
 **Used by** `Gompertz/NAM_rectangularization.R mozhui`, which reruns Part 5's nicotinamide analysis with these four ages.
 
+## Arends_Data_05Nov2026/
+
+The two files Danny Arends mapped from in November 2026, from the folder `Data_05Nov2026` of `Arends_Figures_09Nov2026.zip`, which Rob Williams received on 21 November 2026. Copied out unchanged; the zip's result workbooks and figure drafts are not copied here.
+
+| File | Dated | SHA-256 | Content |
+|---|---|---|---|
+| `BXD_Lifespan_AllDiets_Dataset_Mapping_Arends.xlsx` | 4 November 2026 | `9376a9bb2833e71a897fe51aab06b0198244403c65e0ab4718f64e24b9312916` | 2,077 females: CD 1,044, HF 890, NAM 143 |
+| `BXD_BodyWeight_AllDiets_Dataset_Mapping_Arends.xlsx` | 4 November 2026 | `78582bd0137813b6f13b003e1259071ec509d7d163d29e0257529c084cfb9425` | 1,765 females with body weights: CD 854, HF 778, NAM 133 |
+
+**Layout of the lifespan file.** Rows 1–9 are notes on sample sizes; the column headers are on row 10, with the seven columns of `BXD_Mortality_for_Mapping_Arends.xlsx`. One cell of column 8 holds a note on NAM 4558.
+
+**Layout of the body-weight file.** Rows 1–3 are notes; the column headers are on row 5. One row per mouse: ear tag, diet, strain, status, age at death, dates, `Weight00 Baseline` at set-up, then `Weight01`–`Weight20`, each followed by `AgeAtWeightNN`. Missing values are `x`.
+
+**Compared with the other files** (`qc/Mapping_files_QC.md`):
+- **The lifespan file is Beni Mozhui's CSV at an earlier stage.** It has the same mice and the same chow and high-fat rows, and the corrected age of NAM 4558, but not those of NAM 3527, 4590 and 5026.
+- **In the body-weight file, 6 NAM mice have a slipped row** from `Weight13` on (15 weighings). Every other weighing matches Suheeta's workbooks.
+
+**Used by** `qc/mapping_files_QC.R`.
+
 ## Arends_2026_Supplementary_Table_2.zip
 
 Supplementary Data Table 2 of Arends et al. 2026 (*Nature* 654:437), as published (file `S_Table_2_Vita_mortality_by_age_and_genotype_text_files.zip` in `Arends_Supplementary_Tables_10Apr2026`).

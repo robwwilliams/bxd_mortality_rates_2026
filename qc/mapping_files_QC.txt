@@ -1,0 +1,104 @@
+Check	Diet	EarTag	Strain	Field	Danny	Ours	Beni	GN	Note
+1	NAM	5024	C57BL/6J	not in Danny's file					in Ours only
+1	NAM	5028	C57BL/6J	not in Danny's file					in Ours only
+1	NAM	5027	C57BL/6J	not in Danny's file					in Ours only
+1	NAM	3091	C57BL/6J	not in Danny's file					in Ours only
+1	NAM	3090	C57BL/6J	not in Danny's file					in Ours only
+1	NAM	2986	C57BL/6J	not in Danny's file					in Ours only
+1	NAM	3088	C57BL/6J	not in Danny's file					in Ours only
+1	NAM	3089	C57BL/6J	not in Danny's file					in Ours only
+1	NAM	5031	DBA/2J	not in Danny's file					in Ours only
+1	NAM	5032	DBA/2J	not in Danny's file					in Ours only
+1	NAM	5030	DBA/2J	not in Danny's file					in Ours only
+1	NAM	5029	DBA/2J	not in Danny's file					in Ours only
+1	NAM	4593	DBA/2J	not in Danny's file					in Ours only
+1	NAM	5033	DBA/2J	not in Danny's file					in Ours only
+1	NAM	4594	DBA/2J	not in Danny's file					in Ours only
+1	NAM	4592	DBA/2J	not in Danny's file					in Ours only
+1	NAM	4595	DBA/2J	not in Danny's file					in Ours only
+1	NAM	3034	DBA/2J	not in Danny's file					in Ours only
+1	NAM	3032	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2880	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2923	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2877	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2924	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2926	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2891	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2925	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2879	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2878	DBA/2J	not in Danny's file					in Ours only
+1	NAM	2881	DBA/2J	not in Danny's file					in Ours only
+1	NAM	5026	BXD62	Age	483	483	620	483	
+1	NAM	4590	BXD32	Age	421	421	786	421	
+1	NAM	3527	BXD172	Age	638	638	730	638	
+1	NAM	4558	BXD15	Age	229	155	229	155	
+3	CD	2325	BXD170	age at death; weighed after it	342	342	342	333	last weighed at 365 days
+3	HF	2642	BXD86	age at death; weighed after it	729	729	729	729	last weighed at 757 days
+3	HF	2725	BXD195	age at death; weighed after it	863	863	863	863	last weighed at 887 days
+3	CD	2728	BXD199	age at death; weighed after it	466	466	466	466	last weighed at 473 days
+3	CD	2756	BXD194	age at death; weighed after it	788	788	788	788	last weighed at 833 days
+3	HF	2786	BXD197	age at death; weighed after it	453	453	453	453	last weighed at 547 days
+3	CD	2821	BXD11	age at death; weighed after it	492	492	492	492	last weighed at 493 days
+3	HF	2833	BXD11	age at death; weighed after it	598	598	598	598	last weighed at 601 days
+3	CD	2847	BXD5	age at death; weighed after it	196	196	196	196	last weighed at 403 days
+3	CD	2928	DBA/2J	age at death; weighed after it	902	902	902	902	last weighed at 926 days; not mapped by Danny
+3	CD	2952	BXD14	age at death; weighed after it	559	559	559	559	last weighed at 664 days
+3	CD	3152	BXD160	age at death; weighed after it	691	691	691	691	last weighed at 784 days
+3	CD	3206	BXD170	age at death; weighed after it	622	622	622	622	last weighed at 627 days
+3	CD	3276	BXD218	age at death; weighed after it	631	631	631	631	last weighed at 1263 days
+3	CD	4528	BXD2	age at death; weighed after it	406	406	406	406	last weighed at 409 days
+3	CD	4816	DBA/2J	age at death; weighed after it	623	623	623	623	last weighed at 628 days; not mapped by Danny
+3	CD	4832	BXD2	age at death; weighed after it	571	571	571	571	last weighed at 748 days
+3	CD	4834	BXD125	age at death; weighed after it	640	640	640	640	last weighed at 903 days
+3	CD	4894	B6D2F1	age at death; weighed after it	435	435	435	435	last weighed at 676 days; not mapped by Danny
+3	CD	4983	BXD21	age at death; weighed after it	490	490	490	490	last weighed at 566 days
+3	HF	4990	BXD21	age at death; weighed after it	307	307	307	307	last weighed at 382 days
+3	CD	4996	BXD8	age at death; weighed after it	178	178	178	178	last weighed at 208 days
+3	CD	4997	DBA/2J	age at death; weighed after it	176	176	176	176	last weighed at 205 days; not mapped by Danny
+3	CD	5036	BXD32	age at death; weighed after it	762	762	762	762	last weighed at 814 days
+3	CD	5037	BXD32	age at death; weighed after it	772	772	772	772	last weighed at 814 days
+3	HF	5925	BXD81	age at death; weighed after it	299	299	299	299	last weighed at 482 days
+3	NAM	2887	BXD40	age at death; weighed after it	389	389	389	389	last weighed at 692 days
+3	NAM	3031	BXD62	age at death; weighed after it	271	271	271	271	last weighed at 463 days
+3	NAM	3527	BXD172	age at death; weighed after it	638	638	730	638	last weighed at 698 days
+3	NAM	4558	BXD15	age at death; weighed after it	229	155	229	155	last weighed at 190 days
+3	NAM	4590	BXD32	age at death; weighed after it	421	421	786	421	last weighed at 709 days
+3	NAM	5026	BXD62	age at death; weighed after it	483	483	620	483	last weighed at 526 days
+4	NAM	3038	BXD218	Weight13: weight (age)	924 (NA)	21.1 (924)			
+4	NAM	2995	BXD218	Weight13: weight (age)	890 (NA)	27.1 (890)			
+4	NAM	2889	BXD44	Weight13: weight (age)	534 (50.5)	49.4 (534)			
+4	NAM	2884	BXD32	Weight13: weight (age)	535 (40.3)	45.2 (535)			
+4	NAM	2883	BXD32	Weight13: weight (age)	535 (34.1)	37.4 (535)			
+4	NAM	2882	BXD32	Weight13: weight (age)	535 (33.2)	35.2 (535)			
+4	NAM	2889	BXD44	Weight14: weight (age)	585 (48.7)	50.5 (585)			
+4	NAM	2884	BXD32	Weight14: weight (age)	586 (39.8)	40.3 (586)			
+4	NAM	2883	BXD32	Weight14: weight (age)	586 (32.4)	34.1 (586)			
+4	NAM	2882	BXD32	Weight14: weight (age)	586 (NA)	33.2 (586)			
+4	NAM	2889	BXD44	Weight15: weight (age)	625 (34.3)	48.7 (625)			
+4	NAM	2884	BXD32	Weight15: weight (age)	626 (33.1)	39.8 (626)			
+4	NAM	2883	BXD32	Weight15: weight (age)	626 (NA)	32.4 (626)			
+4	NAM	2889	BXD44	Weight16: weight (age)	688 (NA)	34.3 (688)			
+4	NAM	2884	BXD32	Weight16: weight (age)	689 (NA)	33.1 (689)			
+4	CD	5037	BXD32	weighings after his age at death	1				age at death 772; weighed to 814
+4	CD	5036	BXD32	weighings after his age at death	1				age at death 762; weighed to 814
+4	CD	4528	BXD2	weighings after his age at death	1				age at death 406; weighed to 409
+4	CD	4832	BXD2	weighings after his age at death	3				age at death 571; weighed to 748
+4	HF	2786	BXD197	weighings after his age at death	1				age at death 453; weighed to 547
+4	CD	4996	BXD8	weighings after his age at death	1				age at death 178; weighed to 208
+4	CD	2847	BXD5	weighings after his age at death	1				age at death 196; weighed to 403
+4	NAM	3031	BXD62	weighings after his age at death	1				age at death 271; weighed to 463
+4	CD	2325	BXD170	weighings after his age at death	1				age at death 342; weighed to 365
+4	HF	4990	BXD21	weighings after his age at death	2				age at death 307; weighed to 382
+4	CD	3152	BXD160	weighings after his age at death	1				age at death 691; weighed to 784
+4	NAM	4590	BXD32	weighings after his age at death	5				age at death 421; weighed to 709
+4	NAM	5026	BXD62	weighings after his age at death	1				age at death 483; weighed to 526
+4	CD	2821	BXD11	weighings after his age at death	1				age at death 492; weighed to 493
+4	CD	2728	BXD199	weighings after his age at death	1				age at death 466; weighed to 473
+4	CD	4983	BXD21	weighings after his age at death	1				age at death 490; weighed to 566
+4	CD	3206	BXD170	weighings after his age at death	1				age at death 622; weighed to 627
+4	HF	2833	BXD11	weighings after his age at death	1				age at death 598; weighed to 601
+4	NAM	3527	BXD172	weighings after his age at death	1				age at death 638; weighed to 698
+4	NAM	2887	BXD40	weighings after his age at death	2				age at death 389; weighed to 692
+4	HF	2642	BXD86	weighings after his age at death	1				age at death 729; weighed to 757
+4	HF	2725	BXD195	weighings after his age at death	1				age at death 863; weighed to 887
+4	CD	2756	BXD194	weighings after his age at death	1				age at death 788; weighed to 833
