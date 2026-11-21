@@ -7,7 +7,8 @@
 
 ## In brief
 
-- **It works, with three faults that matter.** 67 timed calls: baskets, R/qtl, R/qtl2, GEMMA through both runners, permutations, covariates and plots.
+- **It works, with four faults that matter.** 71 timed calls: baskets, R/qtl, R/qtl2, GEMMA through both runners, permutations, covariates and plots.
+  - **Given one value per mouse, R/qtl2 keeps the last mouse of each strain and drops the rest without saying so** (item 20).
   - **No GEMMA route fits covariates,** because `/compute/gemma` now runs ravanan (items 6 and 14).
   - **R/qtl2 accepts a covariate and then leaves it out** (item 15).
   - **`/plot/rqtl` will not draw R/qtl2 scans** (item 12).
@@ -17,7 +18,7 @@
 - **The two differ because Danny weights each strain mean by its number of mice.** GeneNetwork cannot weight. A local check reproduces both maps (r = 0.98 to 0.999).
 - **Beni's corrected NAM ages change three strain means, by 8 to 24 days, but not the map.** The largest change in LOD is 0.11, and nothing is significant either way.
 - **Danny's strain-mean maps look uncorrected for kinship.** His high-fat map matches scans without kinship better than scans with it (r = 0.80 against 0.71).
-- **Rob prefers mapping every mouse, with full cofactors and kinship.** GN4AI cannot do that yet, so it heads the feature requests (item 18).
+- **Rob prefers mapping every mouse, with full cofactors and kinship.** GN4AI cannot do that yet, so it heads the feature requests (item 18). The limit is GN4AI's, not R/qtl2's: R/qtl2 itself takes kinship, cofactors and weights together.
 - **Speed.** An R/qtl scan takes 8 s and an R/qtl2 scan 3 s. GEMMA takes 10–22 s the first time and 4 s when cached. 1,000 permutations take from 22 s to nearly 8 minutes.
 - **GeneNetwork's published lifespan traits are older than the curated file.** Their descriptions date them to December 2024 (chow, high fat) and April 2024 (NAM).
   - **They leave out strains with fewer than 3 mice,** as Rob guessed.
@@ -108,6 +109,17 @@ Rob: "I am not sure what method and model Danny Arends is using, but I hope R/qt
 - **In these data the cofactors could include diet, vivarium and birth year.** Part 5 showed the last two matter for nicotinamide.
 - **GN4AI cannot do it yet.** A basket or matrix holds one value per strain (item 18).
 
+**Is that a limit of R/qtl2 or of GeneNetwork?** Rob: "R/qtl2 maps with kinship, or can. Is this a limitation of the GN implementation?" It is GeneNetwork's. Karl Broman's R/qtl2 documentation ([user guide](https://kbroman.org/qtl2/assets/vignettes/user_guide.html); `scan1` in [R/scan1.R](https://github.com/rqtl/qtl2/blob/main/R/scan1.R)) shows `scan1()` taking everything this design needs:
+- **Kinship,** as one matrix or as a list of LOCO matrices. GN4AI's R/qtl2 does use it: its scans with and without kinship differ (table above).
+- **Additive and interactive covariates** (`addcovar`, `intcovar`). The interactive ones give a gene × diet test like Danny's Fig. 2, rows 3–4.
+- **Weights with kinship.** The residual covariance becomes σ²[h²·2K + (1 − h²)D], where D is diagonal with the reciprocals of the weights. With weights equal to the number of mice, that is the right variance for strain means, so Danny's weighting and a kinship correction can go in one scan.
+- **Individuals matched by row names.** To map mice rather than strains, each mouse gets its own ID and its strain's genotype probabilities. Mice of one inbred strain then have kinship 1 with each other.
+
+**What GN4AI does with one value per mouse.** To test it, we sent the 818 high-fat mice of Beni's file to `/compute/qtl2` (LOCO kinship), each under its strain's name, so that names repeat. Code: [`GN4AI/individual_mice.sh`](../GN4AI/individual_mice.sh).
+- **It answered 200 and noted "99 values used":** one per strain, with no warning that 719 mice were left out.
+- **It keeps the last mouse of each strain.** The scan is identical, to the last digit, to one sent with only the last mouse of each strain in the file. It correlates 0.07 with the scan of the first mouse and 0.46 with the scan of strain means.
+- **So a user who sends individual mice gets a map of one mouse per strain,** with a reply that looks normal (item 20).
+
 ### NAM: do Beni's corrected ages change the map?
 
 - **Three strain means change.** BXD32 rises by 24.3 days, BXD62 by 19.6 and BXD172 by 7.7. NAM 4558 (BXD15) is corrected in both files.
@@ -177,8 +189,9 @@ These are traits 18441 (chow), 18435 (high fat) and 24754 (NAM), from Suheeta Ro
 
 **Feature requests**
 
-18. **Mapping individual mice, with cofactors and a strain-level kinship.** This is Rob's preferred design (quoted above), and Danny's Fig. 2, rows 3–4, maps individuals on both diets for main effects and gene × diet interaction. It needs samples that repeat a strain's name, and cofactors for each mouse (diet, vivarium, birth year), in R/qtl2 and GEMMA.
-19. **Weights for strain means:** per-strain *n* or SE, as in GeneNetwork's "replicate average, SE, N". Danny's strain-mean maps need them, and without them a chow map ranks its weak peaks differently.
+18. **Mapping individual mice, with cofactors and a strain-level kinship.** This is Rob's preferred design (quoted above), and Danny's Fig. 2, rows 3–4, maps individuals on both diets for main effects and gene × diet interaction. It needs samples that repeat a strain's name, and cofactors for each mouse (diet, vivarium, birth year), in R/qtl2 and GEMMA. R/qtl2 already supports it: give each mouse its own ID and its strain's genotype probabilities, and pass `addcovar` and `intcovar` to `scan1()`.
+19. **Weights for strain means:** per-strain *n* or SE, as in GeneNetwork's "replicate average, SE, N". Danny's strain-mean maps need them, and without them a chow map ranks its weak peaks differently. R/qtl2's `scan1()` already takes `weights`, with or without kinship; GN4AI only has to pass them through.
+20. **Repeated sample names are collapsed to the last one, silently.** `/compute/qtl2` given 818 high-fat mice under 99 strain names maps the last mouse of each strain and notes only "99 values used". Either refuse repeated names with a 422, or average them and say so, or (better) map them as individuals (item 18).
 
 ## Reproduce
 
