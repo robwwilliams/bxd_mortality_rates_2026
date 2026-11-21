@@ -1,0 +1,57 @@
+Danny's strain-means maps against his model refitted on Beni Mozhui's file (every 10th marker, autosomes and X)
+
+===== CD 
+T20   93 strains, set-up classes (0,180]:54 (180,360]:32 (360,540]:7 with set-up class: r = 0.9997, largest difference 0.0834; without: r = 0.994
+T50   93 strains, set-up classes (0,180]:54 (180,360]:32 (360,540]:7 with set-up class: r = 0.9997, largest difference 0.0834; without: r = 0.994
+T80   93 strains, set-up classes (0,180]:53 (180,360]:33 (360,540]:7 with set-up class: r = 0.9998, largest difference 0.0823; without: r = 0.995
+T110  91 strains, set-up classes (0,180]:51 (180,360]:33 (360,540]:7 with set-up class: r = 0.9998, largest difference 0.0696; without: r = 0.996
+T140  90 strains, set-up classes (0,180]:51 (180,360]:32 (360,540]:7 with set-up class: r = 0.9998, largest difference 0.0793; without: r = 0.996
+T170  90 strains, set-up classes (0,180]:51 (180,360]:32 (360,540]:7 with set-up class: r = 0.9998, largest difference 0.0765; without: r = 0.996
+T200  90 strains, set-up classes (0,180]:50 (180,360]:33 (360,540]:7 with set-up class: r = 0.9996, largest difference 0.0973; without: r = 0.994
+T230  90 strains, set-up classes (0,180]:49 (180,360]:34 (360,540]:7 with set-up class: r = 0.9999, largest difference 0.0985; without: r = 0.998
+T260  90 strains, set-up classes (0,180]:48 (180,360]:35 (360,540]:7 with set-up class: r = 0.9999, largest difference 0.1197; without: r = 0.998
+T290  90 strains, set-up classes (0,180]:48 (180,360]:35 (360,540]:7 with set-up class: r = 0.9999, largest difference 0.1285; without: r = 0.999
+T320  90 strains, set-up classes (0,180]:48 (180,360]:35 (360,540]:7 with set-up class: r = 0.9999, largest difference 0.1176; without: r = 0.999
+T350  89 strains, set-up classes (0,180]:47 (180,360]:35 (360,540]:7 with set-up class: r = 0.9998, largest difference 0.1170; without: r = 0.999
+T380  89 strains, set-up classes (0,180]:47 (180,360]:34 (360,540]:8 with set-up class: r = 0.9997, largest difference 0.1329; without: r = 1.000
+T410  88 strains, set-up classes (0,180]:46 (180,360]:34 (360,540]:8 with set-up class: r = 0.9998, largest difference 0.1327; without: r = 1.000
+T440  88 strains, set-up classes (0,180]:46 (180,360]:34 (360,540]:7 (540,720]:1 with set-up class: r = 0.9995, largest difference 0.1768; without: r = 0.998
+T470  86 strains, set-up classes (0,180]:45 (180,360]:32 (360,540]:8 (540,720]:1 with set-up class: r = 0.9997, largest difference 0.1741; without: r = 0.996
+T500  86 strains, set-up classes (0,180]:45 (180,360]:31 (360,540]:9 (540,720]:1 with set-up class: r = 0.9998, largest difference 0.1430; without: r = 0.997
+T530  84 strains, set-up classes (0,180]:43 (180,360]:31 (360,540]:9 (540,720]:1 with set-up class: r = 0.9997, largest difference 0.1881; without: r = 0.996
+T560  80 strains, set-up classes (0,180]:43 (180,360]:28 (360,540]:8 (540,720]:1 with set-up class: r = 0.9999, largest difference 0.0598; without: r = 0.997
+T590  80 strains, set-up classes (0,180]:44 (180,360]:27 (360,540]:8 (540,720]:1 with set-up class: r = 0.9997, largest difference 0.0804; without: r = 0.994
+T620  73 strains, set-up classes (0,180]:37 (180,360]:27 (360,540]:8 (540,720]:1 with set-up class: r = 0.9998, largest difference 0.0975; without: r = 0.997
+T650  69 strains, set-up classes (0,180]:32 (180,360]:29 (360,540]:7 (540,720]:1 with set-up class: r = 0.9994, largest difference 0.1961; without: r = 0.992
+T680  65 strains, set-up classes (0,180]:28 (180,360]:28 (360,540]:8 (540,720]:1 with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.988
+T710  61 strains, set-up classes (0,180]:27 (180,360]:27 (360,540]:6 (540,720]:1 with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.987
+T740  53 strains, set-up classes (0,180]:23 (180,360]:24 (360,540]:5 (540,720]:1 with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.992
+T770  46 strains, set-up classes (0,180]:24 (180,360]:18 (360,540]:3 (540,720]:1 with set-up class: r = 0.9986, largest difference 0.1528; without: r = 0.994
+
+===== HF 
+T20   87 strains, set-up classes (0,180]:79 (180,360]:8       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.990
+T50   87 strains, set-up classes (0,180]:79 (180,360]:8       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.990
+T80   87 strains, set-up classes (0,180]:79 (180,360]:8       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.990
+T110  87 strains, set-up classes (0,180]:79 (180,360]:8       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.991
+T140  87 strains, set-up classes (0,180]:79 (180,360]:8       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.991
+T170  87 strains, set-up classes (0,180]:79 (180,360]:8       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.992
+T200  87 strains, set-up classes (0,180]:78 (180,360]:9       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.994
+T230  87 strains, set-up classes (0,180]:78 (180,360]:9       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.994
+T260  87 strains, set-up classes (0,180]:78 (180,360]:9       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.995
+T290  87 strains, set-up classes (0,180]:77 (180,360]:10      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.998
+T320  85 strains, set-up classes (0,180]:75 (180,360]:10      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.998
+T350  84 strains, set-up classes (0,180]:74 (180,360]:10      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.998
+T380  81 strains, set-up classes (0,180]:71 (180,360]:10      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.992
+T410  78 strains, set-up classes (0,180]:68 (180,360]:10      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.992
+T440  76 strains, set-up classes (0,180]:67 (180,360]:9       with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.982
+T470  75 strains, set-up classes (0,180]:64 (180,360]:11      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.988
+T500  71 strains, set-up classes (0,180]:59 (180,360]:12      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.985
+T530  69 strains, set-up classes (0,180]:58 (180,360]:11      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.979
+T560  66 strains, set-up classes (0,180]:55 (180,360]:11      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.984
+T590  63 strains, set-up classes (0,180]:52 (180,360]:11      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.976
+T620  60 strains, set-up classes (0,180]:50 (180,360]:10      with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.954
+T650  52 strains, set-up classes (0,180]:43 (180,360]:8 (360,540]:1 with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.824
+T680  35 strains, set-up classes (0,180]:31 (180,360]:3 (360,540]:1 with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.766
+T710  30 strains, set-up classes (0,180]:26 (180,360]:3 (360,540]:1 with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.687
+T740  19 strains, set-up classes (0,180]:15 (180,360]:3 (360,540]:1 with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.647
+T770  14 strains, set-up classes (0,180]:11 (180,360]:2 (360,540]:1 with set-up class: r = 1.0000, largest difference 0.0000; without: r = 0.628

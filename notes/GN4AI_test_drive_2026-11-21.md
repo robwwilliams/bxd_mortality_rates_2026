@@ -17,7 +17,7 @@
 - **Chow: nothing is significant, in GeneNetwork or in Danny's maps.** The top marker differs: Chr 10 in GeneNetwork, Chr 2 in Danny's.
 - **The two differ because Danny weights each strain mean by its number of mice.** GeneNetwork gives every strain the same weight, which is what Rob wants for strain means: weighting by N "will seriously screw up the mapping" (below). A local check reproduces both maps (r = 0.98 to 0.999).
 - **Beni's corrected NAM ages change three strain means, by 8 to 24 days, but not the map.** The largest change in LOD is 0.11, and nothing is significant either way.
-- **The full actuarial scan, 20 to 770 days in 30-day steps, ran in 6 minutes** (108 R/qtl2 scans, with and without kinship). Danny's maps are a regression of strain means weighted by mice, without kinship, at every T-age on chow and to 620 days on high fat. From 650 days on high fat the match weakens, though his maps stay as continuous across T-ages as ours.
+- **The full actuarial scan, 20 to 770 days in 30-day steps, ran in 6 minutes** (108 R/qtl2 scans, with and without kinship). Danny's maps are a regression of strain means weighted by mice, without kinship, at every T-age on chow and to 620 days on high fat. From 650 days on high fat the match weakens. His own model, read from his code, reproduces every map: it adds each strain's set-up age, in 180-day classes, as a covariate.
 - **Danny's strain-mean maps look uncorrected for kinship.** His high-fat map matches scans without kinship better than scans with it (r = 0.80 against 0.71).
 - **Rob prefers mapping every mouse, with full cofactors and kinship.** GN4AI cannot do that yet, so it heads the feature requests (item 18). The limit is GN4AI's, not R/qtl2's: R/qtl2 itself takes kinship, cofactors and weights together.
 - **pangemma gives GEMMA's results.** On chow its rows are identical to gemma-gn2's; on high fat they differ by at most 0.001 in −log10 *p*.
@@ -107,7 +107,8 @@ Rob: "I am not sure what method and model Danny Arends is using, but I hope R/qt
 - **On chow, kinship changes little,** so this test cannot tell the models apart there.
 - **On high fat, kinship matters,** and Danny's map sides with the scans without it (0.80 against 0.71).
 - **The weighted regression without kinship reproduces his map almost exactly.** A scan with kinship would likely differ from his by about as much as GN4AI's two R/qtl2 scans differ from each other (r = 0.91 on high fat).
-- **So his strain-mean maps most likely do not correct for kinship.** Only Danny can confirm it, and his maps of individual mice (his Fig. 2, rows 3–4) may use a different model.
+- **So his strain-mean maps most likely do not correct for kinship.** His code confirms it (below): they are weighted regressions, `lm()`, with set-up class as a covariate.
+- **His maps of individual mice (his Fig. 2, rows 3–4) use another model:** `lmer(age ~ diet + vivarium + set-up class + genotype + (1 | strain))`, with a diet × genotype term for the interaction. The random intercept for strain accounts for mice of the same strain. There is no kinship matrix, so related strains are treated as unrelated.
 - **With kinship, the high-fat peaks hold.** R/qtl2 with LOCO kinship peaks on Chr 1 at 23.5 Mb (LOD 4.25).
 
 **Rob's preference.** Rob: "I actually prefer to use ALL of the data and map at the individual level with full cofactors. The kinship handles the variable number of individuals per genotype well."
@@ -160,7 +161,21 @@ Rob: "You are not doing the full actuarial scan in 30 day truncation steps right
     - high fat pooled with NAM.
     None comes near the r of 0.91 or more seen up to 620 days. Nor does matching each of his columns against the regression at another T-age: the best is 0.71.
   - **His late high-fat maps carry peaks no GN4AI scan shows,** such as Chr 15 at 28 Mb (4.57 at 650 days).
-  - **This is a question for Danny.** His strain means at one late T-age, such as 680 days on high fat, would settle it.
+
+**Solved from Danny's code.** Rob asked for a fork of Danny's map code ([robwwilliams/BxDLifeSpan](https://github.com/robwwilliams/BxDLifeSpan), from [DannyArends/BxDLifeSpan](https://github.com/DannyArends/BxDLifeSpan) at commit `363f3fc`). Its `lifespan.R` fits, at each T-age:
+- `lm(strain mean ~ set-up class + genotype, weights = mice per strain)`.
+- **The set-up class** is the strain's mean set-up age, rounded and cut into 180-day classes.
+- **The strain means** are rounded to whole days.
+- **Genotype is coded** B −1, H 0, D +1.
+
+That model, refitted on Beni's file, reproduces his maps ([`GN4AI/danny_model_check.R`](../GN4AI/danny_model_check.R), [`danny_model_check.txt`](../output/GN4AI/actuarial/danny_model_check.txt)):
+- **High fat:** exactly, at all 26 T-ages (r = 1.0000, largest difference 0.0000 in −log10 P).
+- **Chow:** r ≥ 0.9986 at every T-age.
+
+**Why the high-fat maps change at 650 days.** From 650 days on, one strain, BXD12, is alone in its set-up class (360–540 days; four of its five mice were set up at 470 days).
+- **A covariate class with one strain gives that strain its own intercept,** so BXD12 drops out of the genotype test.
+- **With 14 to 52 strains, losing one moves the map,** and smoothly, as Rob saw.
+- **On chow, the same happens to BXD71** (set-up class 540–720 days) from 440 days on. With 46 to 88 strains, it changes the chow maps less.
 
 **Kinship.** Rob: "The mean survivorship data MUST be mapped with kinship to be accurate. There is strong kinship in the BXD family." So the GN4AI panels of the figure are the scans with LOCO kinship. Over markers, the scans with kinship correlate with those without:
 - **On chow, at r = 0.96 to 1.00 at every T-age,** so kinship barely changes the chow maps. This agrees with GEMMA's PVE on chow, 0 to 0.08 (above).
