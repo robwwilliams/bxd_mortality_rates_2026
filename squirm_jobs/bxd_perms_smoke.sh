@@ -5,6 +5,7 @@
 # Memory: 2 GB
 # Expected time: about 2 minutes
 # Seeds: chunk k uses seed 20261123 + k (2 chunks of 1 permutation)
+# Run again after Squirm's setup on ATHENA (R 4.6.2), which marked the first push as done; Metis has R 4.6.1.
 set -euo pipefail
 Rscript --vanilla -e 'cat(R.version.string, "; qtl2", as.character(packageVersion("qtl2")), "\n")'
 Rscript --vanilla QTL/qtl2_individuals_perm.R --workers "$SQUIRM_CORES" --chunks 2 --per-chunk 1 --seed 20261123 \
