@@ -19,7 +19,7 @@ ATHENA is Rob's Mac Studio (Apple M5 Max, 18 cores). Its own work comes first. T
    - Don't split one job into many to get more turns.
 4. **Keep jobs modest:**
    - at most 12 cores (Squirm caps the count it gives a job);
-   - **memory:** state the most memory the job will use, in its `# Memory:` line, at most 6 GB of ATHENA's 36. Squirm ends a job that goes more than 1 GB over what it stated.
+   - **memory:** state the most memory the job will use, in its `# Memory:` line, at most 6 GB of ATHENA's 36. Squirm counts the resident memory of all the job's processes added together, so each R worker counts: 0.9 GB a worker on 6 workers is 5.4 GB. Squirm ends a job that goes more than 1 GB over what it stated.
    - **restartable:** while a job is paused, if ATHENA runs short of memory (under 20% free), Squirm ends the job, pushes nothing and starts it again from its commit later. It does this at most 3 times. So write jobs that can start over, and keep what's finished, as the permutation recipe below does.
    - no output file over 100 MB. GitHub refuses larger files, so Squirm keeps them on ATHENA and lists them in `squirm_run.txt`.
 5. **A job stays inside its own space,** and ATHENA enforces it (see "How the guest is kept in its place" below):
