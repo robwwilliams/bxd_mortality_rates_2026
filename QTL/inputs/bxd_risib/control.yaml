@@ -1,0 +1,15 @@
+crosstype: risib
+sep: ','
+na.strings:
+- '-'
+- NA
+comment.char: '#'
+geno: geno.csv
+gmap: gmap.csv
+pheno: pheno.csv
+alleles:
+- B
+- D
+genotypes:
+  B: 1
+  D: 2

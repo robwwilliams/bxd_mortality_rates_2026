@@ -6,3 +6,4 @@
 install.packages("readxl", repos = "https://cloud.r-project.org")
 install.packages("survival", repos = "https://cloud.r-project.org")
 install.packages("svglite", repos = "https://cloud.r-project.org")
+install.packages("qtl2", repos = "https://cloud.r-project.org")
