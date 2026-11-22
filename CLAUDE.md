@@ -42,6 +42,12 @@ Rob's decision (24 October 2026): nothing in this project is private. Papers, da
 - **Plans fixed before fits** say who wrote them. Label any analysis added after results were seen as exploratory.
 - **Seeds are fixed.**
 
+## ATHENA (Squirm)
+
+Long CPU-bound R jobs, permutations above all, can run on ATHENA, Rob's Mac Studio, through Squirm: push a branch `squirm/<name>`, and the results come back on it. This project is a guest there that fills the gaps. ATHENA's own work comes first, and a job may wait or pause for hours.
+- **Read `tools/squirm/README.md` before the first job,** and follow its rules for a guest.
+- **Anything needed today runs on Metis.**
+
 ## Figures
 
 Follow `notes/figure_style.md` (Nature-series style). The colors are fixed:
