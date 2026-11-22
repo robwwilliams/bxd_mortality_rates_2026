@@ -46,7 +46,7 @@ The full write-up has every request, reply and timing (187 calls). The scripts a
   - R/qtl rows sit in `.data.markers` (7);
   - `next` links hold unfilled templates (8);
   - server paths appear in notes (9);
-  - R/qtl drops heterozygous calls without saying so (10);
+  - the R/qtl scan, set up as a `riself` cross, drops heterozygous calls without saying so (10);
   - a duplicate basket gets 422 rather than 409 (11);
   - R/qtl2 calls its LODs −log10 *p* (13).
 - **In the data, for Arthur and Suheeta as much as for you:**
