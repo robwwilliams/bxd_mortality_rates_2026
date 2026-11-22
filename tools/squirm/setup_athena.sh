@@ -14,7 +14,9 @@ export PATH="/usr/local/bin:/Library/Frameworks/R.framework/Resources/bin:/opt/h
 R0="${SQUIRM_TEST_ROOT:-}"                              # tests only: a scratch root in place of /
 U=squirm; UH="$R0/Users/$U"; SQ="$UH/squirm"; CTL="$R0/Users/Shared/squirm"; LIB="$R0/Library/Squirm"
 LABEL=com.robwilliams.squirm; PLIST="$R0/Library/LaunchDaemons/$LABEL.plist"
-SRC="$(cd "$(dirname "$0")" && pwd)"; REPO_URL=https://github.com/robwwilliams/bxd_mortality_rates_2026.git
+SRC="$(cd "$(dirname "$0")" && pwd)"
+cd /                                                    # the user squirm runs steps here too, and can't read your home
+REPO_URL=https://github.com/robwwilliams/bxd_mortality_rates_2026.git
 [ -n "$R0" ] && REPO_URL="${SQUIRM_TEST_REPO:-$REPO_URL}"           # tests only
 stop() { echo; echo "Stopped: $*"; echo "Nothing more was changed. Put that right and run this again."; exit 1; }
 as_u() { sudo -u "$U" -H "$@"; }
