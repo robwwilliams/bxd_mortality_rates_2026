@@ -8,8 +8,10 @@
 (allow default)
 (deny network*)
 (allow network* (remote unix-socket))
-(allow network* (local ip "localhost:*"))
-(allow network* (remote ip "localhost:*"))
+;; Loopback only. Not (allow network* (local ip "localhost:*")): macOS matches that against every outbound connection,
+;; whose local end isn't bound yet, and so lets a job reach the internet (found by the setup's probe on ATHENA).
+(allow network-bind network-inbound (local ip "localhost:*"))
+(allow network-outbound (remote ip "localhost:*"))
 (deny file-read* (subpath "/Users") (subpath "/Volumes"))
 (deny file-read* file-write* (subpath "/private/tmp") (subpath "/private/var/tmp"))
 (allow file-read* (literal "/Users") (literal "@UH@") (literal "@SQ@") (subpath "@SQ@/bxd") (subpath "@SQ@/Rlib")
