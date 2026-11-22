@@ -1,0 +1,11 @@
+job: bxd_perms_smoke
+branch: squirm/bxd_perms_smoke
+commit: b1f9e0b48578cccbcaab3642c8db99030ecb2fab
+exit: 0
+cores: 2
+memory stated: 2 GB
+running: 26 s
+start to end: 26 s
+pauses: 0
+machine: ATHENA, Apple M5 Max, 18 cores, 36 GB, macOS 27.0
+R: Rscript (R) version 4.6.2 (2026-10-29)

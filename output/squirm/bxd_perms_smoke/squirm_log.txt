@@ -1,0 +1,6 @@
+R version 4.6.2 (2026-10-29) ; qtl2 0.46 
+1746 mice of 119 strains; 3 T-ages; 0 chunks already done, 2 to run ( 1 permutations each ) on 2 workers
+09:40:56 chunk 2 done
+09:40:56 chunk 1 done
+Ran for 0.01 hours
+Thresholds from 2 permutations written to output/squirm/bxd_perms_smoke/thresholds.txt 
