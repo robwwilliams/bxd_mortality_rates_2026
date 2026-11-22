@@ -48,7 +48,8 @@ case "$priv" in
 esac
 ( umask 077; printf 'https://squirm:%s@github.com\n' "$TOKEN" > "$UH/.git-credentials" ); chown "$U" "$UH/.git-credentials"; chmod 600 "$UH/.git-credentials"
 unset TOKEN
-as_u git config --global credential.helper store
+as_u git config --global --replace-all credential.helper ""   # drops the Keychain helper of Apple's git: squirm has no
+as_u git config --global --add credential.helper store        # keychain, and macOS would ask whoever is logged in
 as_u git config --global core.hooksPath /dev/null
 
 echo "== Squirm's folders and its clone"
