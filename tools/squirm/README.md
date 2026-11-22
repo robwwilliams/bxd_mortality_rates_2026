@@ -19,16 +19,17 @@ ATHENA is Rob's Mac Studio (Apple M5 Max, 18 cores). Its own work comes first. T
    - Don't split one job into many to get more turns.
 4. **Keep jobs modest:**
    - at most 12 cores (Squirm caps the count it gives a job);
-   - at most 16 GB of memory;
+   - **memory:** state the most memory the job will use, in its `# Memory:` line, at most 6 GB of ATHENA's 36. Squirm counts the resident memory of all the job's processes added together, so each R worker counts: 0.9 GB a worker on 6 workers is 5.4 GB. Squirm ends a job that goes more than 1 GB over what it stated.
+   - **restartable:** while a job is paused, if ATHENA runs short of memory (under 20% free), Squirm ends the job, pushes nothing and starts it again from its commit later. It does this at most 3 times. So write jobs that can start over, and keep what's finished, as the permutation recipe below does.
    - no output file over 100 MB. GitHub refuses larger files, so Squirm keeps them on ATHENA and lists them in `squirm_run.txt`.
-5. **A job stays inside its own space.**
-   - It runs in Squirm's own clone of this repository, at the commit that added it.
-   - It reads only what that commit holds. `data/local/` isn't on ATHENA.
-   - It writes only under `$SQUIRM_OUT`.
-   - No network and no installs. The R packages come from `installer.R`, which Squirm installs into its own library before the job starts.
+5. **A job stays inside its own space,** and ATHENA enforces it (see "How the guest is kept in its place" below):
+   - It runs in Squirm's own clone of this repository, at the commit that added it, as the macOS user `squirm`, inside macOS's sandbox.
+   - It can read only what that commit holds, and Squirm's R library. `data/local/` isn't on ATHENA.
+   - It writes only under `$SQUIRM_OUT`. Squirm returns nothing else, and drops any symbolic or hard link a job leaves there.
+   - It has no network and can't install anything. The R packages come from `installer.R`, which Squirm installs into its own library before the job starts.
 6. **Leave the rest of ATHENA alone.**
-   - Other folders on ATHENA belong to Rob's other projects, some of them private. Never list, read or copy them, and never name or describe anything about them here. This repository is public.
-   - Never change Homebrew, system settings or launchd agents on ATHENA.
+   - Other folders on ATHENA belong to Rob's other projects, some of them private. A job can't reach them, and nothing here should try to, or name or describe anything about them. This repository is public.
+   - Never change Homebrew, system settings or launchd jobs on ATHENA.
 7. **Everything a job commits is public,** like the rest of this repository. No tokens and no data Rob hasn't released go into a job.
 8. **Tell Rob only when Squirm itself seems broken:**
    - a short job that hasn't started after three days;
@@ -56,8 +57,9 @@ ATHENA is Rob's Mac Studio (Apple M5 Max, 18 cores). Its own work comes first. T
    - Write each chunk to `$SQUIRM_OUT` as soon as it finishes, for example `chunk_07.txt` with one maximum LOD per permutation.
    - Have the script skip any chunk whose file already exists, and end by combining the chunks into the thresholds.
    - If a job is stopped at Squirm's limit (48 hours running, or 7 days in all), its finished chunks still come back. The next job can carry them in its commit, and the script will skip them.
+   - A job that Squirm ends to free memory starts over from its commit, so keep each chunk short. A chunk that takes about an hour loses at most an hour.
 3. **Put the job's inputs in the commit.** Derived inputs under 100 MB, such as phenotypes and genotypes, can go on the job branch. A new package goes into `installer.R` in the same commit.
-4. **Write the job script.** Copy `tools/squirm/job_template.sh` to `squirm_jobs/<name>.sh`, and fill in its header lines: what it computes, Cores, Memory, Expected time and Seeds.
+4. **Write the job script.** Copy `tools/squirm/job_template.sh` to `squirm_jobs/<name>.sh`, and fill in its header lines: what it computes, Cores, Memory, Expected time and Seeds. Measure the memory on Metis first, from one chunk at the core count you'll ask for.
 5. **Commit and push, from Metis:**
 
    ```
@@ -76,25 +78,53 @@ ATHENA is Rob's Mac Studio (Apple M5 Max, 18 cores). Its own work comes first. T
 - **What comes back,** in `output/squirm/<name>/`:
   - the job's own files;
   - `squirm_log.txt`, everything the job printed;
-  - `squirm_run.txt`: exit status, cores, time spent running (pauses not counted), start to end, the number of pauses, the machine and the R version.
+  - `squirm_run.txt`: exit status (and why, if Squirm ended it), cores, the memory stated, time spent running (pauses not counted), start to end, the number of pauses, the machine and the R version.
 - **If you pushed to the branch while the job ran,** the results go to `squirm/<name>-results` instead.
 - **Bring results to `main`** with a note, labeled planned or exploratory as `CLAUDE.md` asks. Name ATHENA and its R version beside any number from it. If ATHENA's R differs from Metis's, check one chunk on Metis.
 
 ## For Rob: setting it up on ATHENA, once
 
-On ATHENA, in Terminal:
+Three steps, then one command. The setup checks each of them, and stops with a plain message at the first that isn't right, before it installs anything.
 
-```
-git clone https://github.com/robwwilliams/bxd_mortality_rates_2026.git ~/Code/squirm/bxd
-bash ~/Code/squirm/bxd/tools/squirm/setup_athena.sh
-```
+1. **Make a user for Squirm.** On ATHENA: System Settings, Users & Groups, Add User. Choose **Standard**, account name **squirm**, any password (nobody logs in as it).
+2. **Make a token for this repository alone.** On github.com: Settings, Developer settings, Personal access tokens, **Fine-grained tokens**, Generate new token.
+   - Repository access: **Only select repositories**, and pick `bxd_mortality_rates_2026`.
+   - Permissions: **Contents, Read and write** (Squirm pushes the results). Nothing else.
+   - Keep the token to paste in step 4. Squirm stores it for the user `squirm` only.
+3. **Make sure R is on ATHENA:** R for Apple silicon from CRAN (cran.r-project.org/bin/macosx), the same version as on Metis. The setup never uses Homebrew.
+4. **On ATHENA, in Terminal:**
 
-- **R:** the setup needs R on ATHENA. If R is missing, it stops and says so. Install R for Apple silicon from CRAN, the same version as on Metis, and run the setup again. The setup never uses Homebrew.
-- **What it creates:** `~/Code/squirm` and one launchd agent, `com.robwilliams.squirm`, which looks for a job every 5 minutes.
-- **To see what Squirm is doing:** `cat ~/Code/squirm/state.txt`. Its history is in `~/Code/squirm/squirm.log`.
-- **To hold everything:** `touch ~/Code/squirm/HOLD`. A running job pauses at the next check, within a minute, and nothing new starts. To release it: `rm ~/Code/squirm/HOLD`.
-- **To stop it for good:** `launchctl bootout gui/$(id -u)/com.robwilliams.squirm`.
-- **To update it** after `squirm.sh` changes on `main`, run the setup again. It refuses while a job is running.
+   ```
+   git clone https://github.com/robwwilliams/bxd_mortality_rates_2026.git /tmp/squirm-setup
+   sudo bash /tmp/squirm-setup/tools/squirm/setup_athena.sh
+   ```
+
+   - It asks for the token; nothing shows as you paste.
+   - If it says the user `squirm` can open your home folder, run the `chmod 700` it gives you, and run it again. macOS lets other users look inside home folders unless told not to.
+
+**What it creates:**
+- the user `squirm`'s folder `~squirm/squirm`;
+- `/Library/Squirm`, holding the runner and its two sandbox profiles, owned by root so a job can't change them;
+- `/Users/Shared/squirm`, which is yours for the brake, with a `status` folder that is Squirm's;
+- one LaunchDaemon, `com.robwilliams.squirm`, which looks for a job every 5 minutes.
+
+**Day to day:**
+- **To see what Squirm is doing:** `cat /Users/Shared/squirm/status/state.txt`. Its history is in `/Users/Shared/squirm/status/squirm.log`.
+- **To hold everything:** `touch /Users/Shared/squirm/HOLD`. A running job pauses at the next check, within a minute, and nothing new starts. To release it: `rm /Users/Shared/squirm/HOLD`. Squirm can read the brake but can't remove it.
+- **To stop it for good:** `sudo launchctl bootout system/com.robwilliams.squirm`.
+- **To update it** after `squirm.sh` changes on `main`: clone again and run the setup again. It refuses while a job is running.
+
+## How the guest is kept in its place
+
+A job is code from a branch of a public repository, so ATHENA fences it in, rather than trusting it. Four layers do that, each checked by the setup:
+1. **A separate user.** Squirm and its jobs run as `squirm`, a Standard user who can't enter Rob's home, where his other projects and his own GitHub login live.
+2. **A token for one repository.** `squirm`'s GitHub token reaches this repository alone. The setup stops if it can see any private repository.
+3. **macOS's sandbox around every job.**
+   - No network, but this machine's own loopback, which R's parallel clusters use.
+   - Nothing read under `/Users` or `/Volumes` but Squirm's clone and R library. So a job can't read `squirm`'s token either.
+   - Nothing written but the clone's working tree, and never its `.git`.
+   - The setup runs a probe inside the sandbox and stops unless every one of those holds.
+4. **A runner that doesn't trust the job's leftovers.** It runs git with no hooks. It returns only what's under `$SQUIRM_OUT`, and drops links a job leaves there. Its own script and profiles belong to root.
 
 ## How Squirm decides
 
@@ -102,5 +132,10 @@ bash ~/Code/squirm/bxd/tools/squirm/setup_athena.sh
   - **Two busy checks in a row** pause the job: every process in it receives SIGSTOP. Its memory stays, so nothing is lost.
   - **Three quiet checks in a row** (fewer than 1 running) resume it.
 - **A new job starts** only at a quiet moment, with at least 30% of memory free.
+- **Memory:** a job that uses more than 1 GB over its stated memory is ended. While a job is paused, if free memory falls under 20%, it's ended and started again later, at most 3 times.
 - **Even before a pause, a job yields:** it runs at nice 10, so ATHENA's own work comes first for the cores, and at low disk priority.
-- **The tests:** Squirm's tests were run on Linux, with a stand-in for GitHub and with other programs started and stopped mid-job. The first run on ATHENA should be a small job.
+- **The tests:** Squirm's runner was tested on Linux, with a stand-in for GitHub and with other programs started and stopped mid-job:
+  - pausing and resuming;
+  - ending and requeuing on memory;
+  - links and planted hooks.
+  The setup's stops were tested with stand-ins for macOS's commands, including a sandbox that fences nothing, which the probe caught. The real sandbox can only be checked on ATHENA, and the setup does that before it installs anything. The first job there should be a small one.
