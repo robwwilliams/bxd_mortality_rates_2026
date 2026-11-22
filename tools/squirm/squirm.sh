@@ -33,7 +33,6 @@ mkdir -p "$ST" 2>/dev/null; touch "$DONE" "$REQ" 2>/dev/null || exit 1
 if [ -z "${SQUIRM_TEST:-}" ] && [ "$(id -un)" != squirm ]; then state "refused: Squirm runs only as the user squirm"; exit 1; fi
 if [ -e "$LOCK" ] && kill -0 "$(cat "$LOCK")" 2>/dev/null; then exit 0; fi
 echo $$ > "$LOCK"; trap 'rm -f "$LOCK"' EXIT
-if [ -e "$HOLD" ]; then state "held: $HOLD exists"; exit 0; fi
 if command -v sandbox-exec >/dev/null 2>&1 && [ -r "$JOB_SB" ] && [ -r "$INSTALL_SB" ]; then
   BOX_JOB="sandbox-exec -f $JOB_SB"; BOX_INSTALL="sandbox-exec -f $INSTALL_SB"   # the profiles' paths hold no spaces
 elif [ -n "${SQUIRM_TEST:-}" ]; then BOX_JOB=""; BOX_INSTALL=""                  # tests on Linux only: no sandbox there
@@ -55,6 +54,18 @@ mem_free() {  # percent of memory free
   else echo 100; fi
 }
 job_gb() { ps -A -o pgid=,rss= | awk -v p="$1" '$1 == p { k += $2 } END { printf "%.2f", k / 1048576 }'; }  # resident, in GB
+# The memory log: about every 5 minutes, held or not, how much of ATHENA's memory is in use and how much of that is
+# Squirm's job, so that the rest (ATHENA's own work) can be read off over weeks. It records amounts only, never what runs.
+MEMLOG="$ST/memory.txt"; MEM_EVERY="${SQUIRM_MEM_EVERY:-300}"
+TOTAL_GB=$(awk -v b="$(sysctl -n hw.memsize 2>/dev/null || awk '/MemTotal/ { print $2 * 1024 }' /proc/meminfo)" 'BEGIN { printf "%.1f", b / 1073741824 }')
+mem_line() {  # $1: the job's GB (0 for none); $2: none, running or paused
+  local f; f=$(mem_free)
+  [ -s "$MEMLOG" ] || printf 'time\tfree.pct\tused.GB\tsquirm.GB\tathena.GB\tsquirm\n' > "$MEMLOG"
+  awk -v t="$(date '+%Y-%m-%d %H:%M:%S')" -v f="$f" -v T="$TOTAL_GB" -v j="$1" -v s="$2" \
+    'BEGIN { u = T * (100 - f) / 100; a = u - j; if (a < 0) a = 0; printf "%s\t%d\t%.1f\t%.1f\t%.1f\t%s\n", t, f, u, j, a, s }' >> "$MEMLOG"
+}
+mem_line 0 none                                       # a running job's own loop writes the lines while it runs
+if [ -e "$HOLD" ]; then state "held: $HOLD exists"; exit 0; fi
 [ -d "$REPO/.git" ] || { log "no clone at $REPO: run tools/squirm/setup_athena.sh"; exit 1; }
 cd "$REPO" || exit 1
 g fetch -q --prune origin "+refs/heads/squirm/*:refs/remotes/origin/squirm/*" 2>> "$LOG" || { state "GitHub unreachable"; exit 0; }
@@ -100,7 +111,7 @@ t0=$(date +%s)
   > "$OUT/squirm_log.txt" 2>&1 &
 pid=$!                                                # the job's process group has the same number
 command -v caffeinate >/dev/null 2>&1 && caffeinate -i -w "$pid" &
-paused=0; pauses=0; busy_n=0; quiet_n=0; ran=0; last=$t0; why=""; requeue=0
+paused=0; pauses=0; busy_n=0; quiet_n=0; ran=0; last=$t0; last_mem=$t0; why=""; requeue=0
 state "running $branch"
 stop_job() { kill -CONT -"$pid" 2>/dev/null; kill -TERM -"$pid" 2>/dev/null; sleep 10; kill -KILL -"$pid" 2>/dev/null; }
 while kill -0 "$pid" 2>/dev/null; do
@@ -108,6 +119,7 @@ while kill -0 "$pid" 2>/dev/null; do
   now=$(date +%s); [ "$paused" = 0 ] && ran=$(( ran + now - last )); last=$now
   kill -0 "$pid" 2>/dev/null || break
   o=$(others "$pid"); used=$(job_gb "$pid")
+  if [ $(( now - last_mem )) -ge "$MEM_EVERY" ]; then mem_line "$used" "$([ "$paused" = 0 ] && echo running || echo paused)"; last_mem=$now; fi
   if gt "$used" "$(awk -v m="$mem" -v k="${SQUIRM_MEM_SLACK_GB:-1}" 'BEGIN { print m + k }')"; then
     why=" (ended: it used $used GB against its stated $mem GB)"; stop_job; break
   fi

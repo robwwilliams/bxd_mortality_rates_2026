@@ -110,6 +110,13 @@ Three steps, then one command. The setup checks each of them, and stops with a p
 
 **Day to day:**
 - **To see what Squirm is doing:** `cat /Users/Shared/squirm/status/state.txt`. Its history is in `/Users/Shared/squirm/status/squirm.log`.
+- **How much memory ATHENA's own work needs:** `/Users/Shared/squirm/status/memory.txt` has a line about every 5 minutes, whether a job is running or not, and also while Squirm is held. Its columns:
+  - `free.pct`: macOS's own figure for memory free (from `memory_pressure`), the one Squirm decides by;
+  - `used.GB`: memory in use, from that figure;
+  - `squirm.GB`: the share of it that is Squirm's job (summed resident memory, which counts shared memory once per process, so it can run high);
+  - `athena.GB`: the rest, ATHENA's own work;
+  - `squirm`: none, running or paused.
+  It records amounts only, never what is running. After a few weeks, for example, the 90th percentile of `athena.GB` is the memory ATHENA's own work stays under 90% of the time. Peaks shorter than 5 minutes can fall between lines.
 - **To hold everything:** `touch /Users/Shared/squirm/HOLD`. A running job pauses at the next check, within a minute, and nothing new starts. To release it: `rm /Users/Shared/squirm/HOLD`. Squirm can read the brake but can't remove it.
 - **To stop it for good:** `sudo launchctl bootout system/com.robwilliams.squirm`.
 - **To update it** after `squirm.sh` changes on `main`: clone again and run the setup again. It refuses while a job is running.
