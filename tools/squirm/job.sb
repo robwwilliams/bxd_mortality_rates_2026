@@ -1,0 +1,15 @@
+;; Squirm's sandbox for a job (macOS sandbox-exec). The setup writes it to /Library/Squirm/job.sb with @SQ@ and @UH@ filled in.
+;; No network beyond this machine's own loopback (R's parallel clusters talk over localhost). Nothing under /Users or
+;; /Volumes is read but Squirm's clone and R library. Nothing is written but the clone's working tree, and never its .git.
+;; Later rules win over earlier ones.
+(version 1)
+(allow default)
+(deny network*)
+(allow network* (remote unix-socket))
+(allow network* (local ip "localhost:*"))
+(allow network* (remote ip "localhost:*"))
+(deny file-read* (subpath "/Users") (subpath "/Volumes"))
+(allow file-read* (literal "/Users") (literal "@UH@") (literal "@SQ@") (subpath "@SQ@/bxd") (subpath "@SQ@/Rlib"))
+(deny file-write* (subpath "/Users") (subpath "/Volumes") (subpath "/Library") (subpath "/Applications") (subpath "/opt"))
+(allow file-write* (subpath "@SQ@/bxd"))
+(deny file-write* (subpath "@SQ@/bxd/.git"))
