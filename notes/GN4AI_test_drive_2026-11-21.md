@@ -7,11 +7,12 @@
 
 ## In brief
 
-- **It works, with four faults that matter.** 187 timed calls: baskets, R/qtl, R/qtl2, GEMMA through both runners, permutations, covariates and plots.
+- **It works, with five faults that matter.** 187 timed calls: baskets, R/qtl, R/qtl2, GEMMA through both runners, permutations, covariates and plots.
   - **Given one value per mouse, R/qtl2 keeps the last mouse of each strain and drops the rest without saying so** (item 20).
   - **No GEMMA route fits covariates,** because `/compute/gemma` now runs ravanan (items 6 and 14).
   - **R/qtl2 accepts a covariate and then leaves it out** (item 15).
   - **`/plot/rqtl` will not draw R/qtl2 scans** (item 12).
+  - **Heterozygous calls are dropped for the BXD group by default** (R/qtl and R/qtl2 as `riself`; item 24). GN2 keeps them, and RI intercross designs need them.
 - **We repeated Danny Arends's strain-means maps (his Fig. 2, top two rows).** The strain means are at T-age 20, so every mouse counts, and they come from Beni Mozhui's corrected file.
 - **High fat: GeneNetwork finds Danny's two peaks,** on proximal Chr 1 at 23.5 Mb, in the Vita1a–Vita1b interval, and on Chr 2 at 157.5 Mb. Both clear R/qtl's significance threshold from 1,000 permutations.
 - **Chow: nothing is significant, in GeneNetwork or in Danny's maps.** The top marker differs: Chr 10 in GeneNetwork, Chr 2 in Danny's.
@@ -277,6 +278,10 @@ These are traits 18441 (chow), 18435 (high fat) and 24754 (NAM), from Suheeta Ro
 21. **The direction of each effect.** R/qtl2 replies give the LOD only, so a map cannot show which allele raises the trait, as Danny's signed maps do. The actuarial figure above takes the sign from the strain means. Returning the B − D effect per marker (R/qtl2's `scan1coef`), or at least its sign, would fix that.
 22. **Inline samples worked well for a large batch:** 108 scans in 6 minutes, with nothing stored on the server. SKILL.md could show that route beside baskets.
 23. **pangemma agrees with GEMMA.** With `engine: "pangemma"` on `/compute/gemma/ravanan`, the chow basket's 21,055 rows are identical to gemma-gn2's. The high-fat basket's 21,056 rows differ by at most 0.001 in −log10 *p* and 0.02 days in β. Each run took 15 s.
+24. **Keep heterozygous calls for the BXD group by default.** The R/qtl scan sets the panel up as a `riself` cross, and the R/qtl2 scan defaults to `genotype_model: "riself"`. Both drop heterozygous calls: 610,684 of them, 12.7% of BXD.8. Any BXD × BXD F1 in the samples then counts only where its parents agree.
+    - **GN2 keeps them.** Rob: "this may be an "error" in the GN4AI implementation. I have been using RI intercrosses for a long time. GN2 web service handles the BXDs and uses the heterozygous calls."
+    - **RI intercross (RIX) designs depend on those calls.** See Zou et al. 2005, *Genetics* 170:1299–1311; Airey, Lu, Shou & Williams 2002, *The Cerebellum* 1:233–240; and the Complex Trait Consortium's Collaborative Cross paper (Williams et al. 2002).
+    - **Suggestion:** when the samples include F1s, keep the heterozygous calls by default, with an F2-type model (`genotype_model: "f2"`) or dosage, as GEMMA already does. At the least, the reply should name the F1s whose calls were dropped.
 
 ## Reproduce
 

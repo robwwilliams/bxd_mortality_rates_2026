@@ -4,7 +4,7 @@
 
 ---
 
-**Subject:** GN4AI-beta test drive: BXD lifespan mapping, 23 items
+**Subject:** GN4AI-beta test drive: BXD lifespan mapping, 24 items
 
 Hi Pjotr,
 
@@ -20,11 +20,12 @@ The full write-up has every request, reply and timing (187 calls). The scripts a
 
 **It works, and it is fast.** An R/qtl2 scan takes 3 s, and the 108 actuarial scans took 6 minutes, sent inline so that nothing stayed on the server. R/qtl2's LOCO kinship works: on high fat, scans with it correlate with scans without it at r = 0.88 to 0.94 over markers, up to 470 days.
 
-**Four faults matter most:**
+**Five faults matter most:**
 1. **Repeated sample names are collapsed to the last one, without warning** (item 20). We sent 818 high-fat mice under 99 strain names to `/compute/qtl2`. The reply noted "99 values used", and the scan is identical to one of the last mouse per strain. A user who sends individual mice gets a map of one mouse per strain, from a reply that looks normal.
 2. **R/qtl2 drops covariates** (item 15). The reply acknowledges the covariate, but the LODs equal those without it. The command line passes the covariate-structure file twice (`--covariates …-covarstruct.txt --covarstruct …-covarstruct.txt`), so the values never reach the scan.
 3. **No GEMMA route takes covariates** (items 6 and 14). `/compute/gemma` now runs ravanan: its rows equal `/compute/gemma/ravanan`'s to the last digit. Its 422 sends the user back to `/compute/gemma` for a covariate fit.
 4. **`/plot/rqtl` refuses `/compute/qtl2` replies** (item 12), though SKILL.md says it draws them.
+5. **Heterozygous calls are dropped for the BXD group by default** (item 24). R/qtl runs as `riself` and R/qtl2 defaults to it. Rob: "GN2 web service handles the BXDs and uses the heterozygous calls." RI intercross designs, such as our BXD × BXD F1s, need them (Zou et al. 2005, *Genetics* 170:1299).
 
 **Two requests, in the order we need them.** R/qtl2's `scan1()` already does both (Karl Broman's documentation), so GN4AI only has to pass them through:
 - **Individual mice, with cofactors and kinship** (item 18). This is Rob's preferred design: "I actually prefer to use ALL of the data and map at the individual level with full cofactors. The kinship handles the variable number of individuals per genotype well." It needs repeated strain names, per-mouse covariates (diet, vivarium, birth year) and `intcovar` for gene × diet.
