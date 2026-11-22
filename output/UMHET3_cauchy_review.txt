@@ -1,0 +1,92 @@
+Cauchy combination test of Arends et al. 2026: review (exploratory)
+Published LOD matrices: T-ages > 35 to > 1100 ( 72 ), markers 891 
+
+Combined: markers with a LOD of 0.00 at some T-age (Cauchy P forced to 1): 26 of 891
+  markers with BH-adjusted Cauchy -logP >= 1.5: Danny's conversion 447; 3 d.f. 320; 3 d.f. leaving out LODs of 0.00 324
+
+Male: markers with a LOD of 0.00 at some T-age (Cauchy P forced to 1): 43 of 891
+  Male Vita14a: peak LOD 5.36 at > 65; LODs of 0.00 at 1 T-ages; BH-adjusted Cauchy -logP leaving them out: 3.08 (P = 10^-LOD), 2.48 (3 d.f.)
+  Male Vita18a: peak LOD 3.73 at > 110; LODs of 0.00 at 1 T-ages; BH-adjusted Cauchy -logP leaving them out: 2.34 (P = 10^-LOD), 1.81 (3 d.f.)
+  Male VitaXb: peak LOD 1.17 at > 920; LODs of 0.00 at 3 T-ages; BH-adjusted Cauchy -logP leaving them out: 0.23 (P = 10^-LOD), 0.02 (3 d.f.)
+  markers with BH-adjusted Cauchy -logP >= 1.5: Danny's conversion 442; 3 d.f. 307; 3 d.f. leaving out LODs of 0.00 328
+
+Female: markers with a LOD of 0.00 at some T-age (Cauchy P forced to 1): 26 of 891
+  Female Vita6b: peak LOD 1.04 at > 980; LODs of 0.00 at 6 T-ages; BH-adjusted Cauchy -logP leaving them out: 0.07 (P = 10^-LOD), 0.00 (3 d.f.)
+  Female VitaXa: peak LOD 0.15 at > 1085; LODs of 0.00 at 22 T-ages; BH-adjusted Cauchy -logP leaving them out: 0.02 (P = 10^-LOD), 0.00 (3 d.f.)
+  Female VitaXb: peak LOD 1.04 at > 1055; LODs of 0.00 at 9 T-ages; BH-adjusted Cauchy -logP leaving them out: 0.04 (P = 10^-LOD), 0.00 (3 d.f.)
+  markers with BH-adjusted Cauchy -logP >= 1.5: Danny's conversion 159; 3 d.f. 66; 3 d.f. leaving out LODs of 0.00 66
+
+Vita loci, BH-adjusted Cauchy -logP: published (Table 1c), recomputed with Danny's code (P = 10^-LOD), and with P on 3 d.f.
+   Locus Combined.published Combined.Danny Combined.3df Male.published
+  Vita1a               3.64           3.64         3.01           2.74
+  Vita1b               3.83           3.83         3.16           2.43
+  Vita1c               3.22           3.22         2.62           3.14
+  Vita1d               3.05           3.04         2.45           3.05
+  Vita2a               2.53           2.53         1.98           3.14
+  Vita2b               3.41           3.41         2.79           2.38
+  Vita2c               3.28           3.28         2.67           1.55
+  Vita3a               1.21           1.19         0.77           1.91
+  Vita4a               3.83           3.83         3.16           4.84
+  Vita4b               1.32           1.32         0.88           2.38
+  Vita5a               0.71           0.71         0.35           2.10
+  Vita6a               2.39           2.38         1.86           2.58
+  Vita6b               2.32           2.30         1.78           3.05
+  Vita9a               2.13           2.13         1.61           1.68
+  Vita9b               3.28           3.28         2.66           2.24
+  Vita9c               3.20           3.21         2.59           2.67
+ Vita10a               2.48           2.48         1.92           2.25
+ Vita11a               1.80           1.81         1.33           2.21
+ Vita11b               1.42           1.42         0.96           0.23
+ Vita11c               1.50           1.45         1.00           2.91
+ Vita12a               3.01           3.02         2.43           1.29
+ Vita13a               3.33           3.33         2.71           2.15
+ Vita14a               3.61           3.60         2.96           0.00
+ Vita14b               2.87           2.87         2.30           2.34
+ Vita15a               2.89           2.89         2.31           3.05
+ Vita15b               1.96           1.94         1.45           3.14
+ Vita17a               3.07           3.07         2.48           2.49
+ Vita18a               3.06           3.05         2.46           0.00
+  VitaXa               3.28           3.28         2.67           2.52
+  VitaXb                 NA           0.31         0.01             NA
+ Male.Danny Male.3df Female.published Female.Danny Female.3df
+       2.74     2.17             1.69         1.68       1.19
+       2.43     1.90             2.46         2.44       1.90
+       3.11     2.50             0.56         0.56       0.11
+       3.04     2.46             0.39         0.38       0.03
+       3.11     2.50             3.12         3.09       2.50
+       2.37     1.85             4.23         4.22       3.58
+       1.55     1.10             4.61         4.61       3.92
+       1.91     1.39             1.42         1.42       0.96
+       4.85     4.13             0.95         0.95       0.52
+       2.38     1.84             0.49         0.50       0.12
+       2.10     1.56             0.48         0.49       0.06
+       2.57     2.02             0.28         0.29       0.02
+       3.04     2.46             0.00         0.00       0.00
+       1.68     1.21             3.75         3.73       3.11
+       2.24     1.72             1.59         1.58       1.08
+       2.67     2.10             1.26         1.26       0.78
+       2.26     1.71             0.50         0.50       0.14
+       2.21     1.67             0.92         0.92       0.49
+       0.22     0.00             1.96         1.95       1.43
+       2.88     2.30             0.82         0.82       0.41
+       1.29     0.86             1.51         1.51       1.03
+       2.14     1.62             1.01         1.01       0.58
+       0.00     0.00             1.08         1.07       0.65
+       2.33     1.80             0.88         0.87       0.12
+       3.04     2.46             1.01         1.01       0.55
+       3.11     2.50             0.32         0.33       0.01
+       2.48     1.94             0.79         0.79       0.37
+       0.00     0.00             1.48         1.47       1.00
+       2.52     1.98             0.00         0.00       0.00
+       0.00     0.00               NA         0.00       0.00
+Combined: recomputed minus published, median 0.00, range -0.05 to 0.01; Vita loci at >= 1.5: published 25, Danny 24, 3 d.f. 22
+Male: recomputed minus published, median 0.00, range -0.03 to 0.01; Vita loci at >= 1.5: published 25, Danny 25, 3 d.f. 22
+Female: recomputed minus published, median -0.00, range -0.03 to 0.01; Vita loci at >= 1.5: published 9, Danny 9, 3 d.f. 5
+
+LOD thresholds of the paper (3.65, 3.95, 4.65 = -log10 of 0.10, 0.05, 0.01 over 442 tests) as P values for a LOD on 3 d.f.:
+  LOD 3.65: -log10 P = 3.11 on 3 d.f. (4.38 on 1 d.f.); genome-wide P with 442 tests = 0.34
+  LOD 3.95: -log10 P = 3.40 on 3 d.f. (4.70 on 1 d.f.); genome-wide P with 442 tests = 0.18
+  LOD 4.65: -log10 P = 4.06 on 3 d.f. (5.43 on 1 d.f.); genome-wide P with 442 tests = 0.04
+  genome-wide 0.10 over 442 tests needs LOD 4.21 on 3 d.f.
+  genome-wide 0.05 over 442 tests needs LOD 4.53 on 3 d.f.
+  genome-wide 0.01 over 442 tests needs LOD 5.26 on 3 d.f.
