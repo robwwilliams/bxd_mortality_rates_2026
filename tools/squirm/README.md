@@ -19,7 +19,7 @@ ATHENA is Rob's Mac Studio (Apple M5 Max, 18 cores). Its own work comes first. T
    - Don't split one job into many to get more turns.
 4. **Keep jobs modest:**
    - at most 12 cores (Squirm caps the count it gives a job);
-   - **memory:** state the most memory the job will use, in its `# Memory:` line, at most 6 GB of ATHENA's 36. Squirm counts the resident memory of all the job's processes added together, so each R worker counts: 0.9 GB a worker on 6 workers is 5.4 GB. Squirm ends a job that goes more than 1 GB over what it stated.
+   - **memory:** state the most memory the job will use, in its `# Memory:` line, at most 6 GB of ATHENA's 36. Squirm ends a job that goes more than 1 GB over what it stated.
    - **restartable:** while a job is paused, if ATHENA runs short of memory (under 20% free), Squirm ends the job, pushes nothing and starts it again from its commit later. It does this at most 3 times. So write jobs that can start over, and keep what's finished, as the permutation recipe below does.
    - no output file over 100 MB. GitHub refuses larger files, so Squirm keeps them on ATHENA and lists them in `squirm_run.txt`.
 5. **A job stays inside its own space,** and ATHENA enforces it (see "How the guest is kept in its place" below):
@@ -113,6 +113,7 @@ Three steps, then one command. The setup checks each of them, and stops with a p
 - **To hold everything:** `touch /Users/Shared/squirm/HOLD`. A running job pauses at the next check, within a minute, and nothing new starts. To release it: `rm /Users/Shared/squirm/HOLD`. Squirm can read the brake but can't remove it.
 - **To stop it for good:** `sudo launchctl bootout system/com.robwilliams.squirm`.
 - **To update it** after `squirm.sh` changes on `main`: clone again and run the setup again. It refuses while a job is running.
+- **A habit for everything else on ATHENA, not only Squirm:** keep work files out of `/private/tmp`. Squirm's sandbox closes that folder to jobs, but the habit keeps the next tool from opening it again.
 
 ## How the guest is kept in its place
 
@@ -122,6 +123,7 @@ A job is code from a branch of a public repository, so ATHENA fences it in, rath
 3. **macOS's sandbox around every job.**
    - No network, but this machine's own loopback, which R's parallel clusters use.
    - Nothing read under `/Users` or `/Volumes` but Squirm's clone and R library. So a job can't read `squirm`'s token either.
+   - The shared temporary folders, `/private/tmp` (where `/tmp` leads) and `/private/var/tmp`, are closed. Any user's processes can leave files there that everyone can read, and pipes that everyone can write. A job gets its own temporary folder, which the runner empties between jobs, and `TMPDIR` points to it.
    - Nothing written but the clone's working tree, and never its `.git`.
    - The setup runs a probe inside the sandbox and stops unless every one of those holds.
 4. **A runner that doesn't trust the job's leftovers.** It runs git with no hooks. It returns only what's under `$SQUIRM_OUT`, and drops links a job leaves there. Its own script and profiles belong to root.

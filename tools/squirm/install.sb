@@ -1,9 +1,12 @@
 ;; Squirm's sandbox for installing installer.R's packages (macOS sandbox-exec), written by the setup with @SQ@ and @UH@
 ;; filled in. The network is open, to reach CRAN; reads under /Users are kept to Squirm's clone and library, as for a
-;; job, and writes to the library alone. Later rules win over earlier ones.
+;; job, and writes to the library and Squirm's own temporary folder alone. The shared temporary folders are closed, as for a
+;; job. Later rules win over earlier ones.
 (version 1)
 (allow default)
 (deny file-read* (subpath "/Users") (subpath "/Volumes"))
-(allow file-read* (literal "/Users") (literal "@UH@") (literal "@SQ@") (subpath "@SQ@/bxd") (subpath "@SQ@/Rlib"))
+(deny file-read* file-write* (subpath "/private/tmp") (subpath "/private/var/tmp"))
+(allow file-read* (literal "/Users") (literal "@UH@") (literal "@SQ@") (subpath "@SQ@/bxd") (subpath "@SQ@/Rlib")
+       (subpath "@SQ@/tmp"))
 (deny file-write* (subpath "/Users") (subpath "/Volumes") (subpath "/Library") (subpath "/Applications") (subpath "/opt"))
-(allow file-write* (subpath "@SQ@/Rlib") (subpath "@SQ@/bxd/.squirm_home"))
+(allow file-write* (subpath "@SQ@/Rlib") (subpath "@SQ@/bxd/.squirm_home") (subpath "@SQ@/tmp"))

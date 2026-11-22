@@ -84,17 +84,18 @@ cores=$(grep -m1 -iE '^# *Cores:' "$script" | grep -oE '[0-9]+' | head -1); core
 mem=$(grep -m1 -iE '^# *Memory:' "$script" | grep -oE '[0-9]+(\.[0-9]+)?' | head -1); mem=${mem:-2}
 gt "$mem" "$MAX_MEM_GB" && mem=$MAX_MEM_GB
 OUT="output/squirm/$name"; mkdir -p "$OUT" "$SQ/Rlib" .squirm_home
+rm -rf "$SQ/tmp"; mkdir -p "$SQ/tmp"                 # the job's own temporary folder; the shared ones are closed to it
 if [ -f installer.R ] && command -v Rscript >/dev/null 2>&1; then  # installer.R's packages, into Squirm's library, sandboxed
   h=$(g hash-object installer.R)
   if [ "$h" != "$(cat "$SQ/Rlib/.installer" 2>/dev/null)" ]; then
-    HOME="$REPO/.squirm_home" R_LIBS_USER="$SQ/Rlib" LC_ALL=C.UTF-8 $BOX_INSTALL Rscript --vanilla installer.R \
+    HOME="$REPO/.squirm_home" TMPDIR="$SQ/tmp" R_LIBS_USER="$SQ/Rlib" LC_ALL=C.UTF-8 $BOX_INSTALL Rscript --vanilla installer.R \
       >> "$ST/install.log" 2>&1 && echo "$h" > "$SQ/Rlib/.installer"
   fi
 fi
 echo "$sha started $branch" >> "$DONE"; log "started $branch ($sha) on $cores cores, $mem GB"
 t0=$(date +%s)
 ( export SQUIRM_CORES="$cores" SQUIRM_OUT="$OUT" SQUIRM_NAME="$name" SQUIRM_MEM_GB="$mem" R_LIBS_USER="$SQ/Rlib" \
-         LC_ALL=C.UTF-8 HOME="$REPO/.squirm_home" OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
+         LC_ALL=C.UTF-8 HOME="$REPO/.squirm_home" TMPDIR="$SQ/tmp/" OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
   exec nice -n 10 perl -e 'setpgrp(0, 0); exec @ARGV or die "squirm: cannot run the job: $!\n"' $BOX_JOB bash "$script" ) \
   > "$OUT/squirm_log.txt" 2>&1 &
 pid=$!                                                # the job's process group has the same number

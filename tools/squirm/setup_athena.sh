@@ -61,7 +61,7 @@ as_u git -C "$SQ/bxd" config user.name "Squirm (ATHENA)"
 as_u git -C "$SQ/bxd" config user.email "squirm@athena.invalid"
 as_u git -C "$SQ/bxd" push --dry-run -q origin HEAD:refs/heads/squirm-setup-check >/dev/null 2>&1 \
   || stop "the token can't push to this repository: give it Contents, read and write"
-as_u mkdir -p "$SQ/Rlib" "$SQ/bxd/.squirm_home"
+as_u mkdir -p "$SQ/Rlib" "$SQ/bxd/.squirm_home" "$SQ/tmp"
 
 echo "== The runner and its two sandbox profiles, root's own, in $LIB"
 cp "$SRC/squirm.sh" "$LIB/squirm.sh"; chown root:wheel "$LIB/squirm.sh"; chmod 755 "$LIB/squirm.sh"
@@ -70,8 +70,10 @@ for p in job install; do
 done
 
 echo "== 3. The sandbox holds: a probe runs as $U inside a job's sandbox"
-got=$(as_u env HOME="$SQ/bxd/.squirm_home" sandbox-exec -f "$LIB/job.sb" /bin/bash -c '
-  S=$0; O=$1; H=$2                                      # the folder of Squirm, your home, the home of squirm
+PT="$R0/private/tmp"; OWNF="$PT/squirm_probe_$OWNER"   # a file of yours where processes leave work, readable by anyone
+sudo -u "$OWNER" sh -c "umask 022; echo probe > '$OWNF'" || stop "couldn't leave the probe's file in $PT"
+got=$(as_u env HOME="$SQ/bxd/.squirm_home" TMPDIR="$SQ/tmp/" sandbox-exec -f "$LIB/job.sb" /bin/bash -c '
+  S=$0; O=$1; H=$2; F=$3; P=$4                          # the folder of Squirm, your home, the home of squirm, your file, the shared tmp
   t() { if eval "$2" >/dev/null 2>&1; then echo "$1=yes"; else echo "$1=no"; fi; }
   t read_clone  "cat \"$S/bxd/README.md\""
   t write_clone "mkdir -p \"$S/bxd/output\" && echo x > \"$S/bxd/output/.squirm_probe\""
@@ -80,16 +82,19 @@ got=$(as_u env HOME="$SQ/bxd/.squirm_home" sandbox-exec -f "$LIB/job.sb" /bin/ba
   t read_token  "cat \"$H/.git-credentials\""
   t open_shared "ls /Users/Shared"
   t write_home  "echo x > \"$H/squirm_probe\""
+  t read_tmp    "cat \"$F\""
+  t write_tmp   "echo x > \"$P/squirm_probe_job\""
+  t write_own   "echo x > \"$S/tmp/squirm_probe\""
   t network     "curl -s -m 5 -o /dev/null https://github.com"
   t r_runs      "Rscript --vanilla -e \"cat(1)\""
-' "$SQ" "$OH" "$UH" | tr '\n' ' ')
-want="read_clone=yes write_clone=yes write_git=no open_owner=no read_token=no open_shared=no write_home=no network=no r_runs=yes "
-rm -f "$SQ/bxd/output/.squirm_probe"
+' "$SQ" "$OH" "$UH" "$OWNF" "$PT" | tr '\n' ' ')
+want="read_clone=yes write_clone=yes write_git=no open_owner=no read_token=no open_shared=no write_home=no read_tmp=no write_tmp=no write_own=yes network=no r_runs=yes "
+rm -f "$SQ/bxd/output/.squirm_probe" "$OWNF" "$PT/squirm_probe_job" "$SQ/tmp/squirm_probe"
 [ "$got" = "$want" ] || stop "the sandbox didn't hold as it should. Wanted: $want  Got: $got"
 echo "   $got"
 
 echo "== R's packages (installer.R), into Squirm's own library"
-as_u env HOME="$SQ/bxd/.squirm_home" R_LIBS_USER="$SQ/Rlib" LC_ALL=C.UTF-8 sandbox-exec -f "$LIB/install.sb" \
+as_u env HOME="$SQ/bxd/.squirm_home" TMPDIR="$SQ/tmp/" R_LIBS_USER="$SQ/Rlib" LC_ALL=C.UTF-8 sandbox-exec -f "$LIB/install.sb" \
   Rscript --vanilla "$SQ/bxd/installer.R" > "$CTL/status/install.log" 2>&1 || stop "installer.R failed: see $CTL/status/install.log"
 as_u sh -c "git -C '$SQ/bxd' hash-object installer.R > '$SQ/Rlib/.installer'"
 if [ ! -e "$CTL/status/done.txt" ]; then                # first setup only: Squirm takes only jobs pushed after it
