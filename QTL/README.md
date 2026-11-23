@@ -2,6 +2,8 @@
 
 The lifespan maps of the Nature Aging paper are made in Rob's fork of Danny Arends's code, [robwwilliams/BxDLifeSpan](https://github.com/robwwilliams/BxDLifeSpan). This folder holds only what must run inside this repository, chiefly long permutation jobs for ATHENA through Squirm (`tools/squirm/README.md`). It holds derived inputs and our own scripts, and none of Danny's code.
 
+Where the mapping as a whole stands, and why each model was chosen: [`notes/BXD_mapping_status_2026-11-23.md`](../notes/BXD_mapping_status_2026-11-23.md).
+
 ## Individual-mouse permutations
 
 - **`qtl2_individuals_perm.R`** computes genome-wide thresholds for the individual-mouse maps (panels c to f of Fig. 2), which map each mouse's age at death with R/qtl2 and LOCO kinship.
