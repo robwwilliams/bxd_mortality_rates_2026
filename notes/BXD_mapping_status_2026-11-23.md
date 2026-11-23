@@ -1,10 +1,10 @@
 # BXD lifespan mapping: models, reasons and results so far
 
-**Status note, 23 November 2026,** by Claude (Opus 5.5) for Rob Williams, written for colleagues reading this repository, Beni Mozhui first among them. Not yet reviewed by Rob. All of the mapping is exploratory: the models were chosen while maps were being looked at, not fixed in a plan beforehand.
+**Status note, 23 November 2026,** by Claude (Opus 5.5) for Rob Williams, written for colleagues reading this repository: Beni Mozhui, Danny Arends, Suheeta Roy. Reviewed by Rob, evening 23Nov. All of the mapping is exploratory: the models were chosen while maps were being looked at, not fixed in a plan beforehand.
 
 **Where the work lives.**
 - **The maps** are made in Rob's fork of Danny Arends's code, [robwwilliams/BxDLifeSpan](https://github.com/robwwilliams/BxDLifeSpan). Danny's files are unchanged there. The added scripts, the draft [Methods](https://github.com/robwwilliams/BxDLifeSpan/blob/master/Methods_draft.md) and the draft [figure legends](https://github.com/robwwilliams/BxDLifeSpan/blob/master/Figure_legends.md) are listed in its [README](https://github.com/robwwilliams/BxDLifeSpan/blob/master/README.md).
-- **The long permutation job** for the individual-mouse maps runs from this repository ([`QTL/`](../QTL/README.md)) on ATHENA, a lab Mac, through Squirm ([`tools/squirm/`](../tools/squirm/README.md)).
+- **The long permutation job** for the individual-mouse maps runs from this repository ([`QTL/`](../QTL/README.md)) on ATHENA, a MacStudio M5 Max, through Squirm, our informal three-machine version of SLURM ([`tools/squirm/`](../tools/squirm/README.md)).
 - **The Gompertz analyses** that motivate the maps are in this repository ([README](../README.md) and the [report](Report_BXD_Mortality_Parts1-5_28Oct2026_v2.2.md)).
 
 ## Where each part stands
