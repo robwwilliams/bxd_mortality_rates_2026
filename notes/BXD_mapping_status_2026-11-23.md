@@ -11,14 +11,28 @@
 
 | Part | Figure | Status |
 |---|---|---|
-| Strain-mean maps, chow and high fat, with genome-wide thresholds | Fig. 2a,b | **Near final:** 1,000 permutations; the loci that pass are listed below |
+| **Fig. 2 as Rob laid it out on 23 November 2026, with the F1s (next section)** | Fig. 2a–f | **Maps done.** Thresholds done for **a**,**b**; for **c**–**f**, 200 permutations queued on ATHENA as two jobs |
+| Strain-mean maps without F1s, chow and high fat, with genome-wide thresholds | Extended Data | **Near final:** 1,000 permutations; the loci that pass are listed below |
 | The same maps under other weightings of strain means | Methods | **Near final:** a robustness check |
-| Individual-mouse maps with kinship: chow, high fat, both diets, genotype × diet | Fig. 2c–f | **Maps done; thresholds running.** 200 permutations started on ATHENA on 22 November, not back yet |
+| Individual-mouse maps without F1s: chow, high fat, both diets, genotype × diet | Extended Data | **Done:** thresholds from 200 permutations on ATHENA; one locus passes |
 | **Strain and F1 means together, with zooms of proximal Chr 1 (first section below)** | not yet placed | **Preliminary:** maps, support intervals, a leave-one-F1-out check, thresholds from 1,000 permutations and a two-locus scan of high-fat Chr 1, all done |
 | F1 heterosis by cross type | not yet placed | **Preliminary,** descriptive |
 | Body weight and correlated trait locus (CTL) maps | Fig. 3 | **Preliminary:** Danny's models, no thresholds |
-| Combining T-ages by the Cauchy method, as in Arends et al. 2026 | — | **Not started** (planned) |
+| Combining T-ages by the Cauchy method, as in Arends et al. 2026 | Methods | **Done for strain means** with and without F1s (1,000 permutations); for individual mice, recorded by the queued ATHENA jobs |
 | BXD loci tested in UM-HET3 females | — | **Draft plan** awaiting Rob's approval ([PLAN_BXD_UMHET3_concordance.md](PLAN_BXD_UMHET3_concordance.md)) |
+
+## Fig. 2, with the F1 hybrids
+
+Rob, 23 November 2026: "Let's have Fig 2 (T-age mappings) include a. strain means with F1s separately for both diets (first dyad); b. individuals with F1s stratified by CD and HFD (second dyad); c. individuals with F1s, all combined, all cofactors, main effect only; d. individuals all combined, diet x locus interaction effect only (QUESTION if F1s should be included?)". His dyads are panels **a**,**b** and **c**,**d** below; his c and d are **e** and **f**.
+
+[![Fig. 2 with the F1s](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1.png)
+
+**How the individual-mouse panels add the F1s** ([`qtl2_individualsF1.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/qtl2_individualsF1.R)): 308 F1 mice join the 1,746 BXD mice. Each takes its F1 type's genotype probabilities (from both parents) and kinship. F1 class is a covariate in every panel and F1 class × diet in **e** and **f**. The F1s were born in 2020–2022 and housed at TSRB (Rob); the F1 class terms absorb anything they share, so their vivarium coding does not change the fit.
+
+**Results so far:**
+- **Adding the F1 mice changes the individual maps little** (correlation over markers and T-ages with the maps without F1s: 0.99 for chow and both diets, 0.98 for high fat). The chow Chr 1 peak near 5 Mb rises from 4.74 to 5.38 at T770.
+- **Panel f, the interaction, changes most** (correlation 0.96). With F1s, several peaks rise: Chr 11 at 108 Mb from 4.2 to 5.6 (T50), Chr 1 at 35 Mb from 4.4 to 5.3 (T20), Chr 17 at 68 Mb from 4.4 to 5.2 (T440), Chr 12 at 56 Mb from 3.3 to 4.5. Whether to keep the F1s in **f** is best decided when their thresholds are back: the thresholds without F1s are 6.3 at T20 for one T-age (7.5 for any), above all of these. The two versions are side by side in [`Figure2_lifespan_F1_int_without_F1s.png`](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1_int_without_F1s.png).
+- **Thresholds for c–f:** 200 permutations of strains within epochs and F1 types within class, as two Squirm jobs of about 25 hours each on 3 cores (`squirm/bxd_individualsF1_perms_a` and `_b`). Checked on Metis first: the job reproduces the maps to 4 decimals.
 
 ## The F1 hybrids: sharper loci on proximal Chr 1 (preliminary)
 
@@ -167,7 +181,7 @@ Files: [`f1_heterosis.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/mas
 
 ## Results
 
-### Strain-mean maps (Fig. 2a,b): near final
+### Strain-mean maps without F1s (Extended Data): near final
 
 **Thresholds, −log10 P for a single T-age (and for any marker at any T-age), from 1,000 permutations of strains:**
 
@@ -191,7 +205,7 @@ Files: [`f1_heterosis.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/mas
 
 Files: [`significant_loci.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/significant_loci.txt), [`qtl2_permutation_thresholds.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/qtl2_permutation_thresholds.txt), [`compare_weights.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/compare_weights.txt).
 
-### Individual-mouse maps (Fig. 2c–f): maps done, thresholds running
+### Individual-mouse maps without F1s (Extended Data): done
 
 **Kinship explains about a third of the variance in age at death** at T20 (33% with both diets, 35% on chow, 38% on high fat), falling to 8–31% from T650 to T770, depending on the map.
 
@@ -207,9 +221,27 @@ Files: [`significant_loci.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob
 - **They largely repeat the strain-mean loci:** Chr 1 (proximal), Chr 2 at 157 Mb, Chr 9 at 107 Mb, Chr 14 at 49 Mb and Chr 15 at 14 Mb.
 - **Against Danny's individual-mouse maps,** which had a random intercept for strain but no kinship, the main-effect maps correlate at *r* = 0.80–0.94 over markers, and the interaction maps at *r* = 0.99 ([`compare_kinship.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/compare_kinship.txt)).
 
-**Thresholds: a first hint, from only two trial permutations.** Two permutations were run on Metis to test the code. That gives 8 permuted maps (2 permutations × 4 maps). In 6 of them, the largest −log10 P anywhere on the map (4.6 to 7.2) was higher than the largest on the real map (4.4 to 5.1). If the 200 permutations bear that out, the individual-mouse maps need clearly higher thresholds than the strain-mean maps, and few or none of the peaks above would pass. A likely reason is the one given above: the mice of a strain are not independent beyond what kinship explains, so their −log10 P values run high, and only permuting strains shows by how much. Two permutations cannot set a threshold, so treat this as a warning only.
+**Thresholds, from 200 permutations on ATHENA** ([`QTL/README.md`](../QTL/README.md); [`significant_loci_ind.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/significant_loci_ind.txt)). The two trial permutations were right: the individual-mouse thresholds are far higher than the strain-mean ones.
+- **The 5% threshold for one T-age falls with T-age,** as the survivorships shrink: on chow 5.8 at T20 to 4.6 at T770 (any T-age 6.6); on high fat 5.8 to 4.4 (6.7); both diets 6.0 to 4.6 (7.1); genotype × diet 6.3 to 5.3 (7.5). The strain-mean maps need 4.4.
+- **One locus passes:** chow, Chr 1 near 5 Mb, 4.74 at T770 against 4.62, the same locus that the strain means find.
+- **Everything else is suggestive at most,** including chow Chr 14 at 49 Mb (5.06 at T410 against 5.78) and high-fat Chr 15 at 13 Mb (5.10 at T380 against 6.01).
+- **Why the thresholds are so high:** the mice of a strain share its genotype at every marker and are not independent beyond what kinship explains. A test that counts mice runs high, and only permuting strains shows by how much. This is the reason the strain is the unit of inference.
+- **The job:** 200 permutations of strains within strata, at all 26 T-ages and for all four maps ([`QTL/qtl2_individuals_perm.R`](../QTL/qtl2_individuals_perm.R)). On ATHENA (R 4.6.2) it ran 26.5 hours of computing over 33 hours, paused 39 times for ATHENA's own work, and ended cleanly.
 
-**The permutation job:** 200 permutations of strains within strata, at all 26 T-ages and for all four maps, chunked with fixed seeds ([`QTL/qtl2_individuals_perm.R`](../QTL/qtl2_individuals_perm.R)). It started on ATHENA on 22 November at 09:46 and needs about 21 hours of computing; it pauses whenever the machine's own work needs the cores. A test run on ATHENA matched Metis to 6 × 10⁻⁶. The results will come back as a commit on the branch `squirm/bxd_individual_perms`.
+### One P per marker over T-ages: the Cauchy combination
+
+As in Arends et al. 2026, but with exact P values on 1 d.f. ([Cauchy_review_2026-11-21.md](Cauchy_review_2026-11-21.md)): at each marker the P values of the T-ages in the stable range are combined into one, and genome-wide thresholds come from 1,000 permutations ([`cauchy_strainmeans.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/cauchy_strainmeans.txt)).
+
+| Map | T-ages | 5% threshold | Loci at least suggestive |
+|---|---|---|---|
+| Strain means, chow | T20–T770 | 4.44 | **Chr 1 at 5.1 Mb, 4.85 (significant)**; Chr 9 at 107 Mb, 3.42 |
+| Strain means, high fat | T20–T620 | 4.41 | Chr 2 at 157.5 Mb, 4.39 (P < 0.10); Chr 1 at 23.5 Mb, 4.29 (P < 0.10) |
+| Strains + F1s, chow | T20–T740 | 4.82 | Chr 9 at 107 Mb, 3.76 |
+| Strains + F1s, chow | T20–T770 | 4.72 | **Chr 1 at 5.1 Mb, 4.88 (significant)**; Chr 9 at 107 Mb, 3.78 |
+| Strains + F1s, high fat | T20–T590 | 4.73 | Chr 1 at 37.6 Mb, 4.24; Chr 2 at 157 Mb, 3.89; Chr 15 at 14 Mb, 3.69 |
+
+- **The combination is conservative for loci that act at only a few T-ages,** as the review predicted: T-ages where a locus does nothing pull the combined P toward 1. So the chow Chr 1 locus, a T770 effect, passes only when T770 is included.
+- **For the individual-mouse maps,** the queued ATHENA jobs record the genome-wide maximum of the Cauchy combination in each permutation, so their thresholds come back with the single-T-age ones.
 
 ### Strains and F1s together, and F1 heterosis
 
@@ -221,9 +253,9 @@ These are Danny's maps, redrawn: strain means weighted by numbers of mice, witho
 
 ## What comes next
 
-1. **Individual-mouse thresholds** from the ATHENA job, then the stable range of T-ages, as for the strain means, and the thresholds drawn on Fig. 2c–f.
-2. **Cauchy combination over T-ages,** as in Arends et al. 2026 but with exact P values on the right degrees of freedom ([Cauchy_review_2026-11-21.md](Cauchy_review_2026-11-21.md)), so that each marker gets one P for "any age".
+1. **Thresholds for Fig. 2c–f** from the two ATHENA jobs with F1 mice (single T-age, any T-age and Cauchy); then Rob's choice for panel **f**, with or without F1s.
+2. **Cauchy maps for the individual mice,** once those thresholds are back.
 3. **For the F1s:** a permutation that keeps each F1 tied to its parents, to check the high-fat dominance pattern; and whether the F1s also sharpen the chow Chr 9 locus at 107 Mb.
-4. **Thresholds for the body-weight and CTL maps.**
+4. **Body-weight and CTL maps** with the models above, later or by Danny (Rob, 23 November 2026).
 5. **BXD loci in UM-HET3 females,** once Rob approves the plan, with the BXD loci fixed before UM-HET3 is looked at.
 6. **Legend titles that state findings,** once the thresholds are in.
