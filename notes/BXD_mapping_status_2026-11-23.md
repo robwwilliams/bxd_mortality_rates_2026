@@ -36,14 +36,14 @@ Rob, 23 November 2026: "Let's have Fig 2 (T-age mappings) include a. strain mean
 
 ## The F1 hybrids: sharper loci on proximal Chr 1 (preliminary)
 
-*Added on 23 November 2026, at Rob's request:* "That is of greatest interest to me in improving confidence of loci and narrowing 1.5 LOD (or –logP) of the support interval. ... the maps need to be compared to excluding the F1s. Need zoom-in versions of the proximal 50 Mb of Chr 1." *The thresholds and the two-locus scan were added later the same evening, at Rob's go-ahead, and have not yet been reviewed by him.*
+*Added on 23 November 2026, at Rob's request:* "That is of greatest interest to me in improving confidence of loci and narrowing 1.5 LOD (or –logP) of the support interval. ... the maps need to be compared to excluding the F1s. Need zoom-in versions of the proximal 50 Mb of Chr 1." *The thresholds and the two-locus scan were added later the same evening, at Rob's go-ahead.*
 
 **In brief:**
 - **Chow, Chr 1 near 5 Mb, T770:** significant with and without the F1s, and the F1s narrow its 1.5-LOD interval from 4.9–10.4 Mb to 4.9–5.5 Mb. The long × long F1s, as a group, do the narrowing. The peak itself is a flat block from 4.86 to 5.32 Mb holding *Tcea1*, *Rgs20* and *Atp6v1h*; only BXD79, which dies young on chow, has a crossover inside it.
 - **High fat, proximal Chr 1:** significant at T20 (23.5 Mb) and at T500 (37.6 Mb, where the F1s raise the peak from 4.74 to 5.43). Whether that is one locus or two, the data cannot yet say: a second locus never adds more than chance would.
 - **Dominance:** no locus passes the threshold for any T-age.
 
-**Why the F1s.** Rob chose 13 BXD × BXD F1 types: 6 short × short and 7 long × long crosses whose parents differ over different stretches of proximal Chr 1 (panel e of the profiles below). Two aims:
+**Why the F1s.** Rob chose 13 BXD × BXD F1 types: 6 short × short and 7 long × long crosses some of whose BXD parents have recombinations over different stretches of proximal Chr 1 (panel e of the profiles below). Two aims:
 - **Sharper positions.** An F1 heterozygous over one stretch and not the next adds the contrast that a recombination between those stretches gives, like an F2. Rob: "They are genetically just like an F2 cross."
 - **Dominance.** Only heterozygotes can show it, and the inbred strains have none.
 
