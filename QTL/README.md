@@ -11,6 +11,11 @@ Where the mapping as a whole stands, and why each model was chosen: [`notes/BXD_
   - **Permutations:** each strain takes the genotypes of another strain in its stratum, Taylor's strains (BXD1 to BXD42) or the newer ones, and keeps all its mice on both diets and at every T-age.
   - **Chunks:** chunk *k* draws its permutations from seed 20261123 + *k*, so the result does not depend on the number of cores.
 - **`squirm_jobs/bxd_individual_perms.sh`** runs it on ATHENA: 200 permutations in 100 chunks of 2, on 4 cores.
+- **`qtl2_individualsF1_perm.R`** does the same for the individual-mouse maps with the BXD × BXD F1 mice (Rob's Fig. 2 of 23 November 2026, panels with F1s; maps by `qtl2_individualsF1.R` in the fork).
+  - **Permutations:** strains within strata as above, and each F1 type takes the genotypes and kinship of another F1 type of its class (short × short or long × long).
+  - **Also records** the largest Cauchy combination over T-ages at any marker (T20–T770 and T20–T620), for a genome-wide threshold of the Cauchy maps.
+  - **Checked on Metis:** run on the real data (`--check yes`) at T20 and T500, it gives the fork's maps to 4 decimals. One process peaks at 1.87 GB; three workers at 5.4 GB summed resident memory at T20.
+  - **On ATHENA,** as two jobs of 100 permutations (chunks 1–50 and 51–100, seeds 20261124 + *k*) on 3 cores, each about 25 hours, to stay within Squirm's 6 GB and 48 hours.
 
 ### Checks on Metis (R 4.6.1, R/qtl2 0.46)
 
