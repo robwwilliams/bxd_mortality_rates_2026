@@ -56,3 +56,28 @@ Rob: "Soon the real fun will be to mash up the female BXD data with the UM-HET3 
 ## Later
 
 **mash** (Urbut et al. 2019) could treat BXD chow, BXD high fat, UM-HET3 maternal and UM-HET3 paternal effects as four conditions, and learn the sharing patterns of the table from the data. It would be a complement to the projection, not a replacement.
+
+## Decisions of 24 November 2026
+
+**Rob chose two steps:** "Yeh, let's do only option 1 for now." And: "Flavia Villani and Andrea Guarracino are now finishing up building a pangenome for the the BXDs that will include the long variants ... I think we want to just use pangenomic mapping for option 2. Pjotr has that working as far as I know but he will needs the final pangenome structure from Flavia and Andrea."
+- **Option 1, done (exploratory):** UM-HET3 maternal (*B* − *C*) and paternal (*D* − *H*) actuarial maps, in the BXD maps' exact geometry and T-ages (30-day steps), females first, with thresholds from 1,000 permutations within site (`umhet3_maps.R` in robwwilliams/BxDLifeSpan; see `notes/BXD_mapping_status_2026-11-23.md`). Males too, as Rob suggested: "Of course it would be fun to see the stratified male data too."
+- **Option 2, the founder projection (step 3 above), is replaced by pangenomic mapping of the BXDs** once the pangenome of Flavia Villani and Andrea Guarracino is final, with Pjotr Prins's mapping. It will include long structural variants, which the SNP projection would miss.
+- **Polarity at Vita1a and Vita1b.** Rob: "I already know that the polarity at Vita1a and Vita1b is opposite what we see in the BXDs and Danny and Beni have a pretty good reason for why (used the NAM data from the BXDs)."
+- **Step 0 stands:** the BXD loci are fixed before any confirmatory UM-HET3 test. Rob: "This is a good idea. We are going to want to do it this way; but we are also eventually going to want to run Fisher combined –logP for these two independent families."
+  - **A note on Fisher's method (Claude):** it combines P values without their signs, so across the families it asks whether a position affects lifespan in either one, not whether the same allele does. Because the UM-HET3 contrasts are *D* − *H* and *B* − *C*, not *D* − *B*, the sign question belongs to the pangenomic mapping. The two are complementary.
+
+### Step 0: the BXD loci, draft for Rob's approval
+
+From the maps of 23–24 November 2026 (strain means with and without F1s, 1,000 permutations; individual mice, 200 permutations on ATHENA; Cauchy combination). Not yet frozen: Rob approves or amends, and the list is then fixed.
+
+| Diet | Locus | Allele that lives longer | T-ages | Evidence |
+|---|---|---|---|---|
+| Chow | Chr 1, 4.86–5.32 Mb (*Tcea1*, *Rgs20*, *Atp6v1h*) | *D* | T770 | Significant in strain means (with and without F1s), individual mice and the Cauchy combination |
+| Chow | Chr 9, 104–107 Mb | *B* | T620–T680 | Significant at one T-age in strain means (with and without F1s); suggestive in individual mice |
+| Chow | Chr 14, about 49 Mb | *B* | T230–T410 | Suggestive in strain means and individual mice |
+| High fat | Chr 1, about 23.5 Mb | *D* | T20–T110 | Significant at one T-age in strain means (with and without F1s) |
+| High fat | Chr 1, about 35–38 Mb | *D* | T260–T620 | Significant at T500 in strain means (with and without F1s); one or two loci with 23.5 Mb, unresolved |
+| High fat | Chr 2, about 157 Mb | *B* | T20–T260 | Significant in strain means; 10% with F1s |
+| High fat | Chr 15, about 13–14 Mb | *B* | T20–T440 | 10% with F1s; suggestive otherwise |
+
+Chow loci are the primary test (UM-HET3 mice eat chow); high-fat loci are secondary. Thresholds for the individual-mouse maps with F1s are still running on ATHENA and may add or drop entries.

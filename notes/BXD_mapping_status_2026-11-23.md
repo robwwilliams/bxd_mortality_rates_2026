@@ -34,6 +34,40 @@ Rob, 23 November 2026: "Let's have Fig 2 (T-age mappings) include a. strain mean
 - **Panel f, the interaction, changes most** (correlation 0.96). With F1s, several peaks rise: Chr 11 at 108 Mb from 4.2 to 5.6 (T50), Chr 1 at 35 Mb from 4.4 to 5.3 (T20), Chr 17 at 68 Mb from 4.4 to 5.2 (T440), Chr 12 at 56 Mb from 3.3 to 4.5. Whether to keep the F1s in **f** is best decided when their thresholds are back: the thresholds without F1s are 6.3 at T20 for one T-age (7.5 for any), above all of these. The two versions are side by side in [`Figure2_lifespan_F1_int_without_F1s.png`](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1_int_without_F1s.png).
 - **Thresholds for c–f:** 1,000 permutations of strains within epochs and F1 types within class, queued on ATHENA as 18 Squirm jobs (`squirm/bxd_individualsF1_perms_a` to `_r`), about two weeks of ATHENA time in all, around its own work. The first 200 come back first, from jobs a and b. Rob asked for 1,000 because with 200 the 5% threshold has a standard error of about 0.18, larger than the margin (0.12) by which chow Chr 1 passes without F1s. Checked on Metis first: the job reproduces the maps to 4 decimals.
 
+## UM-HET3 maps drawn like the BXD maps (exploratory, 24 November 2026)
+
+Rob: "The fun next thing is to make corresponding figures (exact) for the UM-HET3 to the extent that this is possible so that we can evaluate location and effects of loci." UM-HET3 mice are *C* or *B* from their mothers and *H* or *D* from their fathers; none is *BB* or *DD*, so UM-HET3 has no *D* − *B* contrast. Of the two designs discussed, Rob chose the simpler: "Yeh, let's do only option 1 for now." The true *D* − *B* comparison will come from pangenomic mapping of the BXDs ([PLAN_BXD_UMHET3_concordance.md](PLAN_BXD_UMHET3_concordance.md)).
+
+**What the maps are** ([`umhet3_maps.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/umhet3_maps.R)): the mice and 891 markers of Arends et al. 2026, one sex at a time.
+- **Two maps per sex, each on 1 d.f.:** maternal, *B* against *C*; and paternal, *D* against *H*. The model is Danny's: age at death ~ site + cohort + treatment + dosage, without kinship.
+- **Colors keep their BXD meaning:** warm where *D* lives longer, cool where *B* does, and gray where *C* or *H* does.
+- **A wider scale, to >8** (Rob: "We will need more dynamic range on the P value colors"). The first four bins are the BXD maps', so the two families read alike up to 5.
+- **The X:** a female's paternal X is always *H*, and a male has no paternal X, so only the maternal X is mapped.
+- **Thresholds** come from 1,000 permutations of lifespans within site. At 5% for one T-age they are about 3.5 (maternal) and 3.3–3.5 (paternal); for any T-age to T770, 4.1–4.5. They are lower than the BXD thresholds because the mouse, not the strain, is the unit in UM-HET3, and 891 markers are fewer tests.
+
+**Rows matched to the BXD rows** (Rob: "perhaps some kind of percentage normalization would be best so that the plots can be laid over each other"). Each page has 25 rows that sit where the BXD maps' rows sit, at matched UM-HET3 T-ages:
+
+| BXD row | Linear stretch (UM-HET3 T1100 at BXD T770) | Ratio of median lifespans, × 1.32 | Same fraction alive (BXD females on chow) |
+|---|---|---|---|
+| T50 | T71 | T66 | T51 |
+| T290 | T414 | T384 | T616 |
+| T530 | T757 | T701 | T786 |
+| T770 | T1100 | T1019 | T982 |
+
+Matching by fraction alive squeezes UM-HET3's early life, because BXD mice die earlier in life than UM-HET3 mice (6% of BXD females on chow are dead by T290). The median ratio keeps the stretch linear and anchors it at mid-life; it is drawn here. The linear stretch is the T50–T1100 page.
+
+[![UM-HET3 females, rows matched to the BXD rows](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/UMHET3_female_rows_matched_median.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/UMHET3_female_rows_matched_median.png)
+
+**Females, loci that pass 5% at one T-age** ([`umhet3_thresholds_female.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/umhet3_thresholds_female.txt)):
+- **Paternal:** Chr 2 at 144.5 Mb, *H* longer (8.8 at T320, passing from T20 to T860); Chr 1 at 3.0 Mb, *H* longer (3.7 at T590). The Chr 1 result is opposite in sign to the BXD chow locus, as Rob and Danny expected for Vita1a, and the paternal calls there are biased toward *H* at UM and UT.
+- **Maternal:** Chr 9 at 34.9 Mb, *C* longer (5.9 at T80); Chr 18 at 74.3 Mb, *C* longer (4.4); Chr 5 at 142 Mb, *B* longer (3.7 at T590); Chr 11 at 89 Mb, *B* longer (3.5 at T860).
+
+**Males** ([`umhet3_thresholds_male.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/umhet3_thresholds_male.txt)) differ, as in Arends et al.: the strongest are maternal Chr 4 at 52.5 Mb, *B* longer (7.3 at T650), and paternal Chr 2 at 89 Mb, *D* longer (5.7), and Chr 1 at 3.0 Mb, *H* longer (5.5 at T800).
+
+Rob, on genotype × diet: "The strong Chr 2 loci we see in the BXD interaction panel f, do resonate with the crazy interaction effects in the UM-HET3s in almost the same locations."
+
+**Not yet:** maps laid directly over Fig. 2, and the combination across families (Rob: "we are also eventually going to want to run Fisher combined –logP for these two independent families") after the BXD loci are frozen.
+
 ## The F1 hybrids: sharper loci on proximal Chr 1 (preliminary)
 
 *Added on 23 November 2026, at Rob's request:* "That is of greatest interest to me in improving confidence of loci and narrowing 1.5 LOD (or –logP) of the support interval. ... the maps need to be compared to excluding the F1s. Need zoom-in versions of the proximal 50 Mb of Chr 1." *The thresholds and the two-locus scan were added later the same evening, at Rob's go-ahead.*
