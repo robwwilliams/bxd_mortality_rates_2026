@@ -66,6 +66,8 @@ Matching by fraction alive squeezes UM-HET3's early life, because BXD mice die e
 
 Rob, on genotype × diet: "The strong Chr 2 loci we see in the BXD interaction panel f, do resonate with the crazy interaction effects in the UM-HET3s in almost the same locations."
 
+**Vita1a's sign reversal, read from founder sequence:** see [Vita1a_founder_variants_2026-11-24.md](Vita1a_founder_variants_2026-11-24.md). In short: a variant only DBA/2J carries (such as the *Atp6v1h* LTR) cannot give opposite signs by itself; with additive effects the alleles must rank *H* > *D* > *B*. The flat UM-HET3 maternal map at Vita1a points to C3H-private variants, which BXD cannot see, as the source of the reversal; 363 of the 485 C3H-private sites in the BXD block lie in *Rgs20*.
+
 **Distal Chr 2 is probably several loci.** Rob: "It seems likely that Chr 2 is going to be a set of loci and sets of DNA variants." Three signals so far, each where the *D* allele shortens life or the *B* allele lengthens it:
 - **124–129 Mb, BXD (2013):** the lifespan locus that led to *Mrps5* (Houtkooper et al. 2013, *Nature* 497:451; LOD 4.0), the work that funded this mapping.
 - **144–153 Mb, UM-HET3 females:** the paternal peak, *H* longer (8.8 at T320).

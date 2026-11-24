@@ -1,0 +1,564 @@
+Vita1a, Chr 1 3.0-7.0 Mb (mm10): founder variants of Arends et al. 2026 Supplementary Table 17, homozygous calls in all four
+founders, depth >= 5, QUAL >= 30. Founders: C = BALB/cByJ, B = C57BL/6NJ, H = C3H/HeJ, D = DBA/2J. SNPs and short indels only.
+
+31360 sites read; 24885 pass the filters and vary among the founders (1620 indels)
+
+Sites by pattern and window (which contrasts a pattern touches: BXD = B vs D; pat = UM-HET3 paternal D vs H; mat = maternal B vs C):
+                      proximal flank BXD block distal flank     touches
+D-private                       7533       428         2362     BXD+pat
+H-private (C3H)                 2979       485         3672         pat
+H = D, against C = B            2568       284         1604         BXD
+B-private (B6)                    56       170         1091     BXD+mat
+B = H, against C = D               6       354          918 BXD+pat+mat
+C-private (BALB/c)                55       135           74         mat
+three alleles                     30         3           20     BXD+pat
+B = D, against C = H               4        27            5     pat+mat
+three or more alleles              6         3           13 BXD+pat+mat
+
+In the BXD block, by gene:
+               
+                B = D, against C = H B = H, against C = D B-private (B6) C-private (BALB/c) D-private H = D, against C = B H-private (C3H) three alleles three or more alleles
+  Atp6v1h                         22                    7            108                 29        78                   14              27             0                     1
+  intergenic                       4                  346             10                 51        65                   20              47             0                     2
+  Rgs20                            1                    0             51                 55       239                  186             363             3                     0
+  Rgs20/Atp6v1h                    0                    0              0                  0         1                    0               0             0                     0
+  Tcea1                            0                    1              1                  0        45                   64              48             0                     0
+
+BXD block sites that can give opposite signs (C3H differs from DBA/2J and from B6 at the same site, or C3H-private):
+     pos                                                                       ref                                              alt pattern                 label    gene indel
+ 4858531                                                                         T                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4859038                                                                         A                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4859093                                                                         A                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4859338                                                                         T                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4859549                                                                         T                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4859660                                                                         G                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4859827                                                                         G                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4860052                                                               ATTTTTTTTTT                                        ATTTTTTTT    0010       H-private (C3H)   Tcea1  TRUE
+ 4860246                                                                         C                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4860396                                                                         C                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4860905                                                                         T                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4861573                                                                         G                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4862758                                                                         A                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4862832                                                                         G                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4862885                                                                         T                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4863036                                                                         T                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4863168                                                                         T                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4863671                                                                         T                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4863758                                                                         A                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4864399                                                                         C                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4864556                                                                         C                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4864603                                                                  CAAAAAAA                                             CAAA    0010       H-private (C3H)   Tcea1  TRUE
+ 4864769                                                                         T                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4868510                                                                         A                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4868670                                                                         G                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4869122                                                                         C                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4870481                                                                         A                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4871813                                                                         T                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4872510                                                                         C                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4872778                                                                        TG                                                T    0010       H-private (C3H)   Tcea1  TRUE
+ 4873295                                                                         G                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4874241                                                                      ACCC                                              ACC    0010       H-private (C3H)   Tcea1  TRUE
+ 4874493                                                                         T                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4874496                                                                         G                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4875739                                                                         T                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4877238                                                                         T                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4877602                                                  AAACAAAAACAAAAACAACAAAAA                                        AAACAAAAA    0010       H-private (C3H)   Tcea1  TRUE
+ 4877603                                                          AACAAAAACAAAAACA                                               AA    0010       H-private (C3H)   Tcea1  TRUE
+ 4878867                                                                         C                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4879355                                                                         G                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4883179                                                                         T                                                C    0010       H-private (C3H)   Tcea1 FALSE
+ 4885637                                                                       TGG                                               TG    0010       H-private (C3H)   Tcea1  TRUE
+ 4887257                                                                         A                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4887306                                                                         C                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4893580                                                                         G                                                A    0010       H-private (C3H)   Tcea1 FALSE
+ 4893595                                                                         T                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4896004                                                                         T                                                G    0010       H-private (C3H)   Tcea1 FALSE
+ 4896005                                                                         G                                                T    0010       H-private (C3H)   Tcea1 FALSE
+ 4899113                                                                         A                                                T    0010       H-private (C3H)         FALSE
+ 4899423                                                                         G                                                A    0010       H-private (C3H)         FALSE
+ 4899434                                                                         T                                                C    0010       H-private (C3H)         FALSE
+ 4899957                                                                  ATTGTTGT                                            ATTGT    0010       H-private (C3H)          TRUE
+ 4900285                                                                TAAAAAAAAA                                        TAAAAAAAA    0010       H-private (C3H)          TRUE
+ 4902095                                                                         G                                                A    0010       H-private (C3H)         FALSE
+ 4902397                                                                         C                                                G    0010       H-private (C3H)         FALSE
+ 4902410                                                                         G                                                A    0010       H-private (C3H)         FALSE
+ 4902411                                                                         A                                                G    0010       H-private (C3H)         FALSE
+ 4903152                                                                         C                                                T    0010       H-private (C3H)         FALSE
+ 4905022                                                                         A                                                G    0010       H-private (C3H)         FALSE
+ 4905629                                                                         C                                                G    0010       H-private (C3H)         FALSE
+ 4905810                                                                         G                                                A    0010       H-private (C3H)         FALSE
+ 4906037                                                                         A                                                G    0010       H-private (C3H)         FALSE
+ 4906343                                                                         G                                                C    0010       H-private (C3H)         FALSE
+ 4906663                                                                         G                                                T    0010       H-private (C3H)         FALSE
+ 4906880                                                                         C                                                T    0010       H-private (C3H)         FALSE
+ 4906905                                                                         C                                                T    0010       H-private (C3H)         FALSE
+ 4906985                                                                         T                                                C    0010       H-private (C3H)         FALSE
+ 4907238                                                                         T                                                G    0010       H-private (C3H)         FALSE
+ 4907325                                                                         T                                                C    0010       H-private (C3H)         FALSE
+ 4907420                                                                         A                                                C    0010       H-private (C3H)         FALSE
+ 4907431                                                                         A                                                C    0010       H-private (C3H)         FALSE
+ 4907636                                                                         C                                                T    0010       H-private (C3H)         FALSE
+ 4907658                                                                         T                                                C    0010       H-private (C3H)         FALSE
+ 4907675                                                                         T                                                A    0010       H-private (C3H)         FALSE
+ 4907724                                                                         A                                                C    0010       H-private (C3H)         FALSE
+ 4907765                                                                  TGTAAGTA                                             TGTA    0010       H-private (C3H)          TRUE
+ 4907812                                                                         C                                                G    0010       H-private (C3H)         FALSE
+ 4907830                                                                         A                                                G    0010       H-private (C3H)         FALSE
+ 4907958                                                                         G                                                A    0010       H-private (C3H)         FALSE
+ 4908002                                                                         C                                                T    0010       H-private (C3H)         FALSE
+ 4908005                                                                         T                                                C    0010       H-private (C3H)         FALSE
+ 4908087                                                                         C                                                T    0010       H-private (C3H)         FALSE
+ 4908510                                                                         A                                                G    0010       H-private (C3H)         FALSE
+ 4908622                                                                         A                                                C    0010       H-private (C3H)         FALSE
+ 4908929                                                                         C                                                T    0010       H-private (C3H)         FALSE
+ 4909111                                                                         G                                                A    0010       H-private (C3H)         FALSE
+ 4909306                                                                         T                                                G    0010       H-private (C3H)         FALSE
+ 4909505                                                                         G                                                T    0010       H-private (C3H)         FALSE
+ 4909553                                                                         G                                                A    0010       H-private (C3H)         FALSE
+ 4909590                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4909856                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4909935                                                                      AGAG                                     AGAGGGAGGGAG    0010       H-private (C3H)   Rgs20  TRUE
+ 4910060                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4910924                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4911351                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4912461                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4912657                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4912977                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4912978                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4912979                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4913128                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4913300                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4913489                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4913503                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4913832                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4914021                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4914228                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4914304                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4914370                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4914405                                                                  ACTGTCTG                                             ACTG    0010       H-private (C3H)   Rgs20  TRUE
+ 4914705                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4914808                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4915202                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4915257                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4915431                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4915435                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4915460                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4915478                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4915553                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4915573                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4915658                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4915751                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4916128                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4916182                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4916291                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4916401                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4916483                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4916545                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4916758                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4916826                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4917045                                                                    ATTTTT                                            ATTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4917121                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4917386                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4917401                                                                    AGGGGG                                            AGGGG    0010       H-private (C3H)   Rgs20  TRUE
+ 4917456                                                                       ACC                                             ACCC    0010       H-private (C3H)   Rgs20  TRUE
+ 4917478                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4917634                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4917679                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4917756                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4917779                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4917816                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4917877                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4917963                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4917999                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4918009                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4918012                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4918014                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4918090                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4918140                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4918413                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4918463                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4918599                                                                 ATTTTTTTT                                       ATTTTTTTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4918626                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4918682                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4918721                                                                      ATTT                                          ATTTTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4918787                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4918943                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4918994                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4919027                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4919028                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4919029                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4919030                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4919078                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4919516                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4920111                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4920296                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4920895                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4921596                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4922081                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4922180                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4922328                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4923090                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4923356                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4923964                                                                         A                                                C    0101  B = D, against C = H   Rgs20 FALSE
+ 4924054                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4924676                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4924677                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4924722                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4924735                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4924754                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4924760                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4924896                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4925783                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4925988                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4926293                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4926518                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4926720                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4927469                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4927914                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4928424                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4928503                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4929751                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4929831                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4930575                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4930629                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4930632                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4930862                                                               ATTTTTTTTTT                                     ATTTTTTTTTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4931153                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4931895                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4932212                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4932519                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4932579                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4932609                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4933086                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4933425                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4933852                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4934200                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4934377                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4934407                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4934414                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4934863                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4935178                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4935516                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4935748                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4937275                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4938079                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4938313                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4938455                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4939736                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4940022                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4940467                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4940635                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4940660 GAAGAGAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAA GAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAA    0010       H-private (C3H)   Rgs20  TRUE
+ 4940806                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4941538                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4941555                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4941665                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4941690                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4942671                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4942960                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4943422                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4943596                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4947431                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4947560                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4948467                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4948936                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4949020                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4950739                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4951350                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4951745                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4952060                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4952781                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4953071                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4953309                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4954098                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4956146                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4957212                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4957653                                                                       ACC                                             ACCC    0010       H-private (C3H)   Rgs20  TRUE
+ 4957694                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4957706                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4957707                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4957713                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4958125                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4958847                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4958848                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4958861                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4958864                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4958866                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4958868                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4959070                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4959358                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4960376                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4960721                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4960965                                                                      CACA                                         CACATACA    0010       H-private (C3H)   Rgs20  TRUE
+ 4961615                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4962385                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4962419                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4962451                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4962732                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4962742                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4962865                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4963064                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4963287                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4963383                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4963619                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4964526                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4964658                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4964832                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4964901                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4965248                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4965279                                                                        CT                                             CTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4965889                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4966850                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4966898                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4966930                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4967379                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4967549                                                                CAAAAAAAAA                                        CAAAAAAAA    0010       H-private (C3H)   Rgs20  TRUE
+ 4968291                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4968356                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4968362                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4969100                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4970006                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4970294                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4971193                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4971232                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4971334                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4971395                                                                 ATTTTTTTT                                          ATTTTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4971469                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4971476                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4972581                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4972881                                                                   ATTTTTT                                           ATTTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4972918                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4973845                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4973941                                                                   TATCATC                                             TATC    0010       H-private (C3H)   Rgs20  TRUE
+ 4974039                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4974676                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4974982                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4975685                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4976580                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4977298                                                                     CGGGG                                             CGGG    0010       H-private (C3H)   Rgs20  TRUE
+ 4977359                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4977427                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4977582                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4977612                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4978206                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4978612                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4978672                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4979209                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4979282                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4979395                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4979801                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4979977                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4980879                                                                ATTTTTTTTT                                      ATTTTTTTTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4981143                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4981231                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4981283                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4982039                                                                  CTTTTTTT                                        CTTTTTTTT    0010       H-private (C3H)   Rgs20  TRUE
+ 4982858                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4982904                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4983988                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4984271                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4985279                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4988966                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4990062                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4993657                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4994725                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4995354                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 4995522                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4995533                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4995698                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4995759                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4996142                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4996267                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4996297                                                                      AAGA                                               AA    0010       H-private (C3H)   Rgs20  TRUE
+ 4996717                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4996799                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4997065                                                                        GA                                              GAA    0010       H-private (C3H)   Rgs20  TRUE
+ 4997072                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4997769                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4997799                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4998102                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 4998278                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 4998399                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4998677                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 4999661                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5000157                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5000360                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5000475                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5000575                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5000898                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5000993                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5001674                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5001721                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5001897                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5002225                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5002680                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5002825                                                                       TGG                                             TGGG    0010       H-private (C3H)   Rgs20  TRUE
+ 5003056                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5003355                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5003374                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5003438                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5003504                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5003690                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5003773                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5004024                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5004080                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5004095                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5004168                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5004172                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5004180                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5004344                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5004356                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5004403                                                                        TA                                                T    0010       H-private (C3H)   Rgs20  TRUE
+ 5004425                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5004571                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5004865                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5004976                                                                     TAGAG                                              TAG    0010       H-private (C3H)   Rgs20  TRUE
+ 5005019                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5005507                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5005531                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5005541                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5006100                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5006105                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5006182                                                                        AT                                                A    0010       H-private (C3H)   Rgs20  TRUE
+ 5006299                                                                         T                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5006315                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5006413                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5006434                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5006518                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5006620                                                                         C                                              T,G    0012         three alleles   Rgs20 FALSE
+ 5006636                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5006973                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5006987                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5007093                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5007466                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5007653                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5007770                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5007803                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5008022                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5008116                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5008358                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5008463                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5008672                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5008851                                                                        TT                                        TTTTTTTGT    0010       H-private (C3H)   Rgs20  TRUE
+ 5008889                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5008971                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5009330                                                                         A                                              T,G    0012         three alleles   Rgs20 FALSE
+ 5009574                                                                         T                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5009638                                                                         G                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5009666                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5009755                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5009801                                                                         G                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5010176                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5010546                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5010844                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5011588                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5012112                                                                  TAAAAAAA                                        TAAAAAAAA    0010       H-private (C3H)   Rgs20  TRUE
+ 5012921                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5013030                                                                        AG                                                A    0010       H-private (C3H)   Rgs20  TRUE
+ 5013530                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5013823                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5014165                                                                        CA                                                C    0010       H-private (C3H)   Rgs20  TRUE
+ 5014338                                                                TAAAAAAAAA                             TAAAAAAA,TAAAAAAAAAA    0012         three alleles   Rgs20  TRUE
+ 5015988                                                                         T                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5016681                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5017092                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5017215                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5018310                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5018601                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5018689                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5018808                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5020409                                                                         A                                                C    0010       H-private (C3H)   Rgs20 FALSE
+ 5020530                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5022091                                                                    CACTAC                                              CAC    0010       H-private (C3H)   Rgs20  TRUE
+ 5022472                                                                         C                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5022822                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5023005                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5024456                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5027085                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5027282                                                                         C                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5028093                                                                         A                                                G    0010       H-private (C3H)   Rgs20 FALSE
+ 5040792                                                                         G                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5054852                                                                         A                                                T    0010       H-private (C3H)   Rgs20 FALSE
+ 5056518                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5057165                                                                         C                                                A    0010       H-private (C3H)   Rgs20 FALSE
+ 5062012                                                                        TC                                                T    0010       H-private (C3H)   Rgs20  TRUE
+ 5083337                                                                         C                                                G    0101  B = D, against C = H Atp6v1h FALSE
+ 5083448                                                                         T                                                C    0010       H-private (C3H) Atp6v1h FALSE
+ 5083450                                                                         G                                                C    0010       H-private (C3H) Atp6v1h FALSE
+ 5083451                                                                         G                                                T    0010       H-private (C3H) Atp6v1h FALSE
+ 5084180                                                                         T                                                A    0010       H-private (C3H) Atp6v1h FALSE
+ 5084222                                                                         G                                                C    0010       H-private (C3H) Atp6v1h FALSE
+ 5086630                                                                         G                                                A    0010       H-private (C3H) Atp6v1h FALSE
+ 5091050                                                                         T                                                C    0010       H-private (C3H) Atp6v1h FALSE
+ 5092400                                                                         C                                                T    0101  B = D, against C = H Atp6v1h FALSE
+ 5094608                                                                         G                                                T    0010       H-private (C3H) Atp6v1h FALSE
+ 5104406                                                                   ATTTTTT                                         ATTTTTTT    0101  B = D, against C = H Atp6v1h  TRUE
+ 5105263                                                                         T                                                C    0101  B = D, against C = H Atp6v1h FALSE
+ 5107887                                                                         A                                                G    0010       H-private (C3H) Atp6v1h FALSE
+ 5108742                                                                         C                                                T    0010       H-private (C3H) Atp6v1h FALSE
+ 5108743                                                                         A                                                G    0010       H-private (C3H) Atp6v1h FALSE
+ 5109349                                                                         A                                                G    0101  B = D, against C = H Atp6v1h FALSE
+ 5114490                                                                         T                                                G    0101  B = D, against C = H Atp6v1h FALSE
+ 5114561                                                                         T                                                G    0101  B = D, against C = H Atp6v1h FALSE
+ 5119010                                                                         G                                                A    0010       H-private (C3H) Atp6v1h FALSE
+ 5119148                                                                         C                                                T    0010       H-private (C3H) Atp6v1h FALSE
+ 5119587                                                                         G                                                A    0101  B = D, against C = H Atp6v1h FALSE
+ 5120109                                                                       TTT                              TTTTGCTTTGTTTTGTCTT    0010       H-private (C3H) Atp6v1h  TRUE
+ 5120179                                                                         G                                                T    0101  B = D, against C = H Atp6v1h FALSE
+ 5120184                                                                         G                                                C    0101  B = D, against C = H Atp6v1h FALSE
+ 5120254                                                                         G                                                A    0101  B = D, against C = H Atp6v1h FALSE
+ 5121108                                                                         C                                                T    0101  B = D, against C = H Atp6v1h FALSE
+ 5122551                                                                         T                                                C    0010       H-private (C3H) Atp6v1h FALSE
+ 5123257                                                                         A                                                T    0101  B = D, against C = H Atp6v1h FALSE
+ 5123607                                                                         G                                                C    0101  B = D, against C = H Atp6v1h FALSE
+ 5124338                                                                         A                                                G    0101  B = D, against C = H Atp6v1h FALSE
+ 5124680                                                                         A                                                T    0101  B = D, against C = H Atp6v1h FALSE
+ 5124880                                                                         T                                                G    0101  B = D, against C = H Atp6v1h FALSE
+ 5125026                                                                         G                                                T    0101  B = D, against C = H Atp6v1h FALSE
+ 5126253                                                                GATAGATTCC                                                G    0010       H-private (C3H) Atp6v1h  TRUE
+ 5130917                                                                         T                                                A    0010       H-private (C3H) Atp6v1h FALSE
+ 5132146                                                                         G                                                A    0010       H-private (C3H) Atp6v1h FALSE
+ 5132202                                                                         C                                                T    0010       H-private (C3H) Atp6v1h FALSE
+ 5132934                                                                         C                                                T    0010       H-private (C3H) Atp6v1h FALSE
+ 5136355                                                                         T                                                C    0010       H-private (C3H) Atp6v1h FALSE
+ 5136680                                                                         T                                                A    0010       H-private (C3H) Atp6v1h FALSE
+ 5138359                                                                TAAAAAAAAA                                     TAAAAAAAAAAA    0010       H-private (C3H) Atp6v1h  TRUE
+ 5139029                                                             ATTTTTTTTTTTT                                      ATTTTTTTTTT    0010       H-private (C3H) Atp6v1h  TRUE
+ 5140044                                                                         T                                                C    0101  B = D, against C = H Atp6v1h FALSE
+ 5141394                                                                 GAAAAAAAA                           GAAAAAAAAA,GAAAAAAAAAA    0120 three or more alleles Atp6v1h  TRUE
+ 5142310                                                                         A                                                G    0101  B = D, against C = H Atp6v1h FALSE
+ 5143991                                                                         T                                                C    0101  B = D, against C = H Atp6v1h FALSE
+ 5145198                                                                         G                                                C    0010       H-private (C3H) Atp6v1h FALSE
+ 5147474                                                                         G                                                C    0010       H-private (C3H) Atp6v1h FALSE
+ 5149629                                                                         T                                                C    0101  B = D, against C = H Atp6v1h FALSE
+ 5150035                                                                         C                                                T    0010       H-private (C3H) Atp6v1h FALSE
+ 5175457                                                                         G                                              T,A    0112 three or more alleles         FALSE
+ 5177460                                                                         C                                                T    0010       H-private (C3H)         FALSE
+ 5196068                                                                         C                                                A    0010       H-private (C3H)         FALSE
+ 5256495                                                                         G                                                C    0010       H-private (C3H)         FALSE
+ 5261188                                                                GGGGGTGGGG                 GTGGGGTGGGGTGGGG,GGGGGTGGGGTGGGG    0112 three or more alleles          TRUE
+ 5274245                                                                         G                                                A    0010       H-private (C3H)         FALSE
+ 5315879                                                                         C                                                T    0101  B = D, against C = H         FALSE
+ 5315900                                                                         C                                                T    0101  B = D, against C = H         FALSE
+ 5315915                                                                         C                                                G    0101  B = D, against C = H         FALSE
+ 5316051                                                                         T                                                A    0101  B = D, against C = H         FALSE
+ 5316236                                                                         T                                                A    0010       H-private (C3H)         FALSE
+ 5316379                                                                         T                                                C    0010       H-private (C3H)         FALSE
+
+Coding sites in the BXD block (RefSeq coding exons of Tcea1, Rgs20 and Atp6v1h):
+     pos ref alt pattern                label  coding   BXD paternal maternal
+ 4867496   G   A    0011 H = D, against C = B   Tcea1  TRUE    FALSE    FALSE
+ 4878056   C   T    0011 H = D, against C = B   Tcea1  TRUE    FALSE    FALSE
+ 4912461   C   T    0010      H-private (C3H)   Rgs20 FALSE     TRUE    FALSE
+ 4923964   A   C    0101 B = D, against C = H   Rgs20 FALSE     TRUE     TRUE
+ 5070062   A   C    0001            D-private   Rgs20  TRUE     TRUE    FALSE
+ 5095686   C   T    0100       B-private (B6) Atp6v1h  TRUE    FALSE     TRUE
+ 5124338   A   G    0101 B = D, against C = H Atp6v1h FALSE     TRUE     TRUE
+ 5150035   C   T    0010      H-private (C3H) Atp6v1h FALSE     TRUE    FALSE
+
+Reading, with additive effects: the UM-HET3 maternal map is flat at Vita1a in both sexes (median -log10 P about 0 from 3 to 8 Mb),
+so patterns that touch the maternal contrast (B-private, C-private, B = H against C = D, B = D against C = H, three alleles)
+are unlikely to carry large effects. That leaves, for BXD, D-private sites (also seen by the paternal contrast, with the same
+sign) and H = D against C = B sites (BXD only). The UM-HET3 paternal reversal (H > D) then needs C3H-private sites, which
+BXD cannot see, whose C3H allele lives longer by more than the D-private allele does. The Rgs20 start codon change of
+NM_001290372 (4,923,964; carried by BALB/c and C3H) touches the maternal contrast too, so the flat maternal map argues against it.
