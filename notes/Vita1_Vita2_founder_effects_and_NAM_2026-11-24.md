@@ -57,3 +57,15 @@ What the table says:
 - **A crossover interaction like this would explain the null average effect** of NAM in Part 5: gains in *B* strains cancel losses in *D* strains.
 - **Caution:** NAM mice were born about three years after most high-fat controls, and at TSRB mortality rose with year of birth. If the high-fat controls of *B* and *D* strains differ in birth year, that can mimic an interaction. Birth-year-matched controls are the next check.
 - **What would settle it:** more strains with mice in both arms, chosen by Vita1a and Vita1b genotype. That fits the design of Aim 1 of the grant.
+
+### Birth year at TSRB (added the same day, at Rob's question)
+
+| Born | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 |
+|---|---|---|---|---|---|---|---|---|---|
+| High fat | 11 | 34 | 39 | 62 | 16 | 3 | **0** | 12 | 38 |
+| High fat + NAM | 0 | 0 | 0 | 9 | 19 | 2 | **100** | 13 | 0 |
+
+- **Not a hard confound, but not matched either.** TSRB high-fat controls were born on both sides of the NAM cohort (131 from 2018 on), but none in 2021, when 100 of the 143 NAM mice were born.
+- **With birth year as a covariate,** genotype × NAM stays at −89 days (Vita1a) and −97 (Vita1b); mouse-level P = 0.035 and 0.024; strain permutation P = 0.21 and 0.18.
+- **With high-fat controls born from 2018 on** (54 strains), it shrinks to −39 and −68 days; strain permutation P = 0.63 and 0.43.
+- **A further bias, independent of year:** Vita1a and Vita1b were found in these same high-fat mice, at the markers where *D* beat *B* most. In any new sample, including NAM mice, the *D* − *B* difference is expected to come out smaller (regression toward the mean), which reads as "NAM erases the genotype effect" even with no true interaction. A fair test fixes the locus in data that exclude the high-fat controls used in the comparison, or estimates the high-fat effect out of sample.

@@ -88,3 +88,29 @@ for(l in names(loci)){
               l, obs["int"], obs["chisq"], pchisq(obs["chisq"], 1, lower.tail = FALSE), mean(null >= obs["chisq"])))
 }
 sink()
+
+### Birth year (Rob, 24 November 2026: "I think we have enough TSRB high fat females without NAM ... to not have a NAM+HFD
+### versus HFD-alone to be hard confound. Is that true or false?"): the overlap of birth years at TSRB, and the mixed model
+### again (a) with birth year as a covariate and (b) with high-fat controls born no earlier than the first NAM mouse.
+num <- function(v) suppressWarnings(as.numeric(v))
+to.date <- function(v) if(inherits(v, "POSIXct")) as.Date(v) else as.Date(num(v), origin = "1899-12-30")
+b <- suppressWarnings(as.data.frame(read_excel("data/original/AgingBXD_BodyWeightData_updated31Dec2024.xlsx", sheet = "BXD_Females", .name_repair = "minimal")))
+nm <- suppressWarnings(as.data.frame(read_excel("data/original/AgingBXD_NAM_BodyWeight_Feb2026.xlsx", .name_repair = "minimal")))
+yr <- function(d) as.numeric(format(d, "%Y"))
+x$Year <- ifelse(x$Diet == "NAM", yr(to.date(nm$DateOfBirth))[match(x$EarTag, nm$EarTagNumberCurrent)], yr(to.date(b$DateOfBirth))[match(x$EarTag, b$EarTagNumberCurrent)])
+sink("output/NAM_by_Vita1.txt", append = TRUE, split = TRUE)
+cat("\n== Birth years at TSRB (mice, by arm):\n"); print(table(x$Diet, x$Year, useNA = "ifany"))
+first <- min(x$Year[x$Diet == "NAM"], na.rm = TRUE)
+for(l in names(loci)){
+  st <- unique(x$Strain); gs <- as.character(unlist(g[loci[l], st])); names(gs) <- st; st <- st[gs %in% c("B", "D")]
+  for(v in c("year covariate", "contemporary controls")){
+    y <- x[x$Strain %in% st & !is.na(x$Year), ]; if(v == "contemporary controls") y <- y[y$Diet == "NAM" | y$Year >= first, ]
+    y$G <- gs[y$Strain]; y$cohort <- y$Year - 2018
+    f1 <- lmer(Age ~ Diet * G + cohort + (1 | Strain), y, REML = FALSE); f0 <- lmer(Age ~ Diet + G + cohort + (1 | Strain), y, REML = FALSE)
+    lrt <- function(gmap){ y$G <- gmap[y$Strain]; a <- lmer(Age ~ Diet * G + cohort + (1 | Strain), y, REML = FALSE); z <- lmer(Age ~ Diet + G + cohort + (1 | Strain), y, REML = FALSE); 2 * (logLik(a) - logLik(z)) }
+    obs <- 2 * (logLik(f1) - logLik(f0)); null <- replicate(2000, suppressMessages(lrt(setNames(sample(gs[st]), st))))
+    cat(sprintf("  %s, %s: %d HF and %d NAM mice of %d strains; genotype x NAM %+.0f days, mouse-level P = %.3f, strain permutation P = %.3f (2,000 draws)\n", l, v,
+                sum(y$Diet == "HF"), sum(y$Diet == "NAM"), length(unique(y$Strain)), fixef(f1)["DietNAM:GD"], pchisq(obs, 1, lower.tail = FALSE), mean(null >= obs)))
+  }
+}
+sink()

@@ -29,3 +29,13 @@ Strain means at TSRB (equal weights over strains with at least 3 mice in the arm
 == Every TSRB mouse on HF or NAM: 358 mice of 66 strains (26 with NAM mice)
   Vita1a: genotype x NAM = -96 days (NAM - HF in D strains minus in B strains); LR chi-square 4.43, P = 0.035 (1 d.f.), strain permutation P = 0.238
   Vita1b: genotype x NAM = -121 days (NAM - HF in D strains minus in B strains); LR chi-square 6.79, P = 0.009 (1 d.f.), strain permutation P = 0.137
+
+== Birth years at TSRB (mice, by arm):
+     
+      2015 2016 2017 2018 2019 2020 2021 2022 2023
+  HF    11   34   39   62   16    3    0   12   38
+  NAM    0    0    0    9   19    2  100   13    0
+  Vita1a, year covariate: 215 HF and 143 NAM mice of 66 strains; genotype x NAM -89 days, mouse-level P = 0.035, strain permutation P = 0.206 (2,000 draws)
+  Vita1a, contemporary controls: 131 HF and 143 NAM mice of 54 strains; genotype x NAM -39 days, mouse-level P = 0.404, strain permutation P = 0.629 (2,000 draws)
+  Vita1b, year covariate: 211 HF and 141 NAM mice of 65 strains; genotype x NAM -97 days, mouse-level P = 0.024, strain permutation P = 0.181 (2,000 draws)
+  Vita1b, contemporary controls: 130 HF and 141 NAM mice of 53 strains; genotype x NAM -68 days, mouse-level P = 0.161, strain permutation P = 0.425 (2,000 draws)
