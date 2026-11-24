@@ -11,7 +11,7 @@
 
 | Part | Figure | Status |
 |---|---|---|
-| **Fig. 2 as Rob laid it out on 23 November 2026, with the F1s (next section)** | Fig. 2a–f | **Maps done.** Thresholds done for **a**,**b**; for **c**–**f**, 200 permutations queued on ATHENA as two jobs |
+| **Fig. 2 as Rob laid it out on 23 November 2026, with the F1s (next section)** | Fig. 2a–f | **Maps done.** Thresholds done for **a**,**b**; for **c**–**f**, 1,000 permutations queued on ATHENA as 18 jobs |
 | Strain-mean maps without F1s, chow and high fat, with genome-wide thresholds | Extended Data | **Near final:** 1,000 permutations; the loci that pass are listed below |
 | The same maps under other weightings of strain means | Methods | **Near final:** a robustness check |
 | Individual-mouse maps without F1s: chow, high fat, both diets, genotype × diet | Extended Data | **Done:** thresholds from 200 permutations on ATHENA; one locus passes |
@@ -32,7 +32,7 @@ Rob, 23 November 2026: "Let's have Fig 2 (T-age mappings) include a. strain mean
 **Results so far:**
 - **Adding the F1 mice changes the individual maps little** (correlation over markers and T-ages with the maps without F1s: 0.99 for chow and both diets, 0.98 for high fat). The chow Chr 1 peak near 5 Mb rises from 4.74 to 5.38 at T770.
 - **Panel f, the interaction, changes most** (correlation 0.96). With F1s, several peaks rise: Chr 11 at 108 Mb from 4.2 to 5.6 (T50), Chr 1 at 35 Mb from 4.4 to 5.3 (T20), Chr 17 at 68 Mb from 4.4 to 5.2 (T440), Chr 12 at 56 Mb from 3.3 to 4.5. Whether to keep the F1s in **f** is best decided when their thresholds are back: the thresholds without F1s are 6.3 at T20 for one T-age (7.5 for any), above all of these. The two versions are side by side in [`Figure2_lifespan_F1_int_without_F1s.png`](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1_int_without_F1s.png).
-- **Thresholds for c–f:** 200 permutations of strains within epochs and F1 types within class, as two Squirm jobs of about 25 hours each on 3 cores (`squirm/bxd_individualsF1_perms_a` and `_b`). Checked on Metis first: the job reproduces the maps to 4 decimals.
+- **Thresholds for c–f:** 1,000 permutations of strains within epochs and F1 types within class, queued on ATHENA as 18 Squirm jobs (`squirm/bxd_individualsF1_perms_a` to `_r`), about two weeks of ATHENA time in all, around its own work. The first 200 come back first, from jobs a and b. Rob asked for 1,000 because with 200 the 5% threshold has a standard error of about 0.18, larger than the margin (0.12) by which chow Chr 1 passes without F1s. Checked on Metis first: the job reproduces the maps to 4 decimals.
 
 ## The F1 hybrids: sharper loci on proximal Chr 1 (preliminary)
 

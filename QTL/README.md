@@ -16,6 +16,7 @@ Where the mapping as a whole stands, and why each model was chosen: [`notes/BXD_
   - **Also records** the largest Cauchy combination over T-ages at any marker (T20–T770 and T20–T620), for a genome-wide threshold of the Cauchy maps.
   - **Checked on Metis:** run on the real data (`--check yes`) at T20 and T500, it gives the fork's maps to 4 decimals. One process peaks at 1.87 GB; three workers at 5.4 GB summed resident memory at T20.
   - **On ATHENA,** as two jobs of 100 permutations (chunks 1–50 and 51–100, seeds 20261124 + *k*) on 3 cores, each about 25 hours, to stay within Squirm's 6 GB and 48 hours.
+  - **Raised to 1,000 permutations** (Rob, 24 November 2026: "Yes, queue them"), because 200 leave the 5% threshold with a standard error of about 0.18 (bootstrap, chow T770), larger than the margin by which chow Chr 1 passes. Sixteen more jobs, `squirm/bxd_individualsF1_perms_c` to `_r`, hold chunks 101–500 (25 chunks each, about 16 hours on 3 cores). Chunk *k* keeps seed 20261124 + *k*, so the first 200 count toward the 1,000. All the chunks are combined on Metis.
 
 ### Results (exploratory)
 
