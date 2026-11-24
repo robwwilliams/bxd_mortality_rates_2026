@@ -24,6 +24,7 @@ Results ([notes/MRDT_secondary_results.md](notes/MRDT_secondary_results.md)):
 
 Actuarial maps of lifespan in BXD females on chow and high fat, with R/qtl2 and kinship: strain means, individual mice, and strains with BXD × BXD F1s. Where each part stands, why each model was chosen, and the results so far: [notes/BXD_mapping_status_2026-11-23.md](notes/BXD_mapping_status_2026-11-23.md).
 - **Near final:** the strain-mean maps, with thresholds from 1,000 permutations of strains. Four loci pass at a single T-age: proximal Chr 1 on both diets (*D* lives longer), Chr 9 at 107 Mb on chow and Chr 2 at 157.5 Mb on high fat (*B*).
+- **Preliminary, with the BXD × BXD F1s:** mapped with the strains, the F1s narrow the chow Chr 1 locus (5.0 Mb, T770) from 4.9–10.4 Mb to 4.9–5.5 Mb. On high fat, proximal Chr 1 peaks near 23.5 and 37.6 Mb; a two-locus scan can neither split nor merge them.
 - **Running:** genome-wide thresholds for the individual-mouse maps, 200 permutations of strains on ATHENA ([QTL/](QTL/README.md)).
 - **The maps are made** in Rob's fork of Danny Arends's code, [robwwilliams/BxDLifeSpan](https://github.com/robwwilliams/BxDLifeSpan).
 

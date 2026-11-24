@@ -14,7 +14,7 @@
 | Strain-mean maps, chow and high fat, with genome-wide thresholds | Fig. 2a,b | **Near final:** 1,000 permutations; the loci that pass are listed below |
 | The same maps under other weightings of strain means | Methods | **Near final:** a robustness check |
 | Individual-mouse maps with kinship: chow, high fat, both diets, genotype × diet | Fig. 2c–f | **Maps done; thresholds running.** 200 permutations started on ATHENA on 22 November, not back yet |
-| **Strain and F1 means together, with zooms of proximal Chr 1 (first section below)** | not yet placed | **Preliminary:** maps, support intervals and a leave-one-F1-out check done; no thresholds of their own yet |
+| **Strain and F1 means together, with zooms of proximal Chr 1 (first section below)** | not yet placed | **Preliminary:** maps, support intervals, a leave-one-F1-out check, thresholds from 1,000 permutations and a two-locus scan of high-fat Chr 1, all done |
 | F1 heterosis by cross type | not yet placed | **Preliminary,** descriptive |
 | Body weight and correlated trait locus (CTL) maps | Fig. 3 | **Preliminary:** Danny's models, no thresholds |
 | Combining T-ages by the Cauchy method, as in Arends et al. 2026 | — | **Not started** (planned) |
@@ -22,7 +22,12 @@
 
 ## The F1 hybrids: sharper loci on proximal Chr 1 (preliminary)
 
-*Added on 23 November 2026, at Rob's request:* "That is of greatest interest to me in improving confidence of loci and narrowing 1.5 LOD (or –logP) of the support interval. ... the maps need to be compared to excluding the F1s. Need zoom-in versions of the proximal 50 Mb of Chr 1."
+*Added on 23 November 2026, at Rob's request:* "That is of greatest interest to me in improving confidence of loci and narrowing 1.5 LOD (or –logP) of the support interval. ... the maps need to be compared to excluding the F1s. Need zoom-in versions of the proximal 50 Mb of Chr 1." *The thresholds and the two-locus scan were added later the same evening, at Rob's go-ahead, and have not yet been reviewed by him.*
+
+**In brief:**
+- **Chow, Chr 1 at 5.0 Mb, T770:** significant with and without the F1s, and the F1s narrow its 1.5-LOD interval from 4.9–10.4 Mb to 4.9–5.5 Mb. The long × long F1s, as a group, do the narrowing.
+- **High fat, proximal Chr 1:** significant at T20 (23.5 Mb) and at T500 (37.6 Mb, where the F1s raise the peak from 4.74 to 5.43). Whether that is one locus or two, the data cannot yet say: a second locus never adds more than chance would.
+- **Dominance:** no locus passes the threshold for any T-age.
 
 **Why the F1s.** Rob chose 13 BXD × BXD F1 types: 6 short × short and 7 long × long crosses whose parents differ over different stretches of proximal Chr 1 (panel e of the profiles below). Two aims:
 - **Sharper positions.** An F1 heterozygous over one stretch and not the next adds the contrast that a recombination between those stretches gives, like an F2. Rob: "They are genetically just like an F2 cross."
@@ -34,6 +39,18 @@
 - **Model:** kinship (LOCO) is computed over strains and F1s together. F1 class (inbred, short × short, long × long) is a cofactor, so that the average hybrid vigor of a class is not read as an effect of every marker. Rob: "the two types of F1 were by design, so just add the 'type' as a cofactor."
 - **Numbers:** the F1s add 13 units to the 93 strains at T50 on chow and the 87 on high fat. On chow all 13 F1 types still have at least 3 mice alive at T770, beside 46 strains. On high fat 6 remain at T770, beside 14 strains.
 
+**Genome-wide thresholds** (`qtl2_strainF1_perm.R`): 1,000 permutations in which each strain takes the whole actuarial series of another strain, as for the strain means, and each F1 type that of another F1 type of its own class. So the class covariate and the nesting of survivorships are kept. The same rule as for the strain means sets a stable range of T-ages.
+
+| Map | Stable range | 5%, one T-age (any T-age) | 10% | Suggestive, P = 0.63 |
+|---|---|---|---|---|
+| Chow, additive | T20–T740 | 4.66 (5.83) | 4.30 (5.41) | 3.16 (4.25) |
+| High fat, additive | T20–T590 | 4.59 (5.46) | 4.21 (5.08) | 3.07 (3.91) |
+| Chow, dominance | T20–T500 | 1.15 (1.46) | 1.05 (1.31) | 0.77 (0.97) |
+| High fat, dominance | T20–T500 | 1.91 (2.58) | 1.79 (2.48) | 1.27 (1.75) |
+
+- **The additive thresholds are a little higher than those of the strain means alone** (4.66 and 4.59 against 4.43): the F1s add 13 units and a covariate.
+- **The dominance thresholds are far below what a test on 1 d.f. would suggest.** Only the 13 F1 types inform dominance, so its −log10 *P* values cannot be read on the usual scale; only the permutation thresholds count.
+
 **The support interval** (`chr1_zoom.R`) is the run of neighboring markers whose LOD is within 1.5 of the peak's. At these peaks a drop of 1.5 LOD is a drop of about 1.6 on the −log10 *P* scale. A 1.5-LOD interval is a rough guide, not a confidence interval, and it assumes one locus in the region.
 
 ### Genome-wide, the F1s change little
@@ -41,14 +58,25 @@
 [![Strain means alone and with the F1s, genome-wide](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Strain_and_F1_means.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Strain_and_F1_means.png)
 
 Panels **a** and **d** are the strain-mean maps of Fig. 2a,b. Panels **b** and **e** add the F1s (additive effect). Panels **c** and **f** are the dominance deviations, which only the F1s inform.
-- **The additive maps keep the same loci.** Adding 13 units to 46–93 strains changes no peak by much.
-- **Dominance is nearly blank:** −log10 *P* reaches 2 in 0.05% of the chow map and 0.4% of the high-fat map, with maxima of 2.3 (chow) and 2.8 (high fat), both at T770. So we have no sign of dominance, but 13 F1 types give little power to see it.
+- **The additive maps keep the same loci,** with one change in level (`significant_loci_F1.txt` against `significant_loci.txt`):
+
+  | Locus | Strains alone | Strains + F1s |
+  |---|---|---|
+  | Chow, Chr 1 at 5.0 Mb (*D*) | 6.26 at T770, significant for any T-age | 6.29 at T770, significant (see below) |
+  | Chow, Chr 9 at 107 Mb (*B*) | 4.47 at T680, significant | 4.91 at T680, significant |
+  | High fat, Chr 1 at 23.5 Mb (*D*) | 5.01 at T20; significant T20–T110 | 4.84 at T20; significant at T20 |
+  | High fat, Chr 1 at 37.6 Mb (*D*) | 4.74 at T500, significant | 5.43 at T500, significant |
+  | High fat, Chr 2 at 157 Mb (*B*) | 4.85 at T260; significant T20–T260 | 4.40 at T200; P < 0.10 only |
+
+  No locus passes for any T-age within the stable ranges. Chow T770 lies just past the chow stable range of the strain + F1 maps (its 5% threshold, 4.31, is 0.35 below the median), but 6.29 is above even the strictest threshold of that range, 5.83 for any T-age.
+- **Dominance: nothing on chow.** No marker passes at any T-age in the stable range; the largest, 0.95, is below every single-T-age threshold (1.06–1.32).
+- **Dominance on high fat: one pattern, probably not loci.** The strongest marker on each of 10 chromosomes passes the single-T-age threshold, all at the same T-ages (T20–T200, T350 or T440), and all with heterozygotes below the midpoint of the homozygotes. None passes for any T-age (largest 2.47 against 2.58). Ten chromosomes at once, on the same T-ages and in the same direction, point to the 13 F1 types as a group rather than to 10 loci. A likely cause: the permutation gives each F1 type the lifespans of another, which breaks each F1's resemblance to its own parents, so for dominance the permutation null may be too lenient. Not tested.
 
 ### Proximal Chr 1, 0 to 50 Mb
 
 [![Chr 1, 0 to 50 Mb: profiles with and without the F1s](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Chr1_zoom_profiles.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Chr1_zoom_profiles.png)
 
-*Profiles at the T-ages where Chr 1 is strongest: grey, strain means alone; green, strain and F1 means together (additive). Bars under each profile are the 1.5-LOD support intervals. The dashed line is the strain-mean genome-wide threshold (5%, one T-age); the strain + F1 maps have no threshold of their own yet. **e**, where each F1 type's parents differ, that is, where the F1 is heterozygous.*
+*Profiles at the T-ages where Chr 1 is strongest: grey, strain means alone; green, strain and F1 means together (additive). Bars under each profile are the 1.5-LOD support intervals. Dashed lines are each map's genome-wide 5% threshold for that T-age, from its own permutations. **e**, where each F1 type's parents differ, that is, where the F1 is heterozygous.*
 
 **Chow, T770: the F1s narrow the interval from 5.6 Mb to 0.7 Mb.**
 - **Strains alone:** peak at 5.0 Mb (−log10 *P* 6.26), interval 4.9–10.4 Mb.
@@ -58,17 +86,29 @@ Panels **a** and **d** are the strain-mean maps of Fig. 2a,b. Panels **b** and *
 - **It comes from the long × long F1s as a group.** Leave out all 7 and the interval returns to 4.9–10.4 Mb. Leave out the 6 short × short F1s and it stays at 4.9–5.5 Mb. Several long × long types are heterozygous on one side of 5.5 Mb and not the other (panel e).
 - **One T-age only.** The chow Chr 1 locus is a late-life effect. From T680 to T740 the signal near 5 Mb is weak (−log10 *P* 2.1–2.7, with or without the F1s) and the intervals span 8.5–12 Mb. So this sharpest result comes from the 46 strains and 13 F1 types still alive at T770.
 
-**High fat: probably two loci, about 23.5 and 37.6 Mb, and the F1s shift the weight toward the second.**
+**High fat: peaks near 23.5 and 37.6 Mb, and the F1s shift the weight toward the second.**
 - **T20 to T230:** the peak is at 23.5 Mb, with an interval of 22.4–25.5 Mb, with or without the F1s. Leaving out any F1 type, or either class, does not change it.
 - **From T260 on, with the F1s, the peak moves to 32–38 Mb** at most T-ages up to T650. With strains alone it is there only at T500, T590 and T620.
 - **T500 is the strongest:** 37.6 Mb, −log10 *P* 5.43 with the F1s (4.74 without), interval 34.4–38.7 Mb either way. Without some short × short types (BXD170x172, BXD197x170, BXD9x172) or BXD65x102 it widens to 32.3–38.7 Mb.
-- **At almost every high-fat T-age, markers in the other region also come within 1.5 LOD of the peak.** So an interval that assumes one locus does not fit here. The data fit linked loci near 23.5 and 37.6 Mb about as well as one, and a two-locus scan is needed to tell.
+- **Against the thresholds:** with the F1s, Chr 1 passes at T20 (23.5 Mb, 4.84 against 4.62) and at T500 (37.6 Mb, 5.43 against 4.47).
+- **At almost every high-fat T-age, markers in the other region also come within 1.5 LOD of the peak.** So an interval that assumes one locus does not fit here, and we ran a two-locus scan.
+
+**One locus or two on high fat** (`chr1_twolocus.R`). At each T-age from T20 to T620, every pair of positions in 0–50 Mb was fitted together, in the same mixed model as the maps (it reproduces their single-locus LODs exactly).
+- **The test:** LOD(2 v 1), the best pair against the best single locus. Its P comes from 1,000 parametric bootstraps under the best single locus: traits simulated with one locus, each put through the same search for one locus and for a pair.
+- **The best pair is near 23.5 and 37.6 Mb at most T-ages** (32 of the 42 scans), and it adds 0.8–1.9 LOD to the best single locus.
+- **That is no more than one locus gives by chance:** P(2 v 1) is 0.08 at best (strains alone, T500) and 0.18–0.74 elsewhere. With the F1s, P is lower at most early T-ages (0.18–0.33 at T20–T230, against 0.40–0.51 without), but never below 0.18.
+- **Each position keeps some signal given the other.** Given a locus at 23.5 Mb, the best second locus is at 32–38 Mb at every T-age, adding 0.9–2.6 LOD with strains alone and 1.2–3.3 with the F1s (3.3 at T500). Given 37.6 Mb, the best second locus is near 23 Mb at most T-ages, adding 0.8–2.5 LOD.
+- **So the data neither show two loci nor rule them out.** The high-fat signal spans 22–39 Mb. The F1s move it toward 37.6 Mb at later T-ages but do not split it.
+
+[![Chr 1 on high fat: one locus or two](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Chr1_twolocus.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Chr1_twolocus.png)
+
+*Solid: LOD of one locus. Dashed: LOD of a second locus, given one at 23.5 Mb. Dotted: given one at 37.6 Mb. **g**, P(2 v 1) at every T-age; the dashed line is P = 0.05.*
 
 **The zoomed actuarial maps,** every T-age, with each T-age's support interval as a black bar where its peak reaches −log10 *P* 3:
 
 [![Chr 1, 0 to 50 Mb: zoomed actuarial maps](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Chr1_zoom_maps.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Chr1_zoom_maps.png)
 
-Files: [`chr1_zoom.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/chr1_zoom.R), [`chr1_f1_dropone.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/chr1_f1_dropone.R), [`qtl2_strainF1.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/qtl2_strainF1.R); intervals at every T-age in [`chr1_zoom_intervals.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/chr1_zoom_intervals.txt); the leave-one-out check in [`chr1_f1_dropone.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/chr1_f1_dropone.txt); where each F1 type is heterozygous in [`strainF1_chr1.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/strainF1_chr1.txt). SVG and PDF versions of the figures are beside the PNGs in [`output/maps/`](https://github.com/robwwilliams/BxDLifeSpan/tree/master/output/maps).
+Files: [`qtl2_strainF1_perm.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/qtl2_strainF1_perm.R) and [`significant_loci_F1.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/significant_loci_F1.R), with [`qtl2_strainF1_perm_thresholds.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/qtl2_strainF1_perm_thresholds.txt) and [`significant_loci_F1.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/significant_loci_F1.txt); [`chr1_twolocus.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/chr1_twolocus.R), with [`chr1_twolocus.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/chr1_twolocus.txt); [`chr1_zoom.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/chr1_zoom.R), [`chr1_f1_dropone.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/chr1_f1_dropone.R), [`qtl2_strainF1.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/qtl2_strainF1.R); intervals at every T-age in [`chr1_zoom_intervals.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/chr1_zoom_intervals.txt); the leave-one-out check in [`chr1_f1_dropone.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/chr1_f1_dropone.txt); where each F1 type is heterozygous in [`strainF1_chr1.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/strainF1_chr1.txt). SVG and PDF versions of the figures are beside the PNGs in [`output/maps/`](https://github.com/robwwilliams/BxDLifeSpan/tree/master/output/maps).
 
 ### F1 heterosis
 
@@ -167,7 +207,7 @@ These are Danny's maps, redrawn: strain means weighted by numbers of mice, witho
 
 1. **Individual-mouse thresholds** from the ATHENA job, then the stable range of T-ages, as for the strain means, and the thresholds drawn on Fig. 2c–f.
 2. **Cauchy combination over T-ages,** as in Arends et al. 2026 but with exact P values on the right degrees of freedom ([Cauchy_review_2026-11-21.md](Cauchy_review_2026-11-21.md)), so that each marker gets one P for "any age".
-3. **For the F1s:** genome-wide thresholds for the strain + F1 maps, by permuting strains and F1 types; and a two-locus scan of proximal Chr 1 on high fat (about 23.5 and 37.6 Mb).
+3. **For the F1s:** a permutation that keeps each F1 tied to its parents, to check the high-fat dominance pattern; and whether the F1s also sharpen the chow Chr 9 locus at 107 Mb.
 4. **Thresholds for the body-weight and CTL maps.**
 5. **BXD loci in UM-HET3 females,** once Rob approves the plan, with the BXD loci fixed before UM-HET3 is looked at.
 6. **Legend titles that state findings,** once the thresholds are in.
