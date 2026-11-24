@@ -69,3 +69,11 @@ What the table says:
 - **With birth year as a covariate,** genotype × NAM stays at −89 days (Vita1a) and −97 (Vita1b); mouse-level P = 0.035 and 0.024; strain permutation P = 0.21 and 0.18.
 - **With high-fat controls born from 2018 on** (54 strains), it shrinks to −39 and −68 days; strain permutation P = 0.63 and 0.43.
 - **A further bias, independent of year:** Vita1a and Vita1b were found in these same high-fat mice, at the markers where *D* beat *B* most. In any new sample, including NAM mice, the *D* − *B* difference is expected to come out smaller (regression toward the mean), which reads as "NAM erases the genotype effect" even with no true interaction. A fair test fixes the locus in data that exclude the high-fat controls used in the comparison, or estimates the high-fat effect out of sample.
+
+### The grant's Figs 5 and 6, replicated from the newest data
+
+[`Gompertz/NAM_by_Vita1_mouse_level.R`](../Gompertz/NAM_by_Vita1_mouse_level.R) and [`Gompertz/Figures_NAM_by_Vita1.R`](../Gompertz/Figures_NAM_by_Vita1.R) redo them from Beni's file (corrected NAM ages), all vivaria, at the BXD peak markers: [`output/Fig_NAM_by_Vita1.png`](../output/Fig_NAM_by_Vita1.png), statistics in [`output/NAM_by_Vita1_mouse_level.txt`](../output/NAM_by_Vita1_mouse_level.txt).
+- **The means match the grant:** Vita1b on HFD, *B* 527 ± 9 and *D* 634 ± 9 days; on HFD + NAM, *B* 607 ± 19 and *D* 555 ± 24. Within Vita1b *B*, NAM vs CD is not different (P = 0.7); within *D*, NAM vs CD is −132 days (P = 8 × 10⁻⁷), as in Fig 6.
+- **Vita1b genotype × NAM, by unit of analysis:** mouse-level ANOVA P = 1.2 × 10⁻⁶; with a random strain intercept P = 0.001; **strains permuted, P = 0.018 (98 strains), and 0.013 with vivarium as a covariate (−113 days).** At TSRB alone (65 strains), P = 0.13.
+- **Vita1a:** mouse-level P = 0.017; strains permuted, P = 0.15.
+- **So Vita1b × NAM holds with the strain as the unit** when the high-fat strains of every vivarium are used; Vita1a does not. The regression-toward-the-mean caveat above still applies, since Vita1b was mapped in these high-fat mice.

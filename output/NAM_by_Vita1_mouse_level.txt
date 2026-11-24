@@ -1,0 +1,37 @@
+Replication of the grant's mouse-level analysis of NAM by Vita1 genotype (Figs 5 and 6), from Beni Mozhui's data file
+
+==== all vivaria: CD 928 mice, HF 818 mice, NAM 143 mice
+
+Vita1a: mean age at death ± s.e. (mice)
+  CD   B  627 ±  9 (519)   D  696 ± 10 (405)
+  HF   B  543 ±  8 (476)   D  640 ± 10 (342)
+  NAM  B  581 ± 18 ( 97)   D  595 ± 26 ( 46)
+  Diet x genotype (HF, NAM): mouse-level ANOVA F = 5.74, P = 0.017 | with a random strain intercept P = 0.033 | strain permutation P = 0.149 (99 strains)
+
+Vita1b: mean age at death ± s.e. (mice)
+  CD   B  626 ± 10 (439)   D  687 ±  9 (482)
+  HF   B  527 ±  9 (384)   D  634 ±  9 (427)
+  NAM  B  607 ± 19 ( 78)   D  555 ± 24 ( 63)
+  Diet x genotype (HF, NAM): mouse-level ANOVA F = 23.97, P = 1.2e-06 | with a random strain intercept P = 0.001 | strain permutation P = 0.018 (98 strains)
+  Tukey HSD of diet within each Vita1b genotype (mouse-level, as Fig 6):
+    B: HF-CD -99 days (P = 3.2e-12); NAM-CD -19 days (P = 0.71); NAM-HF +80 days (P = 0.003)
+    D: HF-CD -53 days (P = 9e-05); NAM-CD -132 days (P = 8.2e-07); NAM-HF -79 days (P = 0.0061)
+
+==== TSRB: CD 370 mice, HF 215 mice, NAM 143 mice
+
+Vita1a: mean age at death ± s.e. (mice)
+  CD   B  612 ± 16 (177)   D  700 ± 15 (191)
+  HF   B  512 ± 16 (107)   D  594 ± 21 (108)
+  NAM  B  581 ± 18 ( 97)   D  595 ± 26 ( 46)
+  Diet x genotype (HF, NAM): mouse-level ANOVA F = 2.56, P = 0.11 | with a random strain intercept P = 0.035 | strain permutation P = 0.242 (66 strains)
+
+Vita1b: mean age at death ± s.e. (mice)
+  CD   B  628 ± 17 (166)   D  685 ± 15 (199)
+  HF   B  485 ± 20 ( 92)   D  606 ± 18 (119)
+  NAM  B  607 ± 19 ( 78)   D  555 ± 24 ( 63)
+  Diet x genotype (HF, NAM): mouse-level ANOVA F = 18.17, P = 2.6e-05 | with a random strain intercept P = 0.009 | strain permutation P = 0.129 (65 strains)
+  Tukey HSD of diet within each Vita1b genotype (mouse-level, as Fig 6):
+    B: HF-CD -142 days (P = 1.8e-07); NAM-CD -21 days (P = 0.73); NAM-HF +122 days (P = 0.00022)
+    D: HF-CD -79 days (P = 0.0023); NAM-CD -130 days (P = 3.2e-05); NAM-HF -51 days (P = 0.24)
+
+==== All vivaria, vivarium as a covariate, Vita1b: genotype x NAM -113 days; random strain intercept P = 0.001; strain permutation P = 0.013 (98 strains)
