@@ -47,24 +47,31 @@ Rob: "The fun next thing is to make corresponding figures (exact) for the UM-HET
 
 **Rows matched to the BXD rows** (Rob: "perhaps some kind of percentage normalization would be best so that the plots can be laid over each other"). Each page has 25 rows that sit where the BXD maps' rows sit, at matched UM-HET3 T-ages:
 
-| BXD row | Linear stretch (UM-HET3 T1100 at BXD T770) | Ratio of median lifespans, × 1.32 | Same fraction alive (BXD females on chow) |
-|---|---|---|---|
-| T50 | T71 | T66 | T51 |
-| T290 | T414 | T384 | T616 |
-| T530 | T757 | T701 | T786 |
-| T770 | T1100 | T1019 | T982 |
+| BXD row | Linear stretch (UM-HET3 T1100 at BXD T770) | Ratio of median lifespans, × 1.32 | 40-day grid, × 1.33 (drawn) | Same fraction alive (BXD females on chow) |
+|---|---|---|---|---|
+| T50 | T71 | T66 | T45 | T51 |
+| T290 | T414 | T384 | T365 | T616 |
+| T530 | T757 | T701 | T685 | T786 |
+| T770 | T1100 | T1019 | T1005 | T982 |
 
-Matching by fraction alive squeezes UM-HET3's early life, because BXD mice die earlier in life than UM-HET3 mice (6% of BXD females on chow are dead by T290). The median ratio keeps the stretch linear and anchors it at mid-life; it is drawn here. The linear stretch is the T50–T1100 page.
+Matching by fraction alive squeezes UM-HET3's early life, because BXD mice die earlier in life than UM-HET3 mice (6% of BXD females on chow are dead by T290). The median ratio keeps the stretch linear and anchors it at mid-life. **The rows drawn are a 40-day grid, T45 to T1005** (Rob: "I like your 40-day step size idea"): nearly the median ratio, with round T-ages that include T365 and T725, as Arends et al.'s 15-day grid does. The linear stretch is the T50–T1100 page.
 
-[![UM-HET3 females, rows matched to the BXD rows](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/UMHET3_female_rows_matched_median.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/UMHET3_female_rows_matched_median.png)
+[![UM-HET3 females, rows matched to the BXD rows](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/UMHET3_female_rows_matched_grid40.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/UMHET3_female_rows_matched_grid40.png)
 
 **Females, loci that pass 5% at one T-age** ([`umhet3_thresholds_female.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/umhet3_thresholds_female.txt)):
-- **Paternal:** Chr 2 at 144.5 Mb, *H* longer (8.8 at T320, passing from T20 to T860); Chr 1 at 3.0 Mb, *H* longer (3.7 at T590). The Chr 1 result is opposite in sign to the BXD chow locus, as Rob and Danny expected for Vita1a, and the paternal calls there are biased toward *H* at UM and UT.
+- **Paternal:** Chr 2 at 144.5 Mb, *H* longer (8.8 at T320, passing from T20 to T860); Chr 1 at 3.0 Mb, *H* longer (3.7 at T590). The Chr 1 result is opposite in sign to the BXD locus, as Rob and Danny expected for Vita1a, and the paternal calls there are biased toward *H* at UM and UT. The reversal holds across life in both families: the UM-HET3 paternal *D* is disfavored at every T-age from T20 to T860 (−log10 *P* 2.1–3.2 at 3.0 Mb), and the BXD *D* is favored at every T-age on chow and high fat (0.5–2.7 at 5.02 Mb). Rob: "It is clear that Vita1a is the same beast in both UM-HET3 and BXDs (as it should be from first principles). But the effect reversal is both a puzzle and a WONDERFUL functional clue."
 - **Maternal:** Chr 9 at 34.9 Mb, *C* longer (5.9 at T80); Chr 18 at 74.3 Mb, *C* longer (4.4); Chr 5 at 142 Mb, *B* longer (3.7 at T590); Chr 11 at 89 Mb, *B* longer (3.5 at T860).
 
 **Males** ([`umhet3_thresholds_male.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/umhet3_thresholds_male.txt)) differ, as in Arends et al.: the strongest are maternal Chr 4 at 52.5 Mb, *B* longer (7.3 at T650), and paternal Chr 2 at 89 Mb, *D* longer (5.7), and Chr 1 at 3.0 Mb, *H* longer (5.5 at T800).
 
 Rob, on genotype × diet: "The strong Chr 2 loci we see in the BXD interaction panel f, do resonate with the crazy interaction effects in the UM-HET3s in almost the same locations."
+
+**Distal Chr 2 is probably several loci.** Rob: "It seems likely that Chr 2 is going to be a set of loci and sets of DNA variants." Three signals so far, each where the *D* allele shortens life or the *B* allele lengthens it:
+- **124–129 Mb, BXD (2013):** the lifespan locus that led to *Mrps5* (Houtkooper et al. 2013, *Nature* 497:451; LOD 4.0), the work that funded this mapping.
+- **144–153 Mb, UM-HET3 females:** the paternal peak, *H* longer (8.8 at T320).
+- **154–157 Mb, BXD (2026):** high fat, *B* longer (4.9 at T260); Rob labels its core Vita2b.
+
+UM-HET3 has about one marker per 2.4 Mb on Chr 2, so these can be one, two or three loci.
 
 **Not yet:** maps laid directly over Fig. 2, and the combination across families (Rob: "we are also eventually going to want to run Fisher combined –logP for these two independent families") after the BXD loci are frozen.
 
@@ -132,7 +139,7 @@ Panels **a** and **d** are the strain-mean maps of Fig. 2a,b. Panels **b** and *
 - **What moves the edge:** a plateau from 5.5 to 10.4 Mb. With strains alone it lies just within 1.5 LOD of the peak (−log10 *P* 4.8 against a cut of 4.7). The F1s lower it to 4.25, below the cut. So the narrowing is real in these data, but it rests on a modest change at the plateau.
 - **It does not hang on any one F1 type.** Left out one at a time, every F1 type leaves the interval at 4.9–5.5 Mb (`chr1_f1_dropone.R`).
 - **It comes from the long × long F1s as a group.** Leave out all 7 and the interval returns to 4.9–10.4 Mb. Leave out the 6 short × short F1s and it stays at 4.9–5.5 Mb. Several long × long types are heterozygous on one side of 5.5 Mb and not the other (panel e).
-- **One T-age only.** The chow Chr 1 locus is a late-life effect. From T680 to T740 the signal near 5 Mb is weak (−log10 *P* 2.1–2.7, with or without the F1s) and the intervals span 8.5–12 Mb. So this sharpest result comes from the 46 strains and 13 F1 types still alive at T770. Rob: "Any map at T770 is going to be iffy given the low sample size."
+- **Defined at T770, present throughout.** The locus passes a genome-wide threshold only at T770, but the *D* allele is favored at the 5.02 Mb marker at every T-age, on chow and on high fat (−log10 *P* 0.5–2.7). Rob: "when you say 'only at T770' you are imposing the threshold correctly to define the locus, but that does not mean the locus 'disappears' at younger ages. Once the locus is defined, then the testing burden is reduced." The sharpest interval comes from T770, from the 46 strains and 13 F1 types still alive then; from T680 to T740 the intervals span 8.5–12 Mb. Rob: "Any map at T770 is going to be iffy given the low sample size."
 - **The peak is a flat block, not a point.** Every marker from 4.86 to 5.32 Mb has the same genotypes in all the strains and F1 types mapped at T770, so all give the same −log10 *P* (6.26 alone, 6.29 with F1s). "5.0 Mb" is just the first marker of the block. The data cannot place the locus within it.
 - **What the block holds** (mm10, RefSeq): the start of *Tcea1* (4.86–4.90 Mb), *Rgs20* (4.91–5.07) and *Atp6v1h* (5.08–5.16). Just outside are *Lypla1* and *Mrpl15* (proximal, ending at 4.85 and 4.79 Mb), and *Oprk1* (distal, from 5.59 Mb). Of the three Vita1a candidates named in Arends et al. 2026 (*Mrpl15*, *Atp6v1h*, *Rb1cc1*), only *Atp6v1h* lies in the block, and *Rb1cc1* (6.21 Mb) lies outside the whole interval. The BXD chow locus and Vita1a in UM-HET3 need not be the same variant.
 - **Which strains set the edges** (`chr1_recombinants.R`): proximally, BXD65, BXD102 and BXD43 switch between 4.858 and 4.861 Mb, inside the start of *Tcea1*; distally, BXD11 switches at 5.316 Mb, beyond *Atp6v1h*.
@@ -235,7 +242,7 @@ Files: [`f1_heterosis.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/mas
 
 **Suggestive only:** on chow, Chr 2 at 157 Mb (*B*), Chr 7 at 88 Mb (*B*) and Chr 14 at 49 Mb (*B*); on high fat, Chr 3 at 64 Mb (*D*), Chr 10 at 40 Mb (*D*) and Chr 15 at 14 Mb (*B*).
 
-**In plain terms:** proximal Chr 1 shows up on both diets with the *D* allele living longer, but at different positions and ages. On chow it is a late-life effect at about 5 Mb. On high fat it acts from early ages at about 23 Mb. Whether those are one locus or two is open, and it is what the F1 maps address.
+**In plain terms:** proximal Chr 1 shows up on both diets with the *D* allele living longer, but at different positions and ages. On chow it is defined at T770 at about 5 Mb, though the *D* allele is favored there at every T-age. On high fat it is strongest at early ages at about 23 Mb. Whether those are one locus or two is open, and it is what the F1 maps address.
 
 Files: [`significant_loci.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/significant_loci.txt), [`qtl2_permutation_thresholds.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/qtl2_permutation_thresholds.txt), [`compare_weights.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/compare_weights.txt).
 
