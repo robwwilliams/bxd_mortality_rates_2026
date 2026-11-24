@@ -1,0 +1,11 @@
+job: bxd_individual_perms
+branch: squirm/bxd_individual_perms
+commit: d781d17d7577d06b468417e06d89078630a7ac10
+exit: 0
+cores: 4
+memory stated: 6 GB
+running: 95226 s
+start to end: 119241 s
+pauses: 39
+machine: ATHENA, Apple M5 Max, 18 cores, 36 GB, macOS 27.0
+R: Rscript (R) version 4.6.2 (2026-10-29)

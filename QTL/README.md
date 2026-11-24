@@ -17,6 +17,13 @@ Where the mapping as a whole stands, and why each model was chosen: [`notes/BXD_
   - **Checked on Metis:** run on the real data (`--check yes`) at T20 and T500, it gives the fork's maps to 4 decimals. One process peaks at 1.87 GB; three workers at 5.4 GB summed resident memory at T20.
   - **On ATHENA,** as two jobs of 100 permutations (chunks 1–50 and 51–100, seeds 20261124 + *k*) on 3 cores, each about 25 hours, to stay within Squirm's 6 GB and 48 hours.
 
+### Results (exploratory)
+
+`output/squirm/bxd_individual_perms/` holds the returned job: 200 permutations, run on ATHENA (Apple M5 Max, R 4.6.2) from 22 to 23 November 2026, exit 0, about 26.5 hours of computing over 33 hours, paused 39 times for ATHENA's own work (`squirm_run.txt`).
+- **`thresholds.txt`:** genome-wide −log10 *P* at 5%, 10% and the suggestive level, for each map and T-age, and for any T-age.
+- **The 5% threshold for one T-age falls with T-age as the survivorships shrink:** about 5.8 at T20 to 4.6 at T770 for the chow map (any T-age 6.6). Far higher than for strain means (4.4), as the strain, not the mouse, is the unit.
+- **One locus passes:** chow, Chr 1 at 5.0 Mb, 4.74 at T770 against 4.62. The rest are suggestive at most (`significant_loci_ind.txt` in the fork).
+
 ### Checks on Metis (R 4.6.1, R/qtl2 0.46)
 
 - **Agreement with the fork:** the fork's first permutation (seed 20261123) gives the same maxima at T20 here, to 5 decimals.
