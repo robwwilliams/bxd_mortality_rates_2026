@@ -1,0 +1,31 @@
+High fat + 1% NAM against high fat, by Vita1a and Vita1b genotype; BXD females at TSRB, the strain as the unit
+
+== Strains with at least 3 mice in each arm: 8 strains, 61 NAM and 43 high-fat mice. Mean NAM - HF over strains: +45 days
+  Vita1a: B strains 5, mean NAM - HF +42 days; D strains 3, +50 days; D - B +8 days, permutation P = 0.982 (Welch P = 0.965)
+  Vita1b: B strains 2, mean NAM - HF +98 days; D strains 6, +27 days; D - B -71 days, permutation P = 0.714 (Welch P = 0.424)
+  Strains (NAM - HF, days; Vita1a, Vita1b):
+ strain    d Vita1a Vita1b
+ BXD101   68      B      D
+  BXD15 -265      D      D
+ BXD170  -85      B      D
+ BXD172  135      B      B
+ BXD190   30      B      D
+ BXD197  183      D      D
+   BXD2   62      B      B
+  BXD75  232      D      D
+
+== Strains with at least 2 mice in each arm: 12 strains, 74 NAM and 57 high-fat mice. Mean NAM - HF over strains: +32 days
+  Vita1a: B strains 7, mean NAM - HF +58 days; D strains 5, -5 days; D - B -63 days, permutation P = 0.470 (Welch P = 0.545)
+  Vita1b: B strains 4, mean NAM - HF +41 days; D strains 7, +13 days; D - B -28 days, permutation P = 0.782 (Welch P = 0.741)
+
+Strain means at TSRB (equal weights over strains with at least 3 mice in the arm), by genotype, for reference:
+  Vita1a CD : B  632 days (23 strains), D  706 days (30 strains)
+  Vita1a HF : B  503 days (19 strains), D  577 days (15 strains)
+  Vita1a NAM: B  594 days (14 strains), D  623 days (7 strains)
+  Vita1b CD : B  661 days (20 strains), D  686 days (32 strains)
+  Vita1b HF : B  464 days (14 strains), D  587 days (19 strains)
+  Vita1b NAM: B  617 days (12 strains), D  587 days (9 strains)
+
+== Every TSRB mouse on HF or NAM: 358 mice of 66 strains (26 with NAM mice)
+  Vita1a: genotype x NAM = -96 days (NAM - HF in D strains minus in B strains); LR chi-square 4.43, P = 0.035 (1 d.f.), strain permutation P = 0.238
+  Vita1b: genotype x NAM = -121 days (NAM - HF in D strains minus in B strains); LR chi-square 6.79, P = 0.009 (1 d.f.), strain permutation P = 0.137
