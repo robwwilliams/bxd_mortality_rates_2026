@@ -1,6 +1,6 @@
 # BXD lifespan mapping: models, reasons and results so far
 
-**Status note, 23 November 2026,** by Claude (Opus 5.5) for Rob Williams, written for colleagues reading this repository: Beni Mozhui, Danny Arends, Suheeta Roy. Reviewed by Rob, evening 23Nov. All of the mapping is exploratory: the models were chosen while maps were being looked at, not fixed in a plan beforehand.
+**Status note, 23 November 2026,** by Claude (Opus 5.5) and Rob Williams, written for colleagues reading this repository: Beni Mozhui, Danny Arends, Suheeta Roy, Pjotr Prins, Evan Williams. Reviewed by Rob, evening 23Nov, morning 24Nov. All of the mapping is "exploratory" but probably more than good enough for bioRxiv.
 
 **Where the work lives.**
 - **The maps** are made in Rob's fork of Danny Arends's code, [robwwilliams/BxDLifeSpan](https://github.com/robwwilliams/BxDLifeSpan). Danny's files are unchanged there. The added scripts, the draft [Methods](https://github.com/robwwilliams/BxDLifeSpan/blob/master/Methods_draft.md) and the draft [figure legends](https://github.com/robwwilliams/BxDLifeSpan/blob/master/Figure_legends.md) are listed in its [README](https://github.com/robwwilliams/BxDLifeSpan/blob/master/README.md).
