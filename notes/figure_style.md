@@ -25,7 +25,7 @@ We plan to submit to a Nature-series journal. Figures and legends follow Arends 
 
 ## Legends
 
-- **Spelling:** British (Oxford), as in *Nature*: colour, grey, analysed, labelled, modelled, towards, but -ize endings (randomized). Everything else, including notes, code comments and messages to Rob, is American.
+- **Spelling:** American, as *Nature Aging* uses (Rob, 24 November 2026): color, gray, analyzed, labeled, modeled, toward. Legends written before that date in British (Oxford) spelling were converted. Everything else, including notes, code comments and messages to Rob, is American too.
 - **Opening:** a bold title stating the finding: "**Fig. 1 | A high-fat diet raises mortality at every age without changing the mortality rate doubling time.**" Extended Data figures use "Extended Data Fig. 1 |".
 - **Panels:** one description per panel, with bold panel letters: "**a**, ...", "**b**, ..."; "**a**,**b**, ..." for a pair.
 - **Italic:** statistical symbols (*n*, *P*, *r*, *t*, *χ*², *I*²), axis letters (*x* axis), and gene symbols.
