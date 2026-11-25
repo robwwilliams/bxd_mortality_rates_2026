@@ -12,6 +12,7 @@ Where the mapping as a whole stands, and why each model was chosen: [`notes/BXD_
   - **Chunks:** chunk *k* draws its permutations from seed 20261123 + *k*, so the result does not depend on the number of cores.
 - **`squirm_jobs/bxd_individual_perms.sh`** runs it on ATHENA: 200 permutations in 100 chunks of 2, on 4 cores.
 - **`qtl2_individualsF1_perm.R`** does the same for the individual-mouse maps with the BXD × BXD F1 mice (Rob's Fig. 2 of 23 November 2026, panels with F1s; maps by `qtl2_individualsF1.R` in the fork).
+- **`vita1_by_diet.R`** tests genotype × diet at Vita1a, Vita1b and Vita1y themselves, BXD and F1 mice together, with genotypes permuted among strains and F1 types (about 30 seconds; `output/Vita1_by_diet.txt`). Exploratory; pointwise.
   - **Permutations:** strains within strata as above, and each F1 type takes the genotypes and kinship of another F1 type of its class (short × short or long × long).
   - **Also records** the largest Cauchy combination over T-ages at any marker (T20–T770 and T20–T620), for a genome-wide threshold of the Cauchy maps.
   - **Checked on Metis:** run on the real data (`--check yes`) at T20 and T500, it gives the fork's maps to 4 decimals. One process peaks at 1.87 GB; three workers at 5.4 GB summed resident memory at T20.
@@ -38,4 +39,3 @@ Where the mapping as a whole stands, and why each model was chosen: [`notes/BXD_
 
 - **`inputs/bxd_risib/`** is the R/qtl2 cross: the 119 BXD strains mapped, with genotypes from GeneNetwork's `BXD_current_rev050423.geno` (heterozygous and unknown calls as missing) and the marker map in cM.
 - **`inputs/mice.txt`** has one row per mouse mapped (1,746 females on chow or high fat): ear tag, strain, diet, age at death, vivarium, age at set-up, and the stratum of its strain.
-- **`vita1_by_diet.R`** tests genotype × diet at Vita1a, Vita1b and Vita1y themselves, BXD and F1 mice together, with genotypes permuted among strains and F1 types (about 30 seconds; `output/Vita1_by_diet.txt`). Exploratory; pointwise.
