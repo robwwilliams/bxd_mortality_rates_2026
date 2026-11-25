@@ -1,5 +1,7 @@
 # Arends et al. 2026 (*Nature* 654:437): draft list of errata
 
+**Review copy: the list is now proposed for the paper's own repository as `ERRATA.md` in [DannyArends/UM-HET3#2](https://github.com/DannyArends/UM-HET3/pull/2), 25 November 2026. Make changes there; this file stays as first drafted.**
+
 **Draft by Claude (Opus 5.5) for Rob Williams, 25 November 2026. Not reviewed by any author; nothing here has been sent to *Nature*.** Checked against the PDF in `papers/`, Supplementary Tables 7, 9 and 12, and our own reruns. Confidence: **Sure** (two sources in the paper or its data disagree and one is right), **Likely** (one reading clearly fits), **Ask** (an author should decide).
 
 ## A. Statistics and data: corrections of substance
