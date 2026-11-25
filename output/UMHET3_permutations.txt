@@ -1,0 +1,152 @@
+Permutation thresholds for the actuarial LOD maps of Arends et al. 2026 (exploratory)
+Cross: 6438 mice, 891 markers; T-ages 35 to 1100 in 15-day steps ( 72 )
+
+Check: our LODs against Supplementary Table 9 (rounded to 0.01 there)
+  both   T35   n = 6438: largest |ours - published| 0.005, r = 1.00000
+  both   T365  n = 6249: largest |ours - published| 0.005, r = 1.00000
+  both   T725  n = 4803: largest |ours - published| 0.005, r = 1.00000
+  both   T1100 n = 559: largest |ours - published| 0.005, r = 0.99999
+  male   T35   n = 3401: largest |ours - published| 0.005, r = 1.00000
+  male   T365  n = 3238: largest |ours - published| 0.005, r = 1.00000
+  male   T725  n = 2263: largest |ours - published| 0.005, r = 1.00000
+  male   T1100 n = 277: largest |ours - published| 0.005, r = 0.99999
+  female T35   n = 3037: largest |ours - published| 0.005, r = 1.00000
+  female T365  n = 3011: largest |ours - published| 0.005, r = 1.00000
+  female T725  n = 2540: largest |ours - published| 0.005, r = 0.99999
+  female T1100 n = 282: largest |ours - published| 0.005, r = 0.99999
+
+both: 1000 permutations done after 34.6 minutes
+
+male: 1000 permutations done after 52.2 minutes
+
+female: 1000 permutations done after 69.9 minutes
+
+Thresholds (LOD) at genome-wide 10%, 5% and 1%; the paper used 3.65, 3.95 and 4.65 for every scan
+  both   per scan, median over T-ages: 3.74, 4.12, 4.88 (range of the 5% threshold 3.95 to 4.20); actuarial (any T-age): 5.26, 5.70, 6.45
+  male   per scan, median over T-ages: 3.73, 4.08, 4.86 (range of the 5% threshold 3.94 to 4.31); actuarial (any T-age): 5.38, 5.71, 6.65
+  female per scan, median over T-ages: 3.73, 4.09, 4.97 (range of the 5% threshold 3.95 to 4.23); actuarial (any T-age): 5.24, 5.71, 6.41
+
+Vita loci (Table 1a): the largest published LOD in each locus interval in each map, at the T-age where it occurs, against the
+5% per-scan threshold at that T-age, and against the 5% and 10% actuarial thresholds (any marker at any T-age). table.peak: Table 1a
+   Locus table.peak both.peak both.at both.scan5 both.pass.scan5 both.pass.act5
+  Vita1a       6.84      6.52    T860       4.16            TRUE           TRUE
+  Vita1b       7.91      7.91    T695       4.12            TRUE           TRUE
+  Vita1c       5.51      5.30    T200       4.14            TRUE          FALSE
+  Vita1d       5.47      5.21    T230       4.15            TRUE          FALSE
+  Vita2a       5.54      5.38    T800       4.07            TRUE          FALSE
+  Vita2b       6.84      6.39    T800       4.07            TRUE           TRUE
+  Vita2c       8.13      5.49    T800       4.07            TRUE          FALSE
+  Vita3a       4.26      3.20   T1055       4.00           FALSE          FALSE
+  Vita4a       9.00      7.72    T650       4.12            TRUE           TRUE
+  Vita4b       4.43      2.81   T1085       3.97           FALSE          FALSE
+  Vita5a       4.05      1.60    T455       4.14           FALSE          FALSE
+  Vita6a       4.14      4.61    T155       4.18            TRUE          FALSE
+  Vita6b       5.27      4.26    T155       4.18            TRUE          FALSE
+  Vita9a       5.68      4.40    T950       3.95            TRUE          FALSE
+  Vita9b       6.66      5.85   T1025       4.05            TRUE           TRUE
+  Vita9c       5.79      5.83    T980       4.17            TRUE           TRUE
+ Vita10a       4.48      4.48    T980       4.17            TRUE          FALSE
+ Vita11a       4.21      3.53    T665       4.07           FALSE          FALSE
+ Vita11b       4.07      3.05    T875       4.16           FALSE          FALSE
+ Vita11c       4.91      2.86     T35       4.09           FALSE          FALSE
+ Vita12a       5.22      5.22    T635       4.12            TRUE          FALSE
+ Vita13a       5.62      5.62    T230       4.15            TRUE          FALSE
+ Vita14a       6.08      6.25     T65       4.20            TRUE           TRUE
+ Vita14b       4.86      6.25     T65       4.20            TRUE           TRUE
+ Vita15a       5.08      5.08    T905       4.09            TRUE          FALSE
+ Vita15b       5.73      3.44    T890       4.10           FALSE          FALSE
+ Vita17a       4.97      5.23    T665       4.07            TRUE          FALSE
+ Vita18a       4.56      4.92    T170       4.19            TRUE          FALSE
+  VitaXa       5.64      5.71    T290       4.09            TRUE           TRUE
+ both.pass.act10 male.peak male.at male.scan5 male.pass.scan5 male.pass.act5
+            TRUE      4.84    T815       4.15            TRUE          FALSE
+            TRUE      4.20    T740       4.21           FALSE          FALSE
+            TRUE      5.51    T230       3.99            TRUE          FALSE
+           FALSE      5.47    T230       3.99            TRUE          FALSE
+            TRUE      5.54    T140       4.07            TRUE          FALSE
+            TRUE      4.07    T140       4.07            TRUE          FALSE
+            TRUE      3.14    T845       4.27           FALSE          FALSE
+           FALSE      3.83   T1070       4.23           FALSE          FALSE
+            TRUE      9.00    T650       4.14            TRUE           TRUE
+           FALSE      4.43    T635       4.07            TRUE          FALSE
+           FALSE      4.05   T1085       4.24           FALSE          FALSE
+           FALSE      4.97    T140       4.07            TRUE          FALSE
+           FALSE      5.27    T320       4.01            TRUE          FALSE
+           FALSE      4.08   T1055       4.13           FALSE          FALSE
+            TRUE      3.84   T1010       4.15           FALSE          FALSE
+            TRUE      4.98    T785       4.17            TRUE          FALSE
+           FALSE      4.29    T980       4.15            TRUE          FALSE
+           FALSE      4.21    T635       4.07            TRUE          FALSE
+           FALSE      4.84     T35       3.99            TRUE          FALSE
+           FALSE      4.97     T35       3.99            TRUE          FALSE
+           FALSE      3.04    T995       4.16           FALSE          FALSE
+            TRUE      4.32     T65       4.04            TRUE          FALSE
+            TRUE      5.43     T65       4.04            TRUE          FALSE
+            TRUE      5.36     T65       4.04            TRUE          FALSE
+           FALSE      5.60     T95       4.09            TRUE          FALSE
+           FALSE      5.73     T95       4.09            TRUE           TRUE
+           FALSE      4.69    T695       4.09            TRUE          FALSE
+           FALSE      3.73    T110       4.09           FALSE          FALSE
+            TRUE      4.33    T290       3.97            TRUE          FALSE
+ male.pass.act10 female.peak female.at female.scan5 female.pass.scan5
+           FALSE        3.35      T590         3.95             FALSE
+           FALSE        4.55      T770         4.12              TRUE
+            TRUE        2.12      T905         4.17             FALSE
+            TRUE        2.40      T965         4.13             FALSE
+            TRUE        6.18       T35         4.09              TRUE
+           FALSE        7.15      T320         4.10              TRUE
+           FALSE        8.13      T545         4.00              TRUE
+           FALSE        3.68      T560         4.05             FALSE
+            TRUE        2.07      T635         4.07             FALSE
+           FALSE        2.39      T935         4.01             FALSE
+           FALSE        3.00      T680         4.01             FALSE
+           FALSE        1.77      T680         4.01             FALSE
+           FALSE        1.57      T680         4.01             FALSE
+           FALSE        5.71      T170         4.12              TRUE
+           FALSE        4.12     T1040         4.23             FALSE
+           FALSE        3.76     T1040         4.23             FALSE
+           FALSE        1.55      T335         4.12             FALSE
+           FALSE        2.56      T950         4.10             FALSE
+           FALSE        4.07     T1040         4.23             FALSE
+           FALSE        3.31     T1055         4.15             FALSE
+           FALSE        3.02      T635         4.07             FALSE
+           FALSE        2.66      T395         4.14             FALSE
+            TRUE        2.82      T860         4.21             FALSE
+           FALSE        2.82      T860         4.21             FALSE
+            TRUE        2.76      T875         4.22             FALSE
+            TRUE        1.62      T830         4.03             FALSE
+           FALSE        2.68      T650         4.10             FALSE
+           FALSE        3.72      T380         4.12             FALSE
+           FALSE        0.82      T995         4.12             FALSE
+ female.pass.act5 female.pass.act10
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+             TRUE              TRUE
+             TRUE              TRUE
+             TRUE              TRUE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE              TRUE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+            FALSE             FALSE
+
+Loci passing in at least one map: per-scan 5% 27 ; actuarial 5% 12 ; actuarial 10% 17 of 29 
