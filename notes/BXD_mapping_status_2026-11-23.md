@@ -60,7 +60,7 @@
 
 13. **Weight predicts survival weakly from mid-life, and strongly from recent change.** Latent classes from weights before 365 days predict survival (P = 0.004, clustered by strain), but concordance is 0.539, no better than one weight. At 18 months, recent change predicts death and size does not.
 14. **Terminal weight loss marks about the last three months,** and short × short F1s postpone it rather than lengthen it. These analyses still use the December 2024 F1 table.
-15. **CTL maps: preliminary.** Danny's models, with no kinship and no genome-wide thresholds. They need the same treatment as Fig. 2 before they carry a claim in the Results.
+15. **CTL maps: preliminary.** Danny's models, with no kinship and no genome-wide thresholds. They need the same treatment as Fig. 2 before they carry a claim in the Results. Left to Danny (Rob, 24 November 2026).
 
 ### 5. Open slot: candidates for the authors to choose
 
@@ -376,6 +376,6 @@ These are Danny's maps, redrawn: strain means weighted by numbers of mice, witho
 1. **Thresholds for Fig. 2c–f** from the two ATHENA jobs with F1 mice (single T-age, any T-age and Cauchy); then Rob's choice for panel **f**, with or without F1s.
 2. **Cauchy maps for the individual mice,** once those thresholds are back.
 3. **For the F1s:** a permutation that keeps each F1 tied to its parents, to check the high-fat dominance pattern; and whether the F1s also sharpen the chow Chr 9 locus at 107 Mb.
-4. **Body-weight and CTL maps** with the models above, later or by Danny (Rob, 23 November 2026).
+4. **Body-weight and CTL maps** with the models above: left to Danny (Rob, 24 November 2026).
 5. **BXD loci in UM-HET3 females,** once Rob approves the plan, with the BXD loci fixed before UM-HET3 is looked at.
 6. **Legend titles that state findings,** once the thresholds are in.
