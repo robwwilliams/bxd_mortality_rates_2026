@@ -2,6 +2,8 @@
 An analysis of variation in mortality rate doubling time in BXD females by diet and genotype. Data from Roy et al. 2021 and new 2026 data for ~2000 mice.  
 See GeneNetwork.org trait 10002:  https://genenetwork.org/show_trait?trait_id=10002&dataset=BXD-LongevityPublish
 
+**Key findings, with F1 hybrids, ready for the Results:** [notes/BXD_mapping_status_2026-11-23.md](notes/BXD_mapping_status_2026-11-23.md#key-findings-for-the-results-start-here) (24 November 2026).
+
 ### First result
 
 Pooled over strains, BXD family females on a high-fat diet die at 1.4 times the rate of chow-fed females at every age, and the mortality rate doubling time (MRDT) does not change: 153 d on chow, 149 d on high fat (p = 0.55 for equal slopes). See [notes/MRDT_diet_initial.md](notes/MRDT_diet_initial.md).

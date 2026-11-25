@@ -7,6 +7,79 @@
 - **The long permutation job** for the individual-mouse maps runs from this repository ([`QTL/`](../QTL/README.md)) on ATHENA, a MacStudio M5 Max, through Squirm, our informal three-machine version of SLURM ([`tools/squirm/`](../tools/squirm/README.md)).
 - **The Gompertz analyses** that motivate the maps are in this repository ([README](../README.md) and the [report](Report_BXD_Mortality_Parts1-5_28Oct2026_v2.2.md)).
 
+## Key findings for the Results (start here)
+
+*A one-page guide for coauthors, added on 24 November 2026. Rob: "we could add more guidance at the top of the document about WHAT ARE THE KEY FINDINGS worth emphasis in the Results." The order is the one Rob described, from the themes Beni suggested. Everything is exploratory unless marked as planned. The unit is the strain or F1 type unless stated. All F1 numbers use Suheeta Roy's table of 24 November 2026 (319 F1 mice; ear tags 3694 and 4520 left out until Casey's records are checked, and including them changes nothing below).*
+
+### 1. Mortality: the Gompertz analysis
+
+1. **High fat raises mortality, and within strains it also steepens its rise** (exploratory). Within strains, mortality at 600 days is about 1.8-fold higher on high fat, the MRDT falls from 117 to 91 days, and strains differ in their response (P = 0.0002). Pooled over strains the MRDTs look equal (153 and 149 days), because mixing strains flattens the curves.
+2. **Proximal Chr 1 changes the level of mortality, not its doubling time** (planned test; MRDT ratio 1.10, 95% CI 0.80–1.51, P = 0.57). At 600 days, strains that are *B* across proximal Chr 1 die at twice the rate of *D* strains on high fat, and at 1.25 times the rate on chow (these level ratios are descriptive).
+3. **Heterosis: hybrids of short-lived strains gain the most.** Short × short F1s outlive the mean of their parents by 212 days on chow and 145 on high fat; long × long F1s by 52 and 60. At 600 days on chow, short × short F1s die at a quarter of their parents' rate (1.3 against 5.4 per 1,000 mouse-days). Their mortality then rises faster (MRDT 98 against 156 days; ratio 0.63, 95% CI 0.49–0.81), so the gain narrows with age. Long × long F1s match their parents' slope (0.96, 0.72–1.27).
+   - *Caution:* part of the pooled F1 result (MRDT ratio 0.65) is mixture. With a level for each genotype it is 0.78 (0.61–1.01). The short × short result survives that check (0.60, 0.44–0.82).
+
+*Figures:* [Fig. 7](../output/Fig7_Hazard_by_class_F1_24Nov2026.png) (hazard by class) and [Fig. 6](../output/Fig6_MRDT_ratios_F1_24Nov2026.png) (MRDT ratios). *Detail:* [MRDT_secondary_results.md](MRDT_secondary_results.md), [report](Report_BXD_Mortality_Parts1-5_28Oct2026_v2.2.md).
+
+### 2. Mapping, from main effects to locus by diet
+
+4. **Chow: Chr 1 near 5 Mb (Vita1a), *D* lives longer.** −log10 *P* 6.26 with strain means and 6.71 with the F1s (T770), above the genome-wide threshold for any T-age (5.5 and 5.8). It also passes in individual mice without F1s (4.74 against 4.62) and when all T-ages are combined (5.30 against 4.68). *D* is favored at every T-age and on both diets.
+5. **Chow: Chr 9 at 107 Mb, *B* lives longer** (4.83 at T680; single-T-age threshold only).
+6. **High fat: Chr 1 at 23.5 Mb (Vita1b) and near 36–38 Mb (Vita1y), *D* lives longer** (4.82 at T20; 5.41 at T500; single-T-age threshold). **Chr 2 at 157 Mb, *B* lives longer** (4.85 without F1s; P < 0.10 with them).
+7. **Locus by diet: the *D* advantage on proximal Chr 1 is larger on high fat** (new; [`QTL/vita1_by_diet.R`](../QTL/vita1_by_diet.R), 2,065 mice including 319 F1s, strains and F1 types permuted). Lifespan gain of *DD* over *BB*, in days, all mice (T20):
+
+   | Locus | Chow | High fat | Difference | P (strains permuted) |
+   |---|---|---|---|---|
+   | Vita1a, 5.0 Mb | 27 ± 22 | 53 ± 22 | 27 ± 16 | 0.21 (0.007 at T500) |
+   | Vita1b, 23.5 Mb | 41 ± 21 | 92 ± 21 | 51 ± 16 | 0.010 |
+   | Vita1y, 35.7 Mb | 14 ± 21 | 79 ± 21 | 65 ± 16 | 0.002 |
+
+   This agrees with finding 2, which comes from mortality rates.
+   - *Cautions:* Vita1b and Vita1y were chosen on high fat, which biases their difference upward. The three loci are linked, so these are not three independent results. P values are pointwise. Genome-wide, no interaction peak in panel **f** passes: the largest, 5.3 at T50, is below the 5% level of the maps without F1s (6.3 at T20). Thresholds with F1s are queued.
+
+*Figure:* [Fig. 2](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/maps/Figure2_lifespan_F1.png).
+
+### 3a. Fine mapping Vita1a and Vita1b in BXD
+
+8. **Vita1a on chow lies in a 0.5 Mb block, 4.86–5.32 Mb,** holding the start of *Tcea1*, *Rgs20* and *Atp6v1h*. The 11 kb LTR in intron 1 of *Atp6v1h*, carried, as far as Rob knows, only by the *D* haplotype, is inside it. *Mrpl15* and *Rb1cc1*, two of the three candidates in Arends et al. 2026, are outside.
+   - **The F1s narrow the 1.5-LOD interval from 4.9–10.4 to 4.9–5.5 Mb, but by a small margin.** The 5.5–10.4 Mb plateau is just below the cut, and without the one cross BXD73b×77 the interval is 4.9–10.4 Mb again. Suggested wording: "the F1s strengthen the peak and favor the proximal block."
+   - Only one strain with lifespans, BXD79, has a crossover inside the block. F1s of BXD79 with BXD65 and with BXD77 or BXD102 could split it.
+9. **High fat: the signal spans 22–39 Mb and may be one locus or two.** Peaks are at 23.5 Mb (interval 22.4–25.4) early in life and 37.6 Mb (32.3–38.7) at T500. A second locus never adds more than chance (P ≥ 0.077). The F1s move the weight toward 36–38 Mb but narrow neither peak.
+
+*Figures:* [Chr 1 profiles](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/maps/Chr1_zoom_profiles.png), [two-locus scan](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/maps/Chr1_twolocus.png), [Vita1a close-up](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/maps/Vita1a_zoom.png).
+
+### 3b. What UM-HET3 adds
+
+10. **Vita1a has the opposite sign in UM-HET3 (paternal *H* better than *D*), and one allelic series explains both families:** *H* > *D* > *B* ≈ *C* at Vita1a and Vita1b at every life stage, if effects are additive and shared. Vita1y differs (*D* best).
+11. **The flat UM-HET3 maternal map at Vita1a points to variants private to C3H** as the source of the reversal; 363 of the block's 485 C3H-private sites lie in *Rgs20*. A D-private variant, such as the LTR, cannot by itself explain both signs.
+12. **Distal Chr 2 is probably several loci** (BXD 124–129 and 154–157 Mb; UM-HET3 females 144–153 Mb).
+    - *Cautions:* UM-HET3 genotypes on proximal Chr 1 are faulty at two of three sites (biased toward *H*), there are 891 markers, and there is no *BB* or *DD* in UM-HET3.
+
+*Detail:* [founder variants](Vita1a_founder_variants_2026-11-24.md), [founder effects and NAM](Vita1_Vita2_founder_effects_and_NAM_2026-11-24.md).
+
+### 4. Body weight and CTL
+
+13. **Weight predicts survival weakly from mid-life, and strongly from recent change.** Latent classes from weights before 365 days predict survival (P = 0.004, clustered by strain), but concordance is 0.539, no better than one weight. At 18 months, recent change predicts death and size does not.
+14. **Terminal weight loss marks about the last three months,** and short × short F1s postpone it rather than lengthen it. These analyses still use the December 2024 F1 table.
+15. **CTL maps: preliminary.** Danny's models, with no kinship and no genome-wide thresholds. They need the same treatment as Fig. 2 before they carry a claim in the Results.
+
+### 5. Open slot: candidates for the authors to choose
+
+- **Heterosis as its own section** (the F1s' gain, its shape with age, and no detectable dominance locus). Claude's suggestion: it is the most distinctive BXD × BXD result, and it uses the F1s throughout.
+- **Nicotinamide by Vita1 genotype.** The direction matches the grant's pilot data, but across seven ways of testing at the strain level P runs from 0.01 to 0.8, and the NAM mice are not matched to controls by birth year.
+- **Candidate genes and variants** for Vita1a (long reads, pangenome), if they arrive in time.
+
+### What each result can carry
+
+| Use in the text | Findings |
+|---|---|
+| Lead with these: genome-wide, planned, or robust to the checks | 1, 2, 4, heterosis in short × short F1s (3) |
+| Report with the stated caution | 5, 6, 7, 8, 9, 10 |
+| Discussion or Extended Data, as leads for experiments | 11, 12, 13, 14, 15, nicotinamide |
+
+**Not done yet:** thresholds for individual-mouse maps with the new F1 table; body weights of the new F1 table through our QC; ear tags 3694 and 4520, and 15 mismatches with GeneNetwork ([`F1_GN_check_24Nov2026.txt`](../qc/F1_GN_check_24Nov2026.txt)) with Suheeta and Casey.
+
+---
+
 ## Where each part stands
 
 | Part | Figure | Status |
@@ -27,12 +100,12 @@ Rob, 23 November 2026: "Let's have Fig 2 (T-age mappings) include a. strain mean
 
 [![Fig. 2 with the F1s](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1.png)](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1.png)
 
-**How the individual-mouse panels add the F1s** ([`qtl2_individualsF1.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/qtl2_individualsF1.R)): 308 F1 mice join the 1,746 BXD mice. Each takes its F1 type's genotype probabilities (from both parents) and kinship. F1 class is a covariate in every panel and F1 class × diet in **e** and **f**. The F1s were born in 2020–2022 and housed at TSRB (Rob); the F1 class terms absorb anything they share, so their vivarium coding does not change the fit.
+**How the individual-mouse panels add the F1s** ([`qtl2_individualsF1.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/qtl2_individualsF1.R)): 319 F1 mice join the 1,746 BXD mice. Each takes its F1 type's genotype probabilities (from both parents) and kinship. F1 class is a covariate in every panel and F1 class × diet in **e** and **f**. The F1s were born in 2020–2022 and housed at TSRB (Rob); the F1 class terms absorb anything they share, so their vivarium coding does not change the fit.
 
 **Results so far:**
-- **Adding the F1 mice changes the individual maps little** (correlation over markers and T-ages with the maps without F1s: 0.99 for chow and both diets, 0.98 for high fat). The chow Chr 1 peak near 5 Mb rises from 4.74 to 5.38 at T770.
-- **Panel f, the interaction, changes most** (correlation 0.96). With F1s, several peaks rise: Chr 11 at 108 Mb from 4.2 to 5.6 (T50), Chr 1 at 35 Mb from 4.4 to 5.3 (T20), Chr 17 at 68 Mb from 4.4 to 5.2 (T440), Chr 12 at 56 Mb from 3.3 to 4.5. Whether to keep the F1s in **f** is best decided when their thresholds are back: the thresholds without F1s are 6.3 at T20 for one T-age (7.5 for any), above all of these. The two versions are side by side in [`Figure2_lifespan_F1_int_without_F1s.png`](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1_int_without_F1s.png).
-- **Thresholds for c–f:** 1,000 permutations of strains within epochs and F1 types within class, queued on ATHENA as 18 Squirm jobs (`squirm/bxd_individualsF1_perms_a` to `_r`), about two weeks of ATHENA time in all, around its own work. The first 200 come back first, from jobs a and b. Rob asked for 1,000 because with 200 the 5% threshold has a standard error of about 0.18, larger than the margin (0.12) by which chow Chr 1 passes without F1s. Checked on Metis first: the job reproduces the maps to 4 decimals.
+- **Adding the F1 mice changes the individual maps little** (correlation over markers and T-ages with the maps without F1s: 0.99 for chow and both diets, 0.98 for high fat). The chow Chr 1 peak near 5 Mb rises from 4.74 to 5.38 at T770. The F1 table of 24 November 2026 changes these maps very little (r = 0.997–1.000 with the December 2024 table; [`compare_F1_update.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/compare_F1_update.txt)).
+- **Panel f, the interaction, changes most** (correlation 0.96). With F1s, several peaks rise: Chr 11 at 108 Mb from 4.2 to 5.3 (T50), Chr 1 at 35 Mb from 4.4 to 5.0 (T20), Chr 17 at 68 Mb from 4.4 to 5.2 (T440), Chr 12 at 56 Mb from 3.3 to 4.2. Whether to keep the F1s in **f** is best decided when their thresholds are back: the thresholds without F1s are 6.3 at T20 for one T-age (7.5 for any), above all of these. The two versions are side by side in [`Figure2_lifespan_F1_int_without_F1s.png`](https://raw.githubusercontent.com/robwwilliams/BxDLifeSpan/master/output/maps/Figure2_lifespan_F1_int_without_F1s.png).
+- **Thresholds for c–f:** 1,000 permutations of strains within epochs and F1 types within class, queued on ATHENA as 18 Squirm jobs (`squirm/bxd_individualsF1_perms_a` to `_r`), about two weeks of ATHENA time in all, around its own work. The first 200 come back first, from jobs a and b. Rob asked for 1,000 because with 200 the 5% threshold has a standard error of about 0.18, larger than the margin (0.12) by which chow Chr 1 passes without F1s. Checked on Metis first: the job reproduces the maps to 4 decimals. **These jobs use the December 2024 F1 table (308 F1 mice),** so their thresholds will be approximate for the maps above, which use the table of 24 November 2026 (319).
 
 ## UM-HET3 maps drawn like the BXD maps (exploratory, 24 November 2026)
 
@@ -81,11 +154,13 @@ UM-HET3 has about one marker per 2.4 Mb on Chr 2, so these can be one, two or th
 
 ## The F1 hybrids: sharper loci on proximal Chr 1 (preliminary)
 
+*Numbers updated on 24 November 2026 with Suheeta Roy's new F1 table (319 F1 mice that died naturally; 308 before).*
+
 *Added on 23 November 2026, at Rob's request:* "That is of greatest interest to me in improving confidence of loci and narrowing 1.5 LOD (or –logP) of the support interval. ... the maps need to be compared to excluding the F1s. Need zoom-in versions of the proximal 50 Mb of Chr 1." *The thresholds and the two-locus scan were added later the same evening, at Rob's go-ahead.*
 
 **In brief:**
-- **Chow, Chr 1 near 5 Mb, T770:** significant with and without the F1s, and the F1s narrow its 1.5-LOD interval from 4.9–10.4 Mb to 4.9–5.5 Mb. The long × long F1s, as a group, do the narrowing. The peak itself is a flat block from 4.86 to 5.32 Mb holding *Tcea1*, *Rgs20* and *Atp6v1h*; only BXD79, which dies young on chow, has a crossover inside it.
-- **High fat, proximal Chr 1:** significant at T20 (23.5 Mb) and at T500 (37.6 Mb, where the F1s raise the peak from 4.74 to 5.43). Whether that is one locus or two, the data cannot yet say: a second locus never adds more than chance would.
+- **Chow, Chr 1 near 5 Mb, T770:** significant with and without the F1s, and the F1s raise it (6.26 to 6.71) and narrow its 1.5-LOD interval from 4.9–10.4 Mb to 4.9–5.5 Mb. The narrowing is a close call, and it rests on the long × long F1s, above all BXD73b×77. The peak itself is a flat block from 4.86 to 5.32 Mb holding *Tcea1*, *Rgs20* and *Atp6v1h*; only BXD79, which dies young on chow, has a crossover inside it.
+- **High fat, proximal Chr 1:** significant at T20 (23.5 Mb) and at T500 (37.6 Mb, where the F1s raise the peak from 4.74 to 5.41). Whether that is one locus or two, the data cannot yet say: a second locus never adds more than chance would.
 - **Dominance:** no locus passes the threshold for any T-age.
 
 **Why the F1s.** Rob chose 13 BXD × BXD F1 types: 6 short × short and 7 long × long crosses some of whose BXD parents have recombinations over different stretches of proximal Chr 1 (panel e of the profiles below). Two aims:
@@ -102,12 +177,12 @@ UM-HET3 has about one marker per 2.4 Mb on Chr 2, so these can be one, two or th
 
 | Map | Stable range | 5%, one T-age (any T-age) | 10% | Suggestive, P = 0.63 |
 |---|---|---|---|---|
-| Chow, additive | T20–T740 | 4.66 (5.83) | 4.30 (5.41) | 3.16 (4.25) |
-| High fat, additive | T20–T590 | 4.59 (5.46) | 4.21 (5.08) | 3.07 (3.91) |
-| Chow, dominance | T20–T500 | 1.15 (1.46) | 1.05 (1.31) | 0.77 (0.97) |
-| High fat, dominance | T20–T500 | 1.91 (2.58) | 1.79 (2.48) | 1.27 (1.75) |
+| Chow, additive | T20–T740 | 4.67 (5.82) | 4.31 (5.40) | 3.15 (4.24) |
+| High fat, additive | T20–T590 | 4.59 (5.46) | 4.21 (5.09) | 3.07 (3.93) |
+| Chow, dominance | T20–T500 | 1.20 (1.58) | 1.11 (1.44) | 0.82 (1.08) |
+| High fat, dominance | T20–T500 | 1.87 (2.54) | 1.75 (2.44) | 1.25 (1.71) |
 
-- **The additive thresholds are a little higher than those of the strain means alone** (4.66 and 4.59 against 4.43): the F1s add 13 units and a covariate.
+- **The additive thresholds are a little higher than those of the strain means alone** (4.67 and 4.59 against 4.43): the F1s add 13 units and a covariate.
 - **The dominance thresholds are far below what a test on 1 d.f. would suggest.** Only the 13 F1 types inform dominance, so its −log10 *P* values cannot be read on the usual scale; only the permutation thresholds count.
 
 **The support interval** (`chr1_zoom.R`) is the run of neighboring markers whose LOD is within 1.5 of the peak's. At these peaks a drop of 1.5 LOD is a drop of about 1.6 on the −log10 *P* scale. A 1.5-LOD interval is a rough guide, not a confidence interval, and it assumes one locus in the region.
@@ -121,15 +196,15 @@ Panels **a** and **d** are the strain-mean maps of Fig. 2a,b. Panels **b** and *
 
   | Locus | Strains alone | Strains + F1s |
   |---|---|---|
-  | Chow, Chr 1 at 5.0 Mb (*D*) | 6.26 at T770, significant for any T-age | 6.29 at T770, significant (see below) |
-  | Chow, Chr 9 at 107 Mb (*B*) | 4.47 at T680, significant | 4.91 at T680, significant |
-  | High fat, Chr 1 at 23.5 Mb (*D*) | 5.01 at T20; significant T20–T110 | 4.84 at T20; significant at T20 |
-  | High fat, Chr 1 at 37.6 Mb (*D*) | 4.74 at T500, significant | 5.43 at T500, significant |
-  | High fat, Chr 2 at 157 Mb (*B*) | 4.85 at T260; significant T20–T260 | 4.40 at T200; P < 0.10 only |
+  | Chow, Chr 1 at 5.0 Mb (*D*) | 6.26 at T770, significant for any T-age | 6.71 at T770, significant (see below) |
+  | Chow, Chr 9 at 107 Mb (*B*) | 4.47 at T680, significant | 4.83 at T680, significant |
+  | High fat, Chr 1 at 23.5 Mb (*D*) | 5.01 at T20; significant T20–T110 | 4.82 at T20; significant at T20 |
+  | High fat, Chr 1 at 37.6 Mb (*D*) | 4.74 at T500, significant | 5.41 at T500, significant |
+  | High fat, Chr 2 at 157 Mb (*B*) | 4.85 at T260; significant T20–T260 | 4.34 at T200; P < 0.10 only |
 
-  No locus passes for any T-age within the stable ranges. Chow T770 lies just past the chow stable range of the strain + F1 maps (its 5% threshold, 4.31, is 0.35 below the median), but 6.29 is above even the strictest threshold of that range, 5.83 for any T-age.
-- **Dominance: nothing on chow.** No marker passes at any T-age in the stable range; the largest, 0.95, is below every single-T-age threshold (1.06–1.32).
-- **Dominance on high fat: one pattern, probably not loci.** The strongest marker on each of 10 chromosomes passes the single-T-age threshold, all at the same T-ages (T20–T200, T350 or T440), and all with heterozygotes below the midpoint of the homozygotes. None passes for any T-age (largest 2.47 against 2.58). Ten chromosomes at once, on the same T-ages and in the same direction, point to the 13 F1 types as a group rather than to 10 loci. A likely cause: the permutation gives each F1 type the lifespans of another, which breaks each F1's resemblance to its own parents, so for dominance the permutation null may be too lenient. Not tested.
+  No locus passes for any T-age within the stable ranges. Chow T770 lies just past the chow stable range of the strain + F1 maps (its 5% threshold, 4.24, is 0.43 below the median), but 6.71 is above even the strictest threshold of that range, 5.82 for any T-age.
+- **Dominance: nothing on chow.** No marker passes at any T-age in the stable range; the largest, 1.04 at T380, is below that T-age's threshold (1.27).
+- **Dominance on high fat: one pattern, probably not loci.** The strongest marker on each of 10 chromosomes passes the single-T-age threshold, all at the same T-ages (T20–T200, T350 or T440), and all with heterozygotes below the midpoint of the homozygotes. None passes for any T-age (largest 2.45 against 2.54). Ten chromosomes at once, on the same T-ages and in the same direction, point to the 13 F1 types as a group rather than to 10 loci. A likely cause: the permutation gives each F1 type the lifespans of another, which breaks each F1's resemblance to its own parents, so for dominance the permutation null may be too lenient. Not tested.
 
 ### Proximal Chr 1, 0 to 50 Mb
 
@@ -139,28 +214,28 @@ Panels **a** and **d** are the strain-mean maps of Fig. 2a,b. Panels **b** and *
 
 **Chow, T770: the F1s narrow the interval from 5.6 Mb to 0.7 Mb.**
 - **Strains alone:** peak at 5.0 Mb (−log10 *P* 6.26), interval 4.9–10.4 Mb.
-- **With the F1s:** the same peak (6.29), interval 4.9–5.5 Mb.
-- **What moves the edge:** a plateau from 5.5 to 10.4 Mb. With strains alone it lies just within 1.5 LOD of the peak (−log10 *P* 4.8 against a cut of 4.7). The F1s lower it to 4.25, below the cut. So the narrowing is real in these data, but it rests on a modest change at the plateau.
-- **It does not hang on any one F1 type.** Left out one at a time, every F1 type leaves the interval at 4.9–5.5 Mb (`chr1_f1_dropone.R`).
+- **With the F1s:** the same peak (6.71), interval 4.9–5.5 Mb.
+- **What moves the edge:** a plateau from 5.5 to 10.4 Mb. With strains alone it lies just within 1.5 LOD of the peak (−log10 *P* 4.8 against a cut of 4.7). The F1s raise both, the peak to 6.71 and the plateau to 4.97, which leaves the plateau just below the cut (about 5.1). So the narrowing is a close call: a few more or fewer F1 deaths could move the plateau across the line.
+- **It hangs mostly on BXD73b×77,** which is heterozygous from 5.5 to 39.6 Mb but not in the block. Leave it out and the interval returns to 4.9–10.4 Mb. Leave out any other one F1 type and it stays at 4.9–5.5 Mb (`chr1_f1_dropone.R`). With the December 2024 table, no single type mattered.
 - **It comes from the long × long F1s as a group.** Leave out all 7 and the interval returns to 4.9–10.4 Mb. Leave out the 6 short × short F1s and it stays at 4.9–5.5 Mb. Several long × long types are heterozygous on one side of 5.5 Mb and not the other (panel e).
 - **Defined at T770, present throughout.** The locus passes a genome-wide threshold only at T770, but the *D* allele is favored at the 5.02 Mb marker at every T-age, on chow and on high fat (−log10 *P* 0.5–2.7). Rob: "when you say 'only at T770' you are imposing the threshold correctly to define the locus, but that does not mean the locus 'disappears' at younger ages. Once the locus is defined, then the testing burden is reduced." The sharpest interval comes from T770, from the 46 strains and 13 F1 types still alive then; from T680 to T740 the intervals span 8.5–12 Mb. Rob: "Any map at T770 is going to be iffy given the low sample size."
-- **The peak is a flat block, not a point.** Every marker from 4.86 to 5.32 Mb has the same genotypes in all the strains and F1 types mapped at T770, so all give the same −log10 *P* (6.26 alone, 6.29 with F1s). "5.0 Mb" is just the first marker of the block. The data cannot place the locus within it.
+- **The peak is a flat block, not a point.** Every marker from 4.86 to 5.32 Mb has the same genotypes in all the strains and F1 types mapped at T770, so all give the same −log10 *P* (6.26 alone, 6.71 with F1s). "5.0 Mb" is just the first marker of the block. The data cannot place the locus within it.
 - **What the block holds** (mm10, RefSeq): the start of *Tcea1* (4.86–4.90 Mb), *Rgs20* (4.91–5.07) and *Atp6v1h* (5.08–5.16). Just outside are *Lypla1* and *Mrpl15* (proximal, ending at 4.85 and 4.79 Mb), and *Oprk1* (distal, from 5.59 Mb). Of the three Vita1a candidates named in Arends et al. 2026 (*Mrpl15*, *Atp6v1h*, *Rb1cc1*), only *Atp6v1h* lies in the block, and *Rb1cc1* (6.21 Mb) lies outside the whole interval. The BXD chow locus and Vita1a in UM-HET3 need not be the same variant.
 - **Which strains set the edges** (`chr1_recombinants.R`): proximally, BXD65, BXD102 and BXD43 switch between 4.858 and 4.861 Mb, inside the start of *Tcea1*; distally, BXD11 switches at 5.316 Mb, beyond *Atp6v1h*.
 
 **High fat: peaks near 23.5 and 37.6 Mb, and the F1s shift the weight toward the second.**
 - **T20 to T230:** the peak is at 23.5 Mb, with an interval of 22.4–25.5 Mb, with or without the F1s. Leaving out any F1 type, or either class, does not change it.
 - **From T260 on, with the F1s, the peak moves to 32–38 Mb** at most T-ages up to T650. With strains alone it is there only at T500, T590 and T620.
-- **T500 is the strongest:** 37.6 Mb, −log10 *P* 5.43 with the F1s (4.74 without), interval 34.4–38.7 Mb either way. Without some short × short types (BXD170x172, BXD197x170, BXD9x172) or BXD65x102 it widens to 32.3–38.7 Mb.
-- **Against the thresholds:** with the F1s, Chr 1 passes at T20 (23.5 Mb, 4.84 against 4.62) and at T500 (37.6 Mb, 5.43 against 4.47).
-- **The single peak marker at 37.63 Mb (rs32180312) is called heterozygous in 19 strains,** against 11 at its neighbors, so its exact position should not be trusted. Markers from 35.7 to 37.7 Mb come within 0.35 of it (5.08–5.32 with the F1s). The stretch from 35.7 to 38.0 Mb holds 37 RefSeq genes.
+- **T500 is the strongest:** 37.6 Mb, −log10 *P* 5.41 with the F1s (4.74 without). The interval is 34.4–38.7 Mb with strains alone and 32.3–38.7 Mb with the F1s; without several single F1 types it is again 34.4–38.7 Mb. So here the F1s strengthen the peak but do not narrow it.
+- **Against the thresholds:** with the F1s, Chr 1 passes at T20 (23.5 Mb, 4.82 against 4.62) and at T500 (37.6 Mb, 5.41 against 4.51).
+- **The single peak marker at 37.63 Mb (rs32180312) is called heterozygous in 19 strains,** against 11 at its neighbors, so its exact position should not be trusted. Markers from 35.7 to 37.6 Mb come close to it (about 5.1–5.3 with the F1s). The stretch from 35.7 to 38.0 Mb holds 37 RefSeq genes.
 - **Rob, on this locus:** "I agree that there is likely to be a locus distal to Vita1b at about 35–37 Mb. We have noted that for several years but not look at the interval closely. We do not see this locus in the UM-HET3 so it was been less of a priority. ... But T500 is fine."
 - **At almost every high-fat T-age, markers in the other region also come within 1.5 LOD of the peak.** So an interval that assumes one locus does not fit here, and we ran a two-locus scan.
 
 **One locus or two on high fat** (`chr1_twolocus.R`). At each T-age from T20 to T620, every pair of positions in 0–50 Mb was fitted together, in the same mixed model as the maps (it reproduces their single-locus LODs exactly).
 - **The test:** LOD(2 v 1), the best pair against the best single locus. Its P comes from 1,000 parametric bootstraps under the best single locus: traits simulated with one locus, each put through the same search for one locus and for a pair.
 - **The best pair is near 23.5 and 37.6 Mb at most T-ages** (32 of the 42 scans), and it adds 0.8–1.9 LOD to the best single locus.
-- **That is no more than one locus gives by chance:** P(2 v 1) is 0.08 at best (strains alone, T500) and 0.18–0.74 elsewhere. With the F1s, P is lower at most early T-ages (0.18–0.33 at T20–T230, against 0.40–0.51 without), but never below 0.18.
+- **That is no more than one locus gives by chance:** P(2 v 1) is 0.08 at best (strains alone, T500) and 0.19–0.74 elsewhere. With the F1s, P is lower at most early T-ages (0.19–0.37 at T20–T230, against 0.40–0.51 without), but never below 0.19.
 - **Each position keeps some signal given the other.** Given a locus at 23.5 Mb, the best second locus is at 32–38 Mb at every T-age, adding 0.9–2.6 LOD with strains alone and 1.2–3.3 with the F1s (3.3 at T500). Given 37.6 Mb, the best second locus is near 23 Mb at most T-ages, adding 0.8–2.5 LOD.
 - **So the data neither show two loci nor rule them out.** The high-fat signal spans 22–39 Mb. The F1s move it toward 37.6 Mb at later T-ages but do not split it.
 
@@ -191,11 +266,11 @@ F1 mean lifespan minus the mean of its two parental strains:
 
 | Diet | Short × short (6 types) | Long × long (7 types) |
 |---|---|---|
-| Chow | +196 days (range +129 to +288) | +42 days (−17 to +142) |
-| High fat | +146 days (+99 to +247) | +58 days (−18 to +163) |
+| Chow | +212 days (range +129 to +288) | +52 days (+12 to +142) |
+| High fat | +145 days (+99 to +240) | +60 days (−9 to +163) |
 
-- **Within each class, F1 types do not differ by more than sampling error** (heterogeneity P = 0.21–0.54).
-- **Heterosis does not follow the fraction of the genome that is heterozygous** (40–55% across types). The correlations over F1 types are −0.81 and −0.55 on chow (short × short, long × long), and +0.38 and −0.25 on high fat, each from only 6 or 7 types.
+- **Within each class, F1 types do not differ by more than sampling error** (heterogeneity P = 0.26–0.74).
+- **Heterosis does not follow the fraction of the genome that is heterozygous** (40–55% across types). The correlations over F1 types are −0.63 and −0.44 on chow (short × short, long × long), and +0.38 and −0.24 on high fat, each from only 6 or 7 types.
 
 Files: [`f1_heterosis.txt`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/f1_heterosis.txt).
 
@@ -281,9 +356,9 @@ As in Arends et al. 2026, but with exact P values on 1 d.f. ([Cauchy_review_2026
 |---|---|---|---|
 | Strain means, chow | T20–T770 | 4.44 | **Chr 1 at 5.1 Mb, 4.85 (significant)**; Chr 9 at 107 Mb, 3.42 |
 | Strain means, high fat | T20–T620 | 4.41 | Chr 2 at 157.5 Mb, 4.39 (P < 0.10); Chr 1 at 23.5 Mb, 4.29 (P < 0.10) |
-| Strains + F1s, chow | T20–T740 | 4.82 | Chr 9 at 107 Mb, 3.76 |
-| Strains + F1s, chow | T20–T770 | 4.72 | **Chr 1 at 5.1 Mb, 4.88 (significant)**; Chr 9 at 107 Mb, 3.78 |
-| Strains + F1s, high fat | T20–T590 | 4.73 | Chr 1 at 37.6 Mb, 4.24; Chr 2 at 157 Mb, 3.89; Chr 15 at 14 Mb, 3.69 |
+| Strains + F1s, chow | T20–T740 | 4.79 | Chr 9 at 107 Mb, 3.69 |
+| Strains + F1s, chow | T20–T770 | 4.68 | **Chr 1 at 5.1 Mb, 5.30 (significant)**; Chr 9 at 107 Mb, 3.71 |
+| Strains + F1s, high fat | T20–T590 | 4.74 | Chr 1 at 37.6 Mb, 4.21; Chr 2 at 157 Mb, 3.83; Chr 15 at 14 Mb, 3.73 |
 
 - **The combination is conservative for loci that act at only a few T-ages,** as the review predicted: T-ages where a locus does nothing pull the combined P toward 1. So the chow Chr 1 locus, a T770 effect, passes only when T770 is included.
 - **For the individual-mouse maps,** the queued ATHENA jobs record the genome-wide maximum of the Cauchy combination in each permutation, so their thresholds come back with the single-T-age ones.

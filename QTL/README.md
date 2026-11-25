@@ -38,3 +38,4 @@ Where the mapping as a whole stands, and why each model was chosen: [`notes/BXD_
 
 - **`inputs/bxd_risib/`** is the R/qtl2 cross: the 119 BXD strains mapped, with genotypes from GeneNetwork's `BXD_current_rev050423.geno` (heterozygous and unknown calls as missing) and the marker map in cM.
 - **`inputs/mice.txt`** has one row per mouse mapped (1,746 females on chow or high fat): ear tag, strain, diet, age at death, vivarium, age at set-up, and the stratum of its strain.
+- **`vita1_by_diet.R`** tests genotype × diet at Vita1a, Vita1b and Vita1y themselves, BXD and F1 mice together, with genotypes permuted among strains and F1 types (about 30 seconds; `output/Vita1_by_diet.txt`). Exploratory; pointwise.
