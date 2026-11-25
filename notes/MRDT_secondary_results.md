@@ -102,3 +102,23 @@ For H1 this reverses the sign of the Gompertz estimate. Together with the per-st
 - **The F1s.** Crossing two short-lived BXD strains gives hybrids that are much less likely to die in early and middle adult life. Their risk then climbs faster, so by very old ages the hybrids lose much of their advantage.
 - **The registered direction.** The plan tested whether hybrids age more slowly, with a flatter climb. That was Claude's reading of Rob's question, not Rob's prediction. The data say the opposite, and under the plan that is reported as an estimate, not as a discovery.
 - **Rob's prediction.** Rob predicted that hybrids would be more vigorous and better buffered at every age, which is a statement about level, not about how fast risk climbs. In the short-by-short crosses that holds: hybrid mortality stays below the parents' to about 1,000 d.
+
+## Update, 24 November 2026: the F1 comparisons with Suheeta Roy's new F1 table
+
+Exploratory: rerun after the registered results were seen, with the same code and another F1 table (`data/corrected/AgingBXD_F1_24Nov2026_corrected.txt`: natural deaths, with set-up ages). The registered results above stand as registered. GeneNetwork's F1 ages, which they used, already included the 12 mice that our December 2024 workbook lacked, so little was expected to change.
+
+| F1 / inbred parents, from 200 d | Registered (GeneNetwork), 320 F1s | New table, 316 F1s | With 3694 and 4520, 318 F1s |
+|---|---|---|---|
+| H2, all: F1 MRDT | 106.7 d | 106.5 d | 106.6 d |
+| H2, all: ratio (95% CI) | 0.65 (0.43–0.97) | 0.65 (0.43–0.97) | 0.65 (0.43–0.97) |
+| S×S / short-lived parents: ratio | 0.63 (0.49–0.81) | 0.63 (0.49–0.81) | 0.63 (0.49–0.81) |
+| L×L / long-lived parents: ratio | 0.95 (0.72–1.27) | 0.96 (0.72–1.27) | 0.96 (0.73–1.27) |
+| H2, a level for each genotype: ratio | 0.79 (0.61–1.02) | 0.78 (0.61–1.01) | 0.78 (0.61–1.01) |
+| S×S, a level for each genotype: ratio | 0.62 (0.45–0.84) | 0.60 (0.44–0.82) | 0.60 (0.44–0.82) |
+| F1 deaths per 1,000 mouse-days at 600 d, chow / high fat | 1.06 / 2.46 | 1.04 / 2.46 | 1.05 / 2.46 |
+
+- **Nothing changes in the conclusions.** Dropping any one genotype leaves the H2 log2 ratio between −0.74 and −0.43, as before.
+- **S×S F1s on chow** die at 600 d at 1.32 per 1,000 mouse-days (1.40 before), against 5.4 in their parents.
+- **Tables and figures:** `output/MRDT_*_F1_24Nov2026*.txt`, `output/Fig6_MRDT_ratios_F1_24Nov2026.svg` and `output/Fig7_Hazard_by_class_F1_24Nov2026.svg`.
+- **The measures of spread** (`output/Rectangularization_tests.txt`) were rerun too, and only their F1 rows changed: S×S F1s outlive their parents by 187 days (111–263; 179 before), and L×L F1s by 50 days (−34 to 133; 44 before). The text of `Rectangularization_results.md` and of the v2.2 report still gives the earlier values.
+- **Not rerun:** the body-weight analyses (terminal decline, onset definitions), because the new table's weighings have not been through our QC.

@@ -146,7 +146,7 @@ add("high fat vs chow", "BXD", "mrdt", mean(sim), quantile(sim, 0.025), quantile
     sprintf("check: 40 simulations with one true MRDT (%.0f d) for both diets and the same strains, cell sizes and set-up ages; the estimate is the bias", cmp$fits$CD$MRDT))
 
 # F1 hybrids against their inbred parents (cells: genotype x diet)
-f <- read.delim("data/corrected/AgingBXD_F1_BodyWeight_NaturalDeath_corrected.txt", check.names = FALSE, quote = "")
+f <- read.delim("data/corrected/AgingBXD_F1_24Nov2026_corrected.txt", check.names = FALSE, quote = "")
 f <- f[f[, "CauseOfDeath"] %in% "Natural" & !is.na(num(f[, "AgeAtDeath (days)"])), ]
 f[, "StrainName"] <- sub("^BXD([0-9]+[a-wyz]?)x([0-9]+[a-wyz]?)$", "BXD\\1xBXD\\2", f[, "StrainName"])
 short.parents <- c("BXD9", "BXD170", "BXD172", "BXD197"); long.parents <- c("BXD65", "BXD73b", "BXD77", "BXD102")

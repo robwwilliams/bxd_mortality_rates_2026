@@ -1,0 +1,16 @@
+tag	type.GN	diet.GN	age.GN	type.workbook	diet.workbook	age.workbook	setup	note
+3516	BXD73bx65	CD	685	BXD73bx65	CD	402	21	age differs
+3562	BXD73bx65	CD	1040					not in the workbook
+3563	BXD73bx65	CD	705	BXD73bx65	CD	728	23	age differs by exactly the set-up age
+3564	BXD73bx65	CD	538	BXD73bx65	CD	561	23	age differs by exactly the set-up age
+3566	BXD73bx65	CD	796	BXD73bx65	CD	819	23	age differs by exactly the set-up age
+3634	BXD172x197	CD	771	BXD172x197	CD	957	26	age differs
+3637	BXD197x9	HF	808	BXD197x9	CD	808	24	cross or diet differs
+3640	BXD65x102	CD	1068	BXD73bx65	CD	1068	25	cross or diet differs
+3641	BXD73bx65	CD	1068	BXD77x65	CD	1068	25	cross or diet differs
+3647	BXD170x172	CD	859	BXD170x172	CD	926	21	age differs
+3661	BXD65x77	CD	1053	BXD65x102	CD	1053	29	cross or diet differs
+3662	BXD172x197	CD	506	BXD172x197	CD	991	23	age differs
+3694	BXD102x73b	CD	817	BXD102x73b	CD	882	21	age differs
+4521	BXD102x73b	CD	907					not in the workbook
+4902	BXD9x170	CD	969	BXD65x77	CD	969	39	cross or diet differs

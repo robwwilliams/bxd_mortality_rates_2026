@@ -11,7 +11,14 @@
 #                                  (c, d) F1 hybrids and their inbred parents, on chow and on high fat
 #
 
+# With a suffix (Rscript Gompertz/Figures_MRDT_Secondary.R F1_24Nov2026) it draws the same figures from the tables of another F1
+# data set (see MRDT_Secondary.R) and adds the suffix to the file names. (Added 24 November 2026.)
+#
+
 library(svglite)
+
+args <- commandArgs(trailingOnly = TRUE)
+sfx <- if (length(args) >= 1) paste0("_", args[1]) else ""
 
 ink <- "#0b0b0b"; ink2 <- "#52514e"; grid.col <- "#e4e3df"
 # Haplotype colors follow Arends et al. 2026 (Fig. 2f): B ("black") dark purple, D ("dilute") orange. Their tan D
@@ -30,10 +37,10 @@ openSVG <- function(file, width = 7, height = 5) {
   par(family = "sans", col = ink, col.axis = ink2, col.lab = ink, fg = ink2, las = 1, mgp = c(2.6, 0.6, 0), tcl = -0.3)
 }
 
-tests <- read.delim("output/MRDT_secondary_tests.txt")
-expl <- read.delim("output/MRDT_exploratory_pergenotype.txt")
-levels.out <- read.delim("output/MRDT_secondary_levels.txt")
-binned <- read.delim("output/MRDT_secondary_binned_60d.txt")
+tests <- read.delim(paste0("output/MRDT_secondary", sfx, "_tests.txt"))
+expl <- read.delim(paste0("output/MRDT_exploratory", sfx, "_pergenotype.txt"))
+levels.out <- read.delim(paste0("output/MRDT_secondary", sfx, "_levels.txt"))
+binned <- read.delim(paste0("output/MRDT_secondary", sfx, "_binned_60d.txt"))
 row.of <- function(name, from = 200) tests[tests[, "test"] == name & tests[, "from"] == from, ]
 
 ### Figure 5: MRDT ratios
@@ -60,7 +67,7 @@ rows <- list(
   list("S1  Short x short F1s / short-lived parents", expl[3, ]),
   list("S1  Long x long F1s / long-lived parents", expl[4, ])
 )
-openSVG("output/Fig6_MRDT_ratios.svg", width = 7.5, height = 7.4)
+openSVG(paste0("output/Fig6_MRDT_ratios", sfx, ".svg"), width = 7.5, height = 7.4)
 par(mar = c(4.2, 16.5, 1, 7.2))
 n <- length(rows); y <- rev(seq_len(n))
 xr <- c(-2, 1.25)
@@ -91,7 +98,7 @@ box(bty = "l", col = ink2)
 dev.off()
 
 ### Figure 6: hazard by class, with the fitted lines of the registered model
-openSVG("output/Fig7_Hazard_by_class.svg", width = 7.5, height = 6.6)
+openSVG(paste0("output/Fig7_Hazard_by_class", sfx, ".svg"), width = 7.5, height = 6.6)
 par(mfrow = c(2, 2), mar = c(4, 4.4, 1.6, 0.8))
 doublings <- 2^(-3:6)
 panels <- list(c("H1", "CD", "a"), c("H1", "HF", "b"), c("H2", "CD", "c"), c("H2", "HF", "d"))

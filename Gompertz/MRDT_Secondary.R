@@ -15,10 +15,18 @@
 #
 # Run from the repository root:  Rscript Gompertz/MRDT_Secondary.R
 #
+# Added 24 November 2026 (Claude, for Rob Williams; after the registered results were seen): the same analyses with another
+# table of F1 lifespans, natural deaths only and with its set-up ages. The registered run, without arguments, is unchanged.
+#   Rscript Gompertz/MRDT_Secondary.R data/corrected/AgingBXD_F1_24Nov2026_corrected.txt F1_24Nov2026
+# writes output/MRDT_secondary_F1_24Nov2026_*.txt
+#
 
 library(readxl)
 
 source("Gompertz/gompertz.R")
+
+args <- commandArgs(trailingOnly = TRUE)
+out.file <- function(x) if (length(args) >= 2) sub("^output/MRDT_(secondary|exploratory)", paste0("output/MRDT_\\1_", args[2]), x) else x
 
 # Suheeta Roy's curated file: BXD strains, parents and B6D2 F1s, with set-up ages
 mdata <- read_excel("data/original/BXD_Mortality_for_Mapping_Arends.xlsx", skip = 9, .name_repair = "minimal")
@@ -40,6 +48,12 @@ f1 <- export[grepl("^BXD.*[xX]BXD.*F1$", export[, "Strain"]) & export[, "Sex"] =
 f1[, "Strain"] <- sub("XBXD", "xBXD", f1[, "Strain"])            # one spelling variant: BXD065XBXD102F1
 f1 <- data.frame(Strain = f1[, "Strain"], Diet = f1[, "Tx"], Age = suppressWarnings(as.numeric(f1[, "Value"])), SetupAge = 21)   # harvested: x
 f1 <- f1[!is.na(f1[, "Age"]), ]
+if (length(args) >= 1) {
+  f <- read.delim(args[1], check.names = FALSE, quote = "")
+  f <- f[f[, "CauseOfDeath"] == "Natural" & f[, "DietCode"] %in% c("CD", "HF"), ]
+  f1 <- data.frame(Strain = sub("x", "xBXD", f[, "StrainName"]), Diet = f[, "DietCode"], Age = f[, "AgeAtDeath (days)"],
+                   SetupAge = f[, "AgeAtSet Up (days)"])
+}
 
 short.parents <- c("BXD9", "BXD170", "BXD172", "BXD197")
 long.parents <- c("BXD65", "BXD73b", "BXD77", "BXD102")
@@ -207,10 +221,10 @@ rownames(tests) <- NULL; rownames(gg) <- NULL
 print(tests[, c("test", "from", "n1", "n2", "units1", "units2", "MRDT1", "MRDT2", "delta", "delta.lo", "delta.hi", "p", "p.lrt")], digits = 3)
 print(gg, digits = 3)
 
-write.table(tests, "output/MRDT_secondary_tests.txt", sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(levels.out, "output/MRDT_secondary_levels.txt", sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(loo.out, "output/MRDT_secondary_jackknife.txt", sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(interaction, "output/MRDT_secondary_interaction.txt", sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(gg, "output/MRDT_secondary_gammagompertz.txt", sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(exploratory, "output/MRDT_exploratory_pergenotype.txt", sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(binned, "output/MRDT_secondary_binned_60d.txt", sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(tests, out.file("output/MRDT_secondary_tests.txt"), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(levels.out, out.file("output/MRDT_secondary_levels.txt"), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(loo.out, out.file("output/MRDT_secondary_jackknife.txt"), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(interaction, out.file("output/MRDT_secondary_interaction.txt"), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(gg, out.file("output/MRDT_secondary_gammagompertz.txt"), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(exploratory, out.file("output/MRDT_exploratory_pergenotype.txt"), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(binned, out.file("output/MRDT_secondary_binned_60d.txt"), sep = "\t", quote = FALSE, row.names = FALSE)

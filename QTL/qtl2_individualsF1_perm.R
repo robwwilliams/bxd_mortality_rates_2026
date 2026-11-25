@@ -44,7 +44,7 @@ stratum <- tapply(bxd[, "stratum"], bxd[, "strain"], unique)[strains]
 
 ### F1 types and mice (as strainF1_setup.R and qtl2_individualsF1.R in the fork)
 short <- c("BXD9", "BXD170", "BXD172", "BXD197"); long <- c("BXD65", "BXD73b", "BXD77", "BXD102")
-f1 <- read.delim("data/corrected/AgingBXD_F1_BodyWeight_NaturalDeath_corrected.txt", check.names = FALSE)
+f1 <- read.delim("data/corrected/AgingBXD_F1_24Nov2026_corrected.txt", check.names = FALSE)
 f1 <- f1[f1[, "CauseOfDeath"] == "Natural" & f1[, "DietCode"] %in% c("CD", "HF"), ]
 types <- sort(unique(f1[, "StrainName"]))
 parents <- t(sapply(types, function(x) c(sub("x.*", "", x), paste0("BXD", sub(".*x", "", x)))))
