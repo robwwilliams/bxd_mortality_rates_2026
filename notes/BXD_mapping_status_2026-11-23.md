@@ -60,11 +60,8 @@
 
 13. **Weight predicts survival weakly from mid-life, and strongly from recent change.** Latent classes from weights before 365 days predict survival (P = 0.004, clustered by strain), but concordance is 0.539, no better than one weight. At 18 months, recent change predicts death and size does not.
 14. **Terminal weight loss marks about the last three months,** and short × short F1s postpone it rather than lengthen it. These analyses still use the December 2024 F1 table.
-15. **CTL maps: preliminary.** Danny's models, with no kinship and no genome-wide thresholds. They need the same treatment as Fig. 2 before they carry a claim in the Results. Left to Danny (Rob, 24 November 2026). His P values use the numbers of mice as sample sizes, so a permutation of whole strains shows how strong the map is.
-    - *Reproduced exactly, then tested* (24 November 2026, evening; [`ctl_permutations.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/ctl_permutations.R), [guide](https://github.com/robwwilliams/BxDLifeSpan/blob/master/MODELS_for_Danny.md)). With 1,000 permutations of strains, the map looks no stronger than maps with the genotypes scrambled: the largest −log10 *P* is 10.2 on chow (5% threshold 16.8, genome-wide P = 0.88) and 9.4 on high fat (12.3, P = 0.50). B&H and Bonferroni call markers in essentially all of the permuted maps, because they start from P values that count mice. This does not apply to UM-HET3, where every mouse is genetically unique. Power is low: a planted CTL had to change lifespan by about 200 days per SD of weight to be found. Suggested use: Extended Data, not a claim in the Results.
-    - *With weight held at one age (25 November 2026; [guide](https://github.com/robwwilliams/BxDLifeSpan/blob/master/MODELS_for_Danny.md)), the change of sign goes away:* weight at 90 or 180 days goes with shorter lifespan at nearly every later survivorship, clearly so on high fat (weight at 90 days, within strains at T380: −0.23, 95% CI −0.36 to −0.11). So the sign change comes from the age of the weight, not from the survivorship. CTL maps in this design: none passes genome-wide with strains permuted.
-    - *The full scan* (25 November 2026), the design of Arends et al. 2026: weight at every 30 days from 80 to 740 against every later survivorship, with F1s. None passes over all 595 scans (chow P = 0.68, high fat P = 0.31); 35 scans pass 5% on their own, about 30 expected by chance. Figure: [`CTL_grid.png`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/maps/CTL_grid.png).
-    - *The correlation behind it changes sign gradually* (added in the evening; [`weight_lifespan_sign.R`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/weight_lifespan_sign.R)). The draft legend put the change at about 290 days on high fat, which was wrong: 290 was the last age at which it was mostly negative. Rob: "That is about 150 days earlier than I would have guessed based on Arends et al. and UM-HET3 data." Among mice of the same strain on high fat, it crosses zero at about 425 days and is clearly positive from T560 (+0.12, 95% CI 0.02–0.20, rising to +0.34 at T650). Leaving out mice within 100 days of death moves the crossing to about 535 days and more than halves the late correlation (+0.13 at T650), so wasting in mice near death explains much of it, though not clearly all. On chow the within-strain correlation is weak throughout (−0.09 to +0.11), and its late rise (T650) vanishes without the mice near death.
+15. **CTL: closed (Rob, 25 November 2026: "Case closed as far as I am concerned").** Danny's maps were reproduced exactly. With whole strains permuted, no CTL passes, in his design or in that of Arends et al. 2026 (weight at one age, all later survivorships; 595 scans with F1s; chow P = 0.68, high fat P = 0.31). Permuting mice instead would have made them look significant (P = 0.02). About 100 strains carry too little power for realistic CTLs, so this does not show that there are none. *In the paper:* one sentence in the Results, the heat map ([`CTL_grid.png`](https://github.com/robwwilliams/BxDLifeSpan/blob/master/output/maps/CTL_grid.png)) in Extended Data, and the [hierarchical permutation](Hierarchical_permutation_explained.md) paragraph in Methods. Detail: [guide](https://github.com/robwwilliams/BxDLifeSpan/blob/master/MODELS_for_Danny.md).
+16. **The phenotype is worth reporting** (exploratory): early weight goes with shorter life, most clearly on high fat. Weight at 180 days, pooled: −0.13 (95% CI −0.27 to 0.00) on chow and −0.15 (−0.26 to −0.03) on high fat, close to the −0.11 of UM-HET3 females at 183 days in Arends et al. The two diets do not differ detectably (none of 26 comparisons). The sign turns positive only for weights taken late in life, as at 730 days in UM-HET3 males. Body-weight maps stay with Danny.
 
 ### 5. Open slot: candidates for the authors to choose
 
@@ -78,7 +75,8 @@
 |---|---|
 | Lead with these: genome-wide, planned, or robust to the checks | 1, 2, 4, heterosis in short × short F1s (3) |
 | Report with the stated caution | 5, 6, 7, 8, 9, 10 |
-| Discussion or Extended Data, as leads for experiments | 11, 12, 13, 14, 15, nicotinamide |
+| Discussion or Extended Data, as leads for experiments | 11, 12, 13, 14, 16, nicotinamide |
+| Closed: one sentence and Extended Data | 15 |
 
 **Not done yet:** thresholds for individual-mouse maps with the new F1 table; body weights of the new F1 table through our QC; ear tags 3694 and 4520, and 15 mismatches with GeneNetwork ([`F1_GN_check_24Nov2026.txt`](../qc/F1_GN_check_24Nov2026.txt)) with Suheeta and Casey.
 
@@ -94,7 +92,7 @@
 | Individual-mouse maps without F1s: chow, high fat, both diets, genotype × diet | Extended Data | **Done:** thresholds from 200 permutations on ATHENA; one locus passes |
 | **Strain and F1 means together, with zooms of proximal Chr 1 (first section below)** | not yet placed | **Preliminary:** maps, support intervals, a leave-one-F1-out check, thresholds from 1,000 permutations and a two-locus scan of high-fat Chr 1, all done |
 | F1 heterosis by cross type | not yet placed | **Preliminary,** descriptive |
-| Body weight and correlated trait locus (CTL) maps | Fig. 3 | **Preliminary:** Danny's models, no thresholds |
+| Body weight and correlated trait locus (CTL) maps | Fig. 3 | **CTL closed** (no locus passes hierarchical permutation; Extended Data, finding 15). **Body weight:** Danny's models, no thresholds |
 | Combining T-ages by the Cauchy method, as in Arends et al. 2026 | Methods | **Done for strain means** with and without F1s (1,000 permutations); for individual mice, recorded by the queued ATHENA jobs |
 | BXD loci tested in UM-HET3 females | — | **Draft plan** awaiting Rob's approval ([PLAN_BXD_UMHET3_concordance.md](PLAN_BXD_UMHET3_concordance.md)) |
 
@@ -380,6 +378,6 @@ These are Danny's maps, redrawn: strain means weighted by numbers of mice, witho
 1. **Thresholds for Fig. 2c–f** from the two ATHENA jobs with F1 mice (single T-age, any T-age and Cauchy); then Rob's choice for panel **f**, with or without F1s.
 2. **Cauchy maps for the individual mice,** once those thresholds are back.
 3. **For the F1s:** a permutation that keeps each F1 tied to its parents, to check the high-fat dominance pattern; and whether the F1s also sharpen the chow Chr 9 locus at 107 Mb.
-4. **Body-weight and CTL maps** with the models above: left to Danny (Rob, 24 November 2026).
+4. **Body-weight maps** with the models above: left to Danny (Rob, 24 November 2026). CTL is closed (finding 15).
 5. **BXD loci in UM-HET3 females,** once Rob approves the plan, with the BXD loci fixed before UM-HET3 is looked at.
 6. **Legend titles that state findings,** once the thresholds are in.
