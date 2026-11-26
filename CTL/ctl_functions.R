@@ -84,6 +84,17 @@ ctlTest <- function(rB, rD, nB, nD){
   ifelse(is.finite(zB) & is.finite(zD), sign(rD - rB) * -log10(pchisq(Cv, 1, lower.tail = FALSE)), NA)
 }
 
+# The standard version (added 26 November 2026, exploratory, at Rob's and Danny's request after the strain-level results): each Fisher z
+# weighted (n - 3) / 1.06, the inverse of the variance of a Spearman correlation's z (Fieller, Hartley & Pearson 1957), in place of n - 1;
+# and a group needs at least min.n units (strains), so that the normal approximation holds. ctl_fisher_simulation.R and ctl_tests.R
+# check that it is calibrated where there is no CTL.
+ctlTestStandard <- function(rB, rD, nB, nD, min.n = 20){
+  zB <- 0.5 * log((1 + rB) / (1 - rB)); zD <- 0.5 * log((1 + rD) / (1 - rD))
+  wB <- (nB - 3) / 1.06; wD <- (nD - 3) / 1.06
+  Cv <- (wB * zB^2 + wD * zD^2) - (wB * zB + wD * zD)^2 / (wB + wD)
+  ifelse(is.finite(zB) & is.finite(zD) & nB >= min.n & nD >= min.n, sign(rD - rB) * -log10(pchisq(Cv, 1, lower.tail = FALSE)), NA)
+}
+
 # ==== 3. The Cauchy combination over T-ages (Danny's Cauchy.R) =========================================================================
 # Danny's cauchycombination(): the P values of one marker, one per T-age, become Cauchy quantiles; their mean is turned back into one P.
 # Here per row of P (markers x T-ages), leaving out T-ages without a test. Returns -log10 of the combined P.
@@ -138,10 +149,13 @@ scanAll <- function(G, scans){
   sapply(scans, function(d){ r <- ctlCor(G, d$s, d$wt, d$ow, d$tw, d$oy, d$ty, d$nall); ctlTest(r[, 1], r[, 2], r[, 3], r[, 4]) })
 }
 
-# The same, with strains as the units (strainUnits()): n in Fisher's z is the number of strains. A group with fewer than 5 strains is NA.
+# The same, with strains as the units (strainUnits()): n in Fisher's z is the number of strains. Returns a list of two maps (distinct
+# patterns x scans): coded, Danny's test (weights n - 1; a group with fewer than 5 strains is NA), and standard, ctlTestStandard().
 scanAllStrains <- function(G, scans){
-  sapply(scans, function(d){ u <- d$strain.units; r <- ctlCor(G, u$s, u$wt, u$ow, u$tw, u$oy, u$ty, u$nall)
-    r[which(r[, 3] < 5 | r[, 4] < 5), ] <- NA; ctlTest(r[, 1], r[, 2], r[, 3], r[, 4]) })
+  per.scan <- lapply(scans, function(d){ u <- d$strain.units; r <- ctlCor(G, u$s, u$wt, u$ow, u$tw, u$oy, u$ty, u$nall)
+    coded <- ctlTest(r[, 1], r[, 2], r[, 3], r[, 4]); coded[which(r[, 3] < 5 | r[, 4] < 5)] <- NA
+    list(coded = coded, standard = ctlTestStandard(r[, 1], r[, 2], r[, 3], r[, 4])) })
+  list(coded = sapply(per.scan, `[[`, "coded"), standard = sapply(per.scan, `[[`, "standard"))
 }
 
 # ==== 6. One permutation: each strain takes the genotypes of another strain of its stratum =============================================
@@ -167,19 +181,22 @@ summarizeMap <- function(L, pat){
 }
 
 # ==== 8. One map, real (i = 0) or permuted (permutation i uses seed + i) ===============================================================
-# Both levels, mice (Danny's test) and strains, from the same permutation. Returns
-#   summary  the summaries of step 7: "<design>.<diet>.<summary>" for mice, "<design>.<diet>.strain.<summary>" for strains
-#   scanmax  the largest -log10 P of each scan (mice, then strains, whose names start "strain ")
-#   L, LS    the maps (distinct patterns x scans) of mice and of strains
+# Three tests from the same permutation: mice (Danny's), strains (Danny's formula on strain means) and standard (strain means,
+# ctlTestStandard()). Returns
+#   summary  the summaries of step 7: "<design>.<diet>.<summary>" for mice, ".strain.<summary>" and ".standard.<summary>" for the others
+#   scanmax  the largest -log10 P of each scan (mice, then names starting "strain " and "standard ")
+#   maps     the three maps (distinct patterns x scans): mice, strain, standard
 runMap <- function(i, inp, scans, seed){
   o <- if(i == 0) seq_along(inp$strains) else permuteStrains(inp$stratum, seed + i)
-  L <- scanAll(inp$G[o, , drop = FALSE], scans); LS <- scanAllStrains(inp$G[o, , drop = FALSE], scans)
+  G <- inp$G[o, , drop = FALSE]; strain.maps <- scanAllStrains(G, scans)
+  maps <- list(mice = scanAll(G, scans), strain = strain.maps$coded, standard = strain.maps$standard)
   sets <- split(seq_along(scans), paste(sapply(scans, `[[`, "design"), sapply(scans, `[[`, "diet"), sep = "."))
-  s <- c(lapply(sets, function(j) summarizeMap(L[, j, drop = FALSE], inp$pat)),
-         setNames(lapply(sets, function(j) summarizeMap(LS[, j, drop = FALSE], inp$pat)), paste0(names(sets), ".strain")))
+  s <- do.call(c, lapply(names(maps), function(level) setNames(lapply(sets, function(j) summarizeMap(maps[[level]][, j, drop = FALSE], inp$pat)),
+                                                              paste0(names(sets), if(level == "mice") "" else paste0(".", level)))))
   scanMax <- function(M){ m <- suppressWarnings(apply(abs(M), 2, max, na.rm = TRUE)); m[!is.finite(m)] <- NA; m }
   list(summary = setNames(unlist(s, use.names = FALSE), paste(rep(names(s), lengths(s)), unlist(lapply(s, names)), sep = ".")),
-       scanmax = c(scanMax(L), setNames(scanMax(LS), paste("strain", colnames(LS)))), L = L, LS = LS)
+       scanmax = c(scanMax(maps$mice), setNames(scanMax(maps$strain), paste("strain", colnames(maps$strain))),
+                   setNames(scanMax(maps$standard), paste("standard", colnames(maps$standard)))), maps = maps)
 }
 
 # Genome-wide P from a permutation distribution: (1 + permutations at least as large) / (permutations + 1)
