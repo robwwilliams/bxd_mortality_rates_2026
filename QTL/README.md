@@ -19,6 +19,7 @@ Where the mapping as a whole stands, and why each model was chosen: [`notes/BXD_
   - **Checked on Metis:** run on the real data (`--check yes`) at T20 and T500, it gives the fork's maps to 4 decimals. One process peaks at 1.87 GB; three workers at 5.4 GB summed resident memory at T20.
   - **On ATHENA,** as two jobs of 100 permutations (chunks 1–50 and 51–100, seeds 20261124 + *k*) on 3 cores, each about 25 hours, to stay within Squirm's 6 GB and 48 hours.
   - **Raised to 1,000 permutations** (Rob, 24 November 2026: "Yes, queue them"), because 200 leave the 5% threshold with a standard error of about 0.18 (bootstrap, chow T770), larger than the margin by which chow Chr 1 passes. Sixteen more jobs, `squirm/bxd_individualsF1_perms_c` to `_r`, hold chunks 101–500 (25 chunks each, about 16 hours on 3 cores). Chunk *k* keeps seed 20261124 + *k*, so the first 200 count toward the 1,000. All the chunks are combined on Metis.
+  - **Kept in the queue** (Rob, 26 November 2026: "Keep it in the queue. I am biased in favor of F1."), after the first 100 permutations (job a) already gave a provisional 5% threshold of 4.46 for chow at T770, below the chow Chr 1 peak with F1s (5.38), and 6.0 or more for the interaction map, above its F1 peaks (5.0–5.3).
 
 ### Results (exploratory)
 
