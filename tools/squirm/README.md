@@ -13,7 +13,7 @@ ATHENA is Rob's Mac Studio (Apple M5 Max, 18 cores). Its own work comes first. T
 ## The rules for a guest
 
 1. **ATHENA's own work always comes first.** That's the point of Squirm, and nothing in this project should work against it.
-2. **Plan for waiting.** A job may wait hours or days before it starts, and pause many times once it has. Squirm is for work that can wait. Anything needed today runs on Metis.
+2. **Plan for waiting.** A job may wait hours or days before it starts, and pause many times once it has. BXD compute still runs only here, even work needed today (Rob's rule, 25 November 2026). If a result is needed sooner than ATHENA can give it, tell Rob; don't move it to Metis.
 3. **Don't get around it.**
    - Don't ask Rob to pause ATHENA's other work, to change Squirm's limits, or to run anything on ATHENA by hand.
    - Don't split one job into many to get more turns.

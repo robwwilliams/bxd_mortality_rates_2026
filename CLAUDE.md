@@ -44,9 +44,11 @@ Rob's decision (24 October 2026): nothing in this project is private. Papers, da
 
 ## ATHENA (Squirm)
 
-Long CPU-bound R jobs, permutations above all, can run on ATHENA, Rob's Mac Studio, through Squirm: push a branch `squirm/<name>`, and the results come back on it. This project is a guest there that fills the gaps. ATHENA's own work comes first, and a job may wait or pause for hours.
+Long CPU-bound R jobs, permutations above all, run on ATHENA, Rob's Mac Studio, through Squirm: push a branch `squirm/<name>`, and the results come back on it. This project is a guest there that fills the gaps. ATHENA's own work comes first, and a job may wait or pause for hours.
 - **Read `tools/squirm/README.md` before the first job,** and follow its rules for a guest.
-- **Anything needed today runs on Metis.**
+- **BXD compute runs only on ATHENA, even work needed today.** Rob's rule of 25 November 2026, in his words: "BXD Genetics was suppose to run only on ATHENA." It replaces the earlier "Anything needed today runs on Metis."
+  - Metis keeps the editing, figures and reports, and the one small test chunk that `tools/squirm/README.md` asks for before a job.
+  - If a result is needed sooner than ATHENA can give it, tell Rob; don't run it on Metis.
 
 ## Figures
 
